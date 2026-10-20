@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <div class="flex min-h-screen flex-col tabular-nums md:flex-row">
+    <!-- Side navigation, md and up -->
+    <aside aria-label="Workspace" class="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-line bg-bg md:flex">
+      <div class="border-b border-line px-2 py-1.5">
+        <button type="button" aria-haspopup="menu" aria-expanded="false" class="group flex min-h-11 w-full items-center focus-visible:outline-hidden">
+          <span class="flex h-9 w-full items-center gap-2 rounded-md px-1.5 transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">
+            <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center rounded-sm bg-ink text-xs font-semibold text-bg">F</span>
+            <span class="min-w-0 flex-1 truncate text-left text-sm font-semibold text-ink">Fieldnote Studio</span>
+            <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3 shrink-0 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5 6 2l2.5 2.5M3.5 7.5 6 10l2.5-2.5"/></svg>
+          </span>
+        </button>
+      </div>
+      <nav aria-label="Main" class="flex flex-1 flex-col gap-4 overflow-y-auto px-2 py-3">
+        <ul class="flex flex-col">
+          <li><a href="#" aria-current="page" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md bg-accent-soft px-2.5 text-sm font-medium text-accent group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Dashboard</span></a></li>
+          <li><a href="#invoices" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Invoices <span class="font-mono text-xs font-normal text-muted">14</span></span></a></li>
+          <li><a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Clients <span class="font-mono text-xs font-normal text-muted">23</span></span></a></li>
+          <li><a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Payments</span></a></li>
+          <li><a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Reports</span></a></li>
+        </ul>
+        <div class="flex flex-col">
+          <p class="px-2.5 pb-1 text-xs font-medium text-muted">Saved views</p>
+          <ul class="flex flex-col">
+            <li><a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Overdue <span class="font-mono text-xs text-muted">3</span></span></a></li>
+            <li><a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center justify-between rounded-md px-2.5 text-sm text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Retainers <span class="font-mono text-xs text-muted">6</span></span></a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="flex flex-col gap-1 border-t border-line px-2 py-2">
+        <a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden"><span class="flex h-8 w-full items-center rounded-md px-2.5 text-sm text-ink transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Settings</span></a>
+        <a href="#" class="group flex min-h-11 items-center focus-visible:outline-hidden">
+          <span class="flex h-9 w-full items-center gap-2 rounded-md px-1.5 transition-colors duration-150 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">
+            <span aria-hidden="true" class="grid size-6 place-items-center rounded-sm border border-line bg-surface text-xs font-semibold text-ink">MK</span>
+            <span class="flex min-w-0 flex-col leading-tight"><span class="truncate text-sm text-ink">Mara Kesler</span><span class="truncate text-xs text-muted">Owner</span></span>
+          </span>
+        </a>
+      </div>
+    </aside>
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <!-- Top bar -->
+      <header class="flex min-h-13 items-center gap-2 border-b border-line bg-bg px-2 md:px-6">
+        <button type="button" aria-haspopup="menu" aria-expanded="false" class="group inline-flex min-h-11 min-w-0 items-center focus-visible:outline-hidden md:hidden">
+          <span class="inline-flex h-8 min-w-0 items-center gap-2 rounded-md px-1.5 group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">
+            <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center rounded-sm bg-ink text-xs font-semibold text-bg">F</span>
+            <span class="truncate text-sm font-semibold text-ink">Fieldnote Studio</span>
+            <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3 shrink-0 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5 6 2l2.5 2.5M3.5 7.5 6 10l2.5-2.5"/></svg>
+          </span>
+        </button>
+        <label class="relative hidden min-h-11 flex-1 items-center md:flex md:max-w-sm">
+          <span class="sr-only">Search invoices and clients</span>
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute left-2.5 z-20 size-3.5 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+          <input type="search" placeholder="Search invoices, clients, amounts" class="peer relative z-10 h-11 w-full bg-transparent pl-8 pr-10 text-sm text-ink placeholder:text-muted focus:outline-hidden">
+          <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1.5 rounded-md border border-line bg-surface peer-focus-visible:border-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-accent/30"></span>
+          <kbd class="pointer-events-none absolute right-2 z-20 rounded-sm border border-line bg-bg px-1 font-mono text-xs text-muted">/</kbd>
+        </label>
+        <div class="ml-auto flex items-center">
+          <a href="#" aria-label="Search" class="group inline-flex min-h-11 min-w-11 items-center justify-center focus-visible:outline-hidden md:hidden">
+            <span class="grid size-8 place-items-center rounded-md text-ink group-hover:bg-ink/5 group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">
+              <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+            </span>
+          </a>
+          <a href="#" aria-label="Account, Mara Kesler" class="group inline-flex min-h-11 min-w-11 items-center justify-center focus-visible:outline-hidden md:hidden">
+            <span class="grid size-8 place-items-center rounded-md border border-line bg-surface text-xs font-semibold text-ink group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">MK</span>
+          </a>
+          <p class="hidden font-mono text-xs text-muted md:block">Synced with Stripe 4 min ago</p>
+        </div>
+      </header>
+
+      <main class="flex flex-1 flex-col gap-4 px-4 pb-8 pt-5 md:gap-5 md:px-6 md:pt-6">
+        <div class="flex flex-wrap items-end justify-between gap-x-4 gap-y-1">
+          <div class="flex flex-col">
+            <h1 class="text-xl font-semibold tracking-tight text-ink">Dashboard</h1>
+            <p class="text-sm text-muted">October 1 to 21, all clients, USD</p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            <label class="relative inline-flex min-h-11 items-center">
+              <span class="pointer-events-none absolute left-2.5 z-20 text-sm text-muted">Period</span>
+              <select name="period" class="peer relative z-10 h-11 cursor-pointer appearance-none bg-transparent pl-[3.7rem] pr-7 text-sm font-medium text-ink focus:outline-hidden">
+                <option selected>This month</option>
+                <option>Last month</option>
+                <option>Quarter</option>
+                <option>Year</option>
+              </select>
+              <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1.5 rounded-md border border-line bg-surface peer-hover:bg-bg peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+              <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute right-2 z-20 size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5l3-3"/></svg>
+            </label>
+            <button type="button" class="group inline-flex min-h-11 items-center focus-visible:outline-hidden">
+              <span class="inline-flex h-8 items-center gap-1.5 rounded-md bg-accent pl-2 pr-3 text-sm font-medium text-accent-ink transition-colors duration-150 group-hover:bg-accent/90 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">
+                <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg>
+                New invoice
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI bento -->
+        <div class="grid grid-cols-2 gap-3 lg:grid-cols-3">
+          <section aria-labelledby="cash-title" class="col-span-2 flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 lg:row-span-2">
+            <header class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+              <div class="flex flex-col gap-0.5">
+                <h2 id="cash-title" class="text-sm font-medium text-muted">Cash in and out, last 6 months</h2>
+                <p class="text-xl font-semibold tracking-tight text-ink tabular-nums md:text-2xl"><span class="text-base font-medium text-muted">$</span>86,420<span class="text-base font-medium text-muted">.00</span></p>
+                <p class="text-sm text-muted">Collected in October so far, <span class="font-mono text-ink">40,310.00</span> out</p>
+              </div>
+              <ul class="flex items-center gap-3 text-xs text-muted">
+                <li class="inline-flex items-center gap-1.5"><span aria-hidden="true" class="size-2.5 rounded-[2px] bg-ink/80"></span>In</li>
+                <li class="inline-flex items-center gap-1.5"><span aria-hidden="true" class="size-2.5 rounded-[2px] border border-muted"></span>Out</li>
+              </ul>
+            </header>
+            <figure class="flex flex-col gap-1.5 lg:mt-auto">
+              <div class="relative">
+                <div aria-hidden="true" class="pointer-events-none absolute inset-0 flex flex-col justify-between">
+                  <span class="flex items-center border-t border-dashed border-line"><span class="-translate-y-1/2 bg-surface pr-1 font-mono text-xs text-muted">100k</span></span>
+                  <span class="border-t border-dashed border-line"></span>
+                  <span class="flex items-center border-t border-dashed border-line"><span class="-translate-y-1/2 bg-surface pr-1 font-mono text-xs text-muted">50k</span></span>
+                  <span class="border-t border-dashed border-line"></span>
+                  <span></span>
+                </div>
+                <div role="img" aria-label="Cash in and out by month. May 61.2k in, 41.0k out. June 54.8k in, 39.5k out. July 70.4k in, 44.2k out. August 48.9k in, 38.7k out. September 66.1k in, 42.9k out. October to date 86.4k in, 40.3k out." class="relative grid h-40 grid-cols-6 gap-2 border-b border-line pl-10 md:h-52 md:gap-4">
+                  <div class="flex items-end justify-center gap-0.5"><span class="h-[61.2%] w-full max-w-4 rounded-t-[2px] bg-ink/80"></span><span class="h-[41%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-muted bg-surface"></span></div>
+                  <div class="flex items-end justify-center gap-0.5"><span class="h-[54.8%] w-full max-w-4 rounded-t-[2px] bg-ink/80"></span><span class="h-[39.5%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-muted bg-surface"></span></div>
+                  <div class="flex items-end justify-center gap-0.5"><span class="h-[70.4%] w-full max-w-4 rounded-t-[2px] bg-ink/80"></span><span class="h-[44.2%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-muted bg-surface"></span></div>
+                  <div class="flex items-end justify-center gap-0.5"><span class="h-[48.9%] w-full max-w-4 rounded-t-[2px] bg-ink/80"></span><span class="h-[38.7%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-muted bg-surface"></span></div>
+                  <div class="flex items-end justify-center gap-0.5"><span class="h-[66.1%] w-full max-w-4 rounded-t-[2px] bg-ink/80"></span><span class="h-[42.9%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-muted bg-surface"></span></div>
+                  <div class="flex items-end justify-center gap-0.5 rounded-t-md bg-accent-soft/60"><span class="h-[86.4%] w-full max-w-4 rounded-t-[2px] bg-accent"></span><span class="h-[40.3%] w-full max-w-4 rounded-t-[2px] border border-b-0 border-accent bg-surface"></span></div>
+                </div>
+              </div>
+              <figcaption class="grid grid-cols-6 gap-2 pl-10 text-center text-xs text-muted md:gap-4">
+                <span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span class="font-medium text-accent">Oct</span>
+              </figcaption>
+            </figure>
+          </section>
+
+          <article class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-3 md:p-4">
+            <h2 class="text-sm font-medium text-muted">Outstanding</h2>
+            <p class="text-lg font-semibold tracking-tight text-ink tabular-nums md:text-xl">48,210<span class="text-sm font-medium text-muted">.40</span></p>
+            <div class="mt-auto flex items-end justify-between gap-2">
+              <p class="inline-flex items-center gap-1 text-xs text-ink tabular-nums">
+                <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10V2M2.5 5.5 6 2l3.5 3.5"/></svg>
+                12.4%
+              </p>
+              <svg role="img" aria-label="Rising over 21 days" viewBox="0 0 64 24" class="h-6 w-16 text-muted" fill="none"><path d="M1 19 L8 18 L15 20 L22 15 L29 16 L36 12 L43 13 L50 8 L57 9 L63 4" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="63" cy="4" r="1.75" class="fill-ink"/></svg>
+            </div>
+          </article>
+
+          <article class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-3 md:p-4">
+            <h2 class="text-sm font-medium text-muted">Overdue</h2>
+            <p class="text-lg font-semibold tracking-tight text-warning tabular-nums md:text-xl">6,980<span class="text-sm font-medium">.00</span></p>
+            <p class="text-xs text-muted">3 invoices, oldest 23 days</p>
+            <button type="button" class="group -mb-1.5 mt-auto inline-flex min-h-11 items-center self-start focus-visible:outline-hidden">
+              <span class="inline-flex h-8 items-center rounded-md border border-line bg-surface px-2.5 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-bg group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">Send 3 reminders</span>
+            </button>
+          </article>
+
+          <article class="col-span-2 flex flex-col gap-2 rounded-lg border border-line bg-surface p-3 md:p-4 lg:col-span-1">
+            <h2 class="text-sm font-medium text-muted">Average days to pay</h2>
+            <p class="text-lg font-semibold tracking-tight text-ink tabular-nums md:text-xl">18.2 <span class="text-sm font-medium text-muted">days</span></p>
+            <dl class="mt-auto flex flex-col gap-1 border-t border-line pt-2 text-xs">
+              <div class="flex justify-between gap-2"><dt class="text-muted">Fastest, Lumen Dental</dt><dd class="font-mono text-ink">6</dd></div>
+              <div class="flex justify-between gap-2"><dt class="text-muted">Slowest, Okafor Architects</dt><dd class="font-mono text-ink">34</dd></div>
+            </dl>
+          </article>
+
+          <section aria-labelledby="activity-title" class="col-span-2 flex flex-col rounded-lg border border-line bg-surface">
+            <h2 id="activity-title" class="border-b border-line px-4 py-2.5 text-sm font-medium text-muted">Activity</h2>
+            <ol class="flex flex-col text-sm">
+              <li class="flex items-baseline gap-3 border-b border-line px-4 py-2">
+                <span class="w-10 shrink-0 font-mono text-xs text-muted">09:42</span>
+                <span class="min-w-0 flex-1 text-ink">Kettle Coffee Roasters paid <span class="font-mono text-muted">INV-2041</span></span>
+                <span class="shrink-0 font-mono text-ink tabular-nums">1,180.00</span>
+              </li>
+              <li class="flex items-baseline gap-3 border-b border-line px-4 py-2">
+                <span class="w-10 shrink-0 font-mono text-xs text-muted">08:15</span>
+                <span class="min-w-0 flex-1 text-ink">Okafor Architects opened <span class="font-mono text-muted">INV-2039</span> for the third time</span>
+              </li>
+              <li class="flex items-baseline gap-3 border-b border-line px-4 py-2">
+                <span class="w-10 shrink-0 font-mono text-xs text-muted">Mon</span>
+                <span class="min-w-0 flex-1 text-ink">Card declined for Marlow Health</span>
+                <span class="shrink-0 font-mono text-danger tabular-nums">3,600.00</span>
+              </li>
+              <li class="flex items-baseline gap-3 px-4 py-2">
+                <span class="w-10 shrink-0 font-mono text-xs text-muted">Mon</span>
+                <span class="min-w-0 flex-1 text-ink">Brightwater Co-op paid 60% of <span class="font-mono text-muted">INV-2044</span></span>
+                <span class="shrink-0 font-mono text-ink tabular-nums">1,776.00</span>
+              </li>
+            </ol>
+          </section>
+        </div>
+
+        <!-- Invoices table with filters -->
+        <section id="invoices" aria-labelledby="inv-title" class="overflow-hidden rounded-lg border border-line bg-surface">
+          <header class="flex flex-col gap-1 border-b border-line px-3 py-1 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex items-baseline gap-2 pt-2 lg:pt-0">
+              <h2 id="inv-title" class="text-base font-semibold text-ink">Invoices</h2>
+              <p class="text-sm text-muted">1 selected, <span class="font-mono">7,400.00</span></p>
+            </div>
+            <div class="-mx-1 flex flex-wrap items-center">
+              <ul aria-label="Filter by status" class="flex items-center">
+                <li><button type="button" aria-pressed="true" class="group inline-flex min-h-11 items-center px-0.5 focus-visible:outline-hidden"><span class="inline-flex h-7 items-center gap-1 rounded-md bg-accent-soft px-2 text-sm font-medium text-accent group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">All <span class="font-mono text-xs">41</span></span></button></li>
+                <li><button type="button" aria-pressed="false" class="group inline-flex min-h-11 items-center px-0.5 focus-visible:outline-hidden"><span class="inline-flex h-7 items-center gap-1 rounded-md px-2 text-sm font-medium text-muted transition-colors duration-150 group-hover:bg-ink/5 group-hover:text-ink group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Overdue <span class="font-mono text-xs">3</span></span></button></li>
+                <li><button type="button" aria-pressed="false" class="group inline-flex min-h-11 items-center px-0.5 focus-visible:outline-hidden"><span class="inline-flex h-7 items-center gap-1 rounded-md px-2 text-sm font-medium text-muted transition-colors duration-150 group-hover:bg-ink/5 group-hover:text-ink group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Due <span class="font-mono text-xs">11</span></span></button></li>
+                <li><button type="button" aria-pressed="false" class="group inline-flex min-h-11 items-center px-0.5 focus-visible:outline-hidden"><span class="inline-flex h-7 items-center gap-1 rounded-md px-2 text-sm font-medium text-muted transition-colors duration-150 group-hover:bg-ink/5 group-hover:text-ink group-focus-visible:outline-2 group-focus-visible:outline-offset-1 group-focus-visible:outline-accent">Paid <span class="font-mono text-xs">27</span></span></button></li>
+              </ul>
+              <span aria-hidden="true" class="mx-1.5 hidden h-5 border-l border-line sm:block"></span>
+              <label class="relative ml-1 inline-flex min-h-11 items-center sm:ml-0">
+                <span class="pointer-events-none absolute left-2.5 z-20 text-sm text-muted">Client</span>
+                <select name="client" class="peer relative z-10 h-11 cursor-pointer appearance-none bg-transparent pl-[3.4rem] pr-7 text-sm font-medium text-ink focus:outline-hidden">
+                  <option selected>Any</option>
+                  <option>Harbor and Pine</option>
+                  <option>Okafor Architects</option>
+                  <option>Lumen Dental</option>
+                </select>
+                <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1.5 rounded-md border border-line bg-surface peer-hover:bg-bg peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+                <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute right-2 z-20 size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5l3-3"/></svg>
+              </label>
+            </div>
+          </header>
+          <div class="max-h-[420px] overflow-auto">
+            <table class="w-full min-w-[640px] border-separate border-spacing-0 text-sm">
+              <caption class="sr-only">Invoices for October 2026, newest first</caption>
+              <thead>
+                <tr class="text-left text-xs font-medium text-muted">
+                  <th scope="col" class="sticky top-0 z-10 w-11 border-b border-line bg-bg pl-1.5"><span class="sr-only">Select</span></th>
+                  <th scope="col" class="sticky top-0 z-10 border-b border-line bg-bg py-2 pr-3 font-medium">Invoice</th>
+                  <th scope="col" class="sticky top-0 z-10 border-b border-line bg-bg py-2 pr-3 font-medium">Client</th>
+                  <th scope="col" class="sticky top-0 z-10 border-b border-line bg-bg py-2 pr-3 font-medium">Due</th>
+                  <th scope="col" class="sticky top-0 z-10 border-b border-line bg-bg py-2 pr-3 text-right font-medium">Amount</th>
+                  <th scope="col" class="sticky top-0 z-10 border-b border-line bg-bg py-2 pr-3 font-medium">Status</th>
+                </tr>
+              </thead>
+              <tbody class="text-ink">
+                <tr class="hover:bg-bg">
+                  <td class="border-b border-line pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" aria-label="Select INV-2047" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="border-b border-line pr-3 font-mono text-muted">INV-2047</td>
+                  <td class="border-b border-line pr-3 font-medium">Harbor and Pine</td>
+                  <td class="border-b border-line pr-3 text-muted">Nov 4</td>
+                  <td class="border-b border-line pr-3 text-right font-mono tabular-nums">4,250.00</td>
+                  <td class="border-b border-line pr-3"><span class="inline-flex h-5 items-center rounded-sm border border-line bg-bg px-1.5 text-xs font-medium text-muted">Draft</span></td>
+                </tr>
+                <tr class="hover:bg-bg">
+                  <td class="border-b border-line pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" aria-label="Select INV-2046" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="border-b border-line pr-3 font-mono text-muted">INV-2046</td>
+                  <td class="border-b border-line pr-3 font-medium">Lumen Dental</td>
+                  <td class="border-b border-line pr-3 text-muted">Oct 30</td>
+                  <td class="border-b border-line pr-3 text-right font-mono tabular-nums">12,800.00</td>
+                  <td class="border-b border-line pr-3"><span class="inline-flex h-5 items-center rounded-sm border border-line bg-surface px-1.5 text-xs font-medium text-ink">Sent</span></td>
+                </tr>
+                <tr class="bg-accent-soft">
+                  <td class="border-b border-line pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" checked aria-label="Select INV-2039" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="border-b border-line pr-3 font-mono text-muted">INV-2039</td>
+                  <td class="border-b border-line pr-3 font-medium">Okafor Architects</td>
+                  <td class="border-b border-line pr-3 text-muted">Oct 12</td>
+                  <td class="border-b border-line pr-3 text-right font-mono tabular-nums">7,400.00</td>
+                  <td class="border-b border-line pr-3"><span class="inline-flex h-5 items-center gap-1 rounded-sm border border-warning/35 bg-surface px-1.5 text-xs font-medium text-warning dark:bg-warning/12">Overdue <span class="font-mono">9d</span></span></td>
+                </tr>
+                <tr class="hover:bg-bg">
+                  <td class="border-b border-line pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" aria-label="Select INV-2044" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="border-b border-line pr-3 font-mono text-muted">INV-2044</td>
+                  <td class="border-b border-line pr-3 font-medium">Brightwater Co-op</td>
+                  <td class="border-b border-line pr-3 text-muted">Oct 18</td>
+                  <td class="border-b border-line pr-3 text-right font-mono tabular-nums">2,960.00</td>
+                  <td class="border-b border-line pr-3"><span class="inline-flex h-5 items-center gap-1.5 rounded-sm bg-accent-soft px-1.5 text-xs font-medium text-accent">Partly paid <span class="font-mono">60%</span></span></td>
+                </tr>
+                <tr class="hover:bg-bg">
+                  <td class="border-b border-line pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" aria-label="Select INV-2041" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="border-b border-line pr-3 font-mono text-muted">INV-2041</td>
+                  <td class="border-b border-line pr-3 font-medium">Kettle Coffee Roasters</td>
+                  <td class="border-b border-line pr-3 text-muted">Oct 15</td>
+                  <td class="border-b border-line pr-3 text-right font-mono tabular-nums">1,180.00</td>
+                  <td class="border-b border-line pr-3"><span class="inline-flex h-5 items-center rounded-sm bg-accent-soft px-1.5 text-xs font-medium text-accent">Paid</span></td>
+                </tr>
+                <tr class="hover:bg-bg">
+                  <td class="pl-1.5"><span class="relative grid size-11 place-items-center"><input type="checkbox" aria-label="Select INV-2038" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden"><span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span><svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg></span></td>
+                  <td class="pr-3 font-mono text-muted">INV-2038</td>
+                  <td class="pr-3 font-medium">Marlow Health</td>
+                  <td class="pr-3 text-muted">Oct 9</td>
+                  <td class="pr-3 text-right font-mono tabular-nums">3,600.00</td>
+                  <td class="pr-3"><span class="inline-flex h-5 items-center rounded-sm bg-danger/8 px-1.5 text-xs font-medium text-danger dark:bg-danger/12">Payment failed</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="text-sm">
+                  <td class="border-t border-line bg-bg"></td>
+                  <th scope="row" colspan="3" class="border-t border-line bg-bg py-2.5 pr-3 text-left font-medium text-muted">6 of 41 invoices</th>
+                  <td class="border-t border-line bg-bg py-2.5 pr-3 text-right font-mono font-medium text-ink tabular-nums">32,190.00</td>
+                  <td class="border-t border-line bg-bg"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <!-- Bottom tab bar on mobile. Sticky, not fixed, so it stays inside previews and never covers content. -->
+      <nav aria-label="Main" class="sticky bottom-0 z-30 border-t border-line bg-surface md:hidden">
+        <ul class="grid grid-cols-4">
+          <li><a href="#" aria-current="page" class="relative flex min-h-14 flex-col items-center justify-center gap-0.5 text-xs font-medium text-accent focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"><span aria-hidden="true" class="absolute inset-x-5 top-0 h-0.5 rounded-b-[2px] bg-accent"></span>Dashboard</a></li>
+          <li><a href="#invoices" class="flex min-h-14 flex-col items-center justify-center gap-0.5 text-xs font-medium text-muted hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Invoices<span class="font-mono text-xs leading-none text-muted">14</span></a></li>
+          <li><a href="#" class="flex min-h-14 flex-col items-center justify-center gap-0.5 text-xs font-medium text-muted hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Clients</a></li>
+          <li><a href="#" class="flex min-h-14 flex-col items-center justify-center gap-0.5 text-xs font-medium text-muted hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Reports</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-lg flex-col gap-6 tabular-nums">
+    <section class="flex flex-col gap-2">
+      <h2 class="text-xs font-medium text-muted">Invoice status</h2>
+      <ul class="flex flex-wrap items-center gap-2">
+        <li><span class="inline-flex h-5 items-center rounded-sm border border-line bg-bg px-1.5 text-xs font-medium text-muted">Draft</span></li>
+        <li><span class="inline-flex h-5 items-center rounded-sm bg-accent-soft px-1.5 text-xs font-medium text-accent">Paid</span></li>
+        <li><span class="inline-flex h-5 items-center rounded-sm border border-line bg-surface px-1.5 text-xs font-medium text-ink">Sent</span></li>
+        <li><span class="inline-flex h-5 items-center gap-1 rounded-sm border border-warning/35 bg-surface px-1.5 text-xs font-medium text-warning dark:bg-warning/12">Overdue <span class="font-mono">9d</span></span></li>
+        <li><span class="inline-flex h-5 items-center rounded-sm bg-danger/8 px-1.5 text-xs font-medium text-danger dark:bg-danger/12">Payment failed</span></li>
+      </ul>
+      <p class="text-xs text-muted">Neutral, success (paid), info (sent), warning (overdue), danger. Overdue keeps a surface fill so the amber text stays above 4.5:1.</p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-xs font-medium text-muted">Partial payment, specific to Tally</h2>
+      <ul class="flex flex-wrap items-center gap-2">
+        <li>
+          <span class="inline-flex h-5 items-center gap-1.5 rounded-sm bg-accent-soft pl-1.5 pr-1.5 text-xs font-medium text-accent">
+            Partly paid
+            <span aria-hidden="true" class="relative h-1 w-8 rounded-[1px] bg-surface/80"><span class="absolute inset-y-0 left-0 w-[60%] rounded-[1px] bg-accent"></span></span>
+            <span class="font-mono">60%</span>
+          </span>
+        </li>
+        <li>
+          <span class="inline-flex h-5 items-center gap-1.5 rounded-sm bg-accent-soft px-1.5 text-xs font-medium text-accent">
+            Partly paid
+            <span aria-hidden="true" class="relative h-1 w-8 rounded-[1px] bg-surface/80"><span class="absolute inset-y-0 left-0 w-[25%] rounded-[1px] bg-accent"></span></span>
+            <span class="font-mono">25%</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2 class="text-xs font-medium text-muted">In a row</h2>
+      <div class="flex items-center justify-between gap-3 rounded-lg border border-line bg-surface px-3 py-2.5">
+        <div class="flex min-w-0 flex-col">
+          <span class="truncate text-sm font-medium text-ink">Okafor Architects</span>
+          <span class="font-mono text-xs text-muted">INV-2039, due Oct 12</span>
+        </div>
+        <div class="flex shrink-0 items-center gap-3">
+          <span class="font-mono text-sm text-ink tabular-nums">7,400.00</span>
+          <span class="inline-flex h-5 items-center gap-1 rounded-sm border border-warning/35 bg-surface px-1.5 text-xs font-medium text-warning dark:bg-warning/12">Overdue <span class="font-mono">9d</span></span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

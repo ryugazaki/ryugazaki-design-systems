@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Input</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <!-- The input element is 44px tall with a transparent fill; the 36px frame behind it is drawn by the sibling span. -->
+  <form class="flex max-w-sm flex-col gap-5 tabular-nums" action="#">
+    <div class="flex flex-col gap-1">
+      <label for="billing-email" class="text-sm font-medium text-ink">Billing email</label>
+      <div class="relative">
+        <input id="billing-email" name="billing-email" type="email" value="accounts@harborpine.co" aria-describedby="billing-email-hint" class="peer relative z-10 block h-11 w-full bg-transparent px-3 text-sm text-ink placeholder:text-muted focus:outline-hidden">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1 rounded-md border border-line bg-surface transition-colors duration-150 peer-hover:border-muted/50 peer-focus-visible:border-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-accent/30"></span>
+      </div>
+      <p id="billing-email-hint" class="text-xs text-muted">Invoices, reminders, and receipts go to this address.</p>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="amount" class="text-sm font-medium text-ink">Amount</label>
+      <div class="relative">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-y-0 left-3 z-20 flex items-center font-mono text-sm text-muted">USD</span>
+        <input id="amount" name="amount" type="text" inputmode="decimal" value="4,250.00" aria-invalid="true" aria-describedby="amount-error" class="peer relative z-10 block h-11 w-full bg-transparent pl-14 pr-3 text-right font-mono text-sm text-ink tabular-nums focus:outline-hidden">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1 rounded-md border border-danger bg-surface peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-danger/30"></span>
+      </div>
+      <p id="amount-error" class="text-xs text-danger">This is more than the 3,800.00 left on the estimate.</p>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="memo" class="text-sm font-medium text-ink">Note to client</label>
+      <textarea id="memo" name="memo" rows="3" class="block min-h-24 w-full resize-y rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted transition-colors duration-150 hover:border-muted/50 focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent/30" placeholder="Shown under the line items on the PDF.">Thanks for a smooth October. Second milestone is billed below.</textarea>
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="invoice-number" class="text-sm font-medium text-muted">Invoice number</label>
+      <div class="relative">
+        <input id="invoice-number" name="invoice-number" type="text" value="INV-2047" disabled aria-describedby="invoice-number-hint" class="peer relative z-10 block h-11 w-full cursor-not-allowed bg-transparent px-3 font-mono text-sm text-muted">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1 rounded-md border border-dashed border-line bg-bg"></span>
+      </div>
+      <p id="invoice-number-hint" class="text-xs text-muted">Numbers are assigned in order and cannot be edited.</p>
+    </div>
+  </form>
+  <!-- snippet:end -->
+</body>
+</html>

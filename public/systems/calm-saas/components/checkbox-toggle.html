@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Checkbox and toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <!-- Checkbox: the native input is a transparent 44px square; the 16px box and check are drawn from its peer state. -->
+  <div class="flex max-w-md flex-col gap-7 tabular-nums">
+    <fieldset class="flex flex-col">
+      <legend class="mb-1 text-xs font-medium text-muted">Reminders</legend>
+      <label class="flex min-h-11 cursor-pointer items-center text-sm text-ink">
+        <span class="relative -ml-3.5 grid size-11 shrink-0 place-items-center">
+          <input type="checkbox" name="remind-before" checked class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden">
+          <span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface transition-colors duration-150 peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg>
+        </span>
+        Email the client 3 days before the due date
+      </label>
+      <label class="flex min-h-11 cursor-pointer items-center text-sm text-ink">
+        <span class="relative -ml-3.5 grid size-11 shrink-0 place-items-center">
+          <input type="checkbox" name="remind-weekly" class="peer absolute inset-0 size-full cursor-pointer appearance-none focus:outline-hidden">
+          <span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-muted bg-surface transition-colors duration-150 peer-checked:border-accent peer-checked:bg-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute size-3 text-accent-ink opacity-0 peer-checked:opacity-100" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3.5 8.5 3 3 6-7"/></svg>
+        </span>
+        Repeat every 7 days while overdue
+      </label>
+      <label class="flex min-h-11 cursor-not-allowed items-center text-sm text-muted">
+        <span class="relative -ml-3.5 grid size-11 shrink-0 place-items-center">
+          <input type="checkbox" name="late-fee" disabled class="peer absolute inset-0 size-full cursor-not-allowed appearance-none">
+          <span aria-hidden="true" class="pointer-events-none size-4 rounded-sm border border-dashed border-muted bg-bg"></span>
+        </span>
+        Add a 1.5% late fee (needs the Agency plan)
+      </label>
+    </fieldset>
+
+    <div class="flex flex-col">
+      <h2 class="mb-1 text-xs font-medium text-muted">Workspace</h2>
+      <div class="flex min-h-11 items-center justify-between gap-4 border-b border-line">
+        <div class="flex flex-col py-2">
+          <span id="sw-autopay-label" class="text-sm font-medium text-ink">Card autopay</span>
+          <span class="text-xs text-muted">Charge saved cards on the due date.</span>
+        </div>
+        <button type="button" role="switch" aria-checked="true" aria-labelledby="sw-autopay-label" class="group inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-hidden">
+          <span class="relative h-4 w-7 rounded-sm bg-accent-soft ring-1 ring-accent/30 transition-colors duration-150 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">
+            <span class="absolute left-0.5 top-0.5 size-3 translate-x-3 rounded-[3px] bg-accent transition-transform duration-150 motion-reduce:transition-none"></span>
+          </span>
+        </button>
+      </div>
+      <div class="flex min-h-11 items-center justify-between gap-4 border-b border-line">
+        <div class="flex flex-col py-2">
+          <span id="sw-digest-label" class="text-sm font-medium text-ink">Monday cash digest</span>
+          <span class="text-xs text-muted">One email with what came in and what is due.</span>
+        </div>
+        <button type="button" role="switch" aria-checked="false" aria-labelledby="sw-digest-label" class="group inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-hidden">
+          <span class="relative h-4 w-7 rounded-sm bg-line ring-1 ring-muted/30 transition-colors duration-150 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">
+            <span class="absolute left-0.5 top-0.5 size-3 rounded-[3px] bg-muted transition-transform duration-150 motion-reduce:transition-none"></span>
+          </span>
+        </button>
+      </div>
+      <div class="flex min-h-11 items-center justify-between gap-4">
+        <div class="flex flex-col py-2">
+          <span id="sw-focus-label" class="text-sm font-medium text-ink">Round amounts on PDFs</span>
+          <span class="text-xs text-muted">Focus visible, shown statically.</span>
+        </div>
+        <button type="button" role="switch" aria-checked="false" aria-labelledby="sw-focus-label" class="inline-flex min-h-11 min-w-11 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-hidden">
+          <span class="relative h-4 w-7 rounded-sm bg-line ring-1 ring-muted/30 outline-2 outline-offset-2 outline-accent">
+            <span class="absolute left-0.5 top-0.5 size-3 rounded-[3px] bg-muted"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

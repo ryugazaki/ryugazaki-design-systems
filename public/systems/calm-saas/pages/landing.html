@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <div class="tabular-nums">
+  <header class="relative border-b border-line bg-bg">
+    <div class="mx-auto flex min-h-14 max-w-6xl items-center gap-4 px-4 md:px-6">
+      <a href="#" class="inline-flex min-h-11 items-center gap-2 rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <span aria-hidden="true" class="grid size-6 place-items-center rounded-sm bg-ink">
+          <span class="flex h-3 items-end gap-0.5"><span class="h-1.5 w-0.5 bg-bg"></span><span class="h-3 w-0.5 bg-bg"></span><span class="h-2 w-0.5 bg-bg"></span></span>
+        </span>
+        <span class="text-lg font-semibold tracking-tight text-ink">Tally</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center text-sm font-medium text-muted">
+          <li><a href="#features" class="inline-flex min-h-11 items-center rounded-md px-2.5 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Product</a></li>
+          <li><a href="#pricing" class="inline-flex min-h-11 items-center rounded-md px-2.5 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Pricing</a></li>
+          <li><a href="#proof" class="inline-flex min-h-11 items-center rounded-md px-2.5 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Customers</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-2.5 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Changelog</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-1">
+        <a href="#" class="hidden min-h-11 items-center rounded-md px-2.5 text-sm font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent sm:inline-flex">Sign in</a>
+        <a href="#start" class="group hidden min-h-11 items-center focus-visible:outline-hidden md:inline-flex">
+          <span class="inline-flex h-8 items-center rounded-md border border-line bg-surface px-2.5 text-sm font-medium text-ink group-hover:bg-bg group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">Start free month</span>
+        </a>
+        <details class="group/menu md:hidden">
+          <summary class="group inline-flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center focus-visible:outline-hidden [&::-webkit-details-marker]:hidden">
+            <span class="sr-only">Menu</span>
+            <span aria-hidden="true" class="grid size-8 place-items-center rounded-md border border-line bg-surface text-ink group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent group-open/menu:bg-bg">
+              <svg viewBox="0 0 16 16" class="size-4 group-open/menu:hidden" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2.5 5h11M2.5 11h11"/></svg>
+              <svg viewBox="0 0 16 16" class="hidden size-4 group-open/menu:block" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg>
+            </span>
+          </summary>
+          <div class="absolute inset-x-3 top-full z-20 mt-1 rounded-lg border border-line bg-surface p-2 shadow-pop">
+            <ul class="flex flex-col text-sm font-medium text-ink">
+              <li><a href="#features" class="flex min-h-11 items-center rounded-md px-3 hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Product</a></li>
+              <li><a href="#pricing" class="flex min-h-11 items-center rounded-md px-3 hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Pricing</a></li>
+              <li><a href="#proof" class="flex min-h-11 items-center rounded-md px-3 hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Customers</a></li>
+              <li><a href="#" class="flex min-h-11 items-center rounded-md px-3 hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Changelog</a></li>
+              <li class="mt-1 border-t border-line pt-1"><a href="#" class="flex min-h-11 items-center rounded-md px-3 hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Sign in</a></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero: the thesis is a real month of receivables, not a slogan -->
+    <section aria-labelledby="hero-title" class="border-b border-line">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-10 md:px-6 md:pb-16 md:pt-16 lg:grid-cols-12 lg:gap-12">
+        <div class="flex flex-col gap-5 lg:col-span-6 lg:pt-6">
+          <p class="font-mono text-xs text-muted">Invoicing and cash flow for agencies of 2 to 40 people</p>
+          <h1 id="hero-title" class="text-display font-semibold tracking-tight text-ink text-balance">Know what is owed, by whom, and by when.</h1>
+          <p class="max-w-md text-base text-muted">Tally sends your invoices, chases the late ones in your own words, and shows the next 30 days of cash on one quiet screen. Your bookkeeper gets clean exports every month.</p>
+          <div class="flex flex-wrap items-center gap-x-2">
+            <a href="#start" class="group inline-flex min-h-11 items-center focus-visible:outline-hidden">
+              <span class="inline-flex h-9 items-center rounded-md bg-accent px-4 text-sm font-medium text-accent-ink transition-colors duration-150 group-hover:bg-accent/90 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">Start a free month</span>
+            </a>
+            <a href="#features" class="group inline-flex min-h-11 items-center focus-visible:outline-hidden">
+              <span class="inline-flex h-9 items-center rounded-md border border-line bg-surface px-4 text-sm font-medium text-ink transition-colors duration-150 group-hover:bg-bg group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">See a sample dashboard</span>
+            </a>
+          </div>
+          <p class="text-xs text-muted">No card needed. Import clients from Harvest, Stripe, or a CSV.</p>
+        </div>
+
+        <figure class="flex flex-col overflow-hidden rounded-lg border border-line bg-surface lg:col-span-6">
+          <figcaption class="flex items-baseline justify-between gap-3 border-b border-line px-4 py-2.5">
+            <span class="text-sm font-medium text-ink">Fieldnote Studio, October</span>
+            <span class="font-mono text-xs text-muted">as of Oct 21</span>
+          </figcaption>
+          <dl class="grid grid-cols-2 border-b border-line">
+            <div class="flex flex-col gap-0.5 border-r border-line px-4 py-3">
+              <dt class="text-xs text-muted">Collected</dt>
+              <dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">86,420<span class="text-sm font-medium text-muted">.00</span></dd>
+            </div>
+            <div class="flex flex-col gap-0.5 px-4 py-3">
+              <dt class="text-xs text-muted">Outstanding</dt>
+              <dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">48,210<span class="text-sm font-medium text-muted">.40</span></dd>
+            </div>
+          </dl>
+          <div class="flex flex-col gap-2 px-4 py-3">
+            <p class="text-xs font-medium text-muted">When the outstanding 48,210.40 lands</p>
+            <div aria-hidden="true" class="flex h-2 gap-0.5 overflow-hidden rounded-[2px]">
+              <span class="flex-[14.5] bg-warning"></span>
+              <span class="flex-[30.2] bg-ink/80"></span>
+              <span class="flex-[34.2] bg-ink/45"></span>
+              <span class="flex-[21.1] bg-line"></span>
+            </div>
+            <table class="w-full text-sm">
+              <caption class="sr-only">Outstanding invoices by expected payment window</caption>
+              <tbody>
+                <tr class="border-b border-line"><th scope="row" class="py-1.5 text-left font-normal text-ink"><span aria-hidden="true" class="mr-2 inline-block size-2 rounded-[2px] bg-warning"></span>Overdue</th><td class="py-1.5 text-right font-mono text-warning">6,980.00</td></tr>
+                <tr class="border-b border-line"><th scope="row" class="py-1.5 text-left font-normal text-ink"><span aria-hidden="true" class="mr-2 inline-block size-2 rounded-[2px] bg-ink/80"></span>This week</th><td class="py-1.5 text-right font-mono text-ink">14,560.00</td></tr>
+                <tr class="border-b border-line"><th scope="row" class="py-1.5 text-left font-normal text-ink"><span aria-hidden="true" class="mr-2 inline-block size-2 rounded-[2px] bg-ink/45"></span>Next 2 weeks</th><td class="py-1.5 text-right font-mono text-ink">16,490.40</td></tr>
+                <tr><th scope="row" class="py-1.5 text-left font-normal text-ink"><span aria-hidden="true" class="mr-2 inline-block size-2 rounded-[2px] bg-line"></span>Later</th><td class="py-1.5 text-right font-mono text-ink">10,180.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Features as a bento -->
+    <section id="features" aria-labelledby="features-title" class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:px-6 md:py-16">
+      <div class="flex max-w-2xl flex-col gap-2">
+        <h2 id="features-title" class="text-xl font-semibold tracking-tight text-ink md:text-2xl">The dull parts of getting paid, handled.</h2>
+        <p class="text-base text-muted">Everything sits on one ledger, so a payment, a reminder, and a forecast never disagree.</p>
+      </div>
+      <div class="grid gap-3 md:grid-cols-4">
+        <article class="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:col-span-2 md:row-span-2 md:p-5">
+          <div class="flex flex-col gap-1">
+            <h3 class="text-lg font-semibold text-ink">Reminders in your voice</h3>
+            <p class="text-base text-muted">Write the nudge once. Tally sends it 3 days before, on the day, and weekly after, and stops the moment money arrives.</p>
+          </div>
+          <div class="mt-auto flex flex-col rounded-md border border-line bg-bg text-sm">
+            <div class="flex flex-col gap-0.5 border-b border-line px-3 py-2">
+              <p class="text-muted">To <span class="text-ink">Dayo Okafor</span></p>
+              <p class="text-muted">Subject <span class="text-ink">INV-2039 is 9 days past due</span></p>
+            </div>
+            <p class="px-3 py-3 text-ink">Hi Dayo, a quick note that the October milestone (<span class="font-mono">7,400.00</span>) was due on the 12th. The pay link below takes card or bank transfer. Thanks, Mara</p>
+            <p class="border-t border-line px-3 py-2 font-mono text-xs text-muted">Next reminder Oct 28, stops on payment</p>
+          </div>
+        </article>
+        <article class="flex flex-col justify-between gap-6 rounded-lg border border-line bg-surface p-4 md:col-span-2">
+          <h3 class="text-sm font-medium text-muted">Median days to pay, first 90 days on Tally</h3>
+          <div class="flex items-end gap-6">
+            <p class="flex flex-col"><span class="text-2xl font-semibold tracking-tight text-ink tabular-nums">18</span><span class="text-xs text-muted">with reminders</span></p>
+            <p class="flex flex-col"><span class="text-2xl font-semibold tracking-tight text-muted tabular-nums">27</span><span class="text-xs text-muted">before Tally</span></p>
+          </div>
+        </article>
+        <article class="flex flex-col gap-3 rounded-lg border border-line bg-surface p-4">
+          <h3 class="text-sm font-medium text-muted">Cash forecast, 4 weeks</h3>
+          <div aria-hidden="true" class="flex h-20 items-end gap-1.5 border-b border-line">
+            <span class="h-[45%] flex-1 rounded-t-[2px] bg-ink/80"></span>
+            <span class="h-[72%] flex-1 rounded-t-[2px] bg-ink/80"></span>
+            <span class="h-[38%] flex-1 rounded-t-[2px] bg-ink/45"></span>
+            <span class="h-[90%] flex-1 rounded-t-[2px] bg-ink/45"></span>
+          </div>
+          <p class="text-sm text-ink">Expected <span class="font-mono">31,050.00</span> by Nov 18.</p>
+        </article>
+        <article class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-4">
+          <h3 class="text-sm font-medium text-muted">Brings your history along</h3>
+          <ul class="flex flex-col text-sm text-ink">
+            <li class="flex justify-between border-b border-line py-1.5">Harvest <span class="text-muted">clients, invoices</span></li>
+            <li class="flex justify-between border-b border-line py-1.5">Stripe <span class="text-muted">payments</span></li>
+            <li class="flex justify-between border-b border-line py-1.5">Xero <span class="text-muted">export</span></li>
+            <li class="flex justify-between py-1.5">CSV <span class="text-muted">anything else</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section id="proof" aria-labelledby="proof-title" class="border-y border-line bg-surface">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:px-6 md:py-16 lg:grid-cols-12">
+        <h2 id="proof-title" class="sr-only">Who uses Tally</h2>
+        <figure class="flex flex-col gap-4 lg:col-span-7">
+          <blockquote class="text-lg font-medium text-ink text-pretty md:text-xl md:leading-snug">
+            <p>We used to find out we were short on the 28th. Now I see it on the 3rd, and the reminders do the awkward part for us.</p>
+          </blockquote>
+          <figcaption class="text-sm text-muted">Priya Raman, managing partner at Northline, a 14-person brand studio</figcaption>
+        </figure>
+        <dl class="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line lg:col-span-5">
+          <div class="flex flex-col gap-0.5 bg-surface p-4"><dt class="text-xs text-muted">Invoiced through Tally in 2025</dt><dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">$212M</dd></div>
+          <div class="flex flex-col gap-0.5 bg-surface p-4"><dt class="text-xs text-muted">Agencies</dt><dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">1,940</dd></div>
+          <div class="flex flex-col gap-0.5 bg-surface p-4"><dt class="text-xs text-muted">Reminders sent last month</dt><dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">38,400</dd></div>
+          <div class="flex flex-col gap-0.5 bg-surface p-4"><dt class="text-xs text-muted">Paid within terms</dt><dd class="text-lg font-semibold text-ink tabular-nums md:text-xl">81%</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Pricing as a dense comparison table -->
+    <section id="pricing" aria-labelledby="pricing-title" class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:px-6 md:py-16">
+      <div class="flex flex-col gap-2">
+        <h2 id="pricing-title" class="text-xl font-semibold tracking-tight text-ink md:text-2xl">Two plans, priced per workspace.</h2>
+        <p class="text-base text-muted">Unlimited clients and invoices on both. Card fees are passed through at cost.</p>
+      </div>
+      <div class="overflow-x-auto rounded-lg border border-line bg-surface">
+        <table class="w-full min-w-[480px] text-sm">
+          <caption class="sr-only">Plan comparison</caption>
+          <thead>
+            <tr class="border-b border-line bg-bg text-left">
+              <th scope="col" class="w-1/2 px-4 py-3 text-xs font-medium text-muted">Included</th>
+              <th scope="col" class="px-4 py-3 text-right align-bottom"><span class="block text-sm font-semibold text-ink">Studio</span><span class="font-mono text-sm font-normal text-muted">$19 / month</span></th>
+              <th scope="col" class="px-4 py-3 text-right align-bottom"><span class="block text-sm font-semibold text-ink">Agency</span><span class="font-mono text-sm font-normal text-muted">$49 / month</span></th>
+            </tr>
+          </thead>
+          <tbody class="text-ink">
+            <tr class="border-b border-line"><th scope="row" class="px-4 py-2.5 text-left font-normal">Seats</th><td class="px-4 py-2.5 text-right font-mono">3</td><td class="px-4 py-2.5 text-right font-mono">15</td></tr>
+            <tr class="border-b border-line"><th scope="row" class="px-4 py-2.5 text-left font-normal">Automatic reminders</th><td class="px-4 py-2.5 text-right">Yes</td><td class="px-4 py-2.5 text-right">Yes</td></tr>
+            <tr class="border-b border-line"><th scope="row" class="px-4 py-2.5 text-left font-normal">Cash forecast</th><td class="px-4 py-2.5 text-right"><span class="font-mono">30</span> days</td><td class="px-4 py-2.5 text-right"><span class="font-mono">90</span> days</td></tr>
+            <tr class="border-b border-line"><th scope="row" class="px-4 py-2.5 text-left font-normal">Late fees and deposits</th><td class="px-4 py-2.5 text-right text-muted">No</td><td class="px-4 py-2.5 text-right">Yes</td></tr>
+            <tr><th scope="row" class="px-4 py-2.5 text-left font-normal">Accounting sync</th><td class="px-4 py-2.5 text-right">CSV</td><td class="px-4 py-2.5 text-right">Xero, QuickBooks</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="start" aria-labelledby="cta-title" class="border-t border-line">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-12 md:flex-row md:items-end md:justify-between md:px-6 md:py-16">
+        <div class="flex flex-col gap-2">
+          <h2 id="cta-title" class="text-xl font-semibold tracking-tight text-ink md:text-2xl">Send your next invoice from Tally.</h2>
+          <p class="text-base text-muted">The first month is free. Bring your clients over in about ten minutes.</p>
+        </div>
+        <a href="#" class="group inline-flex min-h-11 shrink-0 items-center self-start focus-visible:outline-hidden md:self-auto">
+          <span class="inline-flex h-9 items-center rounded-md bg-accent px-4 text-sm font-medium text-accent-ink transition-colors duration-150 group-hover:bg-accent/90 group-focus-visible:outline-2 group-focus-visible:outline-offset-2 group-focus-visible:outline-accent">Start a free month</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line bg-surface">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm text-muted md:flex-row md:items-center md:justify-between md:px-6">
+      <p>Tally Ledger Co., Lisbon and Toronto</p>
+      <ul class="flex flex-wrap gap-x-1">
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Security</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Status</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Privacy</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-2 hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

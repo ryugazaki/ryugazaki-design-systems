@@ -1,0 +1,62 @@
+{
+  "slug": "calm-saas",
+  "number": 3,
+  "name": "Calm SaaS",
+  "tagline": "Dense, warm, and quiet. Numbers do the talking.",
+  "description": "For products people use all day. Warm stone neutrals instead of cold grays, a single moss accent, 13px data text with tabular figures, and hairline structure. Density is a feature here, so spacing is tight and consistent.",
+  "tags": ["dashboard", "light", "dense", "saas", "minimal"],
+  "defaultMode": "light",
+  "useCases": ["admin panels", "B2B dashboards", "settings and billing pages", "internal tools"],
+  "fonts": [
+    { "family": "Onest", "role": "interface and headings", "weights": [400, 500, 600, 700], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap" },
+    { "family": "Fragment Mono", "role": "IDs, amounts in tables, code", "weights": [400], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap" }
+  ],
+  "typeScale": { "ratio": 1.333, "steps": { "xs": "12px", "sm": "13px", "base": "14px", "lg": "19px", "xl": "25px", "2xl": "33px", "display": "44px" } },
+  "palette": [
+    { "token": "--color-bg", "light": "#F6F5F2", "dark": "#141412", "role": "app background" },
+    { "token": "--color-surface", "light": "#FFFFFF", "dark": "#1C1B19", "role": "panels and tables" },
+    { "token": "--color-ink", "light": "#1C1B19", "dark": "#ECEAE4", "role": "text" },
+    { "token": "--color-muted", "light": "#6B6860", "dark": "#9C998F", "role": "secondary text" },
+    { "token": "--color-line", "light": "#E4E1DA", "dark": "#2E2D29", "role": "hairlines" },
+    { "token": "--color-accent", "light": "#3F6B4E", "dark": "#8DBB9A", "role": "primary action, selection" },
+    { "token": "--color-accent-ink", "light": "#FFFFFF", "dark": "#141412", "role": "text on accent" },
+    { "token": "--color-accent-soft", "light": "#E3ECE5", "dark": "#22302A", "role": "selected rows, soft badges" },
+    { "token": "--color-warning", "light": "#9A6700", "dark": "#E0B252", "role": "overdue, warnings" },
+    { "token": "--color-danger", "light": "#B42318", "dark": "#F09A8F", "role": "errors, destructive" }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Use 13px for table and form text and 14px for body; headings step up by the 1.333 ratio",
+      "Right-align every number and set it with tabular-nums",
+      "Build structure from 1px hairlines and surface changes, not shadows",
+      "Keep one moss accent for the primary action and the current selection",
+      "Use 6px radius on controls and 10px on panels, nothing larger"
+    ],
+    "dont": [
+      "Do not add illustrations or decorative icons to dashboards",
+      "Do not use colored backgrounds for whole cards",
+      "Do not show more than one primary button per view",
+      "Do not use shadows except on popovers and dialogs",
+      "Do not use cool blue-grays; neutrals stay warm"
+    ]
+  },
+  "components": [
+    { "id": "button", "name": "Button", "file": "components/button.html", "notes": "32px tall at sm, 36px at md (wrapped to 44px tap area on touch). Primary is moss; secondary is surface with a hairline; ghost is text with a hover fill." },
+    { "id": "input", "name": "Input", "file": "components/input.html", "notes": "36px, hairline border, 6px radius, label 13px 500 above. Error shows a danger border and a 12px message." },
+    { "id": "select", "name": "Select", "file": "components/select.html", "notes": "Same frame as input with a 12px chevron; includes a compact inline variant used in table filters." },
+    { "id": "checkbox-toggle", "name": "Checkbox and toggle", "file": "components/checkbox-toggle.html", "notes": "16px checkbox with moss fill when checked. Switch is 28 by 16 with a soft track." },
+    { "id": "badge", "name": "Badge", "file": "components/badge.html", "notes": "Soft fills (accent-soft) with text in the matching strong color; 12px, 4px radius. Overdue uses warning." },
+    { "id": "card", "name": "Card", "file": "components/card.html", "notes": "A KPI panel: label, big number, delta with direction, and a tiny sparkline in inline SVG." },
+    { "id": "navbar", "name": "Navbar", "file": "components/navbar.html", "notes": "App top bar with workspace switcher, search field, and avatar initials. Mobile collapses links into a details menu." },
+    { "id": "modal", "name": "Modal and sheet", "file": "components/modal.html", "notes": "Surface with 10px radius and the pop shadow; header, form body, footer actions right-aligned." },
+    { "id": "table", "name": "Table", "file": "components/table.html", "notes": "Dense invoices table: checkbox column, mono invoice IDs, client, due date, amount right-aligned, status badge, sticky header." },
+    { "id": "bento", "name": "Bento grid", "file": "components/bento.html", "notes": "Dashboard overview: revenue 2x2 with a bar chart, three KPI tiles, and an activity list." },
+    { "id": "empty-state", "name": "Empty state", "file": "components/empty-state.html", "notes": "Inside a table frame: short headline, one sentence, primary action, and a secondary import link." },
+    { "id": "toast", "name": "Toast", "file": "components/toast.html", "notes": "Ink background in light mode, small and bottom-left, with an undo action." }
+  ],
+  "pages": [
+    { "id": "landing", "name": "Landing", "file": "pages/landing.html" },
+    { "id": "app", "name": "Dashboard", "file": "pages/app.html" }
+  ]
+}

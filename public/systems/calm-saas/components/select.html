@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm SaaS / Select</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Onest:wght@400;500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6F5F2;
+  --color-surface: #FFFFFF;
+  --color-ink: #1C1B19;
+  --color-muted: #6B6860;
+  --color-line: #E4E1DA;
+  --color-accent: #3F6B4E;
+  --color-accent-ink: #FFFFFF;
+  --color-accent-soft: #E3ECE5;
+  --color-warning: #9A6700;
+  --color-danger: #B42318;
+
+  --font-display: "Onest", ui-sans-serif, sans-serif;
+  --font-body: "Onest", ui-sans-serif, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.05;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pop: 0 1px 2px rgb(28 27 25 / 0.06), 0 8px 24px rgb(28 27 25 / 0.08);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #141412;
+    --color-surface: #1C1B19;
+    --color-ink: #ECEAE4;
+    --color-muted: #9C998F;
+    --color-line: #2E2D29;
+    --color-accent: #8DBB9A;
+    --color-accent-ink: #141412;
+    --color-accent-soft: #22302A;
+    --color-warning: #E0B252;
+    --color-danger: #F09A8F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-sm flex-col gap-7 tabular-nums">
+    <div class="flex flex-col gap-1">
+      <label for="terms" class="text-sm font-medium text-ink">Payment terms</label>
+      <div class="relative">
+        <select id="terms" name="terms" aria-describedby="terms-hint" class="peer relative z-10 block h-11 w-full cursor-pointer appearance-none bg-transparent pl-3 pr-9 text-sm text-ink focus:outline-hidden">
+          <option>Due on receipt</option>
+          <option>Net 7</option>
+          <option selected>Net 14</option>
+          <option>Net 30</option>
+          <option>Net 45</option>
+        </select>
+        <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1 rounded-md border border-line bg-surface transition-colors duration-150 peer-hover:border-muted/50 peer-focus-visible:border-accent peer-focus-visible:outline-2 peer-focus-visible:outline-offset-1 peer-focus-visible:outline-accent/30"></span>
+        <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute right-3 top-1/2 z-20 size-3 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5l3-3"/></svg>
+      </div>
+      <p id="terms-hint" class="text-xs text-muted">Sets the due date. Harbor and Pine usually pays in 11 days.</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <h2 class="text-xs font-medium text-muted">Inline, used in table filters</h2>
+      <div class="flex flex-wrap items-center gap-x-2">
+        <label class="relative inline-flex min-h-11 items-center">
+          <span class="pointer-events-none absolute left-2.5 z-20 text-sm text-muted">Status</span>
+          <select name="status" class="peer relative z-10 h-11 cursor-pointer appearance-none bg-transparent pl-[3.6rem] pr-7 text-sm font-medium text-ink focus:outline-hidden">
+            <option>All</option>
+            <option selected>Overdue</option>
+            <option>Due</option>
+            <option>Paid</option>
+            <option>Draft</option>
+          </select>
+          <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1.5 rounded-md border border-line bg-surface peer-hover:bg-bg peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+          <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute right-2 z-20 size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5l3-3"/></svg>
+        </label>
+        <label class="relative inline-flex min-h-11 items-center">
+          <span class="pointer-events-none absolute left-2.5 z-20 text-sm text-muted">Client</span>
+          <select name="client" class="peer relative z-10 h-11 cursor-pointer appearance-none bg-transparent pl-[3.4rem] pr-7 text-sm font-medium text-ink focus:outline-hidden">
+            <option selected>Any</option>
+            <option>Harbor and Pine</option>
+            <option>Okafor Architects</option>
+            <option>Lumen Dental</option>
+          </select>
+          <span aria-hidden="true" class="pointer-events-none absolute inset-x-0 inset-y-1.5 rounded-md border border-line bg-surface peer-hover:bg-bg peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent"></span>
+          <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute right-2 z-20 size-3 text-muted" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4.5 6 7.5l3-3"/></svg>
+        </label>
+      </div>
+      <p class="text-xs text-muted">32px frame, 44px hit area. The label reads as part of the control.</p>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
