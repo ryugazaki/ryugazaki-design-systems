@@ -19,7 +19,7 @@ import { collectTags, filterEntries, padNumber, tileSpan } from './catalog-filte
 
     <div class="sticky top-0 z-10 border-y border-ink bg-paper px-4 py-2 md:px-8">
       <div class="flex flex-col gap-2 md:flex-row md:items-center">
-        <label class="flex min-h-11 flex-1 items-center gap-3 border border-ink px-3 md:max-w-sm">
+        <label class="flex min-h-11 flex-1 items-center gap-3 border border-ink px-3 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-signal md:max-w-sm">
           <span class="font-mono text-meta text-graphite">search</span>
           <input
             type="search"
@@ -58,9 +58,9 @@ import { collectTags, filterEntries, padNumber, tileSpan } from './catalog-filte
             <button type="button" class="mt-4 min-h-11 font-mono text-meta underline underline-offset-4 hover:text-signal" (click)="clear()">Clear search and filters</button>
           </div>
         } @else {
-          <div class="grid grid-cols-2 gap-px border-b border-ink bg-ink md:grid-cols-4">
+          <div class="grid grid-cols-2 border-l border-ink bg-paper md:grid-cols-4">
             @for (entry of visible(); track entry.slug; let i = $index) {
-              <div [class]="span(i)">
+              <div class="border-r border-b border-ink" [class]="span(i)">
                 @if (entry.manifest; as manifest) {
                   <app-catalog-tile class="h-full" [manifest]="manifest" [featured]="i === 0" />
                 } @else {
