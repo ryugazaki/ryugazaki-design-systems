@@ -6,7 +6,7 @@
 
 **Architecture:** Design systems are static files in `public/systems/<slug>/` (manifest, theme, HTML files with marker comments). The Angular SPA fetches them at runtime, renders previews in sandboxed `srcdoc` iframes, and builds the "Copy for AI" markdown with a pure function. A dependency-free Node script validates and lints the content.
 
-**Tech Stack:** Angular 22 (standalone, signals, zoneless, Vitest), Tailwind CSS 4.3 via `@tailwindcss/postcss` for the shell, `@tailwindcss/browser@4` CDN inside design system files, Node 24 `node:test` for scripts.
+**Tech Stack:** Angular 21 (standalone, signals, zoneless, Vitest), Tailwind CSS 4.3 via `@tailwindcss/postcss` for the shell, `@tailwindcss/browser@4` CDN inside design system files, Node 24 `node:test` for scripts.
 
 **Spec:** `docs/superpowers/specs/2026-10-20-design-systems-archive-design.md`
 
@@ -89,7 +89,7 @@ public/systems/<slug>/...               six systems
 
 Run from the repo root:
 ```bash
-npx @angular/cli@22 new ryugazaki-archive --directory=. --style=css --routing --ssr=false --skip-git --test-runner=vitest --ai-config=none --defaults
+npx @angular/cli@21 new ryugazaki-archive --directory=. --style=css --routing --ssr=false --skip-git --test-runner=vitest --ai-config=none --defaults
 ```
 Expected: workspace files created next to `docs/`, dependencies installed. If the CLI refuses because the folder is not empty, generate into `../ryugazaki-archive-tmp` with the same flags, then move everything except `.git` into the repo root and delete the temp folder.
 
