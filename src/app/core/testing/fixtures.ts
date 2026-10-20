@@ -1,0 +1,17 @@
+export const validManifest = {
+  slug: 'neo-brutalist',
+  number: 2,
+  name: 'Neo-Brutalist',
+  tagline: 'Thick rules, hard shadows, loud primaries.',
+  description: 'Loud and honest.',
+  tags: ['bold'],
+  defaultMode: 'light',
+  useCases: ['dev tools'],
+  fonts: [{ family: 'Archivo', role: 'display', weights: [800], googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Archivo' }],
+  typeScale: { ratio: 1.414, steps: { base: '16px', display: '64px' } },
+  palette: [{ token: '--color-yolk', light: '#F4D23C', dark: '#F4D23C', role: 'accent' }],
+  allowedGradients: [],
+  rules: { do: ['Use hard shadows'], dont: ['Do not blur'] },
+  components: [{ id: 'button', name: 'Button', file: 'components/button.html', notes: 'Three variants.' }],
+  pages: [{ id: 'landing', name: 'Landing', file: 'pages/landing.html' }],
+};
