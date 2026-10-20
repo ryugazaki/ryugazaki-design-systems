@@ -10,6 +10,7 @@
   --color-yolk: #F4D23C;
   --color-tomato: #FF5C39;
   --color-blue: #3B5BFF;
+  --color-blue-ink: #FFFFFF;
   --color-accent-ink: #111111;
   --color-success: #1F9D55;
 
@@ -53,6 +54,7 @@
     --color-line: #F5F2E8;
     --color-tomato: #FF6E4E;
     --color-blue: #6F86FF;
+    --color-blue-ink: #111111;
     --color-success: #3DCB7A;
   }
   body {

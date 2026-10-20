@@ -21,7 +21,8 @@
     { "token": "--color-yolk", "light": "#F4D23C", "dark": "#F4D23C", "role": "primary accent" },
     { "token": "--color-tomato", "light": "#FF5C39", "dark": "#FF6E4E", "role": "secondary accent, destructive" },
     { "token": "--color-blue", "light": "#3B5BFF", "dark": "#6F86FF", "role": "links and info" },
-    { "token": "--color-accent-ink", "light": "#111111", "dark": "#111111", "role": "text on yolk, tomato, blue" },
+    { "token": "--color-blue-ink", "light": "#FFFFFF", "dark": "#111111", "role": "text on blue" },
+    { "token": "--color-accent-ink", "light": "#111111", "dark": "#111111", "role": "text on yolk and tomato" },
     { "token": "--color-success", "light": "#1F9D55", "dark": "#3DCB7A", "role": "success" }
   ],
   "allowedGradients": [],
