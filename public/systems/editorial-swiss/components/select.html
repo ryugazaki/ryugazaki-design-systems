@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Select</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <form class="flex max-w-md flex-col gap-10" action="#">
+    <div class="flex flex-col gap-1.5">
+      <label for="edition" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Edition</label>
+      <div class="relative">
+        <select id="edition" name="edition" aria-describedby="edition-hint" class="min-h-11 w-full cursor-pointer appearance-none border-0 dark:scheme-dark border-b border-ink bg-transparent py-2 pr-8 pl-0 font-body text-base text-ink focus:outline-none focus-visible:border-b-2 focus-visible:border-accent">
+          <option>Weekday digest</option>
+          <option selected>Sunday long read</option>
+          <option>Monthly print edition</option>
+          <option>Annual cities report</option>
+        </select>
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute top-1/2 right-1 size-4 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="1"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg>
+      </div>
+      <p id="edition-hint" class="font-ui text-xs text-muted">Switch editions any week. The change starts with the next issue.</p>
+    </div>
+
+    <div class="flex flex-col gap-3 border-t-2 border-line-strong pt-3">
+      <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Reader survey, question 4 of 9</p>
+      <label for="city" class="font-display text-lg text-ink">Which city do you read us from?</label>
+      <div class="relative">
+        <select id="city" name="city" aria-describedby="city-hint" class="min-h-11 w-full cursor-pointer appearance-none border-0 dark:scheme-dark border-b border-ink bg-transparent py-2 pr-8 pl-0 font-body text-base italic text-ink focus:outline-none focus-visible:border-b-2 focus-visible:border-accent">
+          <option selected>Choose one</option>
+          <option>Rotterdam</option>
+          <option>Lagos</option>
+          <option>Melbourne</option>
+          <option>Somewhere else</option>
+        </select>
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute top-1/2 right-1 size-4 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="1"><path d="M3.5 6l4.5 4.5L12.5 6"/></svg>
+      </div>
+      <p id="city-hint" class="font-ui text-xs text-muted">Answers are pooled. No name is attached.</p>
+    </div>
+  </form>
+  <!-- snippet:end -->
+</body>
+</html>

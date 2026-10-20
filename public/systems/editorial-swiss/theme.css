@@ -1,0 +1,61 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}

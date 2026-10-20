@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Toast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-6">
+    <div role="status" class="flex items-stretch border-t-2 border-success bg-surface">
+      <div class="flex min-w-0 flex-1 flex-col gap-0.5 py-2.5 pr-2 pl-3 sm:flex-row sm:items-baseline sm:gap-3">
+        <p class="shrink-0 font-ui text-xs font-bold uppercase tracking-[0.08em] text-success">Saved</p>
+        <p class="font-body text-base text-ink"><i>The rent is set in a spreadsheet nobody elected</i> is on your reading list.</p>
+      </div>
+      <button type="button" aria-label="Dismiss" class="inline-flex min-h-11 shrink-0 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted underline decoration-1 underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Dismiss</button>
+    </div>
+
+    <div role="status" class="flex items-stretch border-t-2 border-danger bg-surface">
+      <div class="flex min-w-0 flex-1 flex-col gap-0.5 py-2.5 pr-2 pl-3 sm:flex-row sm:items-baseline sm:gap-3">
+        <p class="shrink-0 font-ui text-xs font-bold uppercase tracking-[0.08em] text-danger">Not sent</p>
+        <p class="font-body text-base text-ink">Your letter is over 250 words. Cut 41 and send again.</p>
+      </div>
+      <button type="button" aria-label="Dismiss" class="inline-flex min-h-11 shrink-0 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted underline decoration-1 underline-offset-4 hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Dismiss</button>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

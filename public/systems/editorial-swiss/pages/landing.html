@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative bg-bg">
+    <div class="mx-auto max-w-6xl px-4 md:px-6">
+      <div class="flex min-h-11 items-center justify-between gap-4 border-b border-line">
+        <p class="font-ui text-xs text-muted">Sunday 18 October <span class="hidden sm:inline">/ Vol. 14, No. 3</span></p>
+        <a href="#" class="inline-flex min-h-11 items-center bg-accent px-4 font-ui text-xs font-medium uppercase tracking-[0.08em] text-accent-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Subscribe</a>
+      </div>
+      <div class="flex justify-center py-4 md:py-6">
+        <a href="#" class="inline-flex min-h-11 items-center font-display text-lg font-semibold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-xl">The Ledger Review</a>
+      </div>
+      <div class="border-t-2 border-line-strong">
+        <nav aria-label="Sections" class="hidden md:block">
+          <ul class="flex items-center justify-center gap-1 border-b border-line">
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </nav>
+        <details class="group border-b border-line md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span>Sections</span>
+            <span class="text-muted group-open:hidden">Open</span>
+            <span class="hidden text-muted group-open:inline">Close</span>
+          </summary>
+          <ul class="flex flex-col border-t border-line pb-2">
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="flex min-h-11 items-center font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 md:px-6">
+    <section aria-labelledby="hero-title" class="grid grid-cols-1 gap-x-6 gap-y-10 pt-10 pb-14 md:grid-cols-12 md:pt-14 md:pb-20">
+      <div class="flex flex-col items-start gap-6 md:col-span-8">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">A review of money and cities</p>
+        <h1 id="hero-title" class="font-display text-2xl font-medium tracking-tight text-ink lg:text-display">Every street has a ledger. We read it.</h1>
+        <p class="max-w-[60ch] font-body text-base text-ink md:text-lg md:leading-snug">The Ledger Review publishes one long investigation every Sunday about who pays for the places we live, and who is paid. Budgets, leases, and levies, checked line by line and written for people with a train to catch.</p>
+        <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center sm:gap-5">
+          <a href="#rates" class="inline-flex min-h-12 items-center justify-center bg-accent px-6 font-ui text-sm font-medium text-accent-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Subscribe for $8 a month</a>
+          <a href="#" class="inline-flex min-h-12 items-center justify-center border border-ink px-6 font-ui text-sm font-medium text-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Read this week free</a>
+        </div>
+      </div>
+      <nav aria-labelledby="contents-title" class="flex flex-col md:col-span-4 md:border-l md:border-line md:pl-6">
+        <h2 id="contents-title" class="border-b-2 border-line-strong pb-2 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink">In this issue</h2>
+        <ol class="flex flex-col divide-y divide-line">
+          <li><a href="#" class="flex min-h-11 items-baseline justify-between gap-4 py-3 font-body text-base text-ink hover:text-accent focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"><span>The rent is set in a spreadsheet nobody elected</span><span class="shrink-0 font-ui text-xs tabular-nums text-muted">p. 4</span></a></li>
+          <li><a href="#" class="flex min-h-11 items-baseline justify-between gap-4 py-3 font-body text-base text-ink hover:text-accent focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"><span>Who pays for the empty flats above the shops</span><span class="shrink-0 font-ui text-xs tabular-nums text-muted">p. 19</span></a></li>
+          <li><a href="#" class="flex min-h-11 items-baseline justify-between gap-4 py-3 font-body text-base text-ink hover:text-accent focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"><span>Where the transit levy went</span><span class="shrink-0 font-ui text-xs tabular-nums text-muted">p. 31</span></a></li>
+          <li><a href="#" class="flex min-h-11 items-baseline justify-between gap-4 py-3 font-body text-base italic text-ink hover:text-accent focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"><span>Letters, and one correction</span><span class="shrink-0 font-ui text-xs not-italic tabular-nums text-muted">p. 38</span></a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <section id="features" aria-labelledby="features-title" class="border-t-2 border-line-strong pt-4 pb-14 md:pb-20">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-2 pb-6 md:grid-cols-12">
+        <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted md:col-span-4">What a subscription brings</p>
+        <h2 id="features-title" class="font-display text-xl font-medium tracking-tight text-ink md:col-span-8">One story a week, reported for months, and the numbers behind it.</h2>
+      </div>
+      <div class="grid grid-cols-1 border-t border-line md:grid-cols-4">
+        <article class="flex flex-col gap-4 border-b border-line py-6 md:col-span-2 md:row-span-2 md:border-r md:pr-6">
+          <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">The Sunday long read</p>
+          <h3 class="font-display text-lg font-medium leading-tight text-ink md:text-xl">Around 6,000 words, with every figure footnoted to its source.</h3>
+          <p class="font-body text-base text-ink">Each investigation takes a reporter and a data editor about ten weeks. You get the story, the method, and the spreadsheet we built it from.</p>
+          <ul class="mt-auto flex flex-col border-t border-ink font-ui text-xs text-ink">
+            <li class="flex justify-between gap-3 border-b border-line py-2.5"><span>Footnotes in the last issue</span><span class="tabular-nums">48</span></li>
+            <li class="flex justify-between gap-3 border-b border-line py-2.5"><span>Documents requested</span><span class="tabular-nums">131</span></li>
+            <li class="flex justify-between gap-3 py-2.5"><span>Weeks of reporting</span><span class="tabular-nums">11</span></li>
+          </ul>
+        </article>
+
+        <article class="flex flex-col gap-2 border-b border-line py-6 md:col-span-2 md:pl-6">
+          <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">The archive</p>
+          <p class="font-display text-2xl tabular-nums text-ink">640</p>
+          <p class="font-body text-base text-muted">Issues since 2012, searchable by city, street, and budget line.</p>
+        </article>
+
+        <figure class="flex flex-col gap-3 border-b border-line py-6 md:col-span-1 md:border-r md:pl-6 md:pr-6">
+          <blockquote class="font-display text-lg italic leading-snug text-ink">“I printed the levy table and took it to the council meeting.”</blockquote>
+          <figcaption class="font-ui text-xs text-muted">Pieter Dekker, reader in Delft</figcaption>
+        </figure>
+
+        <article class="flex flex-col gap-3 border-b border-line py-6 md:col-span-1 md:pl-6">
+          <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Corrections, 2025</p>
+          <div aria-hidden="true" class="flex h-16 items-end gap-1 border-b border-ink">
+            <span class="h-[30%] flex-1 bg-line"></span><span class="h-[10%] flex-1 bg-line"></span><span class="h-[45%] flex-1 bg-line"></span><span class="h-[20%] flex-1 bg-line"></span><span class="h-[10%] flex-1 bg-line"></span><span class="h-[30%] flex-1 bg-line"></span><span class="h-[60%] flex-1 bg-ink"></span><span class="h-[10%] flex-1 bg-line"></span><span class="h-[20%] flex-1 bg-line"></span><span class="h-[10%] flex-1 bg-line"></span><span class="h-[30%] flex-1 bg-line"></span><span class="h-[10%] flex-1 bg-line"></span>
+          </div>
+          <p class="font-body text-base text-ink">17 corrections, all printed on page 38. July had four.</p>
+        </article>
+
+        <aside class="flex flex-col items-start gap-3 py-6 md:col-span-4 md:flex-row md:items-baseline md:justify-between">
+          <p class="font-display text-lg text-ink">The first issue is free, and so is cancelling.</p>
+          <a href="#rates" class="inline-flex min-h-11 items-center font-ui text-sm font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">See the rates</a>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title" class="border-t-2 border-line-strong pt-4 pb-14 md:pb-20">
+      <h2 id="proof-title" class="pb-6 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Read and checked</h2>
+      <div class="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-12">
+        <figure class="flex flex-col gap-4 md:col-span-7">
+          <blockquote class="font-display text-xl italic leading-tight text-ink lg:text-2xl lg:leading-none">“The only publication our finance committee reads before the meeting rather than after it.”</blockquote>
+          <figcaption class="font-ui text-xs text-muted"><span class="font-medium text-ink">Amara Osei</span>, chair, Accra Metropolitan budget committee</figcaption>
+        </figure>
+        <dl class="grid grid-cols-2 gap-x-6 border-t border-ink md:col-span-5 md:border-t-0 md:border-l md:border-line md:pl-6">
+          <div class="flex flex-col gap-1 border-b border-line py-4"><dt class="font-ui text-xs text-muted">Paying readers</dt><dd class="font-display text-lg tabular-nums text-ink lg:text-xl">41,200</dd></div>
+          <div class="flex flex-col gap-1 border-b border-line py-4"><dt class="font-ui text-xs text-muted">Cities covered</dt><dd class="font-display text-lg tabular-nums text-ink lg:text-xl">23</dd></div>
+          <div class="flex flex-col gap-1 py-4"><dt class="font-ui text-xs text-muted">Median read time</dt><dd class="font-display text-lg tabular-nums text-ink lg:text-xl">19 min</dd></div>
+          <div class="flex flex-col gap-1 py-4"><dt class="font-ui text-xs text-muted">Advertisers</dt><dd class="font-display text-lg tabular-nums text-ink lg:text-xl">None</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="rates" aria-labelledby="rates-title" class="border-t-2 border-line-strong pt-4 pb-14 md:pb-20">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-2 pb-6 md:grid-cols-12">
+        <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted md:col-span-4">Rates</p>
+        <h2 id="rates-title" class="font-display text-xl font-medium tracking-tight text-ink md:col-span-8">Three ways to subscribe. No tier hides the footnotes.</h2>
+      </div>
+      <ul class="flex flex-col border-t border-ink">
+        <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-2 border-b border-line py-5 md:grid-cols-12">
+          <h3 class="font-display text-lg text-ink md:col-span-3">Digital</h3>
+          <p class="text-right font-ui text-sm tabular-nums text-ink md:order-last md:col-span-2"><span class="font-display text-lg">$8</span> a month</p>
+          <p class="col-span-2 font-body text-base text-muted md:col-span-7">Every Sunday issue, the full archive, and the data sheets behind each story.</p>
+        </li>
+        <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-2 border-b border-line py-5 md:grid-cols-12">
+          <div class="flex flex-col gap-1 md:col-span-3">
+            <h3 class="font-display text-lg text-ink">Print and digital</h3>
+            <span class="self-start border-b border-accent pb-0.5 font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Most read</span>
+          </div>
+          <p class="self-start text-right font-ui text-sm tabular-nums text-ink md:order-last md:col-span-2"><span class="font-display text-lg">$14</span> a month</p>
+          <div class="col-span-2 flex flex-col items-start gap-3 md:col-span-7">
+            <p class="font-body text-base text-muted">Everything in Digital, plus the monthly print edition posted to you on the first Saturday.</p>
+            <a href="#" class="inline-flex min-h-11 items-center justify-center border border-ink px-5 font-ui text-sm font-medium text-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Subscribe to print and digital</a>
+          </div>
+        </li>
+        <li class="grid grid-cols-[1fr_auto] items-baseline gap-x-6 gap-y-2 border-b border-line py-5 md:grid-cols-12">
+          <h3 class="font-display text-lg text-ink md:col-span-3">Student</h3>
+          <p class="text-right font-ui text-sm tabular-nums text-ink md:order-last md:col-span-2"><span class="font-display text-lg">$3</span> a month</p>
+          <p class="col-span-2 font-body text-base text-muted md:col-span-7">Digital access with a university email address, renewed each academic year.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="cta-title" class="border-t-2 border-line-strong pt-4 pb-16 md:pb-24">
+      <div class="grid grid-cols-1 gap-x-6 gap-y-6 md:grid-cols-12">
+        <div class="flex flex-col gap-3 md:col-span-7">
+          <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Next issue, Sunday 25 October</p>
+          <h2 id="cta-title" class="font-display text-xl font-medium tracking-tight text-ink lg:text-2xl">What a parking space really costs the city.</h2>
+        </div>
+        <form action="#" class="flex flex-col gap-4 md:col-span-5 md:self-end md:border-l md:border-line md:pl-6">
+          <div class="flex flex-col gap-1.5">
+            <label for="cta-email" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Email address</label>
+            <input id="cta-email" name="email" type="email" autocomplete="email" placeholder="you@example.org" class="min-h-11 w-full border-0 border-b border-ink bg-transparent px-0 py-2 font-body text-base text-ink placeholder:italic placeholder:text-muted focus:outline-none focus-visible:border-b-2 focus-visible:border-accent">
+          </div>
+          <button type="submit" class="inline-flex min-h-11 items-center justify-center self-start bg-accent px-5 font-ui text-sm font-medium text-accent-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Start with a free issue</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-line-strong">
+    <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-4 py-10 md:grid-cols-12 md:px-6">
+      <div class="col-span-2 flex flex-col gap-2 md:col-span-6">
+        <p class="font-display text-lg font-semibold tracking-tight text-ink">The Ledger Review</p>
+        <p class="max-w-[44ch] font-ui text-xs text-muted">Published in Rotterdam since 2012. Funded by readers only. Set in Newsreader and Libre Franklin.</p>
+      </div>
+      <nav aria-label="Publication" class="flex flex-col md:col-span-3 md:border-l md:border-line md:pl-6">
+        <p class="pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Publication</p>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Archive</a>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Corrections</a>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Our methods</a>
+      </nav>
+      <nav aria-label="Readers" class="flex flex-col md:col-span-3 md:border-l md:border-line md:pl-6">
+        <p class="pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Readers</p>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Write a letter</a>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Give a subscription</a>
+        <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm text-ink hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Manage your account</a>
+      </nav>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

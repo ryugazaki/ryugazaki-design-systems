@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <header class="relative bg-bg">
+    <div class="mx-auto max-w-6xl px-4 md:px-6">
+      <div class="flex min-h-11 items-center justify-between gap-4 border-b border-line">
+        <p class="font-ui text-xs text-muted">Sunday 18 October <span class="hidden sm:inline">/ Vol. 14, No. 3</span></p>
+        <a href="#" class="inline-flex min-h-11 items-center bg-accent px-4 font-ui text-xs font-medium uppercase tracking-[0.08em] text-accent-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Subscribe</a>
+      </div>
+      <div class="flex justify-center py-4 md:py-6">
+        <a href="#" class="inline-flex min-h-11 items-center font-display text-lg font-semibold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-xl">The Ledger Review</a>
+      </div>
+      <div class="border-t-2 border-line-strong">
+        <nav aria-label="Sections" class="hidden md:block">
+          <ul class="flex items-center justify-center gap-1 border-b border-line">
+            <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent underline decoration-1 underline-offset-[6px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </nav>
+        <details class="group border-b border-line md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span>Sections</span>
+            <span class="text-muted group-open:hidden">Open</span>
+            <span class="hidden text-muted group-open:inline">Close</span>
+          </summary>
+          <ul class="flex flex-col border-t border-line pb-2">
+            <li><a href="#" aria-current="page" class="flex min-h-11 items-center border-b border-line font-body text-base text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="flex min-h-11 items-center font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </header>
+  <!-- snippet:end -->
+</body>
+</html>

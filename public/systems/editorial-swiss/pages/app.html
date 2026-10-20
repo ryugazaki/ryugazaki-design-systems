@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Article</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative bg-bg">
+    <div class="mx-auto max-w-6xl px-4 md:px-6">
+      <div class="flex min-h-11 items-center justify-between gap-4 border-b border-line">
+        <p class="font-ui text-xs text-muted">Sunday 18 October <span class="hidden sm:inline">/ Vol. 14, No. 3</span></p>
+        <a href="#" class="inline-flex min-h-11 items-center bg-accent px-4 font-ui text-xs font-medium uppercase tracking-[0.08em] text-accent-ink transition-colors duration-[120ms] ease-out hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Subscribe</a>
+      </div>
+      <div class="flex justify-center py-4 md:py-6">
+        <a href="#" class="inline-flex min-h-11 items-center font-display text-lg font-semibold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-xl">The Ledger Review</a>
+      </div>
+      <div class="border-t-2 border-line-strong">
+        <nav aria-label="Sections" class="hidden md:block">
+          <ul class="flex items-center justify-center gap-1 border-b border-line">
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent underline decoration-1 underline-offset-[6px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </nav>
+        <details class="group border-b border-line md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span>Sections</span>
+            <span class="text-muted group-open:hidden">Open</span>
+            <span class="hidden text-muted group-open:inline">Close</span>
+          </summary>
+          <ul class="flex flex-col border-t border-line pb-2">
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Cities</a></li>
+            <li><a href="#" aria-current="page" class="flex min-h-11 items-center border-b border-line font-body text-base text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Housing</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Public money</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Transport</a></li>
+            <li><a href="#" class="flex min-h-11 items-center border-b border-line font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Letters</a></li>
+            <li><a href="#" class="flex min-h-11 items-center font-body text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent">Archive</a></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-4 md:px-6">
+    <article aria-labelledby="article-title">
+      <header class="grid grid-cols-1 gap-x-6 gap-y-5 pt-10 pb-8 md:grid-cols-12 md:pt-14">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent md:col-span-12">Housing / Investigation</p>
+        <h1 id="article-title" class="font-display text-2xl font-medium tracking-tight text-ink md:col-span-11 lg:text-display">The rent is set in a spreadsheet nobody elected</h1>
+        <p class="max-w-[60ch] font-display text-lg leading-snug text-muted md:col-span-8">Four software firms now price a third of new leases in Melbourne. We read 2,100 of their quotes and found the same rounding rule in every one.</p>
+        <div class="flex flex-col gap-3 border-t border-line pt-3 md:col-span-12 md:flex-row md:items-center md:justify-between">
+          <p class="font-ui text-xs text-muted"><span class="font-medium text-ink">By Hana Whitlock</span>, with data by Rui Tanaka <span aria-hidden="true">/</span> 18 October 2026 <span aria-hidden="true">/</span> 22 min read</p>
+          <div class="flex items-center gap-5">
+            <span class="border-b border-success pb-0.5 font-ui text-xs font-medium uppercase tracking-[0.08em] text-success">Fact checked</span>
+            <a href="#" class="inline-flex min-h-11 items-center font-ui text-sm font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Save for later</a>
+          </div>
+        </div>
+      </header>
+
+      <figure class="border-t-2 border-line-strong pt-4 pb-10">
+        <div class="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-12">
+          <figcaption class="flex flex-col gap-1 md:col-span-4">
+            <span class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Figure 1</span>
+            <span class="font-display text-lg leading-snug text-ink">Weekly rents quoted by pricing software, by last digit</span>
+            <span class="font-ui text-xs text-muted">2,100 quotes, Melbourne, January to June 2026.</span>
+          </figcaption>
+          <div class="md:col-span-8 md:border-l md:border-line md:pl-6">
+            <div class="flex h-40 items-end gap-1.5 border-b border-ink sm:gap-3" role="img" aria-label="Bar chart: 61 percent of quotes end in 5 and 33 percent end in 0. Every other last digit is under 2 percent.">
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-ink">33</span><div class="h-[48%] w-full bg-ink"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs font-bold tabular-nums text-ink">61</span><div class="h-[88%] w-full bg-ink"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">0</span><div class="h-px w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">1</span><div class="h-[2%] w-full bg-line"></div></div>
+              <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">0</span><div class="h-px w-full bg-line"></div></div>
+            </div>
+            <div aria-hidden="true" class="mt-1.5 flex gap-1.5 font-ui text-xs tabular-nums text-muted sm:gap-3">
+              <span class="flex-1 text-center">0</span><span class="flex-1 text-center">1</span><span class="flex-1 text-center">2</span><span class="flex-1 text-center">3</span><span class="flex-1 text-center">4</span><span class="flex-1 text-center">5</span><span class="flex-1 text-center">6</span><span class="flex-1 text-center">7</span><span class="flex-1 text-center">8</span><span class="flex-1 text-center">9</span>
+            </div>
+            <p class="mt-2 font-ui text-xs text-muted">Share of quotes, percent. Last digit of the weekly rent in dollars.</p>
+          </div>
+        </div>
+      </figure>
+
+      <div class="grid grid-cols-1 gap-x-6 border-t border-line pt-8 pb-12 md:grid-cols-12">
+        <div class="flex max-w-[68ch] flex-col gap-6 font-body text-base text-ink md:col-span-8 lg:col-span-7">
+          <p class="first-letter:float-left first-letter:mt-1 first-letter:mr-2 first-letter:font-display first-letter:text-display first-letter:leading-[0.8] first-letter:font-medium first-letter:text-ink">In March, a two-bedroom flat in Brunswick East was listed at $685 a week. The landlord, a retired pharmacist who owns three properties, told us she had wanted $660. The number came from a dashboard her agent subscribes to, which recommended a figure and then rounded it up to the nearest five.<sup><a href="#fn-1" id="fnref-1" class="px-0.5 font-ui text-xs font-bold text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">1</a></sup></p>
+          <p>That rounding rule, small on any single lease, appears in every quote we collected. Across 2,100 listings from January to June, 61 percent of weekly rents ended in five and 33 percent ended in zero. Rents set by people alone, in a sample from 2017, ended in five only 22 percent of the time.</p>
+          <p>Four firms supply the software. None of them sets a rent directly, and all of them say the landlord has the last word. In practice, agents told us, the recommended figure is the figure. One said that departing from it “means writing an email to explain yourself to head office.”</p>
+
+          <figure class="my-2 border-t-2 border-line-strong border-b border-b-line py-5 lg:-mr-24">
+            <blockquote class="font-display text-xl italic leading-tight text-ink">“Nobody decided that rent should go up by five dollars. A setting did.”</blockquote>
+            <figcaption class="mt-3 font-ui text-xs text-muted">Dr. Lena Petrakis, housing economist, University of Melbourne</figcaption>
+          </figure>
+
+          <p>The extra five dollars is not the story. Multiplied across 38,000 new leases a year, it moves about $9.9 million from tenants to owners annually in one city, before any change in the market itself.<sup><a href="#fn-2" id="fnref-2" class="px-0.5 font-ui text-xs font-bold text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">2</a></sup> The larger question is who checks the setting.</p>
+
+          <div class="flex flex-col gap-2">
+            <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Table 1. Quotes by supplier</p>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse font-ui text-sm text-ink">
+                <thead>
+                  <tr class="border-b border-ink">
+                    <th scope="col" class="py-2 pr-4 text-left text-xs font-medium uppercase tracking-[0.08em] text-muted">Supplier</th>
+                    <th scope="col" class="py-2 pr-4 text-right text-xs font-medium uppercase tracking-[0.08em] text-muted">Quotes</th>
+                    <th scope="col" class="py-2 text-right text-xs font-medium uppercase tracking-[0.08em] text-muted">Ending in 5</th>
+                  </tr>
+                </thead>
+                <tbody class="tabular-nums">
+                  <tr class="border-b border-line"><th scope="row" class="py-2 pr-4 text-left font-normal">Rentwise</th><td class="py-2 pr-4 text-right">812</td><td class="py-2 text-right">64%</td></tr>
+                  <tr class="border-b border-line"><th scope="row" class="py-2 pr-4 text-left font-normal">Leaseline</th><td class="py-2 pr-4 text-right">603</td><td class="py-2 text-right">59%</td></tr>
+                  <tr class="border-b border-line"><th scope="row" class="py-2 pr-4 text-left font-normal">Tenancy IQ</th><td class="py-2 pr-4 text-right">417</td><td class="py-2 text-right">60%</td></tr>
+                  <tr><th scope="row" class="py-2 pr-4 text-left font-normal">PropMetric</th><td class="py-2 pr-4 text-right">268</td><td class="py-2 text-right">58%</td></tr>
+                </tbody>
+                <tfoot class="tabular-nums">
+                  <tr class="border-t-[3px] border-double border-ink font-bold"><th scope="row" class="py-2.5 pr-4 text-left">All</th><td class="py-2.5 pr-4 text-right">2,100</td><td class="py-2.5 text-right">61%</td></tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <p>Victoria's rental code covers how often rent can rise and how much notice a tenant must get. It says nothing about how the first number is chosen. The state's consumer office told us it had “no current inquiry” into pricing software and did not say whether one was planned.</p>
+          <p>The firms are not hiding the rule. Two of them describe it in their documentation as “psychological pricing alignment.” What none of them publishes is how often the recommended rent is accepted unchanged. One agent's records, which we reviewed, put it at 94 percent.<sup><a href="#fn-3" id="fnref-3" class="px-0.5 font-ui text-xs font-bold text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">3</a></sup></p>
+        </div>
+
+        <aside aria-label="About this story" class="mt-10 flex flex-col gap-6 md:col-span-4 md:col-start-9 md:mt-0 md:border-l md:border-line md:pl-6 lg:col-span-4 lg:col-start-9">
+          <div class="flex flex-col gap-2">
+            <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Method</p>
+            <p class="font-body text-sm text-ink">We collected public listings from three portals between 4 January and 28 June 2026 and matched each to its pricing supplier through agent disclosures.</p>
+            <a href="#" class="inline-flex min-h-11 items-center self-start font-ui text-sm font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Get the dataset</a>
+          </div>
+          <div class="flex flex-col gap-2 border-t border-line pt-4">
+            <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">In numbers</p>
+            <dl class="flex flex-col divide-y divide-line">
+              <div class="flex items-baseline justify-between gap-3 py-2"><dt class="font-ui text-xs text-muted">Quotes read</dt><dd class="font-display text-lg tabular-nums text-ink">2,100</dd></div>
+              <div class="flex items-baseline justify-between gap-3 py-2"><dt class="font-ui text-xs text-muted">Ending in five</dt><dd class="font-display text-lg tabular-nums text-ink">61%</dd></div>
+              <div class="flex items-baseline justify-between gap-3 py-2"><dt class="font-ui text-xs text-muted">Moved per year</dt><dd class="font-display text-lg tabular-nums text-ink">$9.9m</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+
+      <section aria-labelledby="notes-title" class="grid grid-cols-1 gap-x-6 border-t-2 border-line-strong pt-4 pb-12 md:grid-cols-12">
+        <h2 id="notes-title" class="pb-4 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted md:col-span-4">Notes</h2>
+        <ol class="flex flex-col gap-4 md:col-span-8 lg:col-span-7">
+          <li id="fn-1" class="grid grid-cols-[1.5rem_1fr] gap-x-2 font-body text-sm text-ink">
+            <span class="font-ui text-xs font-bold tabular-nums text-accent">1</span>
+            <p>Listing and agent correspondence seen by the Review. The landlord asked not to be named. <a href="#fnref-1" class="inline-flex min-h-11 items-center font-ui text-xs font-medium text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Back to text</a></p>
+          </li>
+          <li id="fn-2" class="grid grid-cols-[1.5rem_1fr] gap-x-2 font-body text-sm text-ink">
+            <span class="font-ui text-xs font-bold tabular-nums text-accent">2</span>
+            <p>38,000 leases from the Residential Tenancies Bond Authority, 2025 annual report, table 4. Average uplift of $5 a week across 52 weeks. <a href="#fnref-2" class="inline-flex min-h-11 items-center font-ui text-xs font-medium text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Back to text</a></p>
+          </li>
+          <li id="fn-3" class="grid grid-cols-[1.5rem_1fr] gap-x-2 font-body text-sm text-ink">
+            <span class="font-ui text-xs font-bold tabular-nums text-accent">3</span>
+            <p>Records covering 212 leases signed between July 2025 and May 2026, shared on condition that the agency is not identified. <a href="#fnref-3" class="inline-flex min-h-11 items-center font-ui text-xs font-medium text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Back to text</a></p>
+          </li>
+        </ol>
+      </section>
+    </article>
+
+    <section aria-labelledby="related-title" class="border-t-2 border-line-strong pt-4 pb-16 md:pb-24">
+      <h2 id="related-title" class="pb-4 font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Related reading</h2>
+      <div class="grid grid-cols-1 gap-x-6 md:grid-cols-12">
+        <article class="flex flex-col gap-2 border-t border-ink py-4 md:col-span-6 md:pr-6">
+          <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Housing</p>
+          <h3 class="font-display text-xl font-medium leading-tight text-ink"><a href="#" class="block min-h-11 decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Who pays for the empty flats above the shops</a></h3>
+          <p class="font-body text-base text-muted">Rotterdam has 3,200 vacant upper floors on its high streets. The tax ledger explains why.</p>
+          <p class="font-ui text-xs text-muted">By Ines Vermeulen <span aria-hidden="true">/</span> 14 min read</p>
+        </article>
+        <ol class="flex flex-col md:col-span-6 md:border-l md:border-line md:pl-6">
+          <li class="flex flex-col gap-1 border-t border-line py-4 md:border-ink">
+            <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Public money</p>
+            <h3 class="font-display text-lg leading-snug text-ink"><a href="#" class="block min-h-11 decoration-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Where the transit levy went</a></h3>
+            <p class="font-ui text-xs text-muted">8 min read</p>
+          </li>
+          <li class="flex flex-col gap-1 border-t border-line py-4">
+            <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Letters</p>
+            <h3 class="font-display text-lg italic leading-snug text-ink"><a href="#" class="block min-h-11 decoration-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">A landlord writes back about the rounding rule</a></h3>
+            <p class="font-ui text-xs text-muted">2 min read</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-line-strong">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 md:flex-row md:items-baseline md:justify-between md:px-6">
+      <p class="font-display text-lg font-semibold tracking-tight text-ink">The Ledger Review</p>
+      <p class="font-ui text-xs text-muted">Corrections to <a href="#" class="inline-flex min-h-11 items-center font-medium text-accent underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">desk@ledgerreview.org</a></p>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

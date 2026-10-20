@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-label="Front page" class="mx-auto max-w-6xl border-t-2 border-line-strong">
+    <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-[auto_auto_auto]">
+      <article class="flex flex-col gap-4 border-b border-line py-5 md:col-span-2 md:row-span-2 md:border-r md:pr-6">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Lead story / Housing</p>
+        <h2 class="font-display text-xl font-medium tracking-tight text-ink lg:text-2xl">
+          <a href="#" class="block min-h-11 decoration-1 underline-offset-8 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">The rent is set in a spreadsheet nobody elected</a>
+        </h2>
+        <p class="font-body text-base text-ink">Four software firms now price a third of new leases in Melbourne. We read 2,100 of their quotes and found the same rounding rule in every one.</p>
+        <p class="mt-auto font-ui text-xs text-muted"><span class="font-medium text-ink">By Hana Whitlock</span> <span aria-hidden="true">/</span> 22 min read</p>
+      </article>
+
+      <article class="flex flex-col gap-2 border-b border-line py-5 md:col-span-1 md:border-r md:px-6">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Brief</p>
+        <h3 class="font-display text-lg font-medium leading-snug text-ink">
+          <a href="#" class="block min-h-11 decoration-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Lagos doubles its land-use charge</a>
+        </h3>
+        <p class="font-ui text-xs text-muted">3 min read</p>
+      </article>
+
+      <aside aria-labelledby="numbers-title" class="flex flex-col border-b border-line py-5 md:col-span-1 md:row-span-3 md:border-b-0 md:pl-6">
+        <h3 id="numbers-title" class="border-b border-ink pb-2 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink">This week in numbers</h3>
+        <dl class="flex flex-col divide-y divide-line">
+          <div class="flex flex-col gap-1 py-3">
+            <dt class="font-ui text-xs text-muted">Vacant upper floors, Rotterdam</dt>
+            <dd class="font-display text-xl tabular-nums text-ink">3,200</dd>
+          </div>
+          <div class="flex flex-col gap-1 py-3">
+            <dt class="font-ui text-xs text-muted">Median rent to income, Melbourne</dt>
+            <dd class="font-display text-xl tabular-nums text-ink">31%</dd>
+          </div>
+          <div class="flex flex-col gap-1 py-3">
+            <dt class="font-ui text-xs text-muted">Transit levy unspent, euros</dt>
+            <dd class="font-display text-xl tabular-nums text-ink">4.3m</dd>
+          </div>
+        </dl>
+      </aside>
+
+      <article class="flex flex-col gap-2 border-b border-line py-5 md:col-span-1 md:border-r md:px-6">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Brief</p>
+        <h3 class="font-display text-lg font-medium leading-snug text-ink">
+          <a href="#" class="block min-h-11 decoration-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">The ferry that pays for itself, for now</a>
+        </h3>
+        <p class="font-ui text-xs text-muted">5 min read</p>
+      </article>
+
+      <figure class="flex flex-col gap-3 py-5 md:col-span-3 md:border-r md:border-line md:pr-6">
+        <figcaption class="flex flex-col gap-1">
+          <span class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Chart</span>
+          <span class="font-display text-lg leading-snug text-ink">New leases priced by software, share of total</span>
+        </figcaption>
+        <div class="flex h-32 items-end gap-2 border-b border-ink sm:gap-3" role="img" aria-label="Bar chart: 6 percent in 2019 rising to 34 percent in 2025">
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">6</span><div class="h-[12%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">9</span><div class="h-[18%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">14</span><div class="h-[28%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">19</span><div class="h-[38%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">25</span><div class="h-[50%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs tabular-nums text-muted">29</span><div class="h-[58%] w-full bg-line"></div></div>
+          <div class="flex flex-1 flex-col items-center justify-end gap-1"><span class="font-ui text-xs font-bold tabular-nums text-ink">34</span><div class="h-[68%] w-full bg-ink"></div></div>
+        </div>
+        <div aria-hidden="true" class="flex justify-between font-ui text-xs tabular-nums text-muted"><span>2019</span><span>2025</span></div>
+        <a href="#" class="inline-flex min-h-11 items-center self-start font-ui text-sm font-medium text-accent underline decoration-1 underline-offset-4 hover:decoration-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Get the data as a spreadsheet</a>
+      </figure>
+    </div>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

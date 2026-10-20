@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col">
+    <article class="grid grid-cols-1 gap-x-6 gap-y-4 border-t-2 border-line-strong pt-4 pb-8 md:grid-cols-12">
+      <div class="flex flex-col gap-3 md:col-span-8">
+        <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Housing</p>
+        <h2 class="font-display text-xl font-medium tracking-tight text-ink">
+          <a href="#" class="block min-h-11 decoration-1 underline-offset-[6px] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Who pays for the empty flats above the shops</a>
+        </h2>
+        <p class="font-body text-base text-muted">Rotterdam has 3,200 vacant upper floors on its high streets. Owners say conversion does not pay. The tax ledger says otherwise.</p>
+        <p class="font-ui text-xs text-muted"><span class="font-medium text-ink">By Ines Vermeulen</span> <span aria-hidden="true">/</span> 14 min read</p>
+      </div>
+      <figure aria-hidden="true" class="md:col-span-4 md:border-l md:border-line md:pl-6">
+        <svg viewBox="0 0 120 90" class="h-auto w-full text-ink" fill="none" stroke="currentColor" stroke-width="0.75">
+          <path d="M6 84h108"/>
+          <path d="M14 84V30h28v54M50 84V18h26v66M84 84V40h24v44"/>
+          <path d="M20 38h6M30 38h6M20 48h6M30 48h6M20 58h6M30 58h6M56 26h6M66 26h6M56 36h6M66 36h6M56 46h6M90 48h6M100 48h6M90 58h6"/>
+          <path d="M66 46h6v6h-6zM30 58h6v6h-6zM100 58h6v6h-6z" class="fill-accent text-accent"/>
+        </svg>
+        <figcaption class="sr-only">Three shopfronts with vacant floors marked</figcaption>
+      </figure>
+    </article>
+
+    <article class="flex flex-col gap-1.5 border-t border-line py-4">
+      <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Brief</p>
+      <h3 class="font-display text-lg font-medium leading-snug text-ink">
+        <a href="#" class="block min-h-11 decoration-1 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Lagos raises its land-use charge for the first time since 2018</a>
+      </h3>
+      <p class="font-ui text-xs text-muted">By Tunde Bakare <span aria-hidden="true">/</span> 3 min read</p>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

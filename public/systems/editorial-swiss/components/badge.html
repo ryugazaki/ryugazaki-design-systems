@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-8">
+    <section class="flex flex-col gap-4 border-t-2 border-line-strong pt-3">
+      <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Badges</p>
+      <div class="flex flex-wrap items-end gap-x-6 gap-y-4">
+        <span class="inline-block border-b border-ink pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink">Housing</span>
+        <span class="inline-block border-b border-accent pb-1 font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Long read</span>
+        <span class="inline-block border-b border-success pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-success">Fact checked</span>
+        <span class="inline-block border-b border-danger pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-danger">Corrected</span>
+        <span class="inline-block border-b-[3px] border-double border-ink pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink">Vol. 14, No. 3</span>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3 border-t border-line pt-3">
+      <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">In use</p>
+      <div class="flex flex-col gap-2">
+        <span class="self-start border-b border-danger pb-1 font-ui text-xs font-medium uppercase tracking-[0.08em] text-danger">Corrected</span>
+        <p class="max-w-prose font-body text-base text-ink">An earlier version of this story gave the 2023 vacancy rate as 7.1 percent. The council figure is 6.4 percent.</p>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

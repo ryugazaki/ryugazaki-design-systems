@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col gap-3">
+    <p class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Bottom sheet below md, centered dialog from md</p>
+    <div class="relative min-h-[560px] overflow-hidden border border-line bg-bg md:min-h-[480px]">
+      <div aria-hidden="true" class="flex flex-col gap-4 p-5">
+        <div class="mx-auto h-5 w-40 bg-line"></div>
+        <div class="h-0.5 bg-ink"></div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="col-span-2 flex flex-col gap-2">
+            <div class="h-6 w-4/5 bg-line"></div>
+            <div class="h-3 bg-line"></div>
+            <div class="h-3 bg-line"></div>
+            <div class="h-3 w-2/3 bg-line"></div>
+          </div>
+          <div class="flex flex-col gap-2 border-l border-line pl-4">
+            <div class="h-3 bg-line"></div>
+            <div class="h-3 bg-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 flex items-end justify-center bg-ink/40 pt-10 md:items-center md:p-8">
+        <div role="dialog" aria-modal="true" aria-labelledby="gift-title" aria-describedby="gift-body" class="flex w-full flex-col border-t-2 border-line-strong bg-surface md:max-w-lg">
+          <div class="flex items-start justify-between gap-4 px-5 pt-4 md:px-6 md:pt-5">
+            <div class="flex flex-col gap-2">
+              <p class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Gift subscription</p>
+              <h2 id="gift-title" class="font-display text-lg font-medium leading-snug text-ink">Send a year of the Review to Ada Nwosu?</h2>
+            </div>
+            <button type="button" aria-label="Close" class="-mr-2 inline-flex min-h-11 shrink-0 items-center px-2 font-ui text-xs font-medium uppercase tracking-[0.08em] text-ink underline decoration-1 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Close</button>
+          </div>
+          <div id="gift-body" class="flex flex-col gap-3 px-5 pt-3 pb-5 md:px-6">
+            <p class="font-body text-base text-ink">The first issue reaches her on Sunday 25 October with a card in your name. We charge your card $72 today and never renew a gift.</p>
+            <dl class="grid grid-cols-2 border-t border-line pt-3 font-ui text-xs">
+              <dt class="text-muted">Edition</dt><dd class="text-right text-ink">Sunday long read</dd>
+              <dt class="text-muted">Ends</dt><dd class="text-right text-ink">24 October 2027</dd>
+            </dl>
+          </div>
+          <div class="flex flex-col-reverse gap-2 border-t border-line px-5 py-4 md:flex-row md:items-center md:justify-end md:gap-4 md:px-6">
+            <button type="button" class="inline-flex min-h-11 items-center justify-center border border-ink px-5 font-ui text-sm font-medium text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Edit the card</button>
+            <button type="button" class="inline-flex min-h-11 items-center justify-center bg-accent px-5 font-ui text-sm font-medium text-accent-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent">Send the gift</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

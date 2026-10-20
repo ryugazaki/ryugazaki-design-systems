@@ -1,0 +1,62 @@
+{
+  "slug": "editorial-swiss",
+  "number": 1,
+  "name": "Editorial / Swiss",
+  "tagline": "A strict grid, serious type, and one blue ink.",
+  "description": "Built like a printed review. A 12-column grid, a variable serif for reading, a plain grotesk for interface text, and hairline column rules. Color is almost absent so the one cobalt accent carries meaning.",
+  "tags": ["editorial", "light", "reading", "content", "minimal"],
+  "defaultMode": "light",
+  "useCases": ["publications and blogs", "portfolios", "research and reports", "documentation landing pages"],
+  "fonts": [
+    { "family": "Newsreader", "role": "headlines and body text; use optical sizing", "weights": [400, 500, 600, 700], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap" },
+    { "family": "Libre Franklin", "role": "kickers, captions, navigation, buttons", "weights": [400, 500, 700], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap" }
+  ],
+  "typeScale": { "ratio": 1.5, "steps": { "xs": "13px", "sm": "15px", "base": "18px", "lg": "27px", "xl": "40px", "2xl": "60px", "display": "90px" } },
+  "palette": [
+    { "token": "--color-bg", "light": "#F7F4EC", "dark": "#12110E", "role": "newsprint background" },
+    { "token": "--color-surface", "light": "#FFFDF8", "dark": "#1B1A16", "role": "inputs and raised panels" },
+    { "token": "--color-ink", "light": "#111111", "dark": "#EDE8DC", "role": "text" },
+    { "token": "--color-muted", "light": "#5A564C", "dark": "#A39E90", "role": "captions and metadata" },
+    { "token": "--color-line", "light": "#D9D3C4", "dark": "#3A372F", "role": "hairline column rules" },
+    { "token": "--color-line-strong", "light": "#111111", "dark": "#EDE8DC", "role": "section rules" },
+    { "token": "--color-accent", "light": "#1F3FBF", "dark": "#8EA2FF", "role": "links, kickers, primary action" },
+    { "token": "--color-accent-ink", "light": "#FFFFFF", "dark": "#12110E", "role": "text on accent" },
+    { "token": "--color-danger", "light": "#B3261E", "dark": "#F2867D", "role": "errors" },
+    { "token": "--color-success", "light": "#2E6B3A", "dark": "#86C79A", "role": "success" }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Lay everything on a 12-column grid with 24px gutters; let text blocks span 7 or 8 columns, not 12",
+      "Set reading text in Newsreader at 18px with a line height of 1.6 and a measure of 60 to 72 characters",
+      "Use Libre Franklin uppercase with 0.08em tracking for kickers and captions only",
+      "Separate columns with 1px hairline rules and sections with a 2px rule in line-strong",
+      "Reserve cobalt for links, kickers, and the single primary action"
+    ],
+    "dont": [
+      "Do not use rounded corners or shadows",
+      "Do not center body text",
+      "Do not use more than one accent color",
+      "Do not set headlines in the grotesk",
+      "Do not use icons where a word works"
+    ]
+  },
+  "components": [
+    { "id": "button", "name": "Button", "file": "components/button.html", "notes": "Rectangular, Libre Franklin 500. Primary is a cobalt fill; secondary is a 1px ink outline; ghost is an underlined text link." },
+    { "id": "input", "name": "Input", "file": "components/input.html", "notes": "Bottom border only, label in small caps above, serif input text. Error swaps the border to danger and adds a caption." },
+    { "id": "select", "name": "Select", "file": "components/select.html", "notes": "Bottom border only with a thin chevron; reads like a form in a printed questionnaire." },
+    { "id": "checkbox-toggle", "name": "Checkbox and toggle", "file": "components/checkbox-toggle.html", "notes": "Square 1px checkbox with a cobalt check. Switch is a slim pill track, the only rounded shape allowed." },
+    { "id": "badge", "name": "Badge", "file": "components/badge.html", "notes": "Uppercase Libre Franklin with tracking, no fill, a 1px rule beneath." },
+    { "id": "card", "name": "Card", "file": "components/card.html", "notes": "An article teaser: kicker, serif headline, deck, byline. Separated by hairlines rather than boxed." },
+    { "id": "navbar", "name": "Navbar", "file": "components/navbar.html", "notes": "Masthead with the serif wordmark centered above a rule, section links below in uppercase grotesk." },
+    { "id": "modal", "name": "Modal and sheet", "file": "components/modal.html", "notes": "Plain surface, 2px top rule, serif title, no shadow; backdrop is ink at 40 percent." },
+    { "id": "table", "name": "Table", "file": "components/table.html", "notes": "Financial-page table: hairline rows, tabular figures, a bold total row with a double rule above." },
+    { "id": "bento", "name": "Bento grid", "file": "components/bento.html", "notes": "A front-page layout: lead story 2x2, two briefs, a chart box, and a numbers column." },
+    { "id": "empty-state", "name": "Empty state", "file": "components/empty-state.html", "notes": "Centered within a column: italic serif line, caption, and a text link action." },
+    { "id": "toast", "name": "Toast", "file": "components/toast.html", "notes": "A thin bar with a kicker label and a one-line message, set flush to the column." }
+  ],
+  "pages": [
+    { "id": "landing", "name": "Landing", "file": "pages/landing.html" },
+    { "id": "app", "name": "Article", "file": "pages/app.html" }
+  ]
+}

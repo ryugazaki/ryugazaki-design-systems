@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <figure class="flex max-w-3xl flex-col gap-3">
+    <figcaption class="flex flex-col gap-1 border-t-2 border-line-strong pt-3">
+      <span class="font-ui text-xs font-bold uppercase tracking-[0.08em] text-accent">Public money</span>
+      <span class="font-display text-lg font-medium text-ink">Where the transit levy went, 2025</span>
+      <span class="font-ui text-xs text-muted">Millions of euros, Rotterdam region. Source: council accounts, page 112.</span>
+    </figcaption>
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[560px] border-collapse font-ui text-sm text-ink">
+        <thead>
+          <tr class="border-b border-ink">
+            <th scope="col" class="py-2 pr-4 text-left text-xs font-medium uppercase tracking-[0.08em] text-muted">Line</th>
+            <th scope="col" class="py-2 pr-4 text-right text-xs font-medium uppercase tracking-[0.08em] text-muted">Budget</th>
+            <th scope="col" class="py-2 pr-4 text-right text-xs font-medium uppercase tracking-[0.08em] text-muted">Spent</th>
+            <th scope="col" class="py-2 pr-4 text-right text-xs font-medium uppercase tracking-[0.08em] text-muted">Change</th>
+            <th scope="col" class="py-2 text-left text-xs font-medium uppercase tracking-[0.08em] text-muted">Audit</th>
+          </tr>
+        </thead>
+        <tbody class="tabular-nums">
+          <tr class="border-b border-line">
+            <th scope="row" class="py-2.5 pr-4 text-left font-body text-base font-normal">Tram track renewal</th>
+            <td class="py-2.5 pr-4 text-right">48.0</td>
+            <td class="py-2.5 pr-4 text-right">51.3</td>
+            <td class="py-2.5 pr-4 text-right text-danger">+6.9%</td>
+            <td class="py-2.5"><span class="border-b border-success pb-0.5 text-xs font-medium uppercase tracking-[0.08em] text-success">Signed</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-2.5 pr-4 text-left font-body text-base font-normal">Night bus network</th>
+            <td class="py-2.5 pr-4 text-right">12.5</td>
+            <td class="py-2.5 pr-4 text-right">11.8</td>
+            <td class="py-2.5 pr-4 text-right">−5.6%</td>
+            <td class="py-2.5"><span class="border-b border-success pb-0.5 text-xs font-medium uppercase tracking-[0.08em] text-success">Signed</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-2.5 pr-4 text-left font-body text-base font-normal">Station accessibility</th>
+            <td class="py-2.5 pr-4 text-right">22.0</td>
+            <td class="py-2.5 pr-4 text-right">14.2</td>
+            <td class="py-2.5 pr-4 text-right">−35.5%</td>
+            <td class="py-2.5"><span class="border-b border-ink pb-0.5 text-xs font-medium uppercase tracking-[0.08em] text-ink">Pending</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-2.5 pr-4 text-left font-body text-base font-normal">Ferry subsidy</th>
+            <td class="py-2.5 pr-4 text-right">6.4</td>
+            <td class="py-2.5 pr-4 text-right">6.4</td>
+            <td class="py-2.5 pr-4 text-right">0.0%</td>
+            <td class="py-2.5"><span class="border-b border-success pb-0.5 text-xs font-medium uppercase tracking-[0.08em] text-success">Signed</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="py-2.5 pr-4 text-left font-body text-base font-normal">Fare-capping pilot</th>
+            <td class="py-2.5 pr-4 text-right">3.1</td>
+            <td class="py-2.5 pr-4 text-right">4.0</td>
+            <td class="py-2.5 pr-4 text-right text-danger">+29.0%</td>
+            <td class="py-2.5"><span class="border-b border-danger pb-0.5 text-xs font-medium uppercase tracking-[0.08em] text-danger">Queried</span></td>
+          </tr>
+        </tbody>
+        <tfoot class="tabular-nums">
+          <tr class="border-t-[3px] border-double border-ink font-bold">
+            <th scope="row" class="py-3 pr-4 text-left font-body text-base font-bold">Total</th>
+            <td class="py-3 pr-4 text-right">92.0</td>
+            <td class="py-3 pr-4 text-right">87.7</td>
+            <td class="py-3 pr-4 text-right">−4.7%</td>
+            <td class="py-3"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </figure>
+  <!-- snippet:end -->
+</body>
+</html>

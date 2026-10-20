@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editorial / Swiss / Input</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F7F4EC;
+  --color-surface: #FFFDF8;
+  --color-ink: #111111;
+  --color-muted: #5A564C;
+  --color-line: #D9D3C4;
+  --color-line-strong: #111111;
+  --color-accent: #1F3FBF;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B3261E;
+  --color-success: #2E6B3A;
+
+  --font-display: "Newsreader", ui-serif, Georgia, serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-ui: "Libre Franklin", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.6875rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.5rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.75rem;
+  --text-2xl--line-height: 1;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.95;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+  --shadow-*: initial;
+}
+
+@layer base {
+  .dark {
+    --color-bg: #12110E;
+    --color-surface: #1B1A16;
+    --color-ink: #EDE8DC;
+    --color-muted: #A39E90;
+    --color-line: #3A372F;
+    --color-line-strong: #EDE8DC;
+    --color-accent: #8EA2FF;
+    --color-accent-ink: #12110E;
+    --color-danger: #F2867D;
+    --color-success: #86C79A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <form class="flex max-w-md flex-col gap-8" action="#">
+    <div class="flex flex-col gap-1.5">
+      <label for="reader-email" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Email address</label>
+      <input id="reader-email" name="email" type="email" value="m.okafor@harbourplanning.org" aria-describedby="reader-email-hint" class="min-h-11 w-full border-0 border-b border-ink bg-transparent px-0 py-2 font-body text-base text-ink placeholder:text-muted focus:outline-none focus-visible:border-b-2 focus-visible:border-accent">
+      <p id="reader-email-hint" class="font-ui text-xs text-muted">The Sunday letter goes here. Nothing else does.</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="reader-postcode" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Postal code</label>
+      <input id="reader-postcode" name="postcode" type="text" value="10Q 4R" aria-invalid="true" aria-describedby="reader-postcode-error" class="min-h-11 w-full border-0 border-b-2 border-danger bg-transparent px-0 py-2 font-body text-base text-ink focus:outline-none focus-visible:border-accent">
+      <p id="reader-postcode-error" class="font-ui text-xs font-medium text-danger">This is not a postal code we deliver to. Check the letters and spacing.</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="reader-letter" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Letter to the editor</label>
+      <textarea id="reader-letter" name="letter" rows="4" aria-describedby="reader-letter-hint" class="w-full resize-y border border-line bg-surface px-3 py-2.5 font-body text-base text-ink placeholder:italic placeholder:text-muted focus:outline-none focus-visible:border-accent focus-visible:outline-1 focus-visible:outline-accent" placeholder="Your rent figures for 2019 leave out the service charge."></textarea>
+      <p id="reader-letter-hint" class="font-ui text-xs text-muted">Under 250 words. We edit for length, never for meaning.</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="reader-number" class="font-ui text-xs font-medium uppercase tracking-[0.08em] text-muted">Subscriber number</label>
+      <input id="reader-number" name="number" type="text" value="LR 004 118" disabled aria-describedby="reader-number-hint" class="min-h-11 w-full cursor-not-allowed border-0 border-b border-dashed border-muted bg-transparent px-0 py-2 font-body text-base text-muted">
+      <p id="reader-number-hint" class="font-ui text-xs text-muted">Assigned at sign-up. Write to us to change it.</p>
+    </div>
+  </form>
+  <!-- snippet:end -->
+</body>
+</html>
