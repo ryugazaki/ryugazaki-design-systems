@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Default</p>
+      <header class="relative border-[3px] border-line bg-bg">
+        <div class="flex min-h-16 items-center justify-between gap-4 px-4 md:px-6">
+          <a href="#" class="flex min-h-11 items-center gap-2 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+            <span aria-hidden="true" class="size-4 border-2 border-line bg-yolk"></span>
+            <span class="font-display text-lg font-black tracking-tight text-ink font-stretch-125%">Pipeworks</span>
+          </a>
+          <nav aria-label="Main" class="hidden md:block">
+            <ul class="flex items-center gap-1">
+              <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center px-3 font-bold text-ink underline decoration-[3px] underline-offset-[6px] focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Docs</a></li>
+              <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Pricing</a></li>
+              <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Changelog</a></li>
+              <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Status</a></li>
+            </ul>
+          </nav>
+          <div class="flex items-center gap-2">
+            <a href="#" class="hidden min-h-11 items-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue sm:inline-flex">Install the CLI</a>
+            <details class="group md:hidden">
+              <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-sm border-2 border-line bg-surface px-3 font-mono text-xs font-medium uppercase text-ink shadow-hard-sm group-open:bg-ink group-open:text-bg group-open:shadow-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+                <span class="group-open:hidden">Menu</span>
+                <span class="hidden group-open:inline">Close</span>
+              </summary>
+              <div class="absolute -inset-x-[3px] top-full z-10 border-[3px] border-line bg-surface shadow-hard">
+                <ul class="flex flex-col">
+                  <li><a href="#" aria-current="page" class="flex min-h-12 items-center justify-between gap-3 border-b-2 border-line bg-yolk px-4 font-bold text-accent-ink">Docs <span class="font-mono text-xs font-medium uppercase">You are here</span></a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Pricing</a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Changelog</a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Status</a></li>
+                </ul>
+                <div class="p-4">
+                  <a href="#" class="flex min-h-11 items-center justify-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard">Install the CLI</a>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <section class="flex flex-col gap-3 md:hidden">
+      <p class="font-mono text-xs uppercase text-muted">Mobile menu, open</p>
+      <div class="min-h-[420px]">
+        <header class="relative border-[3px] border-line bg-bg">
+          <div class="flex min-h-16 items-center justify-between gap-4 px-4">
+            <a href="#" class="flex min-h-11 items-center gap-2">
+              <span aria-hidden="true" class="size-4 border-2 border-line bg-yolk"></span>
+              <span class="font-display text-lg font-black tracking-tight text-ink font-stretch-125%">Pipeworks</span>
+            </a>
+            <details open class="group">
+              <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-sm border-2 border-line bg-surface px-3 font-mono text-xs font-medium uppercase text-ink shadow-hard-sm group-open:bg-ink group-open:text-bg group-open:shadow-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+                <span class="group-open:hidden">Menu</span>
+                <span class="hidden group-open:inline">Close</span>
+              </summary>
+              <div class="absolute -inset-x-[3px] top-full z-10 border-[3px] border-line bg-surface shadow-hard">
+                <ul class="flex flex-col">
+                  <li><a href="#" aria-current="page" class="flex min-h-12 items-center justify-between gap-3 border-b-2 border-line bg-yolk px-4 font-bold text-accent-ink">Docs <span class="font-mono text-xs font-medium uppercase">You are here</span></a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Pricing</a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Changelog</a></li>
+                  <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Status</a></li>
+                </ul>
+                <div class="p-4">
+                  <a href="#" class="flex min-h-11 items-center justify-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard">Install the CLI</a>
+                </div>
+              </div>
+            </details>
+          </div>
+        </header>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

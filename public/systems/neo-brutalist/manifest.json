@@ -1,0 +1,63 @@
+{
+  "slug": "neo-brutalist",
+  "number": 2,
+  "name": "Neo-Brutalist",
+  "tagline": "Thick rules, hard shadows, loud primaries.",
+  "description": "A system that shows its construction. Heavy black outlines, offset shadows with no blur, and three primaries used at full strength. It reads as confident and a little rude, which suits tools for people who build things.",
+  "tags": ["bold", "playful", "light", "dev-tool", "marketing"],
+  "defaultMode": "light",
+  "useCases": ["indie product landing pages", "developer tools", "launch pages", "internal dashboards with personality"],
+  "fonts": [
+    { "family": "Archivo", "role": "display and UI; use font-stretch 125% for display", "weights": [500, 700, 800, 900], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap" },
+    { "family": "Martian Mono", "role": "labels, data, code", "weights": [400, 500], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap" }
+  ],
+  "typeScale": { "ratio": 1.414, "steps": { "xs": "12px", "sm": "14px", "base": "16px", "lg": "22px", "xl": "32px", "2xl": "45px", "display": "64px" } },
+  "palette": [
+    { "token": "--color-bg", "light": "#FFFDF5", "dark": "#121210", "role": "page background" },
+    { "token": "--color-surface", "light": "#FFFFFF", "dark": "#1C1C19", "role": "cards and inputs" },
+    { "token": "--color-ink", "light": "#111111", "dark": "#F5F2E8", "role": "text, outlines, shadows" },
+    { "token": "--color-muted", "light": "#4A4A44", "dark": "#B8B4A6", "role": "secondary text" },
+    { "token": "--color-line", "light": "#111111", "dark": "#F5F2E8", "role": "borders and hard shadows" },
+    { "token": "--color-yolk", "light": "#F4D23C", "dark": "#F4D23C", "role": "primary accent" },
+    { "token": "--color-tomato", "light": "#FF5C39", "dark": "#FF6E4E", "role": "secondary accent, destructive" },
+    { "token": "--color-blue", "light": "#3B5BFF", "dark": "#6F86FF", "role": "links and info" },
+    { "token": "--color-accent-ink", "light": "#111111", "dark": "#111111", "role": "text on yolk, tomato, blue" },
+    { "token": "--color-success", "light": "#1F9D55", "dark": "#3DCB7A", "role": "success" }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Outline every surface with a 2px line; use 3px for the primary action and hero elements",
+      "Give interactive surfaces the 4px hard shadow; on press, translate 2px right and down and shrink the shadow to 2px",
+      "Set display headlines in Archivo at font-stretch 125% and weight 800 or 900, tracking tight",
+      "Use Martian Mono for labels, numbers, and metadata, uppercase only for labels under 12 words",
+      "Rotate one sticker element per screen by -2deg to break the grid on purpose",
+      "Use yolk as the main accent; tomato for destructive and for one loud highlight per screen"
+    ],
+    "dont": [
+      "Do not round corners beyond 4px",
+      "Do not use soft or blurred shadows",
+      "Do not use more than three accent colors on one screen",
+      "Do not use thin 1px borders on interactive elements",
+      "Do not center every section; anchor most layouts to the left edge"
+    ]
+  },
+  "components": [
+    { "id": "button", "name": "Button", "file": "components/button.html", "notes": "Primary is yolk with a 3px outline. Pressed state moves 2px and the shadow shrinks to 2px. Destructive is tomato." },
+    { "id": "input", "name": "Input", "file": "components/input.html", "notes": "2px outline, surface fill, mono label above. Error state swaps the outline to tomato and adds a mono error line." },
+    { "id": "select", "name": "Select", "file": "components/select.html", "notes": "Native select with a square chevron block on the right, separated by a 2px rule." },
+    { "id": "checkbox-toggle", "name": "Checkbox and toggle", "file": "components/checkbox-toggle.html", "notes": "Square checkbox with a heavy check. Switch is a rectangle track with a square thumb and the hard shadow." },
+    { "id": "badge", "name": "Badge", "file": "components/badge.html", "notes": "Mono uppercase, 2px outline, flat fill. The sticker variant is rotated -2deg." },
+    { "id": "card", "name": "Card", "file": "components/card.html", "notes": "2px outline, 4px hard shadow, header strip in an accent color separated by a rule." },
+    { "id": "navbar", "name": "Navbar", "file": "components/navbar.html", "notes": "Bottom rule of 3px. Mobile menu is a details disclosure that drops a full-width outlined panel." },
+    { "id": "modal", "name": "Modal and sheet", "file": "components/modal.html", "notes": "Backdrop is ink at 60 percent. Dialog has a 3px outline and an 8px hard shadow." },
+    { "id": "table", "name": "Table", "file": "components/table.html", "notes": "Every cell ruled. Header row inverted (ink background, bg text), mono numbers right-aligned." },
+    { "id": "bento", "name": "Bento grid", "file": "components/bento.html", "notes": "Tiles share outlines with a gap of 12px; each tile uses a different accent or none." },
+    { "id": "empty-state", "name": "Empty state", "file": "components/empty-state.html", "notes": "Dashed 2px outline box, a large mono glyph drawn in CSS, one primary action." },
+    { "id": "toast", "name": "Toast", "file": "components/toast.html", "notes": "Outlined bar with a colored square status block on the left and a square dismiss button." }
+  ],
+  "pages": [
+    { "id": "landing", "name": "Landing", "file": "pages/landing.html" },
+    { "id": "app", "name": "Deploy dashboard", "file": "pages/app.html" }
+  ]
+}

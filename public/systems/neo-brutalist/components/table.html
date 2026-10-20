@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-4xl flex-col gap-3">
+    <p id="deploys-caption" class="font-mono text-xs uppercase text-muted">Recent deploys / pipeworks-api</p>
+    <div class="overflow-x-auto border-2 border-line bg-surface shadow-hard">
+      <table aria-labelledby="deploys-caption" class="w-full min-w-[600px] border-collapse text-left">
+        <thead class="bg-ink text-bg">
+          <tr>
+            <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Commit</th>
+            <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Branch</th>
+            <th scope="col" class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs font-medium uppercase">Duration</th>
+            <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Status</th>
+            <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">When</th>
+          </tr>
+        </thead>
+        <tbody class="text-sm text-ink">
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">a1f9c2e</code><span class="block">Fix login redirect loop</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">main</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:41</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-success px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Live</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">4 min ago</td>
+          </tr>
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">3f8a6cd</code><span class="block">Try the new cache key</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">chore/cache</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:19</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-yolk px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Building</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">Now</td>
+          </tr>
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">e5d2a90</code><span class="block">Add rate limit to uploads</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">feat/uploads</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">1:12</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-surface px-2 py-0.5 font-mono text-xs font-medium uppercase text-ink">Preview</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">1 h ago</td>
+          </tr>
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">9b41f07</code><span class="block">Commit node_modules (sorry)</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">fix/deps</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">6:03</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-tomato px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Failed</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">3 h ago</td>
+          </tr>
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">7c03b1e</code><span class="block">Bump node to 22.11</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">main</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:38</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-dashed border-line bg-bg px-2 py-0.5 font-mono text-xs font-medium uppercase text-ink">Replaced</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">Yesterday</td>
+          </tr>
+          <tr>
+            <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">d07e1aa</code><span class="block">Revert the old cache key</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">main</td>
+            <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:44</td>
+            <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-dashed border-line bg-bg px-2 py-0.5 font-mono text-xs font-medium uppercase text-ink">Rolled back</span></td>
+            <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">2 days ago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

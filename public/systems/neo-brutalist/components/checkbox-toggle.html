@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Checkbox and toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Checkbox, checked and unchecked</p>
+      <div class="flex flex-col gap-1">
+        <label class="flex min-h-11 cursor-pointer items-start gap-3 py-2.5">
+          <span class="relative mt-0.5 inline-flex size-6 shrink-0">
+            <input type="checkbox" name="run-tests" checked class="peer size-6 cursor-pointer appearance-none rounded-sm border-2 border-line bg-surface shadow-hard-sm checked:bg-yolk focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute inset-0 m-auto hidden size-4 text-accent-ink peer-checked:block" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="square"><path d="M3 8.5l3 3 7-7"/></svg>
+          </span>
+          <span class="flex flex-col gap-0.5">
+            <span class="font-bold text-ink">Run tests before every deploy</span>
+            <span class="text-sm text-muted">A red test stops the deploy. Your users never see it.</span>
+          </span>
+        </label>
+        <label class="flex min-h-11 cursor-pointer items-start gap-3 py-2.5">
+          <span class="relative mt-0.5 inline-flex size-6 shrink-0">
+            <input type="checkbox" name="deploy-forks" class="peer size-6 cursor-pointer appearance-none rounded-sm border-2 border-line bg-surface shadow-hard-sm checked:bg-yolk focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute inset-0 m-auto hidden size-4 text-accent-ink peer-checked:block" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="square"><path d="M3 8.5l3 3 7-7"/></svg>
+          </span>
+          <span class="flex flex-col gap-0.5">
+            <span class="font-bold text-ink">Build pull requests from forks</span>
+            <span class="text-sm text-muted">Off by default. Strangers get your build minutes too.</span>
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Switch, on and off</p>
+      <div class="flex flex-col border-2 border-line bg-surface shadow-hard">
+        <button type="button" role="switch" aria-checked="true" class="flex min-h-14 w-full items-center justify-between gap-4 border-b-2 border-line px-4 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+          <span class="flex flex-col">
+            <span class="font-bold text-ink">Auto-rollback</span>
+            <span class="font-mono text-xs text-muted">If the health check fails twice</span>
+          </span>
+          <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-end rounded-sm border-2 border-line bg-yolk p-0.5">
+            <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+          </span>
+        </button>
+        <button type="button" role="switch" aria-checked="false" class="flex min-h-14 w-full items-center justify-between gap-4 px-4 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+          <span class="flex flex-col">
+            <span class="font-bold text-ink">Maintenance page</span>
+            <span class="font-mono text-xs text-muted">Serves a static 503 to everyone</span>
+          </span>
+          <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-start rounded-sm border-2 border-line bg-bg p-0.5">
+            <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+          </span>
+        </button>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

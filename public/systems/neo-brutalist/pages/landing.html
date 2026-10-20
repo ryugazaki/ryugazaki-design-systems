@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b-[3px] border-line bg-bg">
+    <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
+      <a href="#" class="flex min-h-11 items-center gap-2 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+        <span aria-hidden="true" class="size-4 border-2 border-line bg-yolk"></span>
+        <span class="font-display text-lg font-black tracking-tight text-ink font-stretch-125%">Pipeworks</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          <li><a href="#features" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Features</a></li>
+          <li><a href="#pricing" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Pricing</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Docs</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Changelog</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#install" class="hidden min-h-11 items-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue sm:inline-flex">Install the CLI</a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-sm border-2 border-line bg-surface px-3 font-mono text-xs font-medium uppercase text-ink shadow-hard-sm group-open:bg-ink group-open:text-bg group-open:shadow-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 border-b-[3px] border-line bg-surface shadow-hard">
+            <ul class="flex flex-col">
+              <li><a href="#features" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Features</a></li>
+              <li><a href="#pricing" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Pricing</a></li>
+              <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Docs</a></li>
+              <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Changelog</a></li>
+            </ul>
+            <div class="p-4">
+              <a href="#install" class="flex min-h-11 items-center justify-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard">Install the CLI</a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title" class="border-b-[3px] border-line">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 pt-10 pb-12 md:px-6 md:pt-16 md:pb-16 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pt-20 lg:pb-20">
+        <div class="flex flex-col items-start gap-6 lg:col-span-7">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="inline-flex -rotate-2 items-center rounded-sm border-2 border-line bg-yolk px-3 py-1 font-mono text-xs font-medium uppercase text-accent-ink shadow-hard-sm">v2 is out</span>
+            <p class="font-mono text-xs uppercase text-muted">Deploy CLI for indie developers</p>
+          </div>
+          <h1 id="hero-title" class="font-display text-2xl font-black tracking-tighter text-ink font-stretch-125% md:text-display">Deploys that don't need a meeting.</h1>
+          <p class="max-w-xl text-base text-ink md:text-lg md:leading-snug">Pipeworks takes your repo from git push to a live URL with a passing health check. No YAML, no dashboard archaeology, no standup about why staging is down again.</p>
+          <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
+            <a href="#install" class="inline-flex min-h-12 items-center justify-center rounded-sm border-[3px] border-line bg-yolk px-6 text-lg font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap hover:-translate-x-px hover:-translate-y-px active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-blue">Install the CLI</a>
+            <a href="#" class="inline-flex min-h-12 items-center justify-center rounded-sm border-2 border-line bg-surface px-6 text-lg font-bold text-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-blue">Read the docs</a>
+          </div>
+        </div>
+
+        <figure class="flex flex-col rounded-sm border-[3px] border-line bg-ink text-bg shadow-hard-lg lg:col-span-5">
+          <figcaption class="flex items-center justify-between gap-3 border-b-2 border-bg/30 px-4 py-2.5 font-mono text-xs uppercase">
+            <span>~/code/pipeworks-api</span>
+            <span aria-hidden="true" class="flex gap-1.5">
+              <span class="size-2.5 border-2 border-bg"></span>
+              <span class="size-2.5 border-2 border-bg"></span>
+              <span class="size-2.5 bg-yolk"></span>
+            </span>
+          </figcaption>
+          <pre class="overflow-x-auto p-4 font-mono text-xs leading-relaxed md:text-sm md:leading-relaxed"><code><span class="text-yolk">$</span> pipeworks deploy
+<span class="text-bg/70">  build   </span>npm ci, 412 packages
+<span class="text-bg/70">  build   </span>dist/ is 3.1 MB
+<span class="text-bg/70">  upload  </span>fra-1, 2 regions
+<span class="text-bg/70">  check   </span>GET /healthz 200 in 31ms
+
+<span class="text-yolk">live</span> pipeworks-api.pw.run in 41s</code></pre>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" aria-labelledby="features-title" class="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-20">
+      <div class="mb-8 flex flex-col gap-2 md:mb-10">
+        <p class="font-mono text-xs uppercase text-muted">What you get</p>
+        <h2 id="features-title" class="max-w-2xl font-display text-xl font-black tracking-tight text-ink font-stretch-125% md:text-2xl">Four things, done properly, so you can get back to the app.</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-3 md:grid-cols-4">
+        <article class="flex flex-col gap-5 rounded-sm border-2 border-line bg-yolk p-5 text-accent-ink md:col-span-2 md:row-span-2 md:p-6">
+          <div class="flex flex-col gap-2">
+            <p class="font-mono text-xs font-medium uppercase">Zero-config previews</p>
+            <h3 class="font-display text-lg font-black tracking-tight font-stretch-125% md:text-xl">Every branch gets a URL. You configure nothing.</h3>
+            <p class="text-base">Push a branch and the link lands in the pull request a minute later. Merge it and the preview cleans itself up.</p>
+          </div>
+          <ul class="mt-auto flex flex-col border-2 border-line bg-surface font-mono text-xs text-ink">
+            <li class="flex items-center justify-between gap-3 border-b-2 border-line px-3 py-2.5"><span class="truncate">fix-login-redirect.pw.run</span><span class="shrink-0 text-muted">2 min</span></li>
+            <li class="flex items-center justify-between gap-3 border-b-2 border-line px-3 py-2.5"><span class="truncate">feat-uploads.pw.run</span><span class="shrink-0 text-muted">1 h</span></li>
+            <li class="flex items-center justify-between gap-3 px-3 py-2.5"><span class="truncate">chore-cache.pw.run</span><span class="shrink-0 text-muted">building</span></li>
+          </ul>
+        </article>
+
+        <article class="flex flex-col gap-4 rounded-sm border-2 border-line bg-surface p-5 md:col-span-2 md:p-6">
+          <div class="flex flex-col gap-2">
+            <p class="font-mono text-xs uppercase text-muted">Rollbacks in one command</p>
+            <h3 class="font-display text-lg font-black tracking-tight text-ink font-stretch-125%">Broke prod? Type one line.</h3>
+          </div>
+          <p class="overflow-x-auto border-2 border-line bg-bg px-3 py-2.5 font-mono text-sm whitespace-nowrap text-ink"><span class="text-muted">$</span> pipeworks rollback</p>
+          <p class="text-sm text-muted">Swaps traffic to the last healthy deploy in under 3 seconds. No rebuild.</p>
+        </article>
+
+        <article class="flex flex-col gap-3 rounded-sm border-2 border-line bg-ink p-5 text-bg md:p-6">
+          <p class="font-mono text-xs uppercase">Logs you can grep</p>
+          <h3 class="font-display text-lg font-black tracking-tight font-stretch-125%">Plain text. Pipes work.</h3>
+          <p class="font-mono text-xs break-words"><span class="text-yolk">$</span> pipeworks logs | grep 500</p>
+        </article>
+
+        <article class="flex flex-col gap-3 rounded-sm border-2 border-line bg-surface p-5 md:p-6">
+          <p class="font-mono text-xs uppercase text-muted">Pricing per project</p>
+          <p class="font-display text-2xl font-black tracking-tight text-ink tabular-nums font-stretch-125%">$4</p>
+          <p class="text-sm text-muted">Per project, per month. Not per seat, not per build minute.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title" class="border-y-[3px] border-line bg-surface">
+      <h2 id="proof-title" class="sr-only">Pipeworks in numbers</h2>
+      <dl class="mx-auto grid max-w-6xl grid-cols-1 md:grid-cols-3">
+        <div class="flex flex-col gap-1 border-b-2 border-line px-4 py-8 md:border-b-0 md:px-6 md:py-10">
+          <dt class="order-2 font-mono text-xs uppercase text-muted">Median deploy</dt>
+          <dd class="order-1 font-display text-2xl font-black tracking-tight text-ink tabular-nums font-stretch-125% md:text-display">41s</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b-2 border-line px-4 py-8 md:border-b-0 md:border-l-2 md:px-6 md:py-10">
+          <dt class="order-2 font-mono text-xs uppercase text-muted">YAML files</dt>
+          <dd class="order-1 font-display text-2xl font-black tracking-tight text-ink tabular-nums font-stretch-125% md:text-display">0</dd>
+        </div>
+        <div class="flex flex-col gap-1 px-4 py-8 md:border-l-2 md:border-line md:px-6 md:py-10">
+          <dt class="order-2 font-mono text-xs uppercase text-muted">Indie teams</dt>
+          <dd class="order-1 font-display text-2xl font-black tracking-tight text-ink tabular-nums font-stretch-125% md:text-display">1,200</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title" class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:px-6 md:py-20 lg:grid-cols-12 lg:gap-12">
+      <div class="flex flex-col gap-3 lg:col-span-5">
+        <p class="font-mono text-xs uppercase text-muted">Pricing</p>
+        <h2 id="pricing-title" class="font-display text-xl font-black tracking-tight text-ink font-stretch-125% md:text-2xl">$4 a project. Your first one is free.</h2>
+        <p class="text-base text-muted">Add the whole team. Deploy forty times a day. The bill only moves when you start another project.</p>
+      </div>
+      <ul class="flex flex-col border-2 border-line bg-surface shadow-hard lg:col-span-7">
+        <li class="flex flex-col gap-1 border-b-2 border-line p-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span class="font-bold text-ink">Unlimited deploys</span><span class="font-mono text-xs text-muted">Including the 2 a.m. ones</span></li>
+        <li class="flex flex-col gap-1 border-b-2 border-line p-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span class="font-bold text-ink">A preview per branch</span><span class="font-mono text-xs text-muted">Kept for 7 days</span></li>
+        <li class="flex flex-col gap-1 border-b-2 border-line p-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span class="font-bold text-ink">30 days of logs</span><span class="font-mono text-xs text-muted">Plain text, grep-friendly</span></li>
+        <li class="flex flex-col gap-1 border-b-2 border-line p-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span class="font-bold text-ink">Custom domains and TLS</span><span class="font-mono text-xs text-muted">Certificates renew themselves</span></li>
+        <li class="flex flex-col gap-1 p-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"><span class="font-bold text-ink">Every teammate</span><span class="font-mono text-xs text-muted">No seat pricing, ever</span></li>
+      </ul>
+    </section>
+
+    <section id="install" aria-labelledby="cta-title" class="px-4 pb-16 md:px-6 md:pb-24">
+      <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 rounded-sm border-[3px] border-line bg-tomato p-6 text-accent-ink shadow-hard-lg md:flex-row md:items-end md:justify-between md:p-10">
+        <div class="flex flex-col gap-3">
+          <h2 id="cta-title" class="font-display text-xl font-black tracking-tight font-stretch-125% md:text-2xl">Ship the side project tonight.</h2>
+          <p class="overflow-x-auto font-mono text-sm whitespace-nowrap">$ npm i -g pipeworks</p>
+        </div>
+        <a href="#" class="inline-flex min-h-12 shrink-0 items-center justify-center rounded-sm border-[3px] border-line bg-surface px-6 text-lg font-bold text-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-ink">Install the CLI</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-[3px] border-line bg-bg">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 md:flex-row md:items-center md:justify-between md:px-6">
+      <p class="text-sm text-muted">Pipeworks. Built by four people and one stubborn cron job.</p>
+      <ul class="flex flex-wrap gap-x-1 font-mono text-xs uppercase">
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Docs</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Status</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Changelog</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">GitHub</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

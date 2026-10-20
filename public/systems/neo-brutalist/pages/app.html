@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Deploy dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b-[3px] border-line bg-bg">
+    <div class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+      <div class="flex min-w-0 items-center gap-3">
+        <a href="#" class="flex min-h-11 shrink-0 items-center gap-2 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+          <span aria-hidden="true" class="size-4 border-2 border-line bg-yolk"></span>
+          <span class="font-display text-lg font-black tracking-tight text-ink font-stretch-125%">Pipeworks</span>
+        </a>
+        <span aria-hidden="true" class="hidden h-6 w-0.5 bg-line sm:block"></span>
+        <p class="hidden truncate font-mono text-xs text-ink sm:block">pipeworks-api</p>
+      </div>
+      <nav aria-label="Project" class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center px-3 font-bold text-ink underline decoration-[3px] underline-offset-[6px] focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Deploys</a></li>
+          <li><a href="#logs" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Logs</a></li>
+          <li><a href="#environments" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Environments</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center px-3 font-bold text-ink decoration-2 underline-offset-[6px] hover:underline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Settings</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button type="button" class="hidden min-h-11 items-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue sm:inline-flex">Deploy now</button>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-sm border-2 border-line bg-surface px-3 font-mono text-xs font-medium uppercase text-ink shadow-hard-sm group-open:bg-ink group-open:text-bg group-open:shadow-none focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 border-b-[3px] border-line bg-surface shadow-hard">
+            <ul class="flex flex-col">
+              <li><a href="#" aria-current="page" class="flex min-h-12 items-center justify-between gap-3 border-b-2 border-line bg-yolk px-4 font-bold text-accent-ink">Deploys <span class="font-mono text-xs font-medium uppercase">You are here</span></a></li>
+              <li><a href="#logs" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Logs</a></li>
+              <li><a href="#environments" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Environments</a></li>
+              <li><a href="#" class="flex min-h-12 items-center border-b-2 border-line px-4 font-bold text-ink">Settings</a></li>
+            </ul>
+            <div class="p-4">
+              <button type="button" class="flex min-h-11 w-full items-center justify-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard">Deploy now</button>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-6 md:gap-10 md:px-6 md:py-10">
+    <section aria-labelledby="page-title" class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div class="flex flex-col gap-2">
+        <p class="font-mono text-xs uppercase text-muted">Production / fra-1 / node 22</p>
+        <h1 id="page-title" class="font-display text-xl font-black tracking-tight text-ink font-stretch-125% md:text-2xl">pipeworks-api</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="#" class="inline-flex min-h-11 items-center rounded-sm border-2 border-line bg-surface px-4 font-bold text-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">Open live site</a>
+        <button type="button" class="inline-flex min-h-11 items-center rounded-sm border-[3px] border-line bg-yolk px-4 font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue sm:hidden">Deploy now</button>
+      </div>
+    </section>
+
+    <section aria-labelledby="stats-title" class="flex flex-col gap-3">
+      <h2 id="stats-title" class="font-mono text-xs uppercase text-muted">This week</h2>
+      <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <article class="col-span-2 flex flex-col gap-4 rounded-sm border-2 border-line bg-surface p-4 md:row-span-2 md:p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex flex-col gap-1">
+              <h3 class="font-mono text-xs uppercase text-muted">Deploy time, last 14</h3>
+              <p class="font-display text-xl font-black tracking-tight text-ink tabular-nums font-stretch-125%">0:41 median</p>
+            </div>
+            <p class="shrink-0 font-mono text-xs text-muted tabular-nums">max 6:03</p>
+          </div>
+          <div aria-hidden="true" class="flex h-36 items-end gap-1 border-b-2 border-l-2 border-line pl-1 md:mt-auto md:h-48 md:gap-1.5">
+            <span class="h-[14%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[12%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[16%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[11%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[13%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[100%] flex-1 border-2 border-b-0 border-line bg-tomato"></span>
+            <span class="h-[20%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[12%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[11%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[10%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[12%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[11%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[10%] flex-1 border-2 border-b-0 border-line bg-bg"></span>
+            <span class="h-[11%] flex-1 border-2 border-b-0 border-line bg-yolk"></span>
+          </div>
+          <p class="text-sm text-muted">The tall one is 9b41f07. It tried to upload node_modules.</p>
+        </article>
+        <article class="col-span-2 flex flex-col gap-1 rounded-sm border-2 border-line bg-yolk p-4 text-accent-ink md:p-5">
+          <h3 class="font-mono text-xs font-medium uppercase">Deploys</h3>
+          <p class="font-display text-2xl font-black tracking-tight tabular-nums font-stretch-125%">38</p>
+          <p class="text-sm">Up from 29 last week. Fridays included, apparently.</p>
+        </article>
+        <article class="flex flex-col gap-1 rounded-sm border-2 border-line bg-surface p-4 md:p-5">
+          <h3 class="font-mono text-xs uppercase text-muted">Failed</h3>
+          <p class="font-display text-xl font-black tracking-tight text-ink tabular-nums font-stretch-125%">2</p>
+          <p class="font-mono text-xs text-muted">5.2% of deploys</p>
+        </article>
+        <article class="flex flex-col gap-1 rounded-sm border-2 border-line bg-surface p-4 md:p-5">
+          <h3 class="font-mono text-xs uppercase text-muted">Uptime</h3>
+          <p class="font-display text-xl font-black tracking-tight text-ink tabular-nums font-stretch-125%">99.97%</p>
+          <p class="font-mono text-xs text-muted">13 min down in 30 days</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start lg:gap-6">
+      <section aria-labelledby="deploys-title" class="flex min-w-0 flex-col gap-3 lg:col-span-2">
+        <div class="flex items-center justify-between gap-3">
+          <h2 id="deploys-title" class="font-mono text-xs uppercase text-muted">Recent deploys</h2>
+          <a href="#" class="inline-flex min-h-11 items-center font-mono text-xs uppercase text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">All 412</a>
+        </div>
+        <div class="overflow-x-auto border-2 border-line bg-surface shadow-hard">
+          <table aria-labelledby="deploys-title" class="w-full min-w-[600px] border-collapse text-left">
+            <thead class="bg-ink text-bg">
+              <tr>
+                <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Commit</th>
+                <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Branch</th>
+                <th scope="col" class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs font-medium uppercase">Duration</th>
+                <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">Status</th>
+                <th scope="col" class="border-2 border-line px-3 py-2.5 font-mono text-xs font-medium uppercase">When</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-ink">
+              <tr>
+                <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">a1f9c2e</code><span class="block">Fix login redirect loop</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">main</td>
+                <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:41</td>
+                <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-success px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Live</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">4 min ago</td>
+              </tr>
+              <tr>
+                <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">3f8a6cd</code><span class="block">Try the new cache key</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">chore/cache</td>
+                <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:19</td>
+                <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-yolk px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Building</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">Now</td>
+              </tr>
+              <tr>
+                <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">e5d2a90</code><span class="block">Add rate limit to uploads</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">feat/uploads</td>
+                <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">1:12</td>
+                <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-surface px-2 py-0.5 font-mono text-xs font-medium uppercase text-ink">Preview</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">1 h ago</td>
+              </tr>
+              <tr>
+                <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">9b41f07</code><span class="block">Commit node_modules (sorry)</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">fix/deps</td>
+                <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">6:03</td>
+                <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-line bg-tomato px-2 py-0.5 font-mono text-xs font-medium uppercase text-accent-ink">Failed</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">3 h ago</td>
+              </tr>
+              <tr>
+                <td class="border-2 border-line px-3 py-2.5"><code class="block font-mono text-xs font-medium">7c03b1e</code><span class="block">Bump node to 22.11</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs">main</td>
+                <td class="border-2 border-line px-3 py-2.5 text-right font-mono text-xs tabular-nums">0:38</td>
+                <td class="border-2 border-line px-3 py-2.5"><span class="inline-flex items-center rounded-sm border-2 border-dashed border-line bg-bg px-2 py-0.5 font-mono text-xs font-medium uppercase text-ink">Replaced</span></td>
+                <td class="border-2 border-line px-3 py-2.5 font-mono text-xs text-muted">Yesterday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="flex flex-col gap-6">
+        <section id="environments" aria-labelledby="env-title" class="flex flex-col gap-3">
+          <h2 id="env-title" class="font-mono text-xs uppercase text-muted">Environments</h2>
+          <div class="flex flex-col rounded-sm border-2 border-line bg-surface shadow-hard">
+            <button type="button" role="switch" aria-checked="true" class="flex min-h-14 w-full items-center justify-between gap-4 border-b-2 border-line px-4 py-2 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <span class="flex flex-col">
+                <span class="font-bold text-ink">Auto-deploy main</span>
+                <span class="font-mono text-xs text-muted">production</span>
+              </span>
+              <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-end rounded-sm border-2 border-line bg-yolk p-0.5">
+                <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+              </span>
+            </button>
+            <button type="button" role="switch" aria-checked="true" class="flex min-h-14 w-full items-center justify-between gap-4 border-b-2 border-line px-4 py-2 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <span class="flex flex-col">
+                <span class="font-bold text-ink">Preview per branch</span>
+                <span class="font-mono text-xs text-muted">preview</span>
+              </span>
+              <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-end rounded-sm border-2 border-line bg-yolk p-0.5">
+                <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+              </span>
+            </button>
+            <button type="button" role="switch" aria-checked="false" class="flex min-h-14 w-full items-center justify-between gap-4 border-b-2 border-line px-4 py-2 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <span class="flex flex-col">
+                <span class="font-bold text-ink">Deploy staging on tag only</span>
+                <span class="font-mono text-xs text-muted">staging</span>
+              </span>
+              <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-start rounded-sm border-2 border-line bg-bg p-0.5">
+                <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+              </span>
+            </button>
+            <button type="button" role="switch" aria-checked="false" class="flex min-h-14 w-full items-center justify-between gap-4 px-4 py-2 text-left focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <span class="flex flex-col">
+                <span class="font-bold text-ink">Maintenance page</span>
+                <span class="font-mono text-xs text-muted">Serves a static 503</span>
+              </span>
+              <span aria-hidden="true" class="flex h-8 w-14 shrink-0 items-center justify-start rounded-sm border-2 border-line bg-bg p-0.5">
+                <span class="size-6 border-2 border-line bg-surface shadow-hard-sm"></span>
+              </span>
+            </button>
+          </div>
+        </section>
+        <section aria-label="Notifications" class="flex flex-col gap-3">
+          <div role="status" class="flex items-stretch rounded-sm border-2 border-line bg-surface shadow-hard">
+            <span aria-hidden="true" class="flex w-11 shrink-0 items-center justify-center border-r-2 border-line bg-success text-accent-ink">
+              <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M3 8.5l3 3 7-7"/></svg>
+            </span>
+            <div class="flex min-w-0 flex-1 flex-col gap-0.5 px-3 py-2.5">
+              <p class="text-sm font-bold text-ink">Deployed a1f9c2e to production in 41s.</p>
+              <p class="font-mono text-xs text-muted">14:02</p>
+            </div>
+            <button type="button" aria-label="Dismiss" class="flex w-11 shrink-0 items-center justify-center border-l-2 border-line text-ink hover:bg-bg focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 3l10 10M13 3L3 13"/></svg>
+            </button>
+          </div>
+          <div role="alert" class="flex items-stretch rounded-sm border-2 border-line bg-surface shadow-hard">
+            <span aria-hidden="true" class="flex w-11 shrink-0 items-center justify-center border-r-2 border-line bg-tomato font-mono text-lg font-medium text-accent-ink">!</span>
+            <div class="flex min-w-0 flex-1 flex-col gap-0.5 px-3 py-2.5">
+              <p class="text-sm font-bold text-ink">POST /upload returned 413.</p>
+              <p class="text-sm text-ink">The body limit is 10 MB. Raise it in pipeworks.toml.</p>
+            </div>
+            <button type="button" aria-label="Dismiss" class="flex w-11 shrink-0 items-center justify-center border-l-2 border-line text-ink hover:bg-bg focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+              <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 3l10 10M13 3L3 13"/></svg>
+            </button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <section id="logs" aria-labelledby="logs-title" class="flex flex-col gap-3">
+      <div class="flex items-center justify-between gap-3">
+        <h2 id="logs-title" class="font-mono text-xs uppercase text-muted">Log tail / production</h2>
+        <p class="flex items-center gap-2 font-mono text-xs uppercase text-ink"><span aria-hidden="true" class="size-2.5 border-2 border-line bg-success"></span>Streaming</p>
+      </div>
+      <div class="rounded-sm border-2 border-line bg-ink text-bg shadow-hard">
+        <pre class="overflow-x-auto p-4 font-mono text-xs leading-relaxed md:p-5"><code><span class="text-bg/60">14:02:11</span>  <span class="text-yolk">build </span>  npm ci, 412 packages in 9.8s
+<span class="text-bg/60">14:02:21</span>  <span class="text-yolk">build </span>  npm run build
+<span class="text-bg/60">14:02:38</span>  <span class="text-yolk">build </span>  dist/ is 3.1 MB
+<span class="text-bg/60">14:02:40</span>  <span class="text-yolk">deploy</span>  uploading to fra-1
+<span class="text-bg/60">14:02:47</span>  <span class="text-yolk">deploy</span>  GET /healthz 200 in 31ms
+<span class="text-bg/60">14:02:48</span>  <span class="text-yolk">deploy</span>  live at pipeworks-api.pw.run
+<span class="text-bg/60">14:03:02</span>  app     GET /api/projects 200 18ms
+<span class="text-bg/60">14:03:05</span>  app     <span class="text-tomato">POST /upload 413 payload too large</span>
+<span class="text-bg/60">14:03:09</span>  app     GET /api/projects 200 16ms
+<span class="text-bg/60">14:03:11</span>  app     GET /api/deploys?limit=20 200 22ms<span aria-hidden="true" class="ml-1 inline-block h-3.5 w-2 translate-y-0.5 bg-yolk"></span></code></pre>
+      </div>
+    </section>
+
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

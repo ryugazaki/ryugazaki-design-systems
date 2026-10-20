@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Input</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Default</p>
+      <div class="flex flex-col gap-2">
+        <label for="project-name" class="font-mono text-xs font-medium uppercase text-ink">Project name</label>
+        <input id="project-name" name="project-name" type="text" value="pipeworks-api" aria-describedby="project-name-hint" class="min-h-11 w-full rounded-sm border-2 border-line bg-surface px-3 font-mono text-sm text-ink placeholder:text-muted focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+        <p id="project-name-hint" class="text-sm text-muted">Lowercase letters, numbers, and hyphens.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Error</p>
+      <div class="flex flex-col gap-2">
+        <label for="project-name-taken" class="font-mono text-xs font-medium uppercase text-ink">Project name</label>
+        <input id="project-name-taken" name="project-name-taken" type="text" value="pipeworks-api" aria-invalid="true" aria-describedby="project-name-taken-error" class="min-h-11 w-full rounded-sm border-2 border-tomato bg-surface px-3 font-mono text-sm text-ink shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+        <p id="project-name-taken-error" class="flex items-start gap-2 font-mono text-xs text-ink">
+          <span aria-hidden="true" class="mt-0.5 size-3 shrink-0 border-2 border-line bg-tomato"></span>
+          That name is taken. Try pipeworks-api-2.
+        </p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Focused (static)</p>
+      <div class="flex flex-col gap-2">
+        <label for="custom-domain" class="font-mono text-xs font-medium uppercase text-ink">Custom domain</label>
+        <input id="custom-domain" name="custom-domain" type="text" placeholder="api.example.com" aria-describedby="custom-domain-hint" class="min-h-11 w-full rounded-sm border-2 border-line bg-surface px-3 font-mono text-sm text-ink outline-[3px] outline-offset-2 outline-blue placeholder:text-muted">
+        <p id="custom-domain-hint" class="text-sm text-muted">Point a CNAME at edge.pw.run first. We check it every minute.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Textarea</p>
+      <div class="flex flex-col gap-2">
+        <label for="deploy-note" class="font-mono text-xs font-medium uppercase text-ink">Deploy note</label>
+        <textarea id="deploy-note" name="deploy-note" rows="3" placeholder="What changed, in words a teammate can grep for later." aria-describedby="deploy-note-hint" class="w-full resize-y rounded-sm border-2 border-line bg-surface px-3 py-2.5 text-base text-ink placeholder:text-muted focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue"></textarea>
+        <p id="deploy-note-hint" class="text-sm text-muted">Shows up in the deploy list and in rollback prompts.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <p class="font-mono text-xs uppercase text-muted">Disabled</p>
+      <div class="flex flex-col gap-2">
+        <label for="region" class="font-mono text-xs font-medium uppercase text-muted">Region</label>
+        <input id="region" name="region" type="text" value="fra-1" disabled aria-describedby="region-hint" class="min-h-11 w-full cursor-not-allowed rounded-sm border-2 border-dashed border-muted bg-bg px-3 font-mono text-sm text-muted">
+        <p id="region-hint" class="text-sm text-muted">Region is locked after the first deploy. Moving it means a new project.</p>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

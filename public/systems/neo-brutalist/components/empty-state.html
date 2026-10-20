@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-3">
+    <p class="font-mono text-xs uppercase text-muted">Empty deploy list</p>
+    <section aria-labelledby="empty-title" class="flex flex-col items-start gap-5 rounded-sm border-2 border-dashed border-line bg-surface p-6 md:flex-row md:gap-8 md:p-8">
+      <div aria-hidden="true" class="flex h-20 shrink-0 items-center gap-2">
+        <span class="h-full w-4 border-y-4 border-l-4 border-line"></span>
+        <span class="mt-auto mb-2 h-3 w-8 border-2 border-line bg-yolk"></span>
+        <span class="h-full w-4 border-y-4 border-r-4 border-line"></span>
+      </div>
+      <div class="flex flex-col items-start gap-3">
+        <h2 id="empty-title" class="font-display text-xl font-black tracking-tight text-ink font-stretch-125%">No deploys yet</h2>
+        <p class="text-base text-muted">Push a commit to main and it shows up here.</p>
+        <a href="#" class="mt-1 inline-flex min-h-11 items-center gap-2 rounded-sm border-[3px] border-line bg-yolk px-5 font-bold text-accent-ink shadow-hard transition-[transform,box-shadow] duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 active:shadow-hard-sm focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M8 2v12M2 8h12"/></svg>
+          Connect a repo
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

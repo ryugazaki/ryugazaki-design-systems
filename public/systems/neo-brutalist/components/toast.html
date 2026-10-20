@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neo-Brutalist / Toast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Martian+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #FFFDF5;
+  --color-surface: #FFFFFF;
+  --color-ink: #111111;
+  --color-muted: #4A4A44;
+  --color-line: #111111;
+  --color-yolk: #F4D23C;
+  --color-tomato: #FF5C39;
+  --color-blue: #3B5BFF;
+  --color-accent-ink: #111111;
+  --color-success: #1F9D55;
+
+  --font-display: "Archivo", ui-sans-serif, sans-serif;
+  --font-body: "Archivo", ui-sans-serif, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4rem;
+  --text-display--line-height: 0.92;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+
+  --shadow-*: initial;
+  --shadow-hard-sm: 2px 2px 0 0 var(--color-line);
+  --shadow-hard: 4px 4px 0 0 var(--color-line);
+  --shadow-hard-lg: 8px 8px 0 0 var(--color-line);
+
+  --ease-snap: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121210;
+    --color-surface: #1C1C19;
+    --color-ink: #F5F2E8;
+    --color-muted: #B8B4A6;
+    --color-line: #F5F2E8;
+    --color-tomato: #FF6E4E;
+    --color-blue: #6F86FF;
+    --color-success: #3DCB7A;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-4">
+    <p class="font-mono text-xs uppercase text-muted">Success and error</p>
+    <div role="status" class="flex items-stretch rounded-sm border-2 border-line bg-surface shadow-hard">
+      <span aria-hidden="true" class="flex w-11 shrink-0 items-center justify-center border-r-2 border-line bg-success text-accent-ink">
+        <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"><path d="M3 8.5l3 3 7-7"/></svg>
+      </span>
+      <div class="flex min-w-0 flex-1 flex-col gap-0.5 px-3 py-2.5">
+        <p class="text-sm font-bold text-ink">Deployed a1f9c2e to production in 41s.</p>
+        <p class="font-mono text-xs text-muted">pipeworks-api / 14:02</p>
+      </div>
+      <button type="button" aria-label="Dismiss" class="flex w-11 shrink-0 items-center justify-center border-l-2 border-line text-ink hover:bg-bg focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 3l10 10M13 3L3 13"/></svg>
+      </button>
+    </div>
+
+    <div role="alert" class="flex items-stretch rounded-sm border-2 border-line bg-surface shadow-hard">
+      <span aria-hidden="true" class="flex w-11 shrink-0 items-center justify-center border-r-2 border-line bg-tomato font-mono text-lg font-medium text-accent-ink">!</span>
+      <div class="flex min-w-0 flex-1 flex-col gap-1 px-3 py-2.5">
+        <p class="text-sm font-bold text-ink">Build failed on 9b41f07.</p>
+        <p class="text-sm text-ink">node_modules is 1.4 GB. Add it to .gitignore and push again.</p>
+        <a href="#" class="inline-flex min-h-11 items-center self-start font-mono text-xs font-medium uppercase text-ink underline decoration-2 underline-offset-4 focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-blue">View build log</a>
+      </div>
+      <button type="button" aria-label="Dismiss" class="flex w-11 shrink-0 items-center justify-center border-l-2 border-line text-ink hover:bg-bg focus-visible:outline-[3px] focus-visible:-outline-offset-4 focus-visible:outline-blue">
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 3l10 10M13 3L3 13"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
