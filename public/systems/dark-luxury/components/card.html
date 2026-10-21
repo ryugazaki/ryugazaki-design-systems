@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col gap-12 md:flex-row md:items-start">
+    <article aria-labelledby="piece-one" class="flex w-full max-w-sm flex-col border border-line">
+      <div class="aspect-[4/5] bg-surface">
+        <svg aria-hidden="true" viewBox="0 0 240 300" class="h-full w-full">
+          <rect x="0" y="236" width="240" height="64" class="fill-bg"/>
+          <line x1="0" y1="236" x2="240" y2="236" class="stroke-line" stroke-width="1"/>
+          <rect x="94" y="16" width="52" height="268" class="fill-line"/>
+          <rect x="190" y="142" width="9" height="16" class="fill-muted"/>
+          <circle cx="120" cy="150" r="72" class="fill-bg stroke-muted" stroke-width="1"/>
+          <circle cx="120" cy="150" r="62" class="fill-surface stroke-line" stroke-width="1"/>
+          <circle cx="120" cy="150" r="57" fill="none" class="stroke-muted" stroke-width="4" stroke-dasharray="0.5 5.469"/>
+          <circle cx="120" cy="150" r="50" fill="none" class="stroke-ink" stroke-width="6" stroke-dasharray="1 25.18"/>
+          <circle cx="120" cy="176" r="11" fill="none" class="stroke-line" stroke-width="1"/>
+          <line x1="120" y1="176" x2="126" y2="168" class="stroke-accent" stroke-width="0.75"/>
+          <line x1="120" y1="150" x2="100" y2="126" class="stroke-ink" stroke-width="2"/>
+          <line x1="120" y1="150" x2="160" y2="131" class="stroke-ink" stroke-width="1"/>
+          <circle cx="120" cy="150" r="2.5" class="fill-accent"/>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-4 border-t border-line p-6">
+        <div class="flex items-baseline justify-between gap-4">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 01.38</p>
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Edition of 12</p>
+        </div>
+        <h3 id="piece-one" class="font-display text-xl text-ink">Calibre <em>One</em></h3>
+        <p class="text-muted">38 mm in white gold. A grand feu enamel dial, wound by hand, with 72 hours of reserve.</p>
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-t border-line pt-4">
+          <p class="font-display text-lg whitespace-nowrap text-ink tabular-nums">CHF 48 000</p>
+          <a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-muted decoration-1 underline-offset-8 transition-colors duration-[400ms] ease-slow hover:decoration-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">View the piece</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="flex w-full max-w-sm flex-col gap-3">
+      <p class="border-b border-line pb-3 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Compact</p>
+      <article aria-labelledby="piece-nocturne" class="flex items-center gap-5 border-b border-line pb-5">
+        <div class="h-24 w-20 shrink-0 bg-surface">
+          <svg aria-hidden="true" viewBox="0 0 80 96" class="h-full w-full">
+            <rect x="29" y="4" width="22" height="88" class="fill-line"/>
+            <circle cx="40" cy="48" r="24" class="fill-bg stroke-muted" stroke-width="1"/>
+            <circle cx="40" cy="48" r="19" fill="none" class="stroke-ink" stroke-width="3" stroke-dasharray="0.6 9.35"/>
+            <line x1="40" y1="48" x2="33" y2="38" class="stroke-ink" stroke-width="1.25"/>
+            <line x1="40" y1="48" x2="52" y2="44" class="stroke-ink" stroke-width="0.75"/>
+            <circle cx="40" cy="48" r="1.5" class="fill-accent"/>
+          </svg>
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col gap-1">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 02.40</p>
+          <h3 id="piece-nocturne" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Nocturne</a></h3>
+          <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 21 500</p>
+        </div>
+      </article>
+      <p class="text-muted">For saved lists and the side of a piece page. The name is the link.</p>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

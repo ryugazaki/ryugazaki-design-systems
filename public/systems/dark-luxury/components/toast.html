@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Toast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-6">
+    <div role="status" class="flex items-start gap-4 border-t border-accent bg-surface py-4 pr-2 pl-5 transition-[opacity,translate] duration-[400ms] ease-slow starting:translate-y-2 starting:opacity-0 motion-reduce:transition-none">
+      <div class="flex min-w-0 flex-1 flex-col gap-1 pt-2">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-accent">Request received</p>
+        <p class="text-ink">The Geneva salon will write within two working days.</p>
+      </div>
+      <button type="button" aria-label="Dismiss" class="inline-flex size-11 shrink-0 items-center justify-center text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:-outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">
+        <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l10 10M11 1L1 11"/></svg>
+      </button>
+    </div>
+
+    <div role="status" class="flex items-start gap-4 border-t border-danger bg-surface py-4 pr-2 pl-5">
+      <div class="flex min-w-0 flex-1 flex-col gap-1 pt-2">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-danger">Not sent</p>
+        <p class="text-ink">The email address needs a domain. Check it and send again.</p>
+      </div>
+      <button type="button" aria-label="Dismiss" class="inline-flex size-11 shrink-0 items-center justify-center text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:-outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">
+        <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3" fill="none" stroke="currentColor" stroke-width="1"><path d="M1 1l10 10M11 1L1 11"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

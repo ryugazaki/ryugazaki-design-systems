@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line bg-bg">
+    <div class="mx-auto grid min-h-20 max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 md:px-8">
+      <div class="flex items-center">
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center gap-3 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <svg aria-hidden="true" viewBox="0 0 20 10" class="h-2.5 w-5" fill="none" stroke="currentColor" stroke-width="1"><path class="group-open:hidden" d="M0 2h20M0 8h14"/><path class="hidden group-open:block" d="M5 0l10 10M15 0L5 10"/></svg>
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 flex min-h-[calc(100svh-5rem)] flex-col justify-between border-t border-line bg-bg px-6 pt-6 pb-10">
+            <nav aria-label="Main">
+              <ul class="flex flex-col">
+                <li><a href="#collection" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Collection</a></li>
+                <li><a href="#atelier" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">The atelier</a></li>
+                <li><a href="#visit" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Salons</a></li>
+                <li><a href="#" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Journal</a></li>
+              </ul>
+            </nav>
+            <p class="pt-10 text-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Le Locle, Geneva, Paris, Tokyo</p>
+          </div>
+        </details>
+        <nav aria-label="Main" class="hidden md:block">
+          <ul class="flex items-center gap-8">
+            <li><a href="#collection" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Collection</a></li>
+            <li><a href="#atelier" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">The atelier</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="#" class="flex min-h-11 flex-col items-center justify-center gap-0.5 text-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">
+        <span class="pl-[0.5em] text-xs font-normal uppercase tracking-[0.5em] text-muted">Maison</span>
+        <span class="font-display text-lg leading-none text-ink md:text-xl md:leading-none">Ardent</span>
+      </a>
+
+      <nav aria-label="Visit" class="hidden justify-end md:flex">
+        <ul class="flex items-center gap-8">
+          <li><a href="#visit" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Salons</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Journal</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title" class="border-b border-line">
+      <div class="mx-auto grid max-w-6xl gap-16 px-6 pt-16 pb-16 md:px-8 md:pt-24 md:pb-24 lg:grid-cols-12 lg:items-center lg:gap-8">
+        <div class="flex flex-col items-start gap-8 transition-[opacity,translate] duration-[400ms] ease-slow starting:translate-y-2 starting:opacity-0 motion-reduce:transition-none lg:col-span-7">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Independent watchmakers, Le Locle, since 2009</p>
+          <h1 id="hero-title" class="font-display text-2xl text-ink md:text-display">Few pieces. Made <em>slowly</em>.</h1>
+          <p class="max-w-md text-ink">Six references, made in one atelier above the town. Every watch is finished by the watchmaker who began it, and signed inside the case back.</p>
+          <div class="flex w-full flex-col items-stretch gap-6 sm:w-auto sm:flex-row sm:items-center sm:gap-10">
+            <a href="#visit" class="inline-flex min-h-12 items-center justify-center border border-accent px-8 text-sm font-normal uppercase tracking-[var(--tracking-caps)] text-accent transition-colors duration-[400ms] ease-slow hover:bg-accent hover:text-accent-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Request an appointment</a>
+            <a href="#collection" class="inline-flex min-h-12 items-center justify-center text-sm font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-muted decoration-1 underline-offset-8 transition-colors duration-[400ms] ease-slow hover:decoration-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">View the collection</a>
+          </div>
+        </div>
+
+        <figure class="flex flex-col items-center gap-6 lg:col-span-5">
+          <svg aria-hidden="true" viewBox="0 0 320 320" class="w-full max-w-[420px]">
+            <rect x="300" y="150" width="12" height="20" class="fill-muted"/>
+            <circle cx="160" cy="160" r="150" class="fill-surface stroke-muted" stroke-width="0.75"/>
+            <circle cx="160" cy="160" r="140" class="fill-bg stroke-line" stroke-width="1"/>
+            <circle cx="160" cy="160" r="132" fill="none" class="stroke-muted" stroke-width="6" stroke-dasharray="0.75 13.073"/>
+            <circle cx="160" cy="160" r="122" fill="none" class="stroke-line" stroke-width="1"/>
+            <text x="160" y="84" text-anchor="middle" class="fill-ink font-display text-[22px]">XII</text>
+            <text x="226" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">III</text>
+            <text x="94" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">IX</text>
+            <circle cx="160" cy="218" r="24" fill="none" class="stroke-line" stroke-width="1"/>
+            <circle cx="160" cy="218" r="21" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 1.799"/>
+            <line x1="160" y1="218" x2="171" y2="201" class="stroke-accent" stroke-width="1"/>
+            <line x1="160" y1="160" x2="118" y2="116" class="stroke-ink" stroke-width="3"/>
+            <line x1="160" y1="160" x2="236" y2="126" class="stroke-ink" stroke-width="1.5"/>
+            <circle cx="160" cy="160" r="3.5" class="fill-accent"/>
+          </svg>
+          <figcaption class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Calibre One, Réf. AR 01.38</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="collection" aria-labelledby="collection-title" class="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
+      <div class="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
+        <div class="flex flex-col gap-4">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">The 2026 collection</p>
+          <h2 id="collection-title" class="max-w-xl font-display text-xl text-ink md:text-2xl">Six references, each in a <em>small</em> edition.</h2>
+        </div>
+        <p class="max-w-xs text-muted">From 36 to 41 mm. Steel, gold, and one in platinum.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-px border border-line bg-line md:grid-cols-4">
+        <article aria-labelledby="bento-hero" class="flex flex-col bg-bg md:col-span-2 md:row-span-2">
+          <div class="flex flex-1 items-center justify-center bg-surface px-6 py-10 md:py-12">
+            <svg aria-hidden="true" viewBox="0 0 200 240" class="w-full max-w-[260px]">
+              <rect x="78" y="0" width="44" height="240" class="fill-line"/>
+              <rect x="158" y="113" width="8" height="14" class="fill-muted"/>
+              <circle cx="100" cy="120" r="60" class="fill-bg stroke-muted" stroke-width="1"/>
+              <circle cx="100" cy="120" r="52" class="fill-surface stroke-line" stroke-width="1"/>
+              <circle cx="100" cy="120" r="48" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 4.627"/>
+              <circle cx="100" cy="120" r="43" fill="none" class="stroke-ink" stroke-width="5" stroke-dasharray="0.8 21.71"/>
+              <circle cx="100" cy="142" r="9" fill="none" class="stroke-line" stroke-width="1"/>
+              <line x1="100" y1="142" x2="105" y2="135" class="stroke-accent" stroke-width="0.75"/>
+              <line x1="100" y1="120" x2="84" y2="102" class="stroke-ink" stroke-width="2"/>
+              <line x1="100" y1="120" x2="130" y2="106" class="stroke-ink" stroke-width="1"/>
+              <circle cx="100" cy="120" r="2" class="fill-accent"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 border-t border-line p-6 md:p-8">
+            <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 01.38, edition of 12</p>
+            <h3 id="bento-hero" class="font-display text-xl text-ink md:text-2xl">Calibre <em>One</em></h3>
+            <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+              <p class="font-display text-lg whitespace-nowrap text-ink tabular-nums">CHF 48 000</p>
+              <a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-muted decoration-1 underline-offset-8 transition-colors duration-[400ms] ease-slow hover:decoration-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">View the piece</a>
+            </div>
+          </div>
+        </article>
+
+        <figure class="flex flex-col justify-between gap-8 bg-bg p-6 md:col-span-2 md:p-10">
+          <blockquote class="font-display text-lg text-ink italic md:text-xl">We make twelve of these and no more. That is how many we can make well.</blockquote>
+          <figcaption class="flex items-center gap-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">
+            <span aria-hidden="true" class="h-px w-10 bg-accent"></span>
+            Odile Ardent, founder
+          </figcaption>
+        </figure>
+
+        <article aria-labelledby="bento-nocturne" class="flex flex-col gap-6 bg-bg p-6">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 02.40</p>
+          <h3 id="bento-nocturne" class="font-display text-lg text-ink">Nocturne</h3>
+          <div class="mt-auto flex flex-col gap-1 border-t border-line pt-4">
+            <p class="font-display text-xl text-ink tabular-nums">40 mm</p>
+            <p class="text-muted">Steel, smoked dial. The largest case we make in steel.</p>
+          </div>
+        </article>
+
+        <article aria-labelledby="bento-lune" class="flex flex-col gap-6 bg-bg p-6">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 06.37</p>
+          <h3 id="bento-lune" class="font-display text-lg text-ink">Lune</h3>
+          <ul class="mt-auto flex flex-col border-t border-line">
+            <li class="border-b border-line py-2 text-ink">Moon phase, one day out in 122 years</li>
+            <li class="border-b border-line py-2 text-ink">Small seconds at six</li>
+            <li class="py-2 text-ink">37 mm, white gold</li>
+          </ul>
+        </article>
+
+        <section aria-labelledby="bento-hours" class="grid gap-8 bg-bg p-6 md:col-span-4 md:grid-cols-[1fr_2fr] md:p-10">
+          <div class="flex flex-col gap-3">
+            <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Craftsmanship</p>
+            <h3 id="bento-hours" class="font-display text-xl text-ink"><span class="tabular-nums">212</span> hours at the bench</h3>
+            <p class="text-muted">Every Calibre One passes through four hands. This is where the time goes.</p>
+          </div>
+          <figure class="flex flex-col gap-4">
+            <ul class="flex flex-col gap-4">
+              <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+                <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Movement</span>
+                <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 100%"></span>
+                <span class="w-14 text-right font-display text-base text-ink tabular-nums">96 h</span>
+              </li>
+              <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+                <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case</span>
+                <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 50%"></span>
+                <span class="w-14 text-right font-display text-base text-ink tabular-nums">48 h</span>
+              </li>
+              <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+                <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Dial</span>
+                <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 41.67%"></span>
+                <span class="w-14 text-right font-display text-base text-ink tabular-nums">40 h</span>
+              </li>
+              <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+                <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Finishing</span>
+                <span aria-hidden="true" class="block h-0.5 bg-accent" style="width: 29.17%"></span>
+                <span class="w-14 text-right font-display text-base text-ink tabular-nums">28 h</span>
+              </li>
+            </ul>
+            <figcaption class="border-t border-line pt-3 text-muted">Bench hours per Calibre One, by stage. Finishing is done by one person.</figcaption>
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <section id="atelier" aria-labelledby="atelier-title" class="border-y border-line bg-surface">
+      <div class="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
+        <div class="flex flex-col gap-4 md:max-w-2xl">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">The atelier</p>
+          <h2 id="atelier-title" class="font-display text-xl text-ink md:text-2xl">Four watchmakers, one <em>room</em>, north light.</h2>
+        </div>
+        <dl class="mt-12 grid grid-cols-2 border-t border-line md:mt-16 lg:grid-cols-4">
+          <div class="flex flex-col gap-2 border-b border-line py-8 pr-4 lg:border-b-0 lg:border-r lg:px-8 lg:first:pl-0">
+            <dt class="order-2 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Founded in Le Locle</dt>
+            <dd class="order-1 font-display text-xl text-ink tabular-nums md:text-2xl">2009</dd>
+          </div>
+          <div class="flex flex-col gap-2 border-b border-l border-line py-8 pl-4 lg:border-b-0 lg:border-l-0 lg:border-r lg:px-8">
+            <dt class="order-2 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Watchmakers</dt>
+            <dd class="order-1 font-display text-xl text-ink tabular-nums md:text-2xl">4</dd>
+          </div>
+          <div class="flex flex-col gap-2 py-8 pr-4 lg:border-r lg:px-8">
+            <dt class="order-2 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Bench hours, Calibre One</dt>
+            <dd class="order-1 font-display text-xl text-ink tabular-nums md:text-2xl">212</dd>
+          </div>
+          <div class="flex flex-col gap-2 border-l border-line py-8 pl-4 lg:border-l-0 lg:px-8 lg:last:pr-0">
+            <dt class="order-2 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Hours of reserve</dt>
+            <dd class="order-1 font-display text-xl text-ink tabular-nums md:text-2xl">72</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section aria-labelledby="visit-detail-title" class="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-8">
+      <div class="flex flex-col gap-4 lg:col-span-4">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">By appointment</p>
+        <h2 id="visit-detail-title" class="font-display text-xl text-ink md:text-2xl">An hour with the <em>piece</em>.</h2>
+      </div>
+      <dl class="border-t border-line lg:col-span-7 lg:col-start-6">
+        <div class="grid gap-2 border-b border-line py-6 md:grid-cols-[12rem_1fr] md:gap-8">
+          <dt class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted md:pt-1.5">The hour</dt>
+          <dd class="text-ink">A watchmaker brings the pieces you asked to see and stays to answer questions about the movement.</dd>
+        </div>
+        <div class="grid gap-2 border-b border-line py-6 md:grid-cols-[12rem_1fr] md:gap-8">
+          <dt class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted md:pt-1.5">The fitting</dt>
+          <dd class="text-ink">The strap is cut to your wrist in Barenia calfskin or alligator. There is no charge for this.</dd>
+        </div>
+        <div class="grid gap-2 border-b border-line py-6 md:grid-cols-[12rem_1fr] md:gap-8">
+          <dt class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted md:pt-1.5">If you order</dt>
+          <dd class="text-ink">The piece is made for you in about fourteen weeks and delivered to the salon by hand.</dd>
+        </div>
+        <div class="grid gap-2 border-b border-line py-6 md:grid-cols-[12rem_1fr] md:gap-8">
+          <dt class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted md:pt-1.5">Service</dt>
+          <dd class="text-ink">Every piece returns to Le Locle for service. The first, after five years, is included.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="visit" aria-labelledby="visit-title" class="border-t border-line">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-8 px-6 py-16 text-center md:px-8 md:py-24">
+        <span aria-hidden="true" class="h-px w-16 bg-accent"></span>
+        <h2 id="visit-title" class="font-display text-2xl text-ink md:text-display">Come and see them in the <em>hand</em>.</h2>
+        <p class="max-w-md text-muted">Salons in Le Locle, Geneva, Paris, and Tokyo. Appointments are an hour long and there is nothing to sign.</p>
+        <a href="#" class="inline-flex min-h-12 w-full items-center justify-center border border-accent px-8 text-sm font-normal uppercase tracking-[var(--tracking-caps)] text-accent transition-colors duration-[400ms] ease-slow hover:bg-accent hover:text-accent-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none sm:w-auto">Request an appointment</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-12 md:flex-row md:items-start md:justify-between md:px-8">
+      <div class="flex flex-col gap-2">
+        <span class="text-xs font-normal uppercase tracking-[0.5em] text-muted">Maison</span>
+        <span class="font-display text-xl leading-none text-ink">Ardent</span>
+        <p class="mt-4 max-w-xs text-muted">Rue du Temple 14, 2400 Le Locle, Switzerland</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="grid grid-cols-2 gap-x-10">
+          <li><a href="#collection" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Collection</a></li>
+          <li><a href="#atelier" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">The atelier</a></li>
+          <li><a href="#visit" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Salons</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Service</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="border-t border-line">
+      <p class="mx-auto max-w-6xl px-6 py-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted md:px-8">© 2026 Maison Ardent SA</p>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

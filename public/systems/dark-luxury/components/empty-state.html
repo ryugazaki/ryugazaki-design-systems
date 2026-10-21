@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="saved-title" class="mx-auto flex max-w-lg flex-col items-center px-2 py-16 text-center md:py-24">
+    <h2 id="saved-title" class="font-display text-xl text-ink italic md:text-2xl">No saved pieces yet.</h2>
+    <span aria-hidden="true" class="mt-8 h-px w-16 bg-accent"></span>
+    <p class="mt-8 max-w-sm text-muted">Pieces you save stay here with their reference and price.</p>
+    <a href="#" class="mt-6 inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-muted decoration-1 underline-offset-8 transition-colors duration-[400ms] ease-slow hover:decoration-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Browse the collection</a>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-px border border-line bg-line md:grid-cols-4">
+    <article aria-labelledby="bento-hero" class="flex flex-col bg-bg md:col-span-2 md:row-span-2">
+      <div class="flex flex-1 items-center justify-center bg-surface px-6 py-10 md:py-12">
+        <svg aria-hidden="true" viewBox="0 0 320 320" class="w-full max-w-[300px]">
+          <rect x="300" y="150" width="12" height="20" class="fill-muted"/>
+          <circle cx="160" cy="160" r="150" class="fill-bg stroke-muted" stroke-width="1"/>
+          <circle cx="160" cy="160" r="140" class="fill-surface stroke-line" stroke-width="1"/>
+          <circle cx="160" cy="160" r="132" fill="none" class="stroke-muted" stroke-width="6" stroke-dasharray="0.75 13.073"/>
+          <circle cx="160" cy="160" r="122" fill="none" class="stroke-line" stroke-width="1"/>
+          <text x="160" y="84" text-anchor="middle" class="fill-ink font-display text-[22px]">XII</text>
+          <text x="226" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">III</text>
+          <text x="94" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">IX</text>
+          <circle cx="160" cy="218" r="24" fill="none" class="stroke-line" stroke-width="1"/>
+          <circle cx="160" cy="218" r="21" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 1.799"/>
+          <line x1="160" y1="218" x2="171" y2="201" class="stroke-accent" stroke-width="1"/>
+          <line x1="160" y1="160" x2="118" y2="116" class="stroke-ink" stroke-width="3"/>
+          <line x1="160" y1="160" x2="236" y2="126" class="stroke-ink" stroke-width="1.5"/>
+          <circle cx="160" cy="160" r="3.5" class="fill-accent"/>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-3 border-t border-line p-6 md:p-8">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 01.38, edition of 12</p>
+        <h3 id="bento-hero" class="font-display text-xl text-ink md:text-2xl">Calibre <em>One</em></h3>
+        <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
+          <p class="font-display text-lg whitespace-nowrap text-ink tabular-nums">CHF 48 000</p>
+          <a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-muted decoration-1 underline-offset-8 transition-colors duration-[400ms] ease-slow hover:decoration-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">View the piece</a>
+        </div>
+      </div>
+    </article>
+
+    <figure class="flex flex-col justify-between gap-8 bg-bg p-6 md:col-span-2 md:p-10">
+      <blockquote class="font-display text-lg text-ink italic md:text-xl">We make twelve of these and no more. That is how many we can make well.</blockquote>
+      <figcaption class="flex items-center gap-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">
+        <span aria-hidden="true" class="h-px w-10 bg-accent"></span>
+        Odile Ardent, founder
+      </figcaption>
+    </figure>
+
+    <article aria-labelledby="bento-nocturne" class="flex flex-col gap-6 bg-bg p-6">
+      <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 02.40</p>
+      <h3 id="bento-nocturne" class="font-display text-lg text-ink">Nocturne</h3>
+      <div class="mt-auto flex flex-col gap-1 border-t border-line pt-4">
+        <p class="font-display text-xl text-ink tabular-nums">40 mm</p>
+        <p class="text-muted">Steel, smoked dial. The largest case we make.</p>
+      </div>
+    </article>
+
+    <article aria-labelledby="bento-lune" class="flex flex-col gap-6 bg-bg p-6">
+      <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 06.37</p>
+      <h3 id="bento-lune" class="font-display text-lg text-ink">Lune</h3>
+      <ul class="mt-auto flex flex-col border-t border-line">
+        <li class="border-b border-line py-2 text-ink">Moon phase, one day out in 122 years</li>
+        <li class="border-b border-line py-2 text-ink">Small seconds at six</li>
+        <li class="py-2 text-ink">37 mm, white gold</li>
+      </ul>
+    </article>
+
+    <section aria-labelledby="bento-hours" class="grid gap-8 bg-bg p-6 md:col-span-4 md:grid-cols-[1fr_2fr] md:p-10">
+      <div class="flex flex-col gap-3">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Craftsmanship</p>
+        <h3 id="bento-hours" class="font-display text-xl text-ink"><span class="tabular-nums">212</span> hours at the bench</h3>
+        <p class="text-muted">Every Calibre One passes through four hands. This is where the time goes.</p>
+      </div>
+      <figure class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-4">
+          <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+            <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Movement</span>
+            <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 100%"></span>
+            <span class="w-14 text-right font-display text-base text-ink tabular-nums">96 h</span>
+          </li>
+          <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+            <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case</span>
+            <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 50%"></span>
+            <span class="w-14 text-right font-display text-base text-ink tabular-nums">48 h</span>
+          </li>
+          <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+            <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Dial</span>
+            <span aria-hidden="true" class="block h-0.5 bg-ink" style="width: 41.67%"></span>
+            <span class="w-14 text-right font-display text-base text-ink tabular-nums">40 h</span>
+          </li>
+          <li class="grid grid-cols-[7rem_1fr_auto] items-center gap-4">
+            <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Finishing</span>
+            <span aria-hidden="true" class="block h-0.5 bg-accent" style="width: 29.17%"></span>
+            <span class="w-14 text-right font-display text-base text-ink tabular-nums">28 h</span>
+          </li>
+        </ul>
+        <figcaption class="border-t border-line pt-3 text-muted">Bench hours per Calibre One, by stage. Finishing is done by one person.</figcaption>
+      </figure>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

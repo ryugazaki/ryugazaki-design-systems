@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-4xl flex-col gap-16">
+    <div class="max-w-xl">
+      <table class="w-full border-collapse text-left">
+        <caption class="pb-6 text-left">
+          <span class="block text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Specifications, Réf. AR 01.38</span>
+          <span class="mt-2 block font-display text-xl text-ink">Calibre <em>One</em></span>
+        </caption>
+        <tbody class="border-t border-line">
+          <tr class="border-b border-line">
+            <th scope="row" class="w-2/5 py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case</th>
+            <td class="py-4 align-baseline font-display text-base text-ink">18k white gold, 38 mm, 9.4 mm thick</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Movement</th>
+            <td class="py-4 align-baseline font-display text-base text-ink">Calibre A1, wound by hand</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Frequency</th>
+            <td class="py-4 align-baseline font-display text-base text-ink tabular-nums">21 600 vibrations an hour</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Power reserve</th>
+            <td class="py-4 align-baseline font-display text-base text-ink tabular-nums">72 hours</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Dial</th>
+            <td class="py-4 align-baseline font-display text-base text-ink">Grand feu enamel, painted numerals</td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-4 pr-6 align-baseline text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Edition</th>
+            <td class="py-4 align-baseline font-display text-base text-ink tabular-nums">12 pieces</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-2">
+        <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Ledger</p>
+        <h2 id="ledger-title" class="font-display text-xl text-ink">The 2026 collection</h2>
+      </div>
+      <div class="overflow-x-auto border-t border-line">
+        <table aria-labelledby="ledger-title" class="w-full min-w-[680px] border-collapse text-left">
+          <thead>
+            <tr class="border-b border-line">
+              <th scope="col" class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Reference</th>
+              <th scope="col" class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Piece</th>
+              <th scope="col" class="py-4 pr-6 text-right text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case, mm</th>
+              <th scope="col" class="py-4 pr-6 text-right text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Edition</th>
+              <th scope="col" class="py-4 pr-6 text-right text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Price, CHF</th>
+              <th scope="col" class="py-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 01.38</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Calibre One</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">38</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">12</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">48 000</td>
+              <td class="py-4"><span class="inline-flex border border-accent px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-accent">By appointment</span></td>
+            </tr>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 02.40</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Nocturne</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">40</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">40</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">21 500</td>
+              <td class="py-4"><span class="inline-flex border border-ink px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-ink">Available</span></td>
+            </tr>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 03.39</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Régulateur</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">39</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">20</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">36 000</td>
+              <td class="py-4"><span class="inline-flex border border-ink px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-ink">Available</span></td>
+            </tr>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 04.36</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Petite Seconde</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">36</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">60</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">16 800</td>
+              <td class="py-4"><span class="inline-flex border border-line px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">In the atelier</span></td>
+            </tr>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 05.41</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Tourbillon Ardent</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">41</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">5</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">128 000</td>
+              <td class="py-4"><span class="inline-flex border border-danger px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-danger">Waitlist closed</span></td>
+            </tr>
+            <tr class="border-b border-line">
+              <td class="py-4 pr-6 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-muted">AR 06.37</td>
+              <td class="py-4 pr-6 font-display text-base text-ink">Lune</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">37</td>
+              <td class="py-4 pr-6 text-right font-display text-base text-ink tabular-nums">18</td>
+              <td class="py-4 pr-6 text-right font-display text-base whitespace-nowrap text-ink tabular-nums">42 000</td>
+              <td class="py-4"><span class="inline-flex border border-ink px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] whitespace-nowrap text-ink">Available</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

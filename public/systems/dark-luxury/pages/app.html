@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line bg-bg">
+    <div class="mx-auto grid min-h-20 max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 md:px-8">
+      <div class="flex items-center">
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center gap-3 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <svg aria-hidden="true" viewBox="0 0 20 10" class="h-2.5 w-5" fill="none" stroke="currentColor" stroke-width="1"><path class="group-open:hidden" d="M0 2h20M0 8h14"/><path class="hidden group-open:block" d="M5 0l10 10M15 0L5 10"/></svg>
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 flex min-h-[calc(100svh-5rem)] flex-col justify-between border-t border-line bg-bg px-6 pt-6 pb-10">
+            <nav aria-label="Main">
+              <ul class="flex flex-col">
+                <li><a href="#" aria-current="page" class="flex min-h-14 items-center justify-between border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Collection <span aria-hidden="true" class="h-px w-8 bg-accent"></span></a></li>
+                <li><a href="#" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">The atelier</a></li>
+                <li><a href="#" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Salons</a></li>
+                <li><a href="#" class="flex min-h-14 items-center border-b border-line font-display text-xl text-ink focus-visible:outline-1 focus-visible:-outline-offset-1 focus-visible:outline-accent">Saved pieces</a></li>
+              </ul>
+            </nav>
+            <p class="pt-10 text-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Le Locle, Geneva, Paris, Tokyo</p>
+          </div>
+        </details>
+        <nav aria-label="Main" class="hidden md:block">
+          <ul class="flex items-center gap-8">
+            <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-accent decoration-1 underline-offset-8 focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Collection</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">The atelier</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <a href="#" class="flex min-h-11 flex-col items-center justify-center gap-0.5 text-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">
+        <span class="pl-[0.5em] text-xs font-normal uppercase tracking-[0.5em] text-muted">Maison</span>
+        <span class="font-display text-lg leading-none text-ink md:text-xl md:leading-none">Ardent</span>
+      </a>
+
+      <nav aria-label="Account" class="hidden justify-end md:flex">
+        <ul class="flex items-center gap-8">
+          <li><a href="#" class="inline-flex min-h-11 items-center text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Salons</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center gap-2 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Saved <span class="font-display text-base normal-case tracking-normal text-ink tabular-nums">2</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="page-title" class="mx-auto max-w-6xl px-6 pt-16 md:px-8 md:pt-24">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div class="flex flex-col gap-4">
+          <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">The 2026 collection</p>
+          <h1 id="page-title" class="font-display text-2xl text-ink md:text-display">The <em>collection</em></h1>
+        </div>
+        <p class="max-w-xs text-muted md:pb-3">Six references. Prices include Swiss VAT and the first service.</p>
+      </div>
+
+      <div class="mt-12 flex flex-col gap-6 border-y border-line py-4 lg:flex-row lg:items-center lg:justify-between">
+        <div role="group" aria-label="Filter by type" class="flex flex-wrap items-center gap-x-6 gap-y-1">
+          <button type="button" aria-pressed="true" class="inline-flex min-h-11 items-center px-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink underline decoration-accent decoration-1 underline-offset-8 focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-accent">All <span class="ml-2 font-display text-sm normal-case tracking-normal text-muted tabular-nums">6</span></button>
+          <button type="button" aria-pressed="false" class="inline-flex min-h-11 items-center px-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none">Time only <span class="ml-2 font-display text-sm normal-case tracking-normal tabular-nums">3</span></button>
+          <button type="button" aria-pressed="false" class="inline-flex min-h-11 items-center px-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted transition-colors duration-[400ms] ease-slow hover:text-ink focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none">Complications <span class="ml-2 font-display text-sm normal-case tracking-normal tabular-nums">3</span></button>
+        </div>
+        <div class="grid grid-cols-2 gap-6 lg:w-[26rem]">
+          <div class="flex flex-col gap-1">
+            <label for="metal" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case</label>
+            <div class="relative">
+              <select id="metal" name="metal" class="min-h-11 w-full cursor-pointer appearance-none border-0 border-b border-muted bg-transparent px-0 pt-1 pr-6 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+                <option class="bg-surface text-ink" selected>All metals</option>
+                <option class="bg-surface text-ink">Steel</option>
+                <option class="bg-surface text-ink">White gold</option>
+                <option class="bg-surface text-ink">Rose gold</option>
+                <option class="bg-surface text-ink">Platinum</option>
+              </select>
+              <svg aria-hidden="true" viewBox="0 0 16 10" class="pointer-events-none absolute top-1/2 right-0 h-2 w-3.5 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M1 1.5l7 7 7-7"/></svg>
+            </div>
+          </div>
+          <div class="flex flex-col gap-1">
+            <label for="sort" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Sort</label>
+            <div class="relative">
+              <select id="sort" name="sort" class="min-h-11 w-full cursor-pointer appearance-none border-0 border-b border-muted bg-transparent px-0 pt-1 pr-6 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+                <option class="bg-surface text-ink" selected>Reference</option>
+                <option class="bg-surface text-ink">Price</option>
+                <option class="bg-surface text-ink">Diameter</option>
+              </select>
+              <svg aria-hidden="true" viewBox="0 0 16 10" class="pointer-events-none absolute top-1/2 right-0 h-2 w-3.5 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M1 1.5l7 7 7-7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Pieces" class="mx-auto max-w-6xl px-6 pt-12 pb-16 md:px-8 md:pb-24">
+      <ul class="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 md:grid-cols-3">
+        <li class="flex flex-col bg-bg sm:col-span-2 md:row-span-2">
+          <article aria-labelledby="p-01" class="flex h-full flex-col">
+            <div class="relative flex flex-1 items-center justify-center bg-surface px-6 pt-20 pb-12">
+              <span class="absolute top-6 left-6 border border-accent px-3 py-1 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-accent">Shown below</span>
+              <svg aria-hidden="true" viewBox="0 0 320 320" class="w-full max-w-[340px]">
+                <rect x="300" y="150" width="12" height="20" class="fill-muted"/>
+                <circle cx="160" cy="160" r="150" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="160" cy="160" r="140" class="fill-surface stroke-line" stroke-width="1"/>
+                <circle cx="160" cy="160" r="132" fill="none" class="stroke-muted" stroke-width="6" stroke-dasharray="0.75 13.073"/>
+                <circle cx="160" cy="160" r="122" fill="none" class="stroke-line" stroke-width="1"/>
+                <text x="160" y="84" text-anchor="middle" class="fill-ink font-display text-[22px]">XII</text>
+                <text x="226" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">III</text>
+                <text x="94" y="167" text-anchor="middle" class="fill-ink font-display text-[22px]">IX</text>
+                <circle cx="160" cy="218" r="24" fill="none" class="stroke-line" stroke-width="1"/>
+                <circle cx="160" cy="218" r="21" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 1.799"/>
+                <line x1="160" y1="218" x2="171" y2="201" class="stroke-accent" stroke-width="1"/>
+                <line x1="160" y1="160" x2="118" y2="116" class="stroke-ink" stroke-width="3"/>
+                <line x1="160" y1="160" x2="236" y2="126" class="stroke-ink" stroke-width="1.5"/>
+                <circle cx="160" cy="160" r="3.5" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-3 border-t border-line p-6 md:p-8 lg:flex-row lg:items-end lg:justify-between">
+              <div class="flex flex-col gap-2">
+                <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 01.38, edition of 12</p>
+                <h2 id="p-01" class="font-display text-xl text-ink md:text-2xl"><a href="#piece" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Calibre <em>One</em></a></h2>
+              </div>
+              <p class="font-display text-lg whitespace-nowrap text-ink tabular-nums">CHF 48 000</p>
+            </div>
+          </article>
+        </li>
+
+        <li class="flex flex-col bg-bg">
+          <article aria-labelledby="p-02" class="flex h-full flex-col">
+            <div class="flex flex-1 items-center justify-center bg-surface px-6 py-8">
+              <svg aria-hidden="true" viewBox="0 0 200 200" class="w-full max-w-[160px]">
+                <rect x="78" y="0" width="44" height="200" class="fill-line"/>
+                <rect x="158" y="93" width="8" height="14" class="fill-muted"/>
+                <circle cx="100" cy="100" r="60" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="100" cy="100" r="52" class="fill-line stroke-line" stroke-width="1"/>
+                <circle cx="100" cy="100" r="45" fill="none" class="stroke-ink" stroke-width="6" stroke-dasharray="0.8 22.76"/>
+                <line x1="100" y1="100" x2="80" y2="84" class="stroke-ink" stroke-width="2"/>
+                <line x1="100" y1="100" x2="134" y2="112" class="stroke-ink" stroke-width="1"/>
+                <circle cx="100" cy="100" r="2" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-line p-6">
+              <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 02.40</p>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 id="p-02" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Nocturne</a></h2>
+                <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 21 500</p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="flex flex-col bg-bg">
+          <article aria-labelledby="p-03" class="flex h-full flex-col">
+            <div class="flex flex-1 items-center justify-center bg-surface px-6 py-8">
+              <svg aria-hidden="true" viewBox="0 0 200 200" class="w-full max-w-[160px]">
+                <rect x="78" y="0" width="44" height="200" class="fill-line"/>
+                <rect x="158" y="93" width="8" height="14" class="fill-muted"/>
+                <circle cx="100" cy="100" r="60" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="100" cy="100" r="52" class="fill-surface stroke-line" stroke-width="1"/>
+                <circle cx="100" cy="100" r="47" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 4.522"/>
+                <circle cx="100" cy="76" r="13" fill="none" class="stroke-line" stroke-width="1"/>
+                <line x1="100" y1="76" x2="93" y2="68" class="stroke-ink" stroke-width="1.5"/>
+                <circle cx="100" cy="126" r="11" fill="none" class="stroke-line" stroke-width="1"/>
+                <line x1="100" y1="126" x2="106" y2="119" class="stroke-accent" stroke-width="0.75"/>
+                <line x1="100" y1="100" x2="141" y2="82" class="stroke-ink" stroke-width="1"/>
+                <circle cx="100" cy="100" r="2" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-line p-6">
+              <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 03.39</p>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 id="p-03" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Régulateur</a></h2>
+                <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 36 000</p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="flex flex-col bg-bg">
+          <article aria-labelledby="p-04" class="flex h-full flex-col">
+            <div class="flex flex-1 items-center justify-center bg-surface px-6 py-8">
+              <svg aria-hidden="true" viewBox="0 0 200 200" class="w-full max-w-[160px]">
+                <rect x="78" y="0" width="44" height="200" class="fill-line"/>
+                <rect x="152" y="93" width="8" height="14" class="fill-muted"/>
+                <circle cx="100" cy="100" r="54" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="100" cy="100" r="47" class="fill-surface stroke-line" stroke-width="1"/>
+                <circle cx="100" cy="100" r="41" fill="none" class="stroke-ink" stroke-width="5" stroke-dasharray="0.8 20.67"/>
+                <circle cx="100" cy="122" r="10" fill="none" class="stroke-line" stroke-width="1"/>
+                <line x1="100" y1="122" x2="94" y2="115" class="stroke-accent" stroke-width="0.75"/>
+                <line x1="100" y1="100" x2="120" y2="84" class="stroke-ink" stroke-width="2"/>
+                <line x1="100" y1="100" x2="68" y2="92" class="stroke-ink" stroke-width="1"/>
+                <circle cx="100" cy="100" r="2" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-line p-6">
+              <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 04.36</p>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 id="p-04" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Petite Seconde</a></h2>
+                <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 16 800</p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="flex flex-col bg-bg">
+          <article aria-labelledby="p-05" class="flex h-full flex-col">
+            <div class="flex flex-1 items-center justify-center bg-surface px-6 py-8">
+              <svg aria-hidden="true" viewBox="0 0 200 200" class="w-full max-w-[160px]">
+                <rect x="78" y="0" width="44" height="200" class="fill-line"/>
+                <rect x="162" y="93" width="8" height="14" class="fill-muted"/>
+                <circle cx="100" cy="100" r="64" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="100" cy="100" r="56" class="fill-surface stroke-line" stroke-width="1"/>
+                <circle cx="100" cy="100" r="50" fill="none" class="stroke-ink" stroke-width="5" stroke-dasharray="0.8 25.38"/>
+                <circle cx="100" cy="128" r="16" class="fill-bg stroke-muted" stroke-width="1"/>
+                <path d="M100 113v30M87 121l26 14M87 135l26-14" fill="none" class="stroke-muted" stroke-width="0.75"/>
+                <circle cx="100" cy="128" r="3" fill="none" class="stroke-accent" stroke-width="0.75"/>
+                <line x1="100" y1="100" x2="76" y2="78" class="stroke-ink" stroke-width="2"/>
+                <line x1="100" y1="100" x2="140" y2="86" class="stroke-ink" stroke-width="1"/>
+                <circle cx="100" cy="100" r="2" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-line p-6">
+              <div class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+                <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 05.41</p>
+                <span class="border border-danger px-2 py-0.5 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-danger">Waitlist closed</span>
+              </div>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 id="p-05" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Tourbillon Ardent</a></h2>
+                <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 128 000</p>
+              </div>
+            </div>
+          </article>
+        </li>
+
+        <li class="flex flex-col bg-bg">
+          <article aria-labelledby="p-06" class="flex h-full flex-col">
+            <div class="flex flex-1 items-center justify-center bg-surface px-6 py-8">
+              <svg aria-hidden="true" viewBox="0 0 200 200" class="w-full max-w-[160px]">
+                <rect x="78" y="0" width="44" height="200" class="fill-line"/>
+                <rect x="156" y="93" width="8" height="14" class="fill-muted"/>
+                <circle cx="100" cy="100" r="58" class="fill-bg stroke-muted" stroke-width="1"/>
+                <circle cx="100" cy="100" r="50" class="fill-surface stroke-line" stroke-width="1"/>
+                <circle cx="100" cy="100" r="45" fill="none" class="stroke-muted" stroke-width="3" stroke-dasharray="0.4 4.312"/>
+                <path d="M82 84a18 18 0 0 1 36 0z" class="fill-bg stroke-line" stroke-width="1"/>
+                <circle cx="104" cy="76" r="6" class="fill-ink"/>
+                <circle cx="100" cy="124" r="10" fill="none" class="stroke-line" stroke-width="1"/>
+                <line x1="100" y1="124" x2="106" y2="117" class="stroke-accent" stroke-width="0.75"/>
+                <line x1="100" y1="100" x2="122" y2="88" class="stroke-ink" stroke-width="2"/>
+                <line x1="100" y1="100" x2="64" y2="104" class="stroke-ink" stroke-width="1"/>
+                <circle cx="100" cy="100" r="2" class="fill-accent"/>
+              </svg>
+            </div>
+            <div class="flex flex-col gap-2 border-t border-line p-6">
+              <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 06.37</p>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h2 id="p-06" class="font-display text-lg text-ink"><a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent">Lune</a></h2>
+                <p class="font-display text-base whitespace-nowrap text-ink tabular-nums">CHF 42 000</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="piece" aria-labelledby="piece-title" class="border-t border-line">
+      <div class="mx-auto grid max-w-6xl gap-16 px-6 py-16 md:px-8 md:py-24 lg:grid-cols-12 lg:gap-8">
+        <div class="flex flex-col gap-8 lg:col-span-6">
+          <div class="flex flex-col gap-4">
+            <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Réf. AR 01.38</p>
+            <h2 id="piece-title" class="font-display text-xl text-ink md:text-2xl">Calibre <em>One</em></h2>
+            <p class="font-display text-lg text-ink tabular-nums">CHF 48 000</p>
+          </div>
+          <p class="max-w-md text-ink">The first watch we made, and still the one we are asked about most. A plain enamel dial, three Roman numerals, and a small seconds that sits a little low.</p>
+          <dl class="grid grid-cols-[minmax(7rem,2fr)_3fr] border-t border-line">
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Case</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink">18k white gold, 38 mm, 9.4 mm thick</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Movement</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink">Calibre A1, wound by hand</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Frequency</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink tabular-nums">21 600 vibrations an hour</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Power reserve</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink tabular-nums">72 hours</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Dial</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink">Grand feu enamel, painted numerals</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Bench hours</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink tabular-nums">212</dd>
+            <dt class="border-b border-line py-4 pr-4 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Edition</dt>
+            <dd class="border-b border-line py-4 font-display text-base text-ink tabular-nums">12 pieces</dd>
+          </dl>
+        </div>
+
+        <div class="lg:col-span-5 lg:col-start-8">
+          <form id="appointment" aria-labelledby="form-title" class="flex flex-col gap-8 border border-line bg-surface p-6 md:p-10" novalidate>
+            <div class="flex flex-col gap-3">
+              <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Private viewing</p>
+              <h2 id="form-title" class="font-display text-xl text-ink">See it in the <em>hand</em></h2>
+              <p class="text-muted">An hour with a watchmaker. There is nothing to sign.</p>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="a-name" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Full name</label>
+              <input id="a-name" name="name" type="text" autocomplete="name" class="min-h-11 w-full border-0 border-b border-muted bg-transparent px-0 pt-2 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="a-email" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Email</label>
+              <input id="a-email" name="email" type="email" autocomplete="email" aria-describedby="a-email-hint" class="min-h-11 w-full border-0 border-b border-muted bg-transparent px-0 pt-2 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+              <p id="a-email-hint" class="text-muted">The salon replies within two working days.</p>
+            </div>
+
+            <div class="grid gap-8 sm:grid-cols-2 sm:gap-6">
+              <div class="flex flex-col gap-2">
+                <label for="a-salon" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Salon</label>
+                <div class="relative">
+                  <select id="a-salon" name="salon" class="min-h-11 w-full cursor-pointer appearance-none border-0 border-b border-muted bg-transparent px-0 pt-2 pr-6 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+                    <option class="bg-surface text-ink">Le Locle</option>
+                    <option class="bg-surface text-ink" selected>Geneva</option>
+                    <option class="bg-surface text-ink">Paris</option>
+                    <option class="bg-surface text-ink">Tokyo</option>
+                  </select>
+                  <svg aria-hidden="true" viewBox="0 0 16 10" class="pointer-events-none absolute top-1/2 right-0 h-2 w-3.5 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M1 1.5l7 7 7-7"/></svg>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="a-date" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Date</label>
+                <div class="relative">
+                  <select id="a-date" name="date" class="min-h-11 w-full cursor-pointer appearance-none border-0 border-b border-muted bg-transparent px-0 pt-2 pr-6 pb-[9px] text-base text-ink transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none">
+                    <option class="bg-surface text-ink">Tue 3 Nov, 15:00</option>
+                    <option class="bg-surface text-ink" selected>Thu 5 Nov, 11:00</option>
+                    <option class="bg-surface text-ink">Fri 6 Nov, 16:00</option>
+                    <option class="bg-surface text-ink">Tue 10 Nov, 11:00</option>
+                  </select>
+                  <svg aria-hidden="true" viewBox="0 0 16 10" class="pointer-events-none absolute top-1/2 right-0 h-2 w-3.5 -translate-y-1/2 text-ink" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M1 1.5l7 7 7-7"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="a-note" class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">A note for the watchmaker</label>
+              <textarea id="a-note" name="note" rows="3" class="w-full resize-y border-0 border-b border-muted bg-transparent px-0 pt-2 pb-[9px] text-base text-ink placeholder:text-muted transition-colors duration-[400ms] ease-slow focus:border-b-2 focus:border-accent focus:pb-2 focus:outline-none motion-reduce:transition-none" placeholder="Optional. Wrist size, or other pieces to bring"></textarea>
+            </div>
+
+            <label class="flex min-h-11 cursor-pointer items-center gap-4 text-ink">
+              <span class="relative inline-flex size-3.5 shrink-0">
+                <input type="checkbox" name="letter" class="peer m-0 size-3.5 cursor-pointer appearance-none border border-muted bg-transparent transition-colors duration-[400ms] ease-slow checked:border-accent checked:bg-accent focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">
+                <svg aria-hidden="true" viewBox="0 0 14 14" class="pointer-events-none absolute inset-0 hidden size-3.5 text-accent-ink peer-checked:block" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3.5 7.2l2.3 2.3 4.7-5"/></svg>
+              </span>
+              <span>Send me the annual collection letter</span>
+            </label>
+
+            <div class="flex flex-col gap-4 border-t border-line pt-8">
+              <button type="submit" class="inline-flex min-h-12 w-full items-center justify-center border border-accent px-8 text-sm font-normal uppercase tracking-[var(--tracking-caps)] text-accent transition-colors duration-[400ms] ease-slow hover:bg-accent hover:text-accent-ink focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-accent motion-reduce:transition-none">Request an appointment</button>
+              <p class="text-center text-muted">For the Calibre One, Réf. AR 01.38</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 md:flex-row md:items-center md:justify-between md:px-8">
+      <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">© 2026 Maison Ardent SA, Le Locle</p>
+      <p class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Prices in Swiss francs</p>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

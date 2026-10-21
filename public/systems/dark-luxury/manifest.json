@@ -1,0 +1,208 @@
+{
+  "slug": "dark-luxury",
+  "number": 6,
+  "name": "Dark Luxury",
+  "tagline": "Black, bone, and a little brass. Nothing hurried.",
+  "description": "A dark-first system for premium brands. High-contrast Didone headlines, a geometric sans in light weights, hairline rules, and a lot of empty space. Brass appears in small doses and never as a gradient. Motion is slow and quiet.",
+  "tags": [
+    "dark",
+    "premium",
+    "editorial",
+    "commerce",
+    "minimal"
+  ],
+  "defaultMode": "dark",
+  "useCases": [
+    "luxury and fashion",
+    "hospitality",
+    "fine products",
+    "portfolio for high-end studios"
+  ],
+  "fonts": [
+    {
+      "family": "Bodoni Moda",
+      "role": "headlines, numerals, and prices; use optical sizing",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap"
+    },
+    {
+      "family": "Jost",
+      "role": "body, labels, navigation",
+      "weights": [
+        300,
+        400,
+        500
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.618,
+    "steps": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "15px",
+      "lg": "24px",
+      "xl": "39px",
+      "2xl": "63px",
+      "display": "102px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#F2EEE6",
+      "dark": "#0A0A0A",
+      "role": "background"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FAF8F3",
+      "dark": "#121211",
+      "role": "panels and fields"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#14130F",
+      "dark": "#E9E4D8",
+      "role": "bone text"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#6E695E",
+      "dark": "#8C877C",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#CFC8B8",
+      "dark": "#2A2826",
+      "role": "hairlines"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#7D6440",
+      "dark": "#A88B5C",
+      "role": "brass details, primary action"
+    },
+    {
+      "token": "--color-accent-ink",
+      "light": "#F2EEE6",
+      "dark": "#0A0A0A",
+      "role": "text on brass"
+    },
+    {
+      "token": "--color-danger",
+      "light": "#8E2A20",
+      "dark": "#D98A7E",
+      "role": "errors"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Use Jost uppercase at 12 or 13px with 0.24em tracking for labels and navigation",
+      "Set headlines in Bodoni Moda with optical sizing; use italics for one word of emphasis",
+      "Separate everything with 0.5px or 1px hairlines in line color",
+      "Leave at least 96px of vertical space between sections on desktop and 64px on mobile",
+      "Animate with slow fades and small vertical moves, 400ms, never springs"
+    ],
+    "dont": [
+      "Do not use gold gradients, metallic effects, or glow",
+      "Do not use rounded corners",
+      "Do not use bold weights for body text",
+      "Do not crowd a screen with more than one call to action",
+      "Do not use exclamation marks or urgency language such as \"limited time\""
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Rectangular, uppercase Jost with wide tracking. Primary is a brass outline that fills slowly on hover; secondary is bone text with a hairline underline."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Underline-only fields with uppercase labels; focus thickens the line to brass. Error adds a small italic serif message."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Underline-only select with a fine chevron drawn in SVG."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "14px square hairline checkbox with a brass fill. Switch is a thin line track with a small square thumb."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Uppercase micro labels with a hairline frame, no fills."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "Piece card: tall image area drawn with layered tokens, serif name, reference number in small caps, price in serif."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Centered wordmark in the serif, links split left and right in tracked caps. Mobile menu is a details disclosure that opens a full-height panel."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Full-bleed dark overlay, centered panel with hairline frame, serif title, generous padding."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Specifications table: two columns, hairline rows, labels in tracked caps, values in serif."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Editorial collection grid: one oversized piece 2x2, a quote, two smaller pieces, and a craftsmanship note."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "A single serif line in italics, a hairline, and a quiet text action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "Thin bar with a brass hairline on top, uppercase label and short message."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Collection",
+      "file": "pages/app.html"
+    }
+  ]
+}

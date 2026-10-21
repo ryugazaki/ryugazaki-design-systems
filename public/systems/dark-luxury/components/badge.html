@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Luxury / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Jost:wght@300;400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE6;
+  --color-surface: #FAF8F3;
+  --color-ink: #14130F;
+  --color-muted: #6E695E;
+  --color-line: #CFC8B8;
+  --color-accent: #7D6440;
+  --color-accent-ink: #F2EEE6;
+  --color-danger: #8E2A20;
+
+  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-body: "Jost", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.6;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.75;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 2.4375rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.9375rem;
+  --text-2xl--line-height: 1;
+  --text-display: 6.375rem;
+  --text-display--line-height: 0.92;
+
+  --tracking-caps: 0.24em;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-slow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --default-transition-duration: 400ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0A0A0A;
+    --color-surface: #121211;
+    --color-ink: #E9E4D8;
+    --color-muted: #8C877C;
+    --color-line: #2A2826;
+    --color-accent: #A88B5C;
+    --color-accent-ink: #0A0A0A;
+    --color-danger: #D98A7E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-12">
+    <section class="flex flex-col gap-6">
+      <p class="border-b border-line pb-3 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Status</p>
+      <ul class="flex flex-wrap items-center gap-4">
+        <li><span class="inline-flex items-center border border-line px-3 py-1.5 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">In the atelier</span></li>
+        <li><span class="inline-flex items-center border border-accent px-3 py-1.5 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-accent">2026 collection</span></li>
+        <li>
+          <span class="inline-flex items-center gap-2 border border-ink px-3 py-1.5 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-ink">
+            <svg aria-hidden="true" viewBox="0 0 10 10" class="size-2.5" fill="none" stroke="currentColor" stroke-width="1"><path d="M1.5 5.2l2.2 2.2L8.5 2.5"/></svg>
+            Available
+          </span>
+        </li>
+        <li><span class="inline-flex items-center border border-danger px-3 py-1.5 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-danger">Waitlist closed</span></li>
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <p class="border-b border-line pb-3 text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">Edition mark</p>
+      <div class="flex flex-wrap items-center gap-6">
+        <span class="inline-flex items-baseline gap-2 border border-accent px-3 py-1 outline-1 outline-offset-2 outline-line">
+          <span class="text-xs font-normal uppercase tracking-[var(--tracking-caps)] text-muted">No.</span>
+          <span class="font-display text-lg text-ink tabular-nums">04</span>
+          <span class="font-display text-base italic text-muted">of 12</span>
+        </span>
+        <p class="max-w-xs text-muted">Each limited piece carries its number. The double hairline is reserved for this mark.</p>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
