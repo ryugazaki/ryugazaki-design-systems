@@ -10,7 +10,7 @@ import { VIEWPORTS } from './preview-frame';
         @for (width of viewports; track width) {
           <button
             type="button"
-            class="-ml-px min-h-11 border border-ink px-2.5 first:ml-0"
+            class="-ml-px min-h-11 min-w-11 border border-ink px-2.5 first:ml-0"
             [class.bg-ink]="viewport() === width"
             [class.text-paper]="viewport() === width"
             [attr.aria-pressed]="viewport() === width"
