@@ -85,11 +85,11 @@
         <span class="pb-2 text-ink">jobs/s<br><span class="text-xs text-muted dark:text-ink/60">all queues, prod</span></span>
       </p>
       <div class="mt-auto flex flex-col gap-1">
-        <p class="sr-only">Throughput over the last 15 minutes ranged from 118 to 171 jobs per second and is now 157.</p>
-        <p aria-hidden="true" class="overflow-hidden text-xl leading-none tracking-[0.1em] whitespace-nowrap text-accent">▅▆▆▇█▇▆▃▃▄▅▅▆▇▆</p>
+        <p class="sr-only">Throughput over the last 15 minutes was 171 jobs per second at 13:47, fell to 118 at 13:48 when webhooks.out stalled, and has climbed back to 157.</p>
+        <p aria-hidden="true" class="flex justify-between text-lg leading-none text-accent lg:text-xl"><span>█</span><span>▁</span><span>▂</span><span>▂</span><span>▃</span><span>▄</span><span>▄</span><span>▄</span><span>▅</span><span>▅</span><span>▅</span><span>▆</span><span>▆</span><span>▆</span><span>▆</span><span>▆</span></p>
         <p aria-hidden="true" class="flex justify-between text-xs text-muted dark:text-ink/60"><span>13:47</span><span>13:55</span><span>14:02</span></p>
       </div>
-      <p class="border-t border-line pt-3 text-xs text-ink"><span class="font-bold text-amber">[warn]</span> Dip at 13:48 is webhooks.out stalling.</p>
+      <p class="border-t border-line pt-3 text-xs text-ink"><span class="font-bold text-amber">[warn]</span> Drop at 13:48 is webhooks.out stalling at 0 jobs/s.</p>
     </section>
 
     <section aria-labelledby="depth-title" class="relative flex flex-col gap-3 border border-line bg-surface px-4 pt-6 pb-4 md:col-span-2">
