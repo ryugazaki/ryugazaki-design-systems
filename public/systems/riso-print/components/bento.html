@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-4">
+    <article aria-labelledby="poster-title" class="flex flex-col border-2 border-ink bg-surface md:col-span-2 md:row-span-2">
+      <div aria-hidden="true" class="relative aspect-[5/4] overflow-hidden border-b-2 border-ink bg-bg">
+        <div class="absolute left-[8%] top-[8%] aspect-square w-[62%] rounded-full bg-blue mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-[8%] right-[8%] aspect-square w-[56%] bg-pink mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-[12%] left-[10%] h-[18%] w-[40%] bg-halftone text-blue"></div>
+        <div class="absolute right-[10%] top-[10%] aspect-square w-[22%] rounded-full bg-halftone text-pink"></div>
+      </div>
+      <div class="flex flex-col gap-2 p-4 md:p-5">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Poster, A3, two colour</p>
+        <h3 id="poster-title" class="font-display text-xl font-black uppercase leading-none font-stretch-[125%] md:font-stretch-[140%]">Two inks cross</h3>
+        <p class="text-sm text-ink">Blue printed over pink makes a violet we never mix. 50 copies on cream 120 gsm cost $16.00 with masters.</p>
+      </div>
+    </article>
+
+    <article aria-labelledby="runs-title" class="flex items-stretch gap-4 border-2 border-ink bg-surface p-4 md:col-span-2">
+      <div aria-hidden="true" class="w-20 shrink-0 self-stretch rounded-full bg-halftone text-blue md:w-28"></div>
+      <div class="flex min-w-0 flex-1 flex-col gap-3">
+        <div>
+          <h3 id="runs-title" class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Runs printed in 2026</h3>
+          <p class="font-display text-2xl font-black leading-none tabular-nums font-stretch-[130%]">412</p>
+        </div>
+        <figure class="flex flex-col gap-1.5">
+          <div role="img" aria-label="Print runs per quarter in 2026: Q1 88, Q2 104, Q3 131, Q4 89 so far." class="flex h-16 items-end gap-2 border-b-2 border-ink">
+            <span class="h-[67%] flex-1 bg-blue"></span>
+            <span class="h-[79%] flex-1 bg-blue"></span>
+            <span class="h-full flex-1 bg-blue"></span>
+            <span class="h-[68%] flex-1 bg-pink"></span>
+          </div>
+          <figcaption class="grid grid-cols-4 gap-2 text-center text-xs text-muted"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4 so far</span></figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <figure class="flex flex-col justify-between gap-4 border-2 border-ink bg-surface p-4">
+      <blockquote class="text-base text-ink">"The pink came out louder than my screen promised. That is the whole point."</blockquote>
+      <figcaption class="text-xs text-muted">Jun Park, Tidepool notes</figcaption>
+    </figure>
+
+    <article aria-labelledby="fair-title" class="relative flex flex-col gap-3 border-2 border-ink bg-bg p-4">
+      <div aria-hidden="true" class="absolute right-0 top-0 size-6 bg-pink"></div>
+      <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Print fair</p>
+      <h3 id="fair-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[125%]">Sat 14 Nov</h3>
+      <p class="text-sm text-ink">10:00 to 17:00, Canal Street warehouse. 60 tables.</p>
+      <a href="#" class="mt-auto inline-flex min-h-11 items-center justify-center border-2 border-ink px-3 text-sm font-bold text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">Book a table, $40</a>
+    </article>
+
+    <section aria-labelledby="ink-title" class="flex flex-col gap-4 border-2 border-ink bg-surface p-4 md:col-span-4 md:flex-row md:items-center md:justify-between">
+      <h3 id="ink-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[125%]">The ink drawer</h3>
+      <ul class="grid grid-cols-1 gap-3 sm:grid-cols-3 md:gap-8">
+        <li class="flex items-center gap-3"><span aria-hidden="true" class="size-10 shrink-0 bg-blue"></span><span class="text-sm text-ink"><span class="block font-bold">Riso blue</span>Type and solid fills</span></li>
+        <li class="flex items-center gap-3"><span aria-hidden="true" class="size-10 shrink-0 bg-pink"></span><span class="text-sm text-ink"><span class="block font-bold">Fluoro pink</span>Shapes and stickers</span></li>
+        <li class="flex items-center gap-3"><span aria-hidden="true" class="relative size-10 shrink-0"><span class="absolute left-0 top-0 size-7 bg-blue mix-blend-multiply dark:mix-blend-screen"></span><span class="absolute bottom-0 right-0 size-7 bg-pink mix-blend-multiply dark:mix-blend-screen"></span></span><span class="text-sm text-ink"><span class="block font-bold">Both</span>A third colour where they cross</span></li>
+      </ul>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,218 @@
+{
+  "slug": "riso-print",
+  "number": 8,
+  "name": "Riso Print",
+  "tagline": "Two inks, one pass, happy accidents on purpose.",
+  "description": "Borrowed from the risograph: a cream paper ground, two spot inks that overprint into a third color, halftone texture, and type that is slightly off register. It feels handmade and loud without being messy, because the grid underneath stays strict.",
+  "tags": [
+    "light",
+    "playful",
+    "print",
+    "creative",
+    "editorial"
+  ],
+  "defaultMode": "light",
+  "useCases": [
+    "zines and small publishers",
+    "events and festivals",
+    "creative studios",
+    "posters and campaign pages"
+  ],
+  "fonts": [
+    {
+      "family": "Anybody",
+      "role": "display headlines; use font-stretch 130 to 150 percent",
+      "weights": [
+        500,
+        700,
+        900
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
+    },
+    {
+      "family": "Courier Prime",
+      "role": "body, labels, prices",
+      "weights": [
+        400,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.5,
+    "steps": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "24px",
+      "xl": "36px",
+      "2xl": "54px",
+      "display": "72px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#F4EFE4",
+      "dark": "#16151F",
+      "role": "paper"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FBF8F1",
+      "dark": "#1F1D2B",
+      "role": "cards and fields"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#1B1A33",
+      "dark": "#F1ECDF",
+      "role": "text and key lines"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#5B5870",
+      "dark": "#B4AFC2",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#1B1A33",
+      "dark": "#F1ECDF",
+      "role": "rules and control edges"
+    },
+    {
+      "token": "--color-blue",
+      "light": "#2A4BCB",
+      "dark": "#6F8CFF",
+      "role": "riso blue ink, primary fills"
+    },
+    {
+      "token": "--color-pink",
+      "light": "#FF48B0",
+      "dark": "#FF5DBA",
+      "role": "fluoro pink ink, fills and shapes only, never text"
+    },
+    {
+      "token": "--color-blue-ink",
+      "light": "#FBF8F1",
+      "dark": "#16151F",
+      "role": "text on blue"
+    },
+    {
+      "token": "--color-pink-ink",
+      "light": "#1B1A33",
+      "dark": "#16151F",
+      "role": "text on pink"
+    }
+  ],
+  "allowedGradients": [
+    {
+      "pattern": "bg-halftone",
+      "reason": "halftone dot texture that imitates a riso screen, used only on decorative shapes"
+    }
+  ],
+  "rules": {
+    "do": [
+      "Overprint pink and blue shapes with mix-blend-multiply so their overlap prints a third color",
+      "Offset one display headline layer by 2 to 4px in the second ink to fake misregistration, with the duplicate aria-hidden",
+      "Use the halftone utility only on decorative shapes, never behind text",
+      "Set display type in Anybody at wide widths and body in Courier Prime",
+      "Keep the grid strict so the playful ink effects read as intentional"
+    ],
+    "dont": [
+      "Do not use pink as a text color",
+      "Do not use more than the two spot inks plus ink and paper",
+      "Do not round corners except on circular stickers and pills",
+      "Do not use shadows; depth comes from overprint and offset",
+      "Do not put texture behind body copy"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Primary is a blue fill with paper text and a pink block offset 3px behind it (overprinting where they meet). Secondary is an ink outline; ghost is an underlined text link."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Paper field with a 2px ink edge, typewriter label, and an error state with a pink marker block beside a blue-ink message."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Ink-edged select with a hand-cut triangle marker."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Square checkbox that fills blue with a paper check. Switch is a pill track with a pink knob overprinting the blue track when on."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Pill stickers in blue, pink with ink text, outline, and one rotated sticker per screen."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "A zine card: drawn cover with overprinting shapes, title in Anybody, page count and price in typewriter."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Wordmark with a misregistered second layer, links in typewriter, a blue order button. Mobile menu is a details disclosure on paper."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Paper sheet with an ink edge and a pink corner block, title in Anybody, two actions."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Price list: stock, size, one color, two color, minimum run, ruled with ink lines, prices right-aligned."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Poster wall: 2x2 overprint poster tile, a halftone shape tile, a quote, a fair date tile, and an ink swatch tile."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "An empty tray drawn with two offset outlines, one line of copy, one blue action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "Paper strip with a blue or pink square and a typewriter message."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Order a print run",
+      "file": "pages/app.html"
+    }
+  ]
+}

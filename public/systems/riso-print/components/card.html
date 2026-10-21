@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col gap-10 md:flex-row md:items-start">
+    <article aria-labelledby="zine-1" class="flex w-full max-w-sm flex-col border-2 border-ink bg-surface">
+      <div aria-hidden="true" class="relative aspect-[4/5] overflow-hidden border-b-2 border-ink bg-bg">
+        <div class="absolute left-[12%] top-[10%] aspect-square w-[58%] rounded-full bg-blue mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-[14%] right-[10%] h-[46%] w-[52%] bg-pink mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-[8%] left-[8%] aspect-square w-[34%] rounded-full bg-halftone text-blue"></div>
+        <div class="absolute right-[8%] top-[8%] h-[6%] w-[30%] bg-pink"></div>
+      </div>
+      <div class="flex flex-col gap-3 p-4">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Mira Okonkwo</p>
+        <h3 id="zine-1" class="font-display text-lg font-black uppercase leading-none font-stretch-[130%]">Small Hours, issue 3</h3>
+        <p class="text-sm text-ink">Night buses and the people who drive them. Drawn on the 41 between midnight and five.</p>
+        <dl class="grid grid-cols-3 border-y-2 border-ink text-sm">
+          <div class="flex flex-col gap-0.5 py-2 pr-2"><dt class="text-xs text-muted">Pages</dt><dd class="font-bold tabular-nums">24</dd></div>
+          <div class="flex flex-col gap-0.5 border-l-2 border-ink px-2 py-2"><dt class="text-xs text-muted">Inks</dt><dd class="font-bold">Blue, pink</dd></div>
+          <div class="flex flex-col gap-0.5 border-l-2 border-ink py-2 pl-2 text-right"><dt class="text-xs text-muted">Price</dt><dd class="font-bold tabular-nums">$8.00</dd></div>
+        </dl>
+        <div class="flex items-center justify-between gap-3">
+          <span class="inline-flex min-h-7 items-center rounded-full border-2 border-ink px-3 text-sm font-bold text-ink">32 left</span>
+          <button type="button" class="inline-flex min-h-11 items-center justify-center border-2 border-ink px-4 text-base font-bold text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">Add to bag</button>
+        </div>
+      </div>
+    </article>
+
+    <article aria-labelledby="zine-2" class="flex w-full max-w-sm items-stretch border-2 border-ink bg-surface">
+      <div aria-hidden="true" class="relative w-24 shrink-0 overflow-hidden border-r-2 border-ink bg-bg">
+        <div class="absolute -left-3 top-3 size-16 rounded-full bg-pink mix-blend-multiply dark:mix-blend-screen"></div>
+        <div class="absolute bottom-3 left-6 size-14 bg-blue mix-blend-multiply dark:mix-blend-screen"></div>
+      </div>
+      <div class="flex min-w-0 flex-1 flex-col gap-1.5 p-3">
+        <h3 id="zine-2" class="font-display text-base font-black uppercase leading-tight font-stretch-[125%]">Tidepool notes</h3>
+        <p class="text-sm text-muted">12 pages, blue only, kraft 110 gsm</p>
+        <p class="mt-auto flex items-baseline justify-between gap-2 text-sm"><span class="text-muted">Price</span><span class="font-bold tabular-nums text-ink">$5.00</span></p>
+      </div>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

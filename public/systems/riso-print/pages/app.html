@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Order a print run</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b-2 border-ink bg-bg">
+    <div class="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-8">
+      <a href="#" class="inline-flex min-h-11 items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">
+        <span class="relative pb-[2px] pr-[3px] font-display text-base font-black uppercase leading-none font-stretch-[130%] lg:text-lg lg:font-stretch-[145%]">
+          <span aria-hidden="true" class="absolute left-[3px] top-[2px] whitespace-nowrap text-blue">Overprint Press</span>
+          <span class="relative whitespace-nowrap text-ink">Overprint Press</span>
+        </span>
+      </a>
+      <nav aria-label="Account" class="hidden md:block">
+        <ul class="flex items-center gap-4 lg:gap-6">
+          <li><a href="#" class="inline-flex min-h-11 items-center text-base text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">Price list</a></li>
+          <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center text-base font-bold text-ink underline decoration-2 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">New order</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-base text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">Your orders, 2</a></li>
+        </ul>
+      </nav>
+      <details class="group md:hidden">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 px-1 text-base font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+          <span class="group-open:hidden">Menu</span><span class="hidden group-open:inline">Close</span>
+          <svg aria-hidden="true" viewBox="0 0 16 12" class="h-3 w-4 fill-ink group-open:rotate-180"><path d="M0.6 1.2 15.4 0.4 8.4 11.6Z"/></svg>
+        </summary>
+        <div class="absolute inset-x-0 top-full z-20 border-b-2 border-ink bg-bg p-4">
+          <nav aria-label="Account, mobile">
+            <ul class="flex flex-col border-t-2 border-ink">
+              <li><a href="#" class="flex min-h-12 items-center border-b-2 border-ink text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">Price list</a></li>
+              <li><a href="#" aria-current="page" class="flex min-h-12 items-center border-b-2 border-ink text-base font-bold text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">New order</a></li>
+              <li><a href="#" class="flex min-h-12 items-center border-b-2 border-ink text-base text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">Your orders, 2</a></li>
+            </ul>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main class="mx-auto flex max-w-6xl flex-col gap-8 px-4 pb-16 pt-8 md:px-8 md:pt-12">
+    <div class="flex flex-col gap-3">
+      <p class="text-sm font-bold uppercase tracking-[0.14em] text-muted">Small Hours, issue 3</p>
+      <h1 class="font-display text-2xl font-black uppercase leading-none font-stretch-[115%] sm:font-stretch-[130%] md:font-stretch-[145%]">Order a print run</h1>
+      <p class="max-w-xl text-base text-ink">Files uploaded today at 09:40: two greyscale PDFs, one for blue and one for pink. Pick paper, inks and copies, and the price updates as you go.</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-start">
+      <form id="order" action="#" class="flex flex-col gap-8 lg:col-span-7">
+        <fieldset class="flex flex-col gap-3">
+          <legend class="mb-3 font-display text-lg font-black uppercase leading-none font-stretch-[125%]">1. Paper stock</legend>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <label class="relative flex min-h-11 cursor-pointer flex-col gap-1 border-2 border-ink bg-bg p-3 pr-11 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink">
+              <input type="radio" name="stock" value="bone-90" class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span class="text-base font-bold text-ink">Bone 90 gsm</span>
+              <span class="text-sm text-muted">Thin and soft. Good for long zines.</span>
+              <span class="text-sm font-bold tabular-nums text-ink">$0.04 a sheet</span>
+            </label>
+            <label class="relative flex min-h-11 cursor-pointer flex-col gap-1 border-2 border-ink bg-bg p-3 pr-11 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink">
+              <input type="radio" name="stock" value="grey-100" class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span class="text-base font-bold text-ink">Recycled grey 100 gsm</span>
+              <span class="text-sm text-muted">Flecked. Pink turns a little dusty.</span>
+              <span class="text-sm font-bold tabular-nums text-ink">$0.05 a sheet</span>
+            </label>
+            <label class="relative flex min-h-11 cursor-pointer flex-col gap-1 border-2 border-ink bg-bg p-3 pr-11 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink">
+              <input type="radio" name="stock" value="cream-120" checked class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span class="text-base font-bold text-ink">Cream 120 gsm</span>
+              <span class="text-sm text-muted">Our house stock. Holds two inks without show-through.</span>
+              <span class="text-sm font-bold tabular-nums text-ink">$0.06 a sheet</span>
+            </label>
+            <label class="relative flex min-h-11 cursor-pointer flex-col gap-1 border-2 border-ink bg-bg p-3 pr-11 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink">
+              <input type="radio" name="stock" value="kraft-110" aria-describedby="kraft-note" class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span class="text-base font-bold text-ink">Kraft 110 gsm</span>
+              <span class="text-sm text-muted">Brown and toothy. Blue reads best.</span>
+              <span class="flex flex-wrap items-center gap-2"><span class="text-sm font-bold tabular-nums text-ink">$0.07 a sheet</span><span id="kraft-note" class="inline-flex min-h-6 items-center rounded-full bg-pink px-2 text-xs font-bold text-pink-ink">Low stock</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="flex flex-col gap-3">
+          <legend class="mb-3 font-display text-lg font-black uppercase leading-none font-stretch-[125%]">2. Inks</legend>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <label class="relative flex min-h-11 cursor-pointer items-center gap-3 border-2 border-ink bg-bg p-3 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink sm:flex-col sm:items-start">
+              <input type="radio" name="inks" value="blue" class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span aria-hidden="true" class="size-10 shrink-0 bg-blue"></span>
+              <span class="flex flex-col"><span class="text-base font-bold text-ink">Blue only</span><span class="text-sm text-muted">1 master per side</span></span>
+            </label>
+            <label class="relative flex min-h-11 cursor-pointer items-center gap-3 border-2 border-ink bg-bg p-3 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink sm:flex-col sm:items-start">
+              <input type="radio" name="inks" value="pink" class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span aria-hidden="true" class="size-10 shrink-0 bg-pink"></span>
+              <span class="flex flex-col"><span class="text-base font-bold text-ink">Pink only</span><span class="text-sm text-muted">1 master per side</span></span>
+            </label>
+            <label class="relative flex min-h-11 cursor-pointer items-center gap-3 border-2 border-ink bg-bg p-3 has-checked:border-blue has-checked:bg-surface has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-dashed has-focus-visible:outline-ink sm:flex-col sm:items-start">
+              <input type="radio" name="inks" value="both" checked class="peer absolute right-3 top-3 size-5 cursor-pointer appearance-none rounded-full border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-hidden">
+              <span aria-hidden="true" class="pointer-events-none absolute right-[18px] top-[18px] hidden size-2 rounded-full bg-blue-ink peer-checked:block"></span>
+              <span aria-hidden="true" class="relative size-10 shrink-0"><span class="absolute left-0 top-0 size-7 bg-blue mix-blend-multiply dark:mix-blend-screen"></span><span class="absolute bottom-0 right-0 size-7 bg-pink mix-blend-multiply dark:mix-blend-screen"></span></span>
+              <span class="flex flex-col"><span class="text-base font-bold text-ink">Both</span><span class="text-sm text-muted">2 masters per side</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="flex flex-col gap-3">
+          <legend class="mb-3 font-display text-lg font-black uppercase leading-none font-stretch-[125%]">3. Copies and pages</legend>
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div class="flex flex-col gap-2">
+              <label for="qty" class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Copies</label>
+              <div class="flex w-fit items-stretch border-2 border-ink bg-surface">
+                <button type="button" aria-label="50 fewer copies" aria-controls="qty" class="grid size-12 place-items-center border-r-2 border-ink text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">
+                  <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 8h10"/></svg>
+                </button>
+                <input id="qty" name="qty" type="number" inputmode="numeric" min="50" step="50" value="100" aria-describedby="qty-hint" class="w-20 appearance-none bg-surface text-center text-lg font-bold tabular-nums text-ink [appearance:textfield] focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+                <button type="button" aria-label="50 more copies" aria-controls="qty" class="grid size-12 place-items-center border-l-2 border-ink text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">
+                  <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 8h10M8 3v10"/></svg>
+                </button>
+              </div>
+              <p id="qty-hint" class="text-sm text-muted">At least 50, in steps of 50.</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="pages" class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Pages, A5</label>
+              <div class="relative">
+                <select id="pages" name="pages" aria-describedby="pages-hint" class="min-h-12 w-full cursor-pointer appearance-none border-2 border-ink bg-surface pl-3 pr-12 text-base text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">
+                  <option>8 pages, 2 sheets</option>
+                  <option>12 pages, 3 sheets</option>
+                  <option selected>16 pages, 4 sheets</option>
+                  <option>20 pages, 5 sheets</option>
+                  <option>24 pages, 6 sheets</option>
+                  <option>32 pages, 8 sheets</option>
+                  <option>48 pages, 12 sheets</option>
+                </select>
+                <svg aria-hidden="true" viewBox="0 0 16 12" class="pointer-events-none absolute right-4 top-1/2 h-3 w-4 -translate-y-1/2 fill-ink"><path d="M0.6 1.2 15.4 0.4 8.4 11.6Z"/></svg>
+              </div>
+              <p id="pages-hint" class="text-sm text-muted">Each A4 sheet folds into 4 pages.</p>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="flex flex-col gap-6 lg:col-span-5">
+        <figure class="relative flex flex-col gap-3">
+          <div aria-hidden="true" class="grid aspect-[296/210] grid-cols-2 border-2 border-ink bg-surface">
+            <div class="relative overflow-hidden border-r-2 border-dashed border-ink">
+              <div class="absolute left-[14%] top-[12%] h-[4%] w-[60%] bg-blue"></div>
+              <div class="absolute left-[14%] top-[22%] h-[2%] w-[70%] bg-muted"></div>
+              <div class="absolute left-[14%] top-[27%] h-[2%] w-[64%] bg-muted"></div>
+              <div class="absolute left-[14%] top-[32%] h-[2%] w-[68%] bg-muted"></div>
+              <div class="absolute bottom-[10%] left-[14%] h-[38%] w-[72%] bg-halftone text-blue"></div>
+            </div>
+            <div class="relative overflow-hidden">
+              <div class="absolute left-[10%] top-[10%] aspect-square w-[64%] rounded-full bg-blue mix-blend-multiply dark:mix-blend-screen"></div>
+              <div class="absolute bottom-[8%] right-[8%] h-[50%] w-[60%] bg-pink mix-blend-multiply dark:mix-blend-screen"></div>
+            </div>
+          </div>
+          <span aria-hidden="true" class="absolute -top-4 right-2 grid size-20 rotate-[-12deg] place-items-center rounded-full bg-blue text-center text-xs font-bold leading-tight text-blue-ink">Ready<br>30 Oct</span>
+          <figcaption class="text-sm text-muted">Proof preview: page 1 and the cover, blue and pink on cream. Where the circle crosses the block, the inks overprint.</figcaption>
+        </figure>
+
+        <section aria-labelledby="price-title" class="flex flex-col gap-3 border-2 border-ink bg-surface p-4">
+          <div class="flex items-baseline justify-between gap-3">
+            <h2 id="price-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[125%]">Price</h2>
+            <p class="text-xs text-muted">Updates as you change the order</p>
+          </div>
+          <dl aria-live="polite" class="flex flex-col text-sm tabular-nums">
+            <div class="flex items-baseline justify-between gap-3 border-b border-ink py-2"><dt class="flex flex-col"><span class="text-ink">Paper</span><span class="text-xs text-muted">400 sheets x $0.06</span></dt><dd class="text-ink">$24.00</dd></div>
+            <div class="flex items-baseline justify-between gap-3 border-b border-ink py-2"><dt class="flex flex-col"><span class="text-ink">Impressions</span><span class="text-xs text-muted">400 sheets x 2 sides x 2 inks = 1,600 x $0.02</span></dt><dd class="text-ink">$32.00</dd></div>
+            <div class="flex items-baseline justify-between gap-3 border-b border-ink py-2"><dt class="flex flex-col"><span class="text-ink">Masters</span><span class="text-xs text-muted">8 sides x 2 inks = 16 x $3.00</span></dt><dd class="text-ink">$48.00</dd></div>
+            <div class="flex items-baseline justify-between gap-3 border-b-2 border-ink py-2"><dt class="flex flex-col"><span class="text-ink">Fold and staple</span><span class="text-xs text-muted">100 copies x $0.40</span></dt><dd class="text-ink">$40.00</dd></div>
+            <div class="flex items-baseline justify-between gap-3 pt-3"><dt class="text-base font-bold text-ink">Total</dt><dd class="font-display text-xl font-black leading-none font-stretch-[115%]">$144.00</dd></div>
+            <div class="flex items-baseline justify-between gap-3 pt-1"><dt class="text-muted">Per copy</dt><dd class="text-muted">$1.44</dd></div>
+          </dl>
+        </section>
+
+        <section aria-labelledby="summary-title" class="flex flex-col gap-4 border-2 border-ink bg-bg p-4">
+          <h2 id="summary-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[125%]">Order summary</h2>
+          <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
+            <dt class="text-muted">Zine</dt><dd class="text-right text-ink">Small Hours, issue 3</dd>
+            <dt class="text-muted">Format</dt><dd class="text-right text-ink">A5, 16 pages, stapled</dd>
+            <dt class="text-muted">Paper</dt><dd class="text-right text-ink">Cream 120 gsm</dd>
+            <dt class="text-muted">Inks</dt><dd class="text-right text-ink">Blue and pink</dd>
+            <dt class="text-muted">Copies</dt><dd class="text-right tabular-nums text-ink">100</dd>
+            <dt class="text-muted">Photo proof</dt><dd class="text-right text-ink">Thursday 22 October</dd>
+            <dt class="text-muted">Ready</dt><dd class="text-right text-ink">Friday 30 October</dd>
+            <dt class="text-muted">Pickup</dt><dd class="text-right text-ink">Studio, free</dd>
+          </dl>
+          <p class="flex items-baseline justify-between gap-3 border-t-2 border-ink pt-3"><span class="text-base font-bold text-ink">To pay</span><span class="text-lg font-bold tabular-nums text-ink">$144.00</span></p>
+          <div class="flex flex-col gap-3 sm:flex-row-reverse sm:justify-start lg:flex-col">
+            <button type="submit" form="order" class="group relative pr-[3px] pb-[3px] inline-flex min-h-12 items-stretch justify-center text-base font-bold text-blue-ink focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-dashed focus-visible:outline-ink">
+              <span aria-hidden="true" class="absolute bottom-0 left-[3px] right-0 top-[3px] bg-pink"></span>
+              <span class="relative inline-flex flex-1 items-center justify-center px-6 bg-blue transition-transform duration-100 ease-out group-hover:translate-x-px group-hover:translate-y-px group-active:translate-x-[3px] group-active:translate-y-[3px] motion-reduce:transition-none">
+                <span>Place order, $144.00</span>
+              </span>
+            </button>
+            <button type="button" class="inline-flex min-h-12 items-center justify-center border-2 border-ink px-6 text-base font-bold text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">Save as a quote</button>
+          </div>
+          <p class="text-xs text-muted">You pay after you approve the photo proof. Nothing prints before that.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

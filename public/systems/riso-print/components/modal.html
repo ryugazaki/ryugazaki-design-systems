@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="relative flex min-h-[560px] flex-col justify-end bg-ink/50 dark:bg-ink/15 md:min-h-[520px] md:items-center md:justify-center md:p-10">
+    <div aria-hidden="true" class="absolute inset-x-6 top-6 flex flex-col gap-3 opacity-60">
+      <div class="h-4 w-1/2 bg-bg"></div>
+      <div class="h-3 w-3/4 bg-bg"></div>
+      <div class="h-3 w-2/3 bg-bg"></div>
+    </div>
+    <section role="dialog" aria-modal="true" aria-labelledby="dlg-title" aria-describedby="dlg-body" class="relative mt-24 w-full border-2 border-b-0 border-ink bg-bg md:mt-0 md:max-w-lg md:border-b-2">
+      <div aria-hidden="true" class="absolute right-0 top-0 size-10 bg-pink"></div>
+      <div class="flex flex-col gap-5 p-5 pt-6 md:p-8">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Proof 2 of 2, ready</p>
+        <h2 id="dlg-title" class="max-w-[85%] font-display text-xl font-black uppercase leading-none font-stretch-[125%] md:font-stretch-[140%]">Approve your proof?</h2>
+        <div id="dlg-body" class="flex flex-col gap-3 text-base text-ink">
+          <p>Small Hours, issue 3. 24 pages, A5, blue and pink on cream 120 gsm, 100 copies.</p>
+          <p>Once you approve, we burn the masters and the drum starts turning. Changes after this point mean a new set of masters at $3.00 each.</p>
+        </div>
+        <div class="flex flex-col-reverse gap-3 pt-1 sm:flex-row sm:justify-end">
+          <button type="button" class="inline-flex min-h-11 items-center justify-center border-2 border-ink px-5 text-base font-bold text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dashed focus-visible:outline-ink">Ask for changes</button>
+          <button type="button" class="group relative pr-[3px] pb-[3px] inline-flex min-h-11 items-stretch justify-center text-base font-bold text-blue-ink focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-dashed focus-visible:outline-ink">
+            <span aria-hidden="true" class="absolute bottom-0 left-[3px] right-0 top-[3px] bg-pink"></span>
+            <span class="relative inline-flex flex-1 items-center justify-center px-5 bg-blue transition-transform duration-100 ease-out group-hover:translate-x-px group-hover:translate-y-px group-active:translate-x-[3px] group-active:translate-y-[3px] motion-reduce:transition-none">
+              <span>Approve and print</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

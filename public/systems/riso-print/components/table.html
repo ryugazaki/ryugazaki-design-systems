@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="price-title" class="flex max-w-4xl flex-col gap-4">
+    <div class="flex flex-col gap-1">
+      <h2 id="price-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[130%]">Price list</h2>
+      <p class="text-sm text-muted">Per 100 sheets, printed one side. Masters are $3.00 per ink per side, charged once.</p>
+    </div>
+    <div class="overflow-x-auto border-y-2 border-ink">
+      <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b-2 border-ink">
+            <th scope="col" class="py-3 pr-4 text-xs font-bold uppercase tracking-[0.12em] text-ink">Stock</th>
+            <th scope="col" class="px-4 py-3 text-xs font-bold uppercase tracking-[0.12em] text-ink">Size</th>
+            <th scope="col" class="px-4 py-3 text-right text-xs font-bold uppercase tracking-[0.12em] text-ink">One colour</th>
+            <th scope="col" class="px-4 py-3 text-right text-xs font-bold uppercase tracking-[0.12em] text-ink">Two colour</th>
+            <th scope="col" class="px-4 py-3 text-right text-xs font-bold uppercase tracking-[0.12em] text-ink">Minimum run</th>
+            <th scope="col" class="py-3 pl-4 text-xs font-bold uppercase tracking-[0.12em] text-ink">Status</th>
+          </tr>
+        </thead>
+        <tbody class="tabular-nums">
+          <tr class="border-b border-ink">
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Bone 90 gsm</th>
+            <td class="px-4 py-3 text-ink">A4</td>
+            <td class="px-4 py-3 text-right text-ink">$6.00</td>
+            <td class="px-4 py-3 text-right text-ink">$8.00</td>
+            <td class="px-4 py-3 text-right text-ink">50 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full border-2 border-ink px-2.5 text-xs font-bold text-ink">In stock</span></td>
+          </tr>
+          <tr class="border-b border-ink">
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Recycled grey 100 gsm</th>
+            <td class="px-4 py-3 text-ink">A4</td>
+            <td class="px-4 py-3 text-right text-ink">$7.00</td>
+            <td class="px-4 py-3 text-right text-ink">$9.00</td>
+            <td class="px-4 py-3 text-right text-ink">50 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full border-2 border-ink px-2.5 text-xs font-bold text-ink">In stock</span></td>
+          </tr>
+          <tr class="border-b border-ink">
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Cream 120 gsm</th>
+            <td class="px-4 py-3 text-ink">A4</td>
+            <td class="px-4 py-3 text-right text-ink">$8.00</td>
+            <td class="px-4 py-3 text-right text-ink">$10.00</td>
+            <td class="px-4 py-3 text-right text-ink">50 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full bg-blue px-2.5 text-xs font-bold text-blue-ink">House stock</span></td>
+          </tr>
+          <tr class="border-b border-ink">
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Kraft 110 gsm</th>
+            <td class="px-4 py-3 text-ink">A4</td>
+            <td class="px-4 py-3 text-right text-ink">$9.00</td>
+            <td class="px-4 py-3 text-right text-ink">$11.00</td>
+            <td class="px-4 py-3 text-right text-ink">50 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full bg-pink px-2.5 text-xs font-bold text-pink-ink">Low stock</span></td>
+          </tr>
+          <tr class="border-b border-ink">
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Cream 120 gsm</th>
+            <td class="px-4 py-3 text-ink">A3</td>
+            <td class="px-4 py-3 text-right text-ink">$16.00</td>
+            <td class="px-4 py-3 text-right text-ink">$20.00</td>
+            <td class="px-4 py-3 text-right text-ink">25 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full border-2 border-ink px-2.5 text-xs font-bold text-ink">In stock</span></td>
+          </tr>
+          <tr>
+            <th scope="row" class="py-3 pr-4 font-bold text-ink">Cover card 250 gsm</th>
+            <td class="px-4 py-3 text-ink">A4</td>
+            <td class="px-4 py-3 text-right text-ink">$20.00</td>
+            <td class="px-4 py-3 text-right text-ink">$22.00</td>
+            <td class="px-4 py-3 text-right text-ink">25 copies</td>
+            <td class="py-3 pl-4"><span class="inline-flex min-h-7 items-center whitespace-nowrap rounded-full border-2 border-dashed border-muted px-2.5 text-xs font-bold text-muted">Back 2 Nov</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-muted">A4 impressions are 2 cents per ink, A3 impressions 4 cents. Paper is the rest.</p>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

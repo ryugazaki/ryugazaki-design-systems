@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="empty-title" class="flex max-w-md flex-col items-start gap-5 border-2 border-ink bg-surface p-6 md:p-8">
+    <svg aria-hidden="true" viewBox="0 0 200 110" class="w-48">
+      <g class="mix-blend-multiply dark:mix-blend-screen"><path d="M8 34h184l-16 64H24Z" fill="none" class="stroke-pink" stroke-width="6" stroke-linejoin="miter"/></g>
+      <g class="mix-blend-multiply dark:mix-blend-screen"><path d="M2 28h184l-16 64H18Z" fill="none" class="stroke-blue" stroke-width="6" stroke-linejoin="miter"/></g>
+      <path d="M40 28V12h104v16" fill="none" class="stroke-ink" stroke-width="2" stroke-dasharray="6 5"/>
+    </svg>
+    <div class="flex flex-col gap-2">
+      <h2 id="empty-title" class="font-display text-lg font-black uppercase leading-none font-stretch-[125%]">Your print tray is empty</h2>
+      <p class="text-base text-ink">Start a run and your proofs and orders will stack up here.</p>
+    </div>
+    <a href="#" class="group relative pr-[3px] pb-[3px] inline-flex min-h-11 items-stretch justify-center text-base font-bold text-blue-ink focus-visible:outline-2 focus-visible:outline-offset-[6px] focus-visible:outline-dashed focus-visible:outline-ink">
+      <span aria-hidden="true" class="absolute bottom-0 left-[3px] right-0 top-[3px] bg-pink"></span>
+      <span class="relative inline-flex flex-1 items-center justify-center px-5 bg-blue transition-transform duration-100 ease-out group-hover:translate-x-px group-hover:translate-y-px group-active:translate-x-[3px] group-active:translate-y-[3px] motion-reduce:transition-none">
+        <span>Start a print run</span>
+      </span>
+    </a>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

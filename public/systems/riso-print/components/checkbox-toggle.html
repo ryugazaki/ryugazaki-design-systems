@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riso Print / Checkbox and toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F4EFE4;
+  --color-surface: #FBF8F1;
+  --color-ink: #1B1A33;
+  --color-muted: #5B5870;
+  --color-line: #1B1A33;
+  --color-blue: #2A4BCB;
+  --color-pink: #FF48B0;
+  --color-blue-ink: #FBF8F1;
+  --color-pink-ink: #1B1A33;
+
+  --font-display: "Anybody", ui-sans-serif, sans-serif;
+  --font-body: "Courier Prime", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.05;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+}
+
+@utility bg-halftone { background-image: radial-gradient(currentColor 1.1px, transparent 1.6px); background-size: 7px 7px; }
+
+@layer base {
+  .dark {
+    --color-bg: #16151F;
+    --color-surface: #1F1D2B;
+    --color-ink: #F1ECDF;
+    --color-muted: #B4AFC2;
+    --color-line: #F1ECDF;
+    --color-blue: #6F8CFF;
+    --color-pink: #FF5DBA;
+    --color-blue-ink: #16151F;
+    --color-pink-ink: #16151F;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-10">
+    <fieldset class="flex flex-col gap-1">
+      <legend class="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-muted">Finishing</legend>
+      <label class="group flex min-h-11 cursor-pointer items-center gap-3">
+        <span class="relative grid size-6 shrink-0 place-items-center">
+          <input type="checkbox" name="trim" checked class="peer size-6 cursor-pointer appearance-none border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute hidden size-4 text-blue-ink peer-checked:block" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 8.5 6.5 12 13 4"/></svg>
+        </span>
+        <span class="text-base text-ink">Trim to a clean edge</span>
+      </label>
+      <label class="group flex min-h-11 cursor-pointer items-center gap-3">
+        <span class="relative grid size-6 shrink-0 place-items-center">
+          <input type="checkbox" name="sleeve" class="peer size-6 cursor-pointer appearance-none border-2 border-ink bg-surface checked:border-blue checked:bg-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-ink">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="pointer-events-none absolute hidden size-4 text-blue-ink peer-checked:block" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 8.5 6.5 12 13 4"/></svg>
+        </span>
+        <span class="text-base text-ink">Pack in paper sleeves of 10</span>
+      </label>
+    </fieldset>
+
+    <section class="flex flex-col gap-1">
+      <h2 class="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-muted">Switches</h2>
+      <div class="flex min-h-11 items-center justify-between gap-4">
+        <span id="sw-proof" class="text-base text-ink">Send a photo proof first</span>
+        <button type="button" role="switch" aria-checked="true" aria-labelledby="sw-proof" class="group relative inline-flex min-h-11 w-16 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-hidden">
+          <span class="relative block h-5 w-14 rounded-full bg-blue group-focus-visible:outline-2 group-focus-visible:outline-offset-[6px] group-focus-visible:outline-dashed group-focus-visible:outline-ink">
+            <span aria-hidden="true" class="absolute -top-1.5 right-0 size-8 rounded-full border-2 border-ink bg-pink mix-blend-multiply dark:mix-blend-screen"></span>
+          </span>
+        </button>
+      </div>
+      <div class="flex min-h-11 items-center justify-between gap-4">
+        <span id="sw-fair" class="text-base text-ink">Hold copies for the print fair</span>
+        <button type="button" role="switch" aria-checked="false" aria-labelledby="sw-fair" class="group relative inline-flex min-h-11 w-16 shrink-0 cursor-pointer items-center justify-center focus-visible:outline-hidden">
+          <span class="relative block h-5 w-14 rounded-full border-2 border-ink bg-surface group-focus-visible:outline-2 group-focus-visible:outline-offset-[6px] group-focus-visible:outline-dashed group-focus-visible:outline-ink">
+            <span aria-hidden="true" class="absolute -top-2 -left-0.5 size-8 rounded-full border-2 border-ink bg-surface"></span>
+          </span>
+        </button>
+      </div>
+      <div class="flex min-h-11 items-center justify-between gap-4">
+        <span id="sw-demo" class="text-base text-ink">Focus visible example</span>
+        <button type="button" role="switch" aria-checked="true" aria-labelledby="sw-demo" class="relative inline-flex min-h-11 w-16 shrink-0 cursor-pointer items-center justify-center">
+          <span class="relative block h-5 w-14 rounded-full bg-blue outline-2 outline-offset-[6px] outline-dashed outline-ink">
+            <span aria-hidden="true" class="absolute -top-1.5 right-0 size-8 rounded-full border-2 border-ink bg-pink mix-blend-multiply dark:mix-blend-screen"></span>
+          </span>
+        </button>
+      </div>
+      <p class="mt-2 text-sm text-muted">On, the pink knob prints over the blue track and the overlap turns violet.</p>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
