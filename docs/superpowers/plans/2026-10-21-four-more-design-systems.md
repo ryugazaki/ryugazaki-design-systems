@@ -407,7 +407,7 @@ Notes table:
 | checkbox-toggle | Checkbox and toggle | Square 1px edge checkbox with a red check. Switch is a thin line track with a small square that moves and turns red when on. |
 | badge | Badge | Small Zen Kaku Gothic labels with a hairline frame; one round hanko-style badge in red. |
 | card | Card | A ceramic piece: tall token-drawn bowl shape on paper, name in Mincho, glaze and size in small gothic, price. |
-| navbar | Navbar | Wordmark with a small red square seal, links spaced widely, one red reserve action. Mobile menu is a details disclosure with tall rows. |
+| navbar | Navbar | Wordmark with a small red square seal, links spaced widely, an outline reserve action (user ruling: one red element per section). Mobile menu is a details disclosure with tall rows. |
 | modal | Modal and sheet | Paper sheet with a hairline frame, a vertical label on the side at md, two actions. |
 | table | Table | Seasonal tea course or opening hours table with hairline rows and lots of row height. |
 | bento | Bento grid | Asymmetric: one tall tile with a drawn tea bowl, a season note, a vertical label tile, hours, and an empty breathing tile. |

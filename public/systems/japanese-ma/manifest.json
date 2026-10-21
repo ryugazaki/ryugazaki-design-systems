@@ -160,7 +160,7 @@
       "id": "navbar",
       "name": "Navbar",
       "file": "components/navbar.html",
-      "notes": "Wordmark with a small red square seal, links spaced widely, one red reserve action. Mobile menu is a details disclosure with tall rows."
+      "notes": "Wordmark with a small red square seal, links spaced widely, an outline reserve action. Mobile menu is a details disclosure with tall rows."
     },
     {
       "id": "modal",
