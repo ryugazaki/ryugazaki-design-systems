@@ -5,7 +5,8 @@ import { validateManifest } from './manifest';
 import { CatalogEntry, LoadedItem, Manifest, SystemBundle } from './models';
 import { extractSnippet } from './snippet';
 
-export const SYSTEMS_BASE = '/systems';
+/** Relative on purpose: resolves against <base href>, so the app also works under a sub-path (GitHub Pages). */
+export const SYSTEMS_BASE = 'systems';
 
 /** Thrown when a system's manifest.json does not exist (404). */
 export class SystemNotFoundError extends Error {

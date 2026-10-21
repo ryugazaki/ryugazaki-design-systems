@@ -15,7 +15,7 @@ describe('Catalog', () => {
       imports: [Catalog],
       providers: [
         provideRouter([]),
-        { provide: SystemsService, useValue: { loadIndex: () => Promise.resolve(entries), fileUrl: (s: string, f: string) => `/systems/${s}/${f}` } },
+        { provide: SystemsService, useValue: { loadIndex: () => Promise.resolve(entries), fileUrl: (s: string, f: string) => `systems/${s}/${f}` } },
       ],
     }).compileComponents();
     const fixture = TestBed.createComponent(Catalog);

@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:pages": "ng build --base-href /ryugazaki-design-systems/ && node -e \"require('fs').copyFileSync('dist/ryugazaki-archive/browser/index.html','dist/ryugazaki-archive/browser/404.html')\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "check:systems": "node scripts/check-systems.mjs",

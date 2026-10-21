@@ -20,10 +20,10 @@ describe('SystemsService', () => {
 
   it('loads the index and marks broken manifests as null', async () => {
     const result = service.loadIndex();
-    http.expectOne('/systems/index.json').flush({ systems: ['neo-brutalist', 'broken'] });
+    http.expectOne('systems/index.json').flush({ systems: ['neo-brutalist', 'broken'] });
     await flush();
-    http.expectOne('/systems/neo-brutalist/manifest.json').flush(validManifest);
-    http.expectOne('/systems/broken/manifest.json').flush({ slug: 'broken' });
+    http.expectOne('systems/neo-brutalist/manifest.json').flush(validManifest);
+    http.expectOne('systems/broken/manifest.json').flush({ slug: 'broken' });
     const entries = await result;
     expect(entries.map((e) => e.slug)).toEqual(['neo-brutalist', 'broken']);
     expect(entries[0].manifest?.name).toBe('Neo-Brutalist');
@@ -32,11 +32,11 @@ describe('SystemsService', () => {
 
   it('loads a bundle, extracts snippets, and tolerates a missing file', async () => {
     const result = service.loadBundle('neo-brutalist');
-    http.expectOne('/systems/neo-brutalist/manifest.json').flush(validManifest);
+    http.expectOne('systems/neo-brutalist/manifest.json').flush(validManifest);
     await flush();
-    http.expectOne('/systems/neo-brutalist/theme.css').flush('@theme {}');
-    http.expectOne('/systems/neo-brutalist/components/button.html').flush('<!-- snippet:start --><button>Go</button><!-- snippet:end -->');
-    http.expectOne('/systems/neo-brutalist/pages/landing.html').flush('missing', { status: 404, statusText: 'Not Found' });
+    http.expectOne('systems/neo-brutalist/theme.css').flush('@theme {}');
+    http.expectOne('systems/neo-brutalist/components/button.html').flush('<!-- snippet:start --><button>Go</button><!-- snippet:end -->');
+    http.expectOne('systems/neo-brutalist/pages/landing.html').flush('missing', { status: 404, statusText: 'Not Found' });
     const bundle = await result;
     expect(bundle.theme).toBe('@theme {}');
     expect(bundle.components[0]).toEqual({ id: 'button', name: 'Button', notes: 'Three variants.', file: 'components/button.html', snippet: '<button>Go</button>' });
@@ -47,19 +47,19 @@ describe('SystemsService', () => {
 
   it('does not cache a failed bundle', async () => {
     const first = service.loadBundle('nope');
-    http.expectOne('/systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
+    http.expectOne('systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
     await expect(first).rejects.toBeInstanceOf(SystemNotFoundError);
     service.loadBundle('nope').catch(() => undefined);
-    http.expectOne('/systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
+    http.expectOne('systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
   });
 
   it('does not treat a missing theme.css as a missing system', async () => {
     const result = service.loadBundle('neo-brutalist');
-    http.expectOne('/systems/neo-brutalist/manifest.json').flush(validManifest);
+    http.expectOne('systems/neo-brutalist/manifest.json').flush(validManifest);
     await flush();
-    http.expectOne('/systems/neo-brutalist/theme.css').flush('missing', { status: 404, statusText: 'Not Found' });
-    http.expectOne('/systems/neo-brutalist/components/button.html').flush('');
-    http.expectOne('/systems/neo-brutalist/pages/landing.html').flush('');
+    http.expectOne('systems/neo-brutalist/theme.css').flush('missing', { status: 404, statusText: 'Not Found' });
+    http.expectOne('systems/neo-brutalist/components/button.html').flush('');
+    http.expectOne('systems/neo-brutalist/pages/landing.html').flush('');
     const err = await result.catch((e: unknown) => e);
     expect(err).not.toBeInstanceOf(SystemNotFoundError);
     expect(err).toMatchObject({ status: 404 });
@@ -67,13 +67,13 @@ describe('SystemsService', () => {
 
   it('rejects a manifest whose slug does not match the requested slug', async () => {
     const result = service.loadManifest('other');
-    http.expectOne('/systems/other/manifest.json').flush(validManifest);
+    http.expectOne('systems/other/manifest.json').flush(validManifest);
     await expect(result).rejects.toThrow('slug "neo-brutalist" does not match "other"');
   });
 
   it('caches the anti-slop rules', async () => {
     const first = service.loadAntiSlop();
-    http.expectOne('/systems/_global/anti-slop.md').flush('1. No gradients.');
+    http.expectOne('systems/_global/anti-slop.md').flush('1. No gradients.');
     expect(await first).toBe('1. No gradients.');
     expect(await service.loadAntiSlop()).toBe('1. No gradients.');
   });
