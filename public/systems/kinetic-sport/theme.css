@@ -1,0 +1,62 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2F2EC;
+  --color-surface: #FBFBF6;
+  --color-ink: #0D0D0C;
+  --color-muted: #57574F;
+  --color-line: #CFCFC5;
+  --color-edge: #6E6E66;
+  --color-accent: #C6F432;
+  --color-accent-ink: #0D0D0C;
+  --color-hot: #C2321A;
+  --color-hot-ink: #FBFBF6;
+
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.1;
+  --text-xl: 2.625rem;
+  --text-xl--line-height: 0.95;
+  --text-2xl: 4.25rem;
+  --text-2xl--line-height: 0.9;
+  --text-display: 6.875rem;
+  --text-display--line-height: 0.85;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-sprint: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+@utility bg-stripes { background-image: repeating-linear-gradient(-45deg, currentColor 0 6px, transparent 6px 14px); }
+
+@layer base {
+  .dark {
+    --color-bg: #0D0D0C;
+    --color-surface: #171716;
+    --color-ink: #F2F2EC;
+    --color-muted: #A3A39A;
+    --color-line: #2E2E2B;
+    --color-edge: #7A7A72;
+    --color-accent: #C6F432;
+    --color-accent-ink: #0D0D0C;
+    --color-hot: #FF4D2E;
+    --color-hot-ink: #0D0D0C;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}

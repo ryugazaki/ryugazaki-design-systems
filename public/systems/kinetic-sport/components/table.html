@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinetic Sport / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2F2EC;
+  --color-surface: #FBFBF6;
+  --color-ink: #0D0D0C;
+  --color-muted: #57574F;
+  --color-line: #CFCFC5;
+  --color-edge: #6E6E66;
+  --color-accent: #C6F432;
+  --color-accent-ink: #0D0D0C;
+  --color-hot: #C2321A;
+  --color-hot-ink: #FBFBF6;
+
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.1;
+  --text-xl: 2.625rem;
+  --text-xl--line-height: 0.95;
+  --text-2xl: 4.25rem;
+  --text-2xl--line-height: 0.9;
+  --text-display: 6.875rem;
+  --text-display--line-height: 0.85;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-sprint: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+@utility bg-stripes { background-image: repeating-linear-gradient(-45deg, currentColor 0 6px, transparent 6px 14px); }
+
+@layer base {
+  .dark {
+    --color-bg: #0D0D0C;
+    --color-surface: #171716;
+    --color-ink: #F2F2EC;
+    --color-muted: #A3A39A;
+    --color-line: #2E2E2B;
+    --color-edge: #7A7A72;
+    --color-accent: #C6F432;
+    --color-accent-ink: #0D0D0C;
+    --color-hot: #FF4D2E;
+    --color-hot-ink: #0D0D0C;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="board-title" class="flex max-w-4xl flex-col gap-4">
+    <div class="flex flex-wrap items-end justify-between gap-3">
+      <h2 id="board-title" class="font-display text-xl font-black uppercase tracking-tight text-ink">Harbour 10K, top 5</h2>
+      <p class="text-sm tabular-nums text-muted">412 finishers, 6 DNF</p>
+    </div>
+    <div class="relative overflow-x-auto border-2 border-ink">
+      <table class="w-full min-w-[680px] border-collapse text-left">
+        <caption class="sr-only">Top five finishers of the Harbour 10K and one runner who did not finish, with 5 km splits, second 5 km splits and chip times.</caption>
+        <thead>
+          <tr class="border-b-2 border-ink bg-surface text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+            <th scope="col" class="w-16 px-3 py-3 text-right">Rank</th>
+            <th scope="col" class="px-3 py-3 text-right">Bib</th>
+            <th scope="col" class="px-3 py-3">Name</th>
+            <th scope="col" class="px-3 py-3">Cat</th>
+            <th scope="col" class="px-3 py-3 text-right">0 to 5 km</th>
+            <th scope="col" class="px-3 py-3 text-right">5 to 10 km</th>
+            <th scope="col" class="px-3 py-3 text-right">Finish</th>
+          </tr>
+        </thead>
+        <tbody class="tabular-nums">
+          <tr class="border-b border-line">
+            <td class="bg-accent px-3 py-3 text-right font-display text-lg font-black text-accent-ink"><span class="sr-only">Leader, rank </span>1</td>
+            <td class="px-3 py-3 text-right text-muted">214</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Tomas Reyes</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">M</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">15:32</td>
+            <td class="px-3 py-3 text-right text-ink">15:28</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">31:00</td>
+          </tr>
+          <tr class="border-b border-line">
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">2</td>
+            <td class="px-3 py-3 text-right text-muted">331</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Felix Brandt</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">M</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">15:34</td>
+            <td class="px-3 py-3 text-right text-ink">15:46</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">31:20</td>
+          </tr>
+          <tr class="border-b border-line">
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">3</td>
+            <td class="px-3 py-3 text-right text-muted">102</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Dev Malhotra</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">M40</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">15:51</td>
+            <td class="px-3 py-3 text-right text-ink">15:59</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">31:50</td>
+          </tr>
+          <tr class="border-b border-line">
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">4</td>
+            <td class="px-3 py-3 text-right text-muted">058</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Aaron Kwan</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">M</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">16:02</td>
+            <td class="px-3 py-3 text-right text-ink">16:08</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">32:10</td>
+          </tr>
+          <tr class="border-b border-line">
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">5</td>
+            <td class="px-3 py-3 text-right text-muted">276</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Sara Lindqvist</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">W</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">16:24</td>
+            <td class="px-3 py-3 text-right text-ink">16:16</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-ink">32:40</td>
+          </tr>
+          <tr>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-muted"><span aria-hidden="true">/</span><span class="sr-only">No rank</span></td>
+            <td class="px-3 py-3 text-right text-muted">172</td>
+            <th scope="row" class="px-3 py-3 font-semibold text-ink">Owen Price</th>
+            <td class="px-3 py-3"><span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-hot px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-hot">DNF</span></span></td>
+            <td class="px-3 py-3 text-right text-ink">24:15</td>
+            <td class="px-3 py-3 text-right text-muted">Stopped at 6 km</td>
+            <td class="px-3 py-3 text-right font-display text-lg font-black text-muted"><span aria-hidden="true">/</span><span class="sr-only">No time</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-muted">Chip times. The lime rank cell marks the race leader.</p>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinetic Sport / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2F2EC;
+  --color-surface: #FBFBF6;
+  --color-ink: #0D0D0C;
+  --color-muted: #57574F;
+  --color-line: #CFCFC5;
+  --color-edge: #6E6E66;
+  --color-accent: #C6F432;
+  --color-accent-ink: #0D0D0C;
+  --color-hot: #C2321A;
+  --color-hot-ink: #FBFBF6;
+
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.1;
+  --text-xl: 2.625rem;
+  --text-xl--line-height: 0.95;
+  --text-2xl: 4.25rem;
+  --text-2xl--line-height: 0.9;
+  --text-display: 6.875rem;
+  --text-display--line-height: 0.85;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-sprint: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+@utility bg-stripes { background-image: repeating-linear-gradient(-45deg, currentColor 0 6px, transparent 6px 14px); }
+
+@layer base {
+  .dark {
+    --color-bg: #0D0D0C;
+    --color-surface: #171716;
+    --color-ink: #F2F2EC;
+    --color-muted: #A3A39A;
+    --color-line: #2E2E2B;
+    --color-edge: #7A7A72;
+    --color-accent: #C6F432;
+    --color-accent-ink: #0D0D0C;
+    --color-hot: #FF4D2E;
+    --color-hot-ink: #0D0D0C;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b-2 border-ink bg-bg">
+    <div class="mx-auto flex min-h-16 max-w-6xl items-center gap-3 px-4 md:gap-8 md:px-6">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        <span aria-hidden="true" class="h-6 w-3 -skew-x-12 bg-accent"></span>
+        <span class="font-display text-lg font-black uppercase tracking-tight text-ink sm:text-xl">Splitline</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-6">
+          <li><a href="#season" class="inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Races</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Results</a></li>
+          <li><a href="#club" class="inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Club</a></li>
+          <li><a href="#entry" class="inline-flex min-h-11 items-center text-sm font-bold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Entry</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-2">
+        <a href="#register" class="group inline-flex min-h-11 items-center border-2 border-ink px-4 font-display text-base font-extrabold uppercase tracking-wide text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+          <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Register</span>
+        </a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center border-2 border-ink px-3 text-sm font-bold uppercase tracking-[0.12em] text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full z-20 border-b-2 border-ink bg-bg">
+            <ul class="flex flex-col">
+              <li><a href="#season" class="flex min-h-16 items-center justify-between border-b border-line px-4 font-display text-xl font-black uppercase tracking-tight text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Races<svg aria-hidden="true" viewBox="0 0 16 16" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-16 items-center justify-between border-b border-line px-4 font-display text-xl font-black uppercase tracking-tight text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Results<svg aria-hidden="true" viewBox="0 0 16 16" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#club" class="flex min-h-16 items-center justify-between border-b border-line px-4 font-display text-xl font-black uppercase tracking-tight text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Club<svg aria-hidden="true" viewBox="0 0 16 16" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#entry" class="flex min-h-16 items-center justify-between px-4 font-display text-xl font-black uppercase tracking-tight text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Entry<svg aria-hidden="true" viewBox="0 0 16 16" class="size-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title" class="border-b-2 border-ink">
+      <div aria-hidden="true" class="h-4 border-b-2 border-ink bg-accent bg-stripes text-accent-ink"></div>
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 pt-12 pb-14 md:px-6 md:pt-16 md:pb-20 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <div class="flex flex-col items-start gap-7 lg:col-span-7">
+          <span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink px-2.5 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-ink">City 10K series, 2026</span></span>
+          <h1 id="hero-title" class="font-display text-2xl font-black uppercase tracking-tight text-ink md:text-display">Five races. One city. Every second on the clock.</h1>
+          <p class="max-w-lg text-base text-ink md:text-lg md:leading-snug">Splitline times five 10K races through the city, April to November. Chip timing, a split at 5 km, results online by noon.</p>
+          <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+            <a href="#register" class="group inline-flex min-h-12 items-center justify-center bg-accent px-6 font-display text-lg font-extrabold uppercase tracking-wide text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+              <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Register for Old Town 10K</span>
+            </a>
+            <a href="#" class="group inline-flex min-h-12 items-center justify-center border-2 border-ink px-6 font-display text-lg font-extrabold uppercase tracking-wide text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+              <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Harbour 10K results</span>
+            </a>
+          </div>
+        </div>
+
+        <aside aria-labelledby="clock-title" class="border-2 border-ink bg-surface lg:col-span-5">
+          <div class="flex items-center justify-between gap-3 border-b-2 border-ink px-4 py-3">
+            <h2 id="clock-title" class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Harbour 10K, winning time</h2>
+            <span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-accent bg-accent px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-accent-ink">Leader</span></span>
+          </div>
+          <div class="flex flex-col gap-2 px-4 py-5">
+            <p class="font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink sm:text-display">31:00</p>
+            <p class="text-sm tabular-nums text-muted">Tomas Reyes, bib 214. 3:06 /km.</p>
+          </div>
+          <dl class="grid grid-cols-2 border-t-2 border-ink">
+            <div class="flex flex-col gap-1 border-r border-line px-4 py-3">
+              <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">0 to 5 km</dt>
+              <dd class="font-display text-lg font-black tabular-nums text-ink">15:32</dd>
+            </div>
+            <div class="flex flex-col gap-1 px-4 py-3">
+              <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">5 to 10 km</dt>
+              <dd class="font-display text-lg font-black tabular-nums text-ink">15:28</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="season" aria-labelledby="season-title" class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+      <div class="mb-8 flex flex-col gap-3 md:mb-10 md:flex-row md:items-end md:justify-between">
+        <h2 id="season-title" class="font-display text-xl font-black uppercase tracking-tight text-ink md:text-2xl">The 2026 season</h2>
+        <p class="max-w-sm text-base text-muted">Same distance, same timing, five different parts of the city.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-0.5 border-2 border-ink bg-ink md:grid-cols-4">
+        <article aria-labelledby="calendar-title" class="flex flex-col gap-5 bg-bg p-5 md:col-span-2 md:row-span-2 md:p-7">
+          <h3 id="calendar-title" class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Race calendar</h3>
+          <ol class="flex flex-col border-t-2 border-ink">
+            <li class="grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-3 border-b border-line py-3">
+              <span class="font-display text-lg font-black tabular-nums text-muted">19.04</span>
+              <span class="font-semibold text-ink">Riverside 10K</span>
+              <span class="text-sm tabular-nums text-muted">352 finished</span>
+            </li>
+            <li class="grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-3 border-b border-line py-3">
+              <span class="font-display text-lg font-black tabular-nums text-muted">21.06</span>
+              <span class="font-semibold text-ink">Park Loop 10K</span>
+              <span class="text-sm tabular-nums text-muted">377 finished</span>
+            </li>
+            <li class="grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-3 border-b border-line py-3">
+              <span class="font-display text-lg font-black tabular-nums text-muted">16.08</span>
+              <span class="font-semibold text-ink">Canal 10K</span>
+              <span class="text-sm tabular-nums text-muted">388 finished</span>
+            </li>
+            <li class="grid grid-cols-[3.5rem_1fr_auto] items-baseline gap-3 border-b border-line py-3">
+              <span class="font-display text-lg font-black tabular-nums text-muted">18.10</span>
+              <span class="font-semibold text-ink">Harbour 10K</span>
+              <span class="text-sm tabular-nums text-muted">412 finished</span>
+            </li>
+            <li class="grid grid-cols-[3.5rem_1fr_auto] items-center gap-3 py-3">
+              <span class="font-display text-lg font-black tabular-nums text-ink">15.11</span>
+              <span class="font-semibold text-ink">Old Town 10K</span>
+              <span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-accent bg-accent px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-accent-ink">Next</span></span>
+            </li>
+          </ol>
+          <p class="mt-auto text-sm text-muted">Every race is on a Sunday. Dates are day and month.</p>
+        </article>
+
+        <section aria-labelledby="record-title" class="flex flex-col justify-between gap-3 bg-bg p-5">
+          <h3 id="record-title" class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Biggest field</h3>
+          <p class="font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink">412</p>
+          <p class="text-sm text-muted">Finishers at Harbour 10K, from 418 starters.</p>
+        </section>
+
+        <figure class="flex flex-col justify-between gap-5 bg-bg p-5">
+          <blockquote class="text-base font-semibold text-ink">"45:10 in August, 44:20 in October. The 5 km split showed me where the minute went."</blockquote>
+          <figcaption class="text-sm text-muted">Ana Ruiz, W40, bib 318</figcaption>
+        </figure>
+
+        <figure class="flex flex-col gap-4 bg-bg p-5 md:col-span-2 md:p-6">
+          <p class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Finishers per race</p>
+          <ol class="grid grid-cols-5 gap-3">
+            <li class="flex flex-col gap-1.5"><span class="text-center font-display text-lg font-black tabular-nums text-ink">352</span><div class="flex h-28 flex-col justify-end"><div class="h-[70.4%] bg-ink"></div></div><span class="text-center text-xs text-muted">Apr</span></li>
+            <li class="flex flex-col gap-1.5"><span class="text-center font-display text-lg font-black tabular-nums text-ink">377</span><div class="flex h-28 flex-col justify-end"><div class="h-[75.4%] bg-ink"></div></div><span class="text-center text-xs text-muted">Jun</span></li>
+            <li class="flex flex-col gap-1.5"><span class="text-center font-display text-lg font-black tabular-nums text-ink">388</span><div class="flex h-28 flex-col justify-end"><div class="h-[77.6%] bg-ink"></div></div><span class="text-center text-xs text-muted">Aug</span></li>
+            <li class="flex flex-col gap-1.5"><span class="text-center font-display text-lg font-black tabular-nums text-ink">412</span><div class="flex h-28 flex-col justify-end"><div class="h-[82.4%] bg-ink"></div></div><span class="text-center text-xs text-muted">Oct</span></li>
+            <li class="flex flex-col gap-1.5"><span class="text-center font-display text-lg font-black tabular-nums text-ink">362</span><div class="flex h-28 flex-col justify-end"><div class="h-[72.4%] border-2 border-ink bg-stripes text-edge"></div></div><span class="text-center text-xs text-muted">Nov</span></li>
+          </ol>
+          <figcaption class="text-sm text-muted">Bar height is out of the 500 place cap. The striped November bar counts entries so far, not finishers.</figcaption>
+        </figure>
+
+        <section id="club" aria-labelledby="club-title" class="flex flex-col items-start gap-4 bg-bg p-5 md:col-span-4 md:flex-row md:items-center md:justify-between md:p-6">
+          <div class="flex flex-col gap-1">
+            <h3 id="club-title" class="font-display text-xl font-black uppercase tracking-tight text-ink">Train with the club</h3>
+            <p class="text-sm tabular-nums text-muted">Track on Tuesdays at 18:30. Long run on Saturdays at 08:00.</p>
+          </div>
+          <a href="#entry" class="group inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-[0.12em] text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Join the club</span>
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg>
+          </a>
+        </section>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title" class="border-y-2 border-ink bg-surface">
+      <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+        <h2 id="proof-title" class="mb-8 text-sm font-bold uppercase tracking-[0.12em] text-ink">This season so far</h2>
+        <dl class="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div class="flex flex-col gap-2 border-l-4 border-ink pl-4">
+            <dt class="order-2 text-sm text-muted">Finishers across four races</dt>
+            <dd class="order-1 font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink">1,529</dd>
+          </div>
+          <div class="flex flex-col gap-2 border-l-4 border-ink pl-4">
+            <dt class="order-2 text-sm text-muted">Timing mats on every course: start, 5 km, finish</dt>
+            <dd class="order-1 font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink">3</dd>
+          </div>
+          <div class="flex flex-col gap-2 border-l-4 border-ink pl-4">
+            <dt class="order-2 text-sm text-muted">Results online by noon on race day</dt>
+            <dd class="order-1 font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink">12:00</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="entry" aria-labelledby="entry-title" class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:px-6 md:py-20 lg:grid-cols-12">
+      <div class="flex flex-col gap-4 lg:col-span-5">
+        <h2 id="entry-title" class="font-display text-xl font-black uppercase tracking-tight text-ink md:text-2xl">Entry fees</h2>
+        <p class="max-w-md text-base text-ink">One price per race, paid when you register. Withdraw up to 7 days before and the fee becomes club credit.</p>
+      </div>
+      <div class="flex flex-col gap-8 lg:col-span-7">
+        <dl class="border-t-2 border-ink">
+          <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+            <dt class="font-semibold text-ink">Single race</dt>
+            <dd class="font-display text-xl font-black tabular-nums text-ink">$28</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 border-b border-line py-4">
+            <dt class="font-semibold text-ink">Club member</dt>
+            <dd class="font-display text-xl font-black tabular-nums text-ink">$20</dd>
+          </div>
+          <div class="flex items-baseline justify-between gap-4 border-b-2 border-ink py-4">
+            <dt class="font-semibold text-ink">Under 18</dt>
+            <dd class="font-display text-xl font-black tabular-nums text-ink">$10</dd>
+          </div>
+        </dl>
+        <div class="flex flex-col gap-3">
+          <h3 class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Every entry includes</h3>
+          <ul class="grid gap-x-8 gap-y-2 text-base text-ink sm:grid-cols-2">
+            <li class="flex gap-3"><span aria-hidden="true" class="mt-2 h-2 w-3 shrink-0 -skew-x-12 bg-ink"></span>A chip bib, collected on race morning</li>
+            <li class="flex gap-3"><span aria-hidden="true" class="mt-2 h-2 w-3 shrink-0 -skew-x-12 bg-ink"></span>A split at 5 km and a chip time</li>
+            <li class="flex gap-3"><span aria-hidden="true" class="mt-2 h-2 w-3 shrink-0 -skew-x-12 bg-ink"></span>Water at 5 km and at the finish</li>
+            <li class="flex gap-3"><span aria-hidden="true" class="mt-2 h-2 w-3 shrink-0 -skew-x-12 bg-ink"></span>A start wave set by your best 10K</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" aria-labelledby="cta-title" class="border-t-2 border-ink">
+      <div class="mx-auto grid max-w-6xl md:grid-cols-12">
+        <div aria-hidden="true" class="h-16 border-b-2 border-ink bg-accent bg-stripes text-accent-ink md:col-span-3 md:h-auto md:border-r-2 md:border-b-0"></div>
+        <div class="flex flex-col items-start gap-6 px-4 py-12 md:col-span-9 md:px-8 md:py-16">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Race 5 of 5, Sun 15 Nov, 08:30</p>
+          <h2 id="cta-title" class="font-display text-2xl font-black uppercase tracking-tight text-ink md:text-display">Old Town 10K</h2>
+          <p class="max-w-lg text-base text-ink">Two laps of the old town, start and finish on Market Square. <span class="font-semibold tabular-nums">138 of 500 places left.</span></p>
+          <a href="#" class="group inline-flex min-h-12 items-center justify-center bg-accent px-6 font-display text-lg font-extrabold uppercase tracking-wide text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Register for $28</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-2 border-ink bg-surface">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 md:flex-row md:items-center md:justify-between md:px-6">
+      <div class="flex items-center gap-2">
+        <span aria-hidden="true" class="h-5 w-2.5 -skew-x-12 bg-accent"></span>
+        <span class="font-display text-lg font-black uppercase tracking-tight text-ink">Splitline</span>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap gap-x-6">
+          <li><a href="#season" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Races</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Results</a></li>
+          <li><a href="#entry" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Entry</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center text-sm font-semibold uppercase tracking-[0.12em] text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="text-sm text-muted">Splitline Running Club, timing since 2019.</p>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

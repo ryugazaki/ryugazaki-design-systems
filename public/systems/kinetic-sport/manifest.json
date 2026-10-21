@@ -1,0 +1,64 @@
+{
+  "slug": "kinetic-sport",
+  "number": 10,
+  "name": "Kinetic Sport",
+  "tagline": "Big numbers, hard edges, always moving.",
+  "description": "A dark-first system that feels like a race clock. Condensed uppercase headlines at huge sizes, giant tabular numerals, an acid lime that marks what is live or leading, skewed labels, and diagonal stripes used like track markings.",
+  "tags": ["dark", "bold", "sport", "events", "dashboard"],
+  "defaultMode": "dark",
+  "useCases": ["sports clubs and race events", "fitness apps", "streetwear and campaigns", "live results and leaderboards"],
+  "fonts": [
+    { "family": "Big Shoulders Display", "role": "display headlines and big numerals, uppercase", "weights": [700, 800, 900], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap" },
+    { "family": "Barlow", "role": "body, labels, tables with tabular numerals", "weights": [400, 500, 600, 700], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap" }
+  ],
+  "typeScale": { "ratio": 1.618, "steps": { "xs": "12px", "sm": "14px", "base": "16px", "lg": "26px", "xl": "42px", "2xl": "68px", "display": "110px" } },
+  "palette": [
+    { "token": "--color-bg", "light": "#F2F2EC", "dark": "#0D0D0C", "role": "background" },
+    { "token": "--color-surface", "light": "#FBFBF6", "dark": "#171716", "role": "panels and rows" },
+    { "token": "--color-ink", "light": "#0D0D0C", "dark": "#F2F2EC", "role": "text" },
+    { "token": "--color-muted", "light": "#57574F", "dark": "#A3A39A", "role": "secondary text" },
+    { "token": "--color-line", "light": "#CFCFC5", "dark": "#2E2E2B", "role": "rules" },
+    { "token": "--color-edge", "light": "#6E6E66", "dark": "#7A7A72", "role": "control edges that need 3:1" },
+    { "token": "--color-accent", "light": "#C6F432", "dark": "#C6F432", "role": "acid lime: live, leading, primary action fills; never text on light backgrounds" },
+    { "token": "--color-accent-ink", "light": "#0D0D0C", "dark": "#0D0D0C", "role": "text on lime" },
+    { "token": "--color-hot", "light": "#C2321A", "dark": "#FF4D2E", "role": "live badge, alerts, DNF" },
+    { "token": "--color-hot-ink", "light": "#FBFBF6", "dark": "#0D0D0C", "role": "text on hot" }
+  ],
+  "allowedGradients": [
+    { "pattern": "bg-stripes", "reason": "diagonal track-marking stripe texture on decorative bands and empty areas only" }
+  ],
+  "rules": {
+    "do": [
+      "Set headlines in Big Shoulders Display uppercase with tight tracking at the largest step the layout allows",
+      "Make the key number on every screen giant and tabular",
+      "Use a -12deg skew on small labels and badges, with the text itself counter-skewed back upright",
+      "Mark what is live or leading with the lime fill, and keep lime off light backgrounds as text",
+      "Use the stripe utility only on decorative bands, never behind text"
+    ],
+    "dont": [
+      "Do not round corners",
+      "Do not use shadows or glows",
+      "Do not use lime as text on light backgrounds",
+      "Do not use more than lime and hot as accents",
+      "Do not write cheesy motivational slogans"
+    ]
+  },
+  "components": [
+    { "id": "button", "name": "Button", "file": "components/button.html", "notes": "Primary is a lime block with uppercase condensed label in ink; secondary is an ink outline; ghost is an uppercase text link with an arrow. Hover nudges the label 2px right." },
+    { "id": "input", "name": "Input", "file": "components/input.html", "notes": "Surface field with an edge border, uppercase Barlow label, bib or time formats in tabular numerals. Error uses hot." },
+    { "id": "select", "name": "Select", "file": "components/select.html", "notes": "Category select with a chevron, uppercase options." },
+    { "id": "checkbox-toggle", "name": "Checkbox and toggle", "file": "components/checkbox-toggle.html", "notes": "Square checkbox that fills lime with an ink check. Switch is a hard-edged track with a square knob that turns lime when on." },
+    { "id": "badge", "name": "Badge", "file": "components/badge.html", "notes": "Skewed labels: LIVE in hot, LEADER in lime, category in outline, DNF in hot outline." },
+    { "id": "card", "name": "Card", "file": "components/card.html", "notes": "Personal result: giant finish time, position out of field, pace per km, a stripe band on top." },
+    { "id": "navbar", "name": "Navbar", "file": "components/navbar.html", "notes": "Condensed uppercase wordmark, links, a lime register action. Mobile menu is a details disclosure with large uppercase rows." },
+    { "id": "modal", "name": "Modal and sheet", "file": "components/modal.html", "notes": "Hard-edged sheet with a lime top bar, uppercase title, two actions." },
+    { "id": "table", "name": "Table", "file": "components/table.html", "notes": "Leaderboard with rank, bib, name, category, two splits and finish, tabular numerals, the leader row marked with a lime rank cell." },
+    { "id": "bento", "name": "Bento grid", "file": "components/bento.html", "notes": "2x2 giant finish time, a pace bar chart, field size stat, weather and course tile, a stripe band tile." },
+    { "id": "empty-state", "name": "Empty state", "file": "components/empty-state.html", "notes": "A stripe band, \"No results yet\" in condensed uppercase, one line, one action." },
+    { "id": "toast", "name": "Toast", "file": "components/toast.html", "notes": "Hard-edged bar with a skewed label and tabular time." }
+  ],
+  "pages": [
+    { "id": "landing", "name": "Landing", "file": "pages/landing.html" },
+    { "id": "app", "name": "Race results", "file": "pages/app.html" }
+  ]
+}

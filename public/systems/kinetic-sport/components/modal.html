@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinetic Sport / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2F2EC;
+  --color-surface: #FBFBF6;
+  --color-ink: #0D0D0C;
+  --color-muted: #57574F;
+  --color-line: #CFCFC5;
+  --color-edge: #6E6E66;
+  --color-accent: #C6F432;
+  --color-accent-ink: #0D0D0C;
+  --color-hot: #C2321A;
+  --color-hot-ink: #FBFBF6;
+
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.1;
+  --text-xl: 2.625rem;
+  --text-xl--line-height: 0.95;
+  --text-2xl: 4.25rem;
+  --text-2xl--line-height: 0.9;
+  --text-display: 6.875rem;
+  --text-display--line-height: 0.85;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-sprint: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+@utility bg-stripes { background-image: repeating-linear-gradient(-45deg, currentColor 0 6px, transparent 6px 14px); }
+
+@layer base {
+  .dark {
+    --color-bg: #0D0D0C;
+    --color-surface: #171716;
+    --color-ink: #F2F2EC;
+    --color-muted: #A3A39A;
+    --color-line: #2E2E2B;
+    --color-edge: #7A7A72;
+    --color-accent: #C6F432;
+    --color-accent-ink: #0D0D0C;
+    --color-hot: #FF4D2E;
+    --color-hot-ink: #0D0D0C;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="relative flex min-h-[520px] items-end bg-accent-ink/85 pt-20 md:items-center md:justify-center md:p-10">
+    <div role="dialog" aria-modal="true" aria-labelledby="sheet-title" aria-describedby="sheet-body" class="w-full border-2 border-ink bg-surface md:max-w-lg">
+      <div aria-hidden="true" class="h-2 bg-accent"></div>
+      <div class="flex flex-col gap-6 p-5 md:p-7">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex flex-col gap-2">
+            <p class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Race 5 of 5</p>
+            <h2 id="sheet-title" class="font-display text-xl font-black uppercase tracking-tight text-ink">Register for Old Town 10K</h2>
+          </div>
+          <button type="button" aria-label="Close" class="inline-flex size-11 shrink-0 items-center justify-center border-2 border-edge text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 3l10 10M13 3L3 13"/></svg>
+          </button>
+        </div>
+        <p id="sheet-body" class="text-base text-ink">Sun 15 Nov 2026, Wave B at 08:40. Two laps of the old town, start and finish on Market Square. Collect your chip bib there from 07:30.</p>
+        <dl class="grid grid-cols-2 border-y-2 border-ink">
+          <div class="flex flex-col gap-1 border-r border-line py-3 pr-3">
+            <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Entry</dt>
+            <dd class="font-display text-xl font-black tabular-nums text-ink">$28</dd>
+          </div>
+          <div class="flex flex-col gap-1 py-3 pl-3">
+            <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Places left</dt>
+            <dd class="font-display text-xl font-black tabular-nums text-ink">138</dd>
+          </div>
+        </dl>
+        <div class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <button type="button" class="group inline-flex min-h-12 items-center justify-center border-2 border-ink px-6 font-display text-lg font-extrabold uppercase tracking-wide text-ink hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Not now</span>
+          </button>
+          <button type="button" class="group inline-flex min-h-12 items-center justify-center bg-accent px-6 font-display text-lg font-extrabold uppercase tracking-wide text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Pay $28 and register</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

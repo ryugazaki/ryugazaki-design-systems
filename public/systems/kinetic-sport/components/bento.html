@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kinetic Sport / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2F2EC;
+  --color-surface: #FBFBF6;
+  --color-ink: #0D0D0C;
+  --color-muted: #57574F;
+  --color-line: #CFCFC5;
+  --color-edge: #6E6E66;
+  --color-accent: #C6F432;
+  --color-accent-ink: #0D0D0C;
+  --color-hot: #C2321A;
+  --color-hot-ink: #FBFBF6;
+
+  --font-display: "Big Shoulders Display", ui-sans-serif, sans-serif;
+  --font-body: "Barlow", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.625rem;
+  --text-lg--line-height: 1.1;
+  --text-xl: 2.625rem;
+  --text-xl--line-height: 0.95;
+  --text-2xl: 4.25rem;
+  --text-2xl--line-height: 0.9;
+  --text-display: 6.875rem;
+  --text-display--line-height: 0.85;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --ease-sprint: cubic-bezier(0.2, 0.9, 0.1, 1);
+}
+
+@utility bg-stripes { background-image: repeating-linear-gradient(-45deg, currentColor 0 6px, transparent 6px 14px); }
+
+@layer base {
+  .dark {
+    --color-bg: #0D0D0C;
+    --color-surface: #171716;
+    --color-ink: #F2F2EC;
+    --color-muted: #A3A39A;
+    --color-line: #2E2E2B;
+    --color-edge: #7A7A72;
+    --color-accent: #C6F432;
+    --color-accent-ink: #0D0D0C;
+    --color-hot: #FF4D2E;
+    --color-hot-ink: #0D0D0C;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="grid max-w-5xl grid-cols-1 gap-0.5 border-2 border-ink bg-ink md:grid-cols-4">
+    <article aria-labelledby="hero-time" class="flex flex-col justify-between gap-8 bg-bg p-5 md:col-span-2 md:row-span-2 md:p-7">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Harbour 10K, Sun 18 Oct</p>
+        <span class="mx-1 inline-flex -skew-x-12 items-center border-2 border-ink bg-ink px-2 py-0.5"><span class="inline-block skew-x-12 text-xs font-bold uppercase tracking-[0.12em] text-bg">PB</span></span>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h2 id="hero-time" class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Ana Ruiz, chip time</h2>
+        <p class="font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink sm:text-display">44:20</p>
+      </div>
+      <dl class="grid grid-cols-2 gap-4 border-t-2 border-ink pt-4">
+        <div class="flex flex-col gap-1">
+          <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Overall</dt>
+          <dd class="font-display text-xl font-black tabular-nums text-ink">112<span class="text-lg text-muted">/412</span></dd>
+        </div>
+        <div class="flex flex-col gap-1">
+          <dt class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Pace</dt>
+          <dd class="font-display text-xl font-black tabular-nums text-ink">4:26<span class="text-lg text-muted"> /km</span></dd>
+        </div>
+      </dl>
+    </article>
+
+    <figure class="flex flex-col gap-4 bg-bg p-5 md:col-span-2 md:p-6">
+      <p class="text-sm font-bold uppercase tracking-[0.12em] text-ink">Pace by kilometre</p>
+      <ol class="grid grid-cols-10 gap-1.5">
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[76.67%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>1<span class="sr-only">, 4:22</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[73.33%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>2<span class="sr-only">, 4:23</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[70%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>3<span class="sr-only">, 4:24</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[63.33%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>4<span class="sr-only">, 4:26</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[60%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>5<span class="sr-only">, 4:27</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[56.67%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>6<span class="sr-only">, 4:28</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[50%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>7<span class="sr-only">, 4:30</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[46.67%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>8<span class="sr-only">, 4:31</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[56.67%] bg-ink"></div></div><span class="text-center text-xs tabular-nums text-muted"><span class="sr-only">Km </span>9<span class="sr-only">, 4:28</span></span></li>
+        <li class="flex flex-col gap-1.5"><div class="flex h-32 flex-col justify-end"><div class="h-[80%] border-2 border-ink bg-accent dark:border-accent"></div></div><span class="text-center text-xs font-bold tabular-nums text-ink"><span class="sr-only">Km </span>10<span class="sr-only">, 4:21, fastest</span></span></li>
+      </ol>
+      <figcaption class="text-sm text-muted">Taller is faster. The base is 4:45 /km and the top is 4:15 /km. Lime marks the fastest, km 10 in 4:21; the slowest was km 8 in 4:31.</figcaption>
+    </figure>
+
+    <section aria-labelledby="field-title" class="flex flex-col justify-between gap-4 bg-bg p-5">
+      <h3 id="field-title" class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Field size</h3>
+      <p class="font-display text-2xl leading-[1.2] font-black tabular-nums tracking-tight text-ink">412</p>
+      <p class="text-sm tabular-nums text-muted">Finishers from 418 starters. 6 DNF.</p>
+    </section>
+
+    <section aria-labelledby="course-title" class="flex flex-col gap-3 bg-bg p-5">
+      <h3 id="course-title" class="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Weather and course</h3>
+      <ul class="flex flex-col text-sm tabular-nums text-ink">
+        <li class="flex justify-between gap-3 border-b border-line py-1.5"><span class="text-muted">Start</span><span class="font-semibold">09:00, 9 °C</span></li>
+        <li class="flex justify-between gap-3 border-b border-line py-1.5"><span class="text-muted">Wind</span><span class="font-semibold">12 km/h NW</span></li>
+        <li class="flex justify-between gap-3 border-b border-line py-1.5"><span class="text-muted">Climb</span><span class="font-semibold">14 m</span></li>
+        <li class="flex justify-between gap-3 py-1.5"><span class="text-muted">Route</span><span class="font-semibold">One flat loop</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="next-title" class="flex flex-col bg-bg md:col-span-4 md:flex-row">
+      <div aria-hidden="true" class="h-12 border-b-2 border-ink bg-accent bg-stripes text-accent-ink md:h-auto md:w-2/5 md:border-r-2 md:border-b-0"></div>
+      <div class="flex flex-1 flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between md:p-6">
+        <div class="flex flex-col gap-1">
+          <h3 id="next-title" class="font-display text-xl font-black uppercase tracking-tight text-ink">Old Town 10K</h3>
+          <p class="text-sm tabular-nums text-muted">Sun 15 Nov, 08:30. 138 places left.</p>
+        </div>
+        <a href="#" class="group inline-flex min-h-12 items-center justify-center self-start bg-accent px-6 font-display text-lg font-extrabold uppercase tracking-wide text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink sm:self-auto">
+          <span class="inline-block transition-transform duration-150 ease-sprint group-hover:translate-x-0.5 motion-reduce:transition-none">Register</span>
+        </a>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
