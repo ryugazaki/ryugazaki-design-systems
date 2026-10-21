@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="empty-title" class="flex max-w-md flex-col items-start gap-6 rounded-md bg-surface p-6">
+    <div class="flex w-full items-center justify-between gap-4">
+      <p class="font-mono text-xs text-muted">bathroom, slot 6 of 6</p>
+      <p class="flex items-center gap-2 font-mono text-xs text-muted"><span aria-hidden="true" class="size-2 rounded-full border border-muted"></span>empty</p>
+    </div>
+    <svg aria-hidden="true" viewBox="0 0 240 120" class="w-full max-w-[280px]">
+      <rect x="40" y="10" width="160" height="100" rx="8" fill="none" class="stroke-muted" stroke-width="1.5" stroke-dasharray="6 5"/>
+      <rect x="96" y="96" width="48" height="14" rx="2" class="fill-panel stroke-muted" stroke-width="1"/>
+      <path d="M106 100v6M114 100v6M122 100v6M130 100v6" class="stroke-muted" stroke-width="2"/>
+      <circle cx="120" cy="50" r="18" fill="none" class="stroke-muted" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <circle cx="184" cy="24" r="3" fill="none" class="stroke-muted" stroke-width="1.25"/>
+      <path d="M120 74v12M114 80l6 6 6-6" fill="none" class="stroke-ink" stroke-width="1.5"/>
+    </svg>
+    <div>
+      <h2 id="empty-title" class="text-xl font-semibold tracking-tight text-ink">No sensor in the bathroom</h2>
+      <p class="mt-2 text-base text-muted">Press a Fieldkit S1 onto the bathroom base until it clicks and it reports within two minutes.</p>
+    </div>
+    <a href="#" class="inline-flex min-h-11 items-center justify-center rounded-md bg-accent px-5 text-sm font-medium text-accent-ink shadow-key transition-[filter,box-shadow] duration-150 ease-detent hover:brightness-95 active:shadow-none active:brightness-90 dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">Pair a sensor</a>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

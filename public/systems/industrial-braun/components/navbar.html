@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex flex-col gap-8">
+    <header class="relative rounded-md bg-surface">
+      <div class="flex min-h-16 items-center gap-3 px-3 sm:gap-4 sm:px-4 md:px-6">
+        <a href="#" class="inline-flex min-h-11 items-center gap-2 rounded-md text-lg font-bold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+          <span aria-hidden="true" class="grid size-5 grid-cols-2 gap-0.5"><span class="rounded-[1px] bg-ink"></span><span class="rounded-full bg-ink"></span><span class="rounded-full bg-ink"></span><span class="rounded-[1px] bg-ink"></span></span>
+          Fieldkit
+        </a>
+        <nav aria-label="Main" class="ml-6 hidden md:block">
+          <ul class="flex items-center gap-1">
+            <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center gap-2 rounded-md px-3 font-mono text-xs text-ink underline decoration-ink decoration-1 underline-offset-[6px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">sensors</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-3 font-mono text-xs text-muted transition-colors duration-150 ease-detent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">radio</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-3 font-mono text-xs text-muted transition-colors duration-150 ease-detent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">manual</a></li>
+            <li><a href="#" class="inline-flex min-h-11 items-center rounded-md px-3 font-mono text-xs text-muted transition-colors duration-150 ease-detent hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">support</a></li>
+          </ul>
+        </nav>
+        <div class="ml-auto flex items-center gap-2">
+          <a href="#" class="inline-flex min-h-11 items-center justify-center rounded-md bg-accent px-4 text-sm whitespace-nowrap font-medium text-accent-ink shadow-key transition-[filter,box-shadow] duration-150 ease-detent hover:brightness-95 active:shadow-none active:brightness-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none dark:shadow-bg">Order a kit</a>
+          <details class="group md:hidden">
+            <summary class="inline-flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center gap-2 rounded-md bg-panel px-3 font-mono text-xs text-ink shadow-key group-open:bg-line group-open:shadow-none dark:shadow-bg dark:group-open:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+              <span aria-hidden="true" class="grid size-3 grid-cols-2 gap-0.5"><span class="bg-ink"></span><span class="bg-ink"></span><span class="bg-ink"></span><span class="bg-ink"></span></span>
+              <span class="sr-only group-open:hidden sm:not-sr-only">menu</span><span class="sr-only hidden group-open:inline sm:not-sr-only">close</span>
+            </summary>
+            <nav aria-label="Main" class="absolute inset-x-0 top-full z-10 mt-2 rounded-md bg-surface p-4">
+              <ul class="grid grid-cols-2 gap-2">
+                <li><a href="#" aria-current="page" class="flex min-h-16 flex-col justify-between rounded-md bg-line p-3 text-sm font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:bg-bg">Sensors<span class="font-mono text-xs font-normal">s1, 5 rooms</span></a></li>
+                <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Radio<span class="font-mono text-xs font-normal">r1</span></a></li>
+                <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Manual<span class="font-mono text-xs font-normal">setup, care</span></a></li>
+                <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Support<span class="font-mono text-xs font-normal">repairs</span></a></li>
+              </ul>
+            </nav>
+          </details>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="menu-open-demo" class="max-w-sm">
+      <h2 id="menu-open-demo" class="mb-3 font-mono text-xs text-muted">mobile menu, open state</h2>
+      <div class="rounded-md bg-surface p-4">
+        <details open class="group">
+          <summary class="inline-flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-md bg-panel px-3 font-mono text-xs text-ink shadow-key group-open:bg-line group-open:shadow-none dark:shadow-bg dark:group-open:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+            <span aria-hidden="true" class="grid size-3 grid-cols-2 gap-0.5"><span class="bg-ink"></span><span class="bg-ink"></span><span class="bg-ink"></span><span class="bg-ink"></span></span>
+            <span class="group-open:hidden">menu</span><span class="hidden group-open:inline">close</span>
+          </summary>
+          <nav aria-label="Main, open demo" class="mt-4">
+            <ul class="grid grid-cols-2 gap-2">
+              <li><a href="#" aria-current="page" class="flex min-h-16 flex-col justify-between rounded-md bg-line p-3 text-sm font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink dark:bg-bg">Sensors<span class="font-mono text-xs font-normal">s1, 5 rooms</span></a></li>
+              <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Radio<span class="font-mono text-xs font-normal">r1</span></a></li>
+              <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Manual<span class="font-mono text-xs font-normal">setup, care</span></a></li>
+              <li><a href="#" class="flex min-h-16 flex-col justify-between rounded-md bg-panel p-3 text-sm font-medium text-ink shadow-key dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Support<span class="font-mono text-xs font-normal">repairs</span></a></li>
+            </ul>
+          </nav>
+        </details>
+        <p class="mt-4 font-mono text-xs text-muted">the current section is the pressed key</p>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

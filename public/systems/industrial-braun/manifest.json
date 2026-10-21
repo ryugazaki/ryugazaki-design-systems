@@ -1,0 +1,214 @@
+{
+  "slug": "industrial-braun",
+  "number": 7,
+  "name": "Industrial / Braun",
+  "tagline": "Less, but better. One orange switch per screen.",
+  "description": "A system that behaves like a well made appliance. Warm greys, a strict modular grid, rounded-square keys and round dials, tiny monospaced labels under every control, and a single signal orange reserved for the one thing that matters on each screen.",
+  "tags": [
+    "light",
+    "minimal",
+    "hardware",
+    "product",
+    "dashboard"
+  ],
+  "defaultMode": "light",
+  "useCases": [
+    "hardware and IoT products",
+    "control panels and settings",
+    "product landing pages",
+    "tools with physical counterparts"
+  ],
+  "fonts": [
+    {
+      "family": "Albert Sans",
+      "role": "display, headings and interface",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap"
+    },
+    {
+      "family": "Azeret Mono",
+      "role": "control labels, readouts, units",
+      "weights": [
+        400,
+        500
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.333,
+    "steps": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "15px",
+      "lg": "20px",
+      "xl": "27px",
+      "2xl": "36px",
+      "display": "48px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#EEECE6",
+      "dark": "#191917",
+      "role": "warm off-white housing"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#F7F6F2",
+      "dark": "#222220",
+      "role": "raised panels"
+    },
+    {
+      "token": "--color-panel",
+      "light": "#D7D4CC",
+      "dark": "#2B2B28",
+      "role": "recessed control panels and keys"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#1E1E1C",
+      "dark": "#E9E7E1",
+      "role": "text and markings"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#5F5D57",
+      "dark": "#A3A098",
+      "role": "labels and secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#C9C6BD",
+      "dark": "#3A3936",
+      "role": "seams and dividers"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#C2410C",
+      "dark": "#F06A2E",
+      "role": "the one signal element per screen"
+    },
+    {
+      "token": "--color-accent-ink",
+      "light": "#FFFFFF",
+      "dark": "#191917",
+      "role": "text on accent"
+    },
+    {
+      "token": "--color-led",
+      "light": "#2F7D4F",
+      "dark": "#5BC489",
+      "role": "on and healthy indicator dots"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Align everything to an 8px grid and group controls into panels like a device face",
+      "Put a tiny Azeret Mono label in lowercase under or beside every control and readout",
+      "Use rounded-square keys (8px radius) and true circles for dials, knobs and LEDs",
+      "Reserve the orange accent for exactly one element per screen: the primary action or the active state",
+      "Show state with small LED dots and readouts, not with colored backgrounds"
+    ],
+    "dont": [
+      "Do not use more than one orange element on a screen",
+      "Do not use drop shadows; panels read as recessed or raised through tone and a single inset line",
+      "Do not use decorative icons; draw only functional symbols",
+      "Do not use bold weights above 700 or condensed type",
+      "Do not round corners beyond 8px except for circles"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Rounded-square keys on the panel tone with a 1px inset bottom line. Primary is the orange key; secondary is panel; ghost is a text control with a mono label. Pressed state darkens the key and removes the inset line."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Recessed field on panel tone with an ink control edge, mono label above, unit suffix on the right. Error shows an orange-free danger message in ink with a small square marker."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Recessed field with a small triangle marker, styled like a detent switch label."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Square checkbox with a solid ink check. Switch is a rounded-square slide switch with an LED dot that lights when on."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Small mono labels with an LED dot: on, standby, offline, and one accent badge for the single current item."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "A device module: readout in large numerals, unit in mono, a small dial, and a status LED."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Wordmark left, mono section labels, a single orange action. Mobile menu is a details disclosure laid out as a key grid."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "A panel that slides up with a seam line on top, mono title label, two keys; the confirm key is the only orange."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Schedule table with mono times, room names, target values and LED status, ruled by seams."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Device face: a 2x2 dial tile, readout tiles, a key grid tile, and a level meter drawn with segments."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "A drawn outline of a module slot, one line explaining what to plug in, one key action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "A thin panel strip with an LED dot and a mono timestamp."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Device panel",
+      "file": "pages/app.html"
+    }
+  ]
+}

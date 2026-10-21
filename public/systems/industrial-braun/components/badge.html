@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-4">
+    <div class="rounded-md bg-surface p-6">
+      <h2 class="font-mono text-xs text-muted">status labels</h2>
+      <ul class="mt-5 flex flex-wrap items-center gap-3">
+        <li class="inline-flex min-h-7 items-center gap-2 rounded-sm border border-line px-2.5 font-mono text-xs text-ink">
+          <span aria-hidden="true" class="size-2 rounded-full bg-led"></span>on
+        </li>
+        <li class="inline-flex min-h-7 items-center gap-2 rounded-sm border border-line px-2.5 font-mono text-xs text-ink">
+          <span aria-hidden="true" class="size-2 rounded-full bg-muted"></span>standby
+        </li>
+        <li class="inline-flex min-h-7 items-center gap-2 rounded-sm border border-line px-2.5 font-mono text-xs text-muted">
+          <span aria-hidden="true" class="size-2 rounded-full border border-muted"></span>offline
+        </li>
+        <li class="inline-flex min-h-7 items-center gap-2 rounded-sm border border-ink px-2.5 font-mono text-xs font-medium text-ink">
+          <span aria-hidden="true" class="size-2 bg-ink"></span>fault
+        </li>
+        <li class="inline-flex min-h-7 items-center rounded-sm bg-panel px-2.5 font-mono text-xs text-ink">
+          fw 2.4.1
+        </li>
+        <li class="inline-flex min-h-7 items-center gap-2 rounded-sm bg-accent px-2.5 font-mono text-xs font-medium text-accent-ink">
+          <span aria-hidden="true" class="size-2 rounded-full bg-accent-ink"></span>now playing
+        </li>
+      </ul>
+    </div>
+
+    <div class="rounded-md bg-surface p-6">
+      <h2 class="font-mono text-xs text-muted">key</h2>
+      <dl class="mt-4 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-sm">
+        <dt class="font-mono text-xs text-ink">on</dt><dd class="text-muted">Success. The sensor reported in the last two minutes.</dd>
+        <dt class="font-mono text-xs text-ink">standby</dt><dd class="text-muted">Neutral. Paired and asleep until the next report.</dd>
+        <dt class="font-mono text-xs text-ink">offline</dt><dd class="text-muted">No report for ten minutes. Check the battery.</dd>
+        <dt class="font-mono text-xs text-ink">fault</dt><dd class="text-muted">Danger. The reading is out of range or the sensor failed a self test.</dd>
+        <dt class="font-mono text-xs text-ink">fw</dt><dd class="text-muted">Firmware version, a plain panel label.</dd>
+        <dt class="font-mono text-xs text-ink">now playing</dt><dd class="text-muted">The single current item. The only orange on the screen.</dd>
+      </dl>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

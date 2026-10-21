@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Checkbox and toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-4">
+    <fieldset class="rounded-md bg-surface p-6">
+      <legend class="float-left mb-4 w-full font-mono text-xs text-muted">report to this panel</legend>
+      <div class="clear-both flex flex-col">
+        <label class="flex min-h-11 cursor-pointer items-center gap-3">
+          <span class="relative inline-flex size-5 shrink-0">
+            <input type="checkbox" checked class="peer size-5 cursor-pointer appearance-none rounded-sm border-2 border-ink bg-surface checked:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="pointer-events-none absolute inset-0 hidden size-5 stroke-bg peer-checked:block" fill="none" stroke-width="2.5" stroke-linecap="square"><path d="M5.5 10.5l3 3 6-7"/></svg>
+          </span>
+          <span class="text-base text-ink">Temperature</span>
+          <span class="ml-auto font-mono text-xs text-muted">°c</span>
+        </label>
+        <label class="flex min-h-11 cursor-pointer items-center gap-3 border-t border-line">
+          <span class="relative inline-flex size-5 shrink-0">
+            <input type="checkbox" checked class="peer size-5 cursor-pointer appearance-none rounded-sm border-2 border-ink bg-surface checked:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="pointer-events-none absolute inset-0 hidden size-5 stroke-bg peer-checked:block" fill="none" stroke-width="2.5" stroke-linecap="square"><path d="M5.5 10.5l3 3 6-7"/></svg>
+          </span>
+          <span class="text-base text-ink">Humidity</span>
+          <span class="ml-auto font-mono text-xs text-muted">%</span>
+        </label>
+        <label class="flex min-h-11 cursor-pointer items-center gap-3 border-t border-line">
+          <span class="relative inline-flex size-5 shrink-0">
+            <input type="checkbox" class="peer size-5 cursor-pointer appearance-none rounded-sm border-2 border-ink bg-surface checked:bg-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="pointer-events-none absolute inset-0 hidden size-5 stroke-bg peer-checked:block" fill="none" stroke-width="2.5" stroke-linecap="square"><path d="M5.5 10.5l3 3 6-7"/></svg>
+          </span>
+          <span class="text-base text-ink">Air quality</span>
+          <span class="ml-auto font-mono text-xs text-muted">ppm</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="rounded-md bg-surface p-6">
+      <h2 class="mb-4 font-mono text-xs text-muted">switches</h2>
+      <div class="flex flex-col">
+        <div class="flex flex-col gap-1 pb-3">
+          <button type="button" role="switch" aria-checked="true" aria-describedby="dim-desc" class="group flex min-h-11 w-full cursor-pointer items-center justify-between gap-4 rounded-md text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="text-base text-ink">Dim display at night</span>
+            <span class="flex items-center gap-3">
+              <span aria-hidden="true" class="size-2 rounded-full bg-led"></span>
+              <span aria-hidden="true" class="relative h-7 w-12 rounded-md border border-ink bg-panel">
+                <span class="absolute top-0.5 right-0.5 size-[22px] rounded-sm bg-ink transition-[right] duration-150 ease-detent motion-reduce:transition-none"></span>
+              </span>
+              <span aria-hidden="true" class="w-6 font-mono text-xs text-ink">on</span>
+            </span>
+          </button>
+          <p id="dim-desc" class="font-mono text-xs text-muted">22:00 to 06:30, display at 10 %</p>
+        </div>
+        <div class="flex flex-col gap-1 border-t border-line pt-3">
+          <button type="button" role="switch" aria-checked="false" aria-describedby="chime-desc" class="group flex min-h-11 w-full cursor-pointer items-center justify-between gap-4 rounded-md text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            <span class="text-base text-ink">Chime on air alert</span>
+            <span class="flex items-center gap-3">
+              <span aria-hidden="true" class="size-2 rounded-full border border-muted"></span>
+              <span aria-hidden="true" class="relative h-7 w-12 rounded-md border border-ink bg-panel">
+                <span class="absolute top-0.5 left-0.5 size-[22px] rounded-sm border border-ink bg-surface transition-[left] duration-150 ease-detent motion-reduce:transition-none"></span>
+              </span>
+              <span aria-hidden="true" class="w-6 font-mono text-xs text-muted">off</span>
+            </span>
+          </button>
+          <p id="chime-desc" class="font-mono text-xs text-muted">radio plays one tone above 1,000 ppm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

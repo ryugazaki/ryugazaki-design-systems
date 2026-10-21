@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="relative flex min-h-[480px] flex-col justify-end rounded-md bg-bg p-3 pt-16 md:items-center md:justify-center md:p-12">
+    <div aria-hidden="true" class="absolute inset-0 flex flex-col gap-3 p-4">
+      <div class="h-10 rounded-md bg-surface"></div>
+      <div class="grid flex-1 grid-cols-2 gap-3">
+        <div class="rounded-md bg-surface"></div>
+        <div class="rounded-md bg-surface"></div>
+      </div>
+    </div>
+    <div aria-hidden="true" class="absolute inset-0 rounded-md bg-ink/45 dark:bg-bg/80"></div>
+
+    <div role="dialog" aria-modal="true" aria-labelledby="fw-title" aria-describedby="fw-body" class="relative w-full rounded-md bg-surface transition-[translate,opacity] duration-300 ease-detent starting:translate-y-6 starting:opacity-0 motion-reduce:transition-none md:max-w-md">
+      <div class="flex justify-center pt-2.5 md:hidden">
+        <span aria-hidden="true" class="h-1 w-10 rounded-full bg-muted"></span>
+      </div>
+      <div class="flex items-center justify-between gap-4 border-b border-line px-5 pt-3 pb-3 md:pt-4">
+        <p class="font-mono text-xs whitespace-nowrap text-muted">radio r1 firmware</p>
+        <p class="font-mono text-xs whitespace-nowrap tabular-nums text-muted">2.4.1 to 2.4.2</p>
+      </div>
+      <div class="px-5 pt-5 pb-6">
+        <h2 id="fw-title" class="text-xl font-semibold tracking-tight text-ink">Update the radio now?</h2>
+        <p id="fw-body" class="mt-3 text-base text-ink">The radio restarts and stays silent for about 90 seconds. Presets, alarms and the volume are kept.</p>
+        <p class="mt-4 flex items-center gap-2 font-mono text-xs text-muted">
+          <span aria-hidden="true" class="size-2 rounded-full bg-led"></span>battery 100 %, on mains power
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-2 border-t border-line p-3">
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-md bg-panel px-4 text-sm font-medium text-ink shadow-key transition-[background-color,box-shadow] duration-150 ease-detent hover:bg-line active:bg-line active:shadow-none dark:shadow-bg dark:active:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">Not now</button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-md bg-accent px-4 text-sm font-medium text-accent-ink shadow-key transition-[filter,box-shadow] duration-150 ease-detent hover:brightness-95 active:shadow-none active:brightness-90 dark:shadow-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink motion-reduce:transition-none">Update now</button>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

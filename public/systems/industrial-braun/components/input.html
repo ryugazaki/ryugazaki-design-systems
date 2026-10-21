@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Industrial / Braun / Input</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EEECE6;
+  --color-surface: #F7F6F2;
+  --color-panel: #D7D4CC;
+  --color-ink: #1E1E1C;
+  --color-muted: #5F5D57;
+  --color-line: #C9C6BD;
+  --color-accent: #C2410C;
+  --color-accent-ink: #FFFFFF;
+  --color-led: #2F7D4F;
+
+  --font-display: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-body: "Albert Sans", ui-sans-serif, sans-serif;
+  --font-mono: "Azeret Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 0.9375rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.35;
+  --text-xl: 1.6875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.25rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-key: inset 0 -2px 0 0 rgb(30 30 28 / 0.18);
+
+  --ease-detent: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #191917;
+    --color-surface: #222220;
+    --color-panel: #2B2B28;
+    --color-ink: #E9E7E1;
+    --color-muted: #A3A098;
+    --color-line: #3A3936;
+    --color-accent: #F06A2E;
+    --color-accent-ink: #191917;
+    --color-led: #5BC489;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <form class="flex max-w-md flex-col gap-6 rounded-md bg-surface p-6" action="#">
+    <div class="flex flex-col gap-2">
+      <label for="room-name" class="font-mono text-xs text-muted">room name</label>
+      <input id="room-name" type="text" value="Living room" aria-describedby="room-name-hint" class="min-h-11 w-full rounded-md border border-ink bg-panel px-3 text-base text-ink transition-[outline-color] duration-150 ease-detent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      <p id="room-name-hint" class="text-sm text-muted">Shown on the sensor display. Up to 16 characters.</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="target-temp" class="font-mono text-xs text-muted">target temperature</label>
+      <div class="relative">
+        <input id="target-temp" type="text" inputmode="decimal" value="21.5" aria-describedby="target-temp-hint" class="min-h-11 w-full rounded-md border border-ink bg-panel py-2 pr-14 pl-3 font-mono text-base tabular-nums text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 flex items-center border-l border-ink px-3 font-mono text-xs text-ink">°c</span>
+      </div>
+      <p id="target-temp-hint" class="text-sm text-muted">In degrees Celsius. Fieldkit holds the room within 0.5 °C.</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="co2-alert" class="font-mono text-xs text-muted">air alert above</label>
+      <div class="relative">
+        <input id="co2-alert" type="text" inputmode="numeric" value="12000" aria-invalid="true" aria-describedby="co2-alert-error" class="min-h-11 w-full rounded-md border-2 border-ink bg-panel py-2 pr-16 pl-3 font-mono text-base tabular-nums text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+        <span aria-hidden="true" class="pointer-events-none absolute inset-y-0 right-0 flex items-center border-l-2 border-ink px-3 font-mono text-xs text-ink">ppm</span>
+      </div>
+      <p id="co2-alert-error" class="flex items-start gap-2 text-sm font-medium text-ink">
+        <span aria-hidden="true" class="mt-1.5 size-2 shrink-0 bg-ink"></span>
+        Enter a value between 400 and 5,000 ppm.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="room-note" class="font-mono text-xs text-muted">note for this room</label>
+      <textarea id="room-note" rows="3" aria-describedby="room-note-hint" class="w-full rounded-md border border-ink bg-panel px-3 py-2.5 text-base text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Sensor sits on the bookshelf, away from the window.</textarea>
+      <p id="room-note-hint" class="text-sm text-muted">Only you see this note.</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="serial" class="font-mono text-xs text-muted">serial number</label>
+      <input id="serial" type="text" value="FK-S1-04812" disabled aria-describedby="serial-hint" class="min-h-11 w-full cursor-not-allowed rounded-md border border-dashed border-muted bg-bg px-3 font-mono text-base text-muted">
+      <p id="serial-hint" class="text-sm text-muted">Read from the sensor. It cannot be changed.</p>
+    </div>
+  </form>
+  <!-- snippet:end -->
+</body>
+</html>
