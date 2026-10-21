@@ -1,0 +1,212 @@
+{
+  "slug": "terminal-retro",
+  "number": 4,
+  "name": "Terminal / Retro",
+  "tagline": "Phosphor on black. Every pixel earns its place.",
+  "description": "A dark-first system that borrows from terminals and line printers. Monospace everywhere, a bitmap display face for big moments, box-drawing borders, and status tags in brackets. The light mode is a printout, not an inverted screen.",
+  "tags": [
+    "dark",
+    "mono",
+    "dev-tool",
+    "retro",
+    "dashboard"
+  ],
+  "defaultMode": "dark",
+  "useCases": [
+    "developer tools and CLIs",
+    "monitoring dashboards",
+    "changelogs and docs for technical products",
+    "hacker-flavored landing pages"
+  ],
+  "fonts": [
+    {
+      "family": "JetBrains Mono",
+      "role": "all interface and body text",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap"
+    },
+    {
+      "family": "VT323",
+      "role": "display headlines and big numbers only",
+      "weights": [
+        400
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.333,
+    "steps": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "19px",
+      "xl": "25px",
+      "2xl": "33px",
+      "display": "72px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#EDEAD8",
+      "dark": "#0B0F0C",
+      "role": "screen or paper"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#F6F4E8",
+      "dark": "#111812",
+      "role": "panels"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#1D2B1F",
+      "dark": "#C8F5D2",
+      "role": "text"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#5C6B5E",
+      "dark": "#5E7A64",
+      "role": "comments, metadata"
+    },
+    {
+      "token": "--color-line",
+      "light": "#1D2B1F",
+      "dark": "#2B3A2F",
+      "role": "box borders"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#1F7A3A",
+      "dark": "#7CF29A",
+      "role": "phosphor accent, ok status, prompt"
+    },
+    {
+      "token": "--color-accent-ink",
+      "light": "#EDEAD8",
+      "dark": "#0B0F0C",
+      "role": "text on accent"
+    },
+    {
+      "token": "--color-amber",
+      "light": "#9A5B00",
+      "dark": "#FFB547",
+      "role": "warnings, highlights"
+    },
+    {
+      "token": "--color-danger",
+      "light": "#B3261E",
+      "dark": "#FF6B5B",
+      "role": "errors"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Set all text in JetBrains Mono at 14px; use VT323 only for display text and large numbers",
+      "Draw containers with 1px solid borders and label them in the top border like a terminal window title",
+      "Show status with bracket tags such as [ok], [warn], [err], colored by meaning",
+      "Prefix interactive rows and prompts with a > or $ character",
+      "Use inverse video (accent background, accent-ink text) for the selected row and the primary action"
+    ],
+    "dont": [
+      "Do not round any corner",
+      "Do not add glow, bloom, or text-shadow to phosphor text",
+      "Do not use scanline overlays on content that must be read",
+      "Do not use proportional fonts anywhere",
+      "Do not invert the dark theme to make the light theme; light mode is printout paper"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Bracketed labels like [ deploy ]. Primary is inverse video; secondary is bordered; ghost is text with a > prefix on hover."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "A prompt line: $ prefix, no box, a block cursor drawn with a blinking span. Error prints an [err] line below."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Bordered native select with a v chevron character; label written as a key with a colon, for example \"env:\"."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Checkbox rendered as [x] and [ ] text. Switch rendered as on / off segments with inverse video on the active one."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Bracket tags: [ok] accent, [warn] amber, [err] danger, [idle] muted."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "Terminal window: title in the top border, body text, footer status line."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Single status line: product name, path, links separated by pipes, clock on the right. Mobile uses a details menu."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Box with a double top border, title line, body, and [ confirm ] [ cancel ] actions."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Fixed-width columns, header underlined with box-drawing characters, inverse selected row, numbers right-aligned."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Worker grid: a large throughput number in VT323, a sparkline made of block characters, queue depth, and a log excerpt."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "A comment-style message (# nothing queued) and a command to copy."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "One-line log entries with timestamps and status tags, stacked."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Queue monitor",
+      "file": "pages/app.html"
+    }
+  ]
+}

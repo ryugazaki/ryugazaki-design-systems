@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-10">
+    <article aria-labelledby="card-title" class="relative mt-2.5 flex flex-col border border-line bg-surface">
+      <h2 id="card-title" class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">webhooks.out</h2>
+      <div class="flex flex-col gap-4 px-4 pt-6 pb-4">
+        <p class="font-display text-2xl text-danger">Stalled for 14 minutes</p>
+        <p class="text-ink">The endpoint at hooks.acme-pay.io answers 503 on every request. nightshift stopped dispatching after 5 failures in a row and is holding 9,812 jobs until it recovers.</p>
+        <pre class="overflow-x-auto border-l-2 border-line py-1 pl-3 text-xs text-ink dark:border-muted"><span class="text-muted dark:text-ink/60"># last response</span>
+POST /v2/events  503  1,204 ms
+retry-after: 120</pre>
+        <div class="flex flex-wrap gap-3">
+          <a href="#" class="inline-flex min-h-11 items-center bg-accent px-4 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>open queue<span aria-hidden="true">&nbsp;]</span></a>
+          <a href="#" class="inline-flex min-h-11 items-center border border-line px-4 text-ink hover:bg-bg dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>tail logs<span aria-hidden="true">&nbsp;]</span></a>
+        </div>
+      </div>
+      <footer class="flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-line px-4 py-2 text-xs">
+        <span class="font-bold text-danger">[err]</span>
+        <span class="text-ink">211 failed</span>
+        <span aria-hidden="true" class="text-muted">|</span>
+        <span class="text-ink">owner @payments</span>
+        <span aria-hidden="true" class="text-muted">|</span>
+        <span class="text-muted dark:text-ink/60">since 13:48 UTC</span>
+      </footer>
+    </article>
+
+    <article aria-labelledby="mini-title" class="relative mt-2.5 flex max-w-xs flex-col border border-line bg-surface">
+      <h2 id="mini-title" class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w07</h2>
+      <dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 px-4 pt-5 pb-3 text-sm">
+        <dt class="text-muted dark:text-ink/60">queue:</dt><dd class="text-ink">email.send</dd>
+        <dt class="text-muted dark:text-ink/60">rate:</dt><dd class="text-ink tabular-nums">12.4 jobs/s</dd>
+      </dl>
+      <footer class="flex items-center justify-between gap-2 border-t border-line px-4 py-1.5 text-xs">
+        <span class="font-bold text-accent">[ok]</span>
+        <span class="text-muted dark:text-ink/60 tabular-nums">up 6d 02h</span>
+      </footer>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

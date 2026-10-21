@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># status tags</h2>
+      <div class="flex flex-wrap items-center gap-2 border border-line bg-surface p-4">
+        <span class="inline-flex items-center bg-surface px-1 font-bold text-accent">[ok]</span>
+        <span class="inline-flex items-center bg-surface px-1 font-bold text-amber">[warn]</span>
+        <span class="inline-flex items-center bg-surface px-1 font-bold text-danger">[err]</span>
+        <span class="inline-flex items-center bg-surface px-1 font-bold text-muted dark:text-ink/60">[idle]</span>
+        <span class="inline-flex items-center px-1 text-ink">[queued]</span>
+      </div>
+      <p class="text-xs text-muted dark:text-ink/60">Accent doubles as success: [ok] is the phosphor green. [queued] is the neutral tag in plain ink.</p>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># system tags</h2>
+      <div class="flex flex-wrap items-center gap-3 border border-line bg-surface p-4">
+        <span class="inline-flex items-center gap-1 px-1 font-bold text-accent">[live<span aria-hidden="true" class="inline-block h-[1.1em] w-[1ch] bg-accent animate-blink motion-reduce:animate-none"></span>]</span>
+        <span class="inline-flex items-center px-1 font-bold text-amber">[retry 3/5]</span>
+        <span class="inline-flex items-center bg-ink px-1.5 font-bold text-bg">[w07]</span>
+      </div>
+      <p class="text-xs text-muted dark:text-ink/60">The live tag blinks its cursor while a stream is attached. It holds still with reduced motion.</p>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># in a log line</h2>
+      <ul class="flex flex-col gap-1 border border-line bg-surface p-4 text-sm">
+        <li class="flex flex-wrap gap-x-2"><span class="text-muted dark:text-ink/60 tabular-nums">13:48:07</span><span class="font-bold text-danger">[err]</span><span class="text-ink">webhooks.out stalled, 0 jobs/s</span></li>
+        <li class="flex flex-wrap gap-x-2"><span class="text-muted dark:text-ink/60 tabular-nums">13:48:41</span><span class="font-bold text-amber">[warn]</span><span class="text-ink">billing.charge p95 at 1,920 ms</span></li>
+        <li class="flex flex-wrap gap-x-2"><span class="text-muted dark:text-ink/60 tabular-nums">13:49:02</span><span class="font-bold text-accent">[ok]</span><span class="text-ink">email.send drained 4,310 jobs</span></li>
+      </ul>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

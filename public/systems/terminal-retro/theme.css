@@ -1,0 +1,62 @@
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}

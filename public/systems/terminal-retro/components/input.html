@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Input</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-lg flex-col gap-8">
+    <div class="flex flex-col gap-1.5">
+      <label for="queue-name" class="text-xs text-muted dark:text-ink/60">queue name:</label>
+      <div class="flex min-h-11 items-center gap-2 border-b border-line focus-within:border-accent focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-dashed focus-within:outline-accent dark:border-muted dark:focus-within:border-accent">
+        <span aria-hidden="true" class="font-bold text-accent">$</span>
+        <input id="queue-name" name="queue-name" type="text" value="webhooks.out" aria-describedby="queue-name-hint" autocomplete="off" spellcheck="false" class="peer min-h-11 min-w-[1ch] max-w-full bg-transparent py-2 text-ink caret-accent outline-none [field-sizing:content]">
+        <span aria-hidden="true" class="h-5 w-[1ch] bg-accent animate-blink motion-reduce:animate-none peer-focus:hidden"></span>
+      </div>
+      <p id="queue-name-hint" class="text-xs text-muted dark:text-ink/60"># lowercase, dots between parts</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="queue-bad" class="text-xs text-muted dark:text-ink/60">queue name:</label>
+      <div class="flex min-h-11 items-center gap-2 border-b border-danger focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-dashed focus-within:outline-danger">
+        <span aria-hidden="true" class="font-bold text-danger">$</span>
+        <input id="queue-bad" name="queue-bad" type="text" value="webhook.out" aria-invalid="true" aria-describedby="queue-bad-error" autocomplete="off" spellcheck="false" class="peer min-h-11 min-w-[1ch] max-w-full bg-transparent py-2 text-ink caret-danger outline-none [field-sizing:content]">
+        <span aria-hidden="true" class="h-5 w-[1ch] bg-danger animate-blink motion-reduce:animate-none peer-focus:hidden"></span>
+      </div>
+      <p id="queue-bad-error" class="text-xs text-danger"><span class="font-bold">[err]</span> No queue named webhook.out. Did you mean webhooks.out?</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="payload" class="text-xs text-muted dark:text-ink/60">job payload:</label>
+      <div class="flex border-l-2 border-line focus-within:border-accent dark:border-muted dark:focus-within:border-accent">
+        <span aria-hidden="true" class="flex flex-col py-2 pr-2 pl-2 text-right text-xs leading-[1.6rem] text-muted select-none"><span>1</span><span>2</span><span>3</span><span>4</span></span>
+        <textarea id="payload" name="payload" rows="4" aria-describedby="payload-hint" spellcheck="false" class="min-w-0 flex-1 resize-y bg-transparent py-2 pr-2 text-sm leading-[1.6rem] text-ink caret-accent outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">{ "invoice": "inv_7731",
+  "amount": 4800,
+  "currency": "eur",
+  "attempt": 1 }</textarea>
+      </div>
+      <p id="payload-hint" class="text-xs text-muted dark:text-ink/60"># JSON, 64 KB max. Sent as is to the worker.</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label for="region" class="text-xs text-muted dark:text-ink/60">region:</label>
+      <div class="flex min-h-11 items-center gap-2 border-b border-dashed border-muted">
+        <span aria-hidden="true" class="text-muted">$</span>
+        <input id="region" name="region" type="text" value="eu-west-1" disabled aria-describedby="region-hint" class="min-h-11 min-w-0 flex-1 cursor-not-allowed bg-transparent py-2 text-muted outline-none">
+      </div>
+      <p id="region-hint" class="text-xs text-muted dark:text-ink/60"># locked. Region is set when the queue is created.</p>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

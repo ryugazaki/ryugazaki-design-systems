@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="empty-title" class="relative mt-2.5 flex max-w-xl flex-col gap-5 border border-dashed border-line bg-surface px-5 pt-8 pb-6 dark:border-muted">
+    <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">reports.nightly</p>
+    <div class="flex flex-col gap-2">
+      <h2 id="empty-title" class="font-display text-2xl text-ink"><span class="text-muted">#</span> nothing queued in reports.nightly</h2>
+      <p class="text-ink">The next batch is scheduled for 02:00 UTC, or you can enqueue one now from your terminal.</p>
+    </div>
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+      <p class="flex min-h-11 min-w-0 flex-1 items-center overflow-x-auto bg-bg px-3 text-sm whitespace-nowrap text-ink"><span aria-hidden="true" class="pr-2 text-muted">$</span>nightshift enqueue reports.nightly</p>
+      <button type="button" class="inline-flex min-h-11 shrink-0 items-center justify-center bg-accent px-4 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>copy command<span aria-hidden="true">&nbsp;]</span></button>
+    </div>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

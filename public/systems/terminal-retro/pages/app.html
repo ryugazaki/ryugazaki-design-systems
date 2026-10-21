@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Queue monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line bg-surface">
+    <div class="flex min-h-12 items-center gap-3 px-4 md:gap-4 md:px-6">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-1 font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-accent">&gt;</span>nightshift</a>
+      <span class="hidden truncate text-xs sm:inline text-muted dark:text-ink/60">~/prod/queues</span>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center text-sm">
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" aria-current="page" class="inline-flex min-h-11 items-center px-2 font-bold text-ink underline decoration-accent decoration-2 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">queues</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">workers</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">logs</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">alerts</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-3">
+        <time datetime="14:02:11" class="text-xs text-ink tabular-nums"><span class="sr-only">Server time </span>14:02:11 UTC</time>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center border border-line px-3 text-sm text-ink group-open:bg-ink group-open:text-bg dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">[ menu ]</span>
+            <span class="hidden group-open:inline">[ close ]</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 border-b border-line bg-surface">
+            <ul class="flex flex-col text-ink">
+              <li><a href="#" aria-current="page" class="flex min-h-12 items-center gap-2 px-4 font-bold hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-accent">&gt;</span>queues</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>workers</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>logs</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>alerts</a></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-6 md:px-6 md:py-8">
+    <section aria-labelledby="status-title" class="flex flex-col gap-4">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+        <h1 id="status-title" class="font-display text-display text-ink">Queue monitor</h1>
+        <p class="text-xs text-ink">prod <span aria-hidden="true" class="text-muted">|</span> eu-west-1 <span aria-hidden="true" class="text-muted">|</span> uptime <span class="tabular-nums">41d 06h 12m</span> <span aria-hidden="true" class="text-muted">|</span> refresh 1 s</p>
+      </div>
+      <dl class="grid grid-cols-2 border-t border-l border-line lg:grid-cols-4">
+        <div class="flex flex-col gap-1 border-r border-b border-line bg-surface p-3 md:p-4">
+          <dt class="text-xs text-muted dark:text-ink/60">throughput, jobs/s</dt>
+          <dd class="font-display text-2xl text-accent tabular-nums lg:text-display">157</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-r border-b border-line bg-surface p-3 md:p-4">
+          <dt class="text-xs text-muted dark:text-ink/60">waiting in 6 queues</dt>
+          <dd class="font-display text-2xl text-ink tabular-nums lg:text-display">12,144</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-r border-b border-line bg-surface p-3 md:p-4">
+          <dt class="text-xs text-muted dark:text-ink/60">failed, last hour</dt>
+          <dd class="font-display text-2xl text-danger tabular-nums lg:text-display">214</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-r border-b border-line bg-surface p-3 md:p-4">
+          <dt class="text-xs text-muted dark:text-ink/60">workers up</dt>
+          <dd class="font-display text-2xl text-ink tabular-nums lg:text-display">11/12</dd>
+        </div>
+      </dl>
+    </section>
+
+    <div class="grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-12">
+      <section aria-labelledby="queues-title" class="relative mt-2.5 flex min-w-0 flex-col border border-line bg-surface lg:col-span-7">
+        <h2 id="queues-title" class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">queues (6)</h2>
+        <div class="overflow-x-auto pt-4 pb-2">
+          <table class="w-full min-w-[640px] table-fixed text-sm">
+            <caption class="sr-only">Queues in production, worst first. The selected row is webhooks.out.</caption>
+            <colgroup><col class="w-[19ch]"><col class="w-[9ch]"><col class="w-[9ch]"><col class="w-[8ch]"><col class="w-[8ch]"><col class="w-[12ch]"></colgroup>
+            <thead>
+              <tr class="text-left text-xs text-muted dark:text-ink/60">
+                <th scope="col" class="px-3 pt-1 font-normal"><span aria-hidden="true">&nbsp;&nbsp;</span>queue</th>
+                <th scope="col" class="px-3 pt-1 font-normal">status</th>
+                <th scope="col" class="px-3 pt-1 text-right font-normal">depth</th>
+                <th scope="col" class="px-3 pt-1 text-right font-normal">rate/s</th>
+                <th scope="col" class="px-3 pt-1 text-right font-normal">p95 ms</th>
+                <th scope="col" class="px-3 pt-1 text-right font-normal">failed 1h</th>
+              </tr>
+              <tr aria-hidden="true" class="text-xs text-muted">
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+                <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr aria-current="true" class="bg-accent font-bold text-surface">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed focus-visible:outline-surface"><span aria-hidden="true">&gt;&nbsp;</span>webhooks.out<span class="sr-only"> (selected)</span></a></td>
+                <td class="px-3 py-2">[err]</td>
+                <td class="px-3 py-2 text-right tabular-nums">9,812</td>
+                <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+                <td class="px-3 py-2 text-right tabular-nums">n/a</td>
+                <td class="px-3 py-2 text-right tabular-nums">211</td>
+              </tr>
+              <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>billing.charge</a></td>
+                <td class="px-3 py-2 font-bold text-amber">[warn]</td>
+                <td class="px-3 py-2 text-right tabular-nums">2,140</td>
+                <td class="px-3 py-2 text-right tabular-nums">18.5</td>
+                <td class="px-3 py-2 text-right tabular-nums">1,920</td>
+                <td class="px-3 py-2 text-right tabular-nums">3</td>
+              </tr>
+              <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>email.send</a></td>
+                <td class="px-3 py-2 font-bold text-accent">[ok]</td>
+                <td class="px-3 py-2 text-right tabular-nums">128</td>
+                <td class="px-3 py-2 text-right tabular-nums">42.0</td>
+                <td class="px-3 py-2 text-right tabular-nums">310</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+              </tr>
+              <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>thumbs.render</a></td>
+                <td class="px-3 py-2 font-bold text-accent">[ok]</td>
+                <td class="px-3 py-2 text-right tabular-nums">64</td>
+                <td class="px-3 py-2 text-right tabular-nums">96.2</td>
+                <td class="px-3 py-2 text-right tabular-nums">140</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+              </tr>
+              <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>search.index</a></td>
+                <td class="px-3 py-2 font-bold text-muted dark:text-ink/60">[idle]</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+                <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+                <td class="px-3 py-2 text-right tabular-nums text-muted dark:text-ink/60">n/a</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+              </tr>
+              <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+                <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>reports.nightly</a></td>
+                <td class="px-3 py-2 font-bold text-muted dark:text-ink/60">[idle]</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+                <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+                <td class="px-3 py-2 text-right tabular-nums text-muted dark:text-ink/60">n/a</td>
+                <td class="px-3 py-2 text-right tabular-nums">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="flex flex-col gap-3 border-t border-line px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-xs text-ink"><span class="font-bold text-danger">[err]</span> webhooks.out stalled 14m. Endpoint answers 503.</p>
+          <div class="flex flex-wrap gap-3">
+            <button type="button" class="inline-flex min-h-11 items-center border border-line px-4 text-sm text-ink hover:bg-bg dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>pause<span aria-hidden="true">&nbsp;]</span></button>
+            <button type="button" class="inline-flex min-h-11 items-center bg-accent px-4 text-sm font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>retry 211<span aria-hidden="true">&nbsp;]</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="log-title" class="relative mt-2.5 flex min-w-0 flex-col border border-line bg-surface lg:col-span-5">
+        <h2 id="log-title" class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">live log <span class="font-normal text-accent">[live]</span></h2>
+        <ol aria-label="Recent events, newest last" class="flex flex-col gap-1.5 px-4 pt-6 pb-3 text-xs">
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">13:48:07</span><span class="font-bold text-danger">[err]</span><span class="text-ink">webhooks.out POST /v2/events 503</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">13:48:31</span><span class="font-bold text-amber">[warn]</span><span class="text-ink">webhooks.out dispatch paused after 5 failures</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">13:49:02</span><span class="font-bold text-accent">[ok]</span><span class="text-ink">email.send drained 4,310 jobs</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">14:01:40</span><span class="font-bold text-accent">[ok]</span><span class="text-ink">thumbs.render retried 64 jobs, all passed</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">14:02:04</span><span class="font-bold text-amber">[warn]</span><span class="text-ink">billing.charge p95 1,920 ms, budget 1,500 ms</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">14:02:09</span><span class="font-bold text-danger">[err]</span><span class="text-ink">w09 lost connection, 3 jobs back to billing.charge</span></li>
+          <li class="flex flex-wrap gap-x-2"><span class="tabular-nums text-muted dark:text-ink/60">14:02:11</span><span class="font-bold text-amber">[warn]</span><span class="text-ink">webhooks.out still 503, next probe in 120 s</span></li>
+        </ol>
+        <p class="mt-auto flex min-h-11 items-center gap-2 border-t border-line px-4 text-sm text-ink"><span aria-hidden="true" class="font-bold text-accent">$</span><span>nightshift tail prod</span><span aria-hidden="true" class="inline-block h-[1.2em] w-[1ch] bg-accent animate-blink motion-reduce:animate-none"></span></p>
+      </section>
+    </div>
+
+    <section aria-labelledby="workers-title" class="flex flex-col gap-4">
+      <div class="flex flex-wrap items-baseline justify-between gap-2">
+        <h2 id="workers-title" class="font-display text-2xl text-ink">Workers</h2>
+        <p class="text-xs text-ink">8 busy <span aria-hidden="true" class="text-muted">|</span> 3 idle <span aria-hidden="true" class="text-muted">|</span> <span class="text-danger">1 down</span></p>
+      </div>
+      <ul class="grid grid-cols-2 gap-x-3 gap-y-6 pt-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w01</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">email.send</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">14.1 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w02</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">email.send</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">15.5 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w03</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">thumbs.render</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">31.8 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w04</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">thumbs.render</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">32.0 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w05</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">thumbs.render</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">32.4 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w06</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">billing.charge</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">9.6 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w07</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">email.send</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">12.4 jobs/s</p>
+        </li>
+        <li class="relative border border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w08</p>
+          <p class="font-bold text-accent">[ok]</p>
+          <p class="truncate text-ink">billing.charge</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">8.9 jobs/s</p>
+        </li>
+        <li class="relative border border-danger bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w09</p>
+          <p class="font-bold text-danger">[err]</p>
+          <p class="truncate text-ink">lost connection</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">0.0 jobs/s</p>
+        </li>
+        <li class="relative border border-dashed border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w10</p>
+          <p class="font-bold text-muted dark:text-ink/60">[idle]</p>
+          <p class="truncate text-ink">webhooks.out, paused</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">0.0 jobs/s</p>
+        </li>
+        <li class="relative border border-dashed border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w11</p>
+          <p class="font-bold text-muted dark:text-ink/60">[idle]</p>
+          <p class="truncate text-ink">waiting</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">0.0 jobs/s</p>
+        </li>
+        <li class="relative border border-dashed border-line dark:border-muted bg-surface px-3 pt-5 pb-2 text-xs">
+          <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">w12</p>
+          <p class="font-bold text-muted dark:text-ink/60">[idle]</p>
+          <p class="truncate text-ink">waiting</p>
+          <p class="tabular-nums text-muted dark:text-ink/60">0.0 jobs/s</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

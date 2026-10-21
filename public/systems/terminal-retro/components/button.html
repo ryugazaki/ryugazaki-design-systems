@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-8">
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># variants</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button type="button" class="inline-flex min-h-11 items-center bg-accent px-4 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <span aria-hidden="true">[&nbsp;</span>deploy<span aria-hidden="true">&nbsp;]</span>
+        </button>
+        <button type="button" class="inline-flex min-h-11 items-center border border-line px-4 text-ink hover:bg-surface hover:border-ink dark:border-muted dark:hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <span aria-hidden="true">[&nbsp;</span>view logs<span aria-hidden="true">&nbsp;]</span>
+        </button>
+        <button type="button" class="group inline-flex min-h-11 items-center gap-1 px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <span aria-hidden="true" class="text-accent opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100">&gt;</span>skip
+        </button>
+        <button type="button" class="inline-flex min-h-11 items-center border border-danger px-4 text-danger hover:bg-danger hover:text-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-danger">
+          <span aria-hidden="true">[&nbsp;</span>purge queue<span aria-hidden="true">&nbsp;]</span>
+        </button>
+      </div>
+      <p class="text-xs text-muted dark:text-ink/60">Ghost shows its &gt; prompt on hover and focus.</p>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># sizes and icon</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button type="button" class="inline-flex min-h-11 items-center border border-line px-3 text-xs text-ink hover:bg-surface dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <span aria-hidden="true">[&nbsp;</span>sm<span aria-hidden="true">&nbsp;]</span>
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center border border-line px-5 text-ink hover:bg-surface dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <span aria-hidden="true">[&nbsp;</span>md<span aria-hidden="true">&nbsp;]</span>
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center gap-2 bg-accent px-5 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="currentColor" shape-rendering="crispEdges"><path d="M4 2h2v12H4zM6 4h2v8H6zM8 6h2v4H8zM10 7h2v2h-2z"/></svg>
+          resume queue
+        </button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xs text-muted dark:text-ink/60"># states</h2>
+      <div class="flex flex-wrap items-start gap-4">
+        <div class="flex flex-col gap-1.5">
+          <button type="button" class="inline-flex min-h-11 items-center bg-accent px-4 font-bold text-surface outline-2 outline-offset-2 outline-dashed outline-accent">
+            <span aria-hidden="true">[&nbsp;</span>deploy<span aria-hidden="true">&nbsp;]</span>
+          </button>
+          <p class="text-xs text-muted dark:text-ink/60">focus-visible</p>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <button type="button" aria-busy="true" class="inline-flex min-h-11 items-center gap-2 border border-line px-4 text-ink dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4 animate-spin motion-reduce:animate-none" fill="currentColor" shape-rendering="crispEdges"><path d="M7 1h2v4H7zM7 11h2v4H7z"/><path d="M1 7h4v2H1zM11 7h4v2h-4z" opacity="0.35"/></svg>
+            Saving
+          </button>
+          <p class="text-xs text-muted dark:text-ink/60">loading</p>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <button type="button" disabled class="inline-flex min-h-11 cursor-not-allowed items-center border border-dashed border-muted px-4 text-muted">
+            <span aria-hidden="true">[&nbsp;</span>deploy<span aria-hidden="true">&nbsp;]</span>
+          </button>
+          <p class="text-xs text-muted dark:text-ink/60"># 3 workers still busy. Drain them first.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col gap-3">
+    <p class="text-xs text-muted dark:text-ink/60"># bottom sheet below md, centered dialog from md</p>
+    <div class="relative min-h-[520px] overflow-hidden border border-line bg-bg">
+      <pre aria-hidden="true" class="p-4 text-xs leading-6 text-muted">nightshift ~/prod/queues
+
+queue            status   depth
+email.send       [ok]       128
+billing.charge   [warn]   2,140
+webhooks.out     [err]    9,812
+thumbs.render    [ok]        64
+search.index     [idle]       0
+</pre>
+      <div class="absolute inset-0 flex items-end justify-center bg-bg/85 md:items-center md:p-8">
+        <div role="dialog" aria-modal="true" aria-labelledby="retry-title" aria-describedby="retry-body" class="flex w-full flex-col border border-b-0 border-t-[5px] border-double border-line bg-surface md:max-w-lg md:border-b dark:border-muted">
+          <div class="flex items-start justify-between gap-4 px-4 pt-4 pb-3 md:px-5">
+            <div class="flex flex-col gap-1">
+              <p class="text-xs text-muted dark:text-ink/60">prod / webhooks.out</p>
+              <h2 id="retry-title" class="font-display text-2xl text-ink">Retry 211 failed jobs?</h2>
+            </div>
+            <button type="button" aria-label="Close" class="flex size-11 shrink-0 items-center justify-center text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">[x]</button>
+          </div>
+          <div id="retry-body" class="flex flex-col gap-3 border-t border-line px-4 py-4 md:px-5">
+            <p class="text-ink">They go back to the front of the queue in their original order. Jobs that fail again count toward their 5 attempts.</p>
+            <p class="overflow-x-auto bg-bg px-3 py-2 text-xs whitespace-nowrap text-ink"><span aria-hidden="true" class="text-muted">$ </span>nightshift retry webhooks.out -n 211</p>
+            <p class="text-xs text-amber"><span class="font-bold">[warn]</span> The endpoint still answers 503. Most of these will fail again.</p>
+          </div>
+          <div class="flex flex-col gap-3 border-t border-line px-4 py-4 sm:flex-row sm:justify-end md:px-5">
+            <button type="button" class="inline-flex min-h-11 items-center justify-center bg-accent px-4 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent sm:order-2"><span aria-hidden="true">[&nbsp;</span>confirm<span aria-hidden="true">&nbsp;]</span></button>
+            <button type="button" class="inline-flex min-h-11 items-center justify-center border border-line px-4 text-ink hover:bg-bg dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent sm:order-1"><span aria-hidden="true">[&nbsp;</span>cancel<span aria-hidden="true">&nbsp;]</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

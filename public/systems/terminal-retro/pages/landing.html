@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line bg-surface">
+    <div class="mx-auto flex min-h-12 max-w-6xl items-center gap-3 px-4 md:gap-4 md:px-6">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-1 font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-accent">&gt;</span>nightshift</a>
+      <span class="hidden text-xs text-muted lg:inline dark:text-ink/60">v2.4.0</span>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center text-sm">
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#features" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">features</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#pricing" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">pricing</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">docs</a></li>
+          <li class="flex items-center"><span aria-hidden="true" class="px-1 text-muted">|</span><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">changelog</a><span aria-hidden="true" class="px-1 text-muted">|</span></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-3">
+        <a href="#" class="hidden min-h-11 items-center px-2 text-sm text-ink hover:underline hover:underline-offset-4 lg:inline-flex focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">sign in</a>
+        <a href="#install" class="hidden min-h-11 items-center border border-line px-3 text-sm text-ink hover:bg-bg sm:inline-flex dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>install<span aria-hidden="true">&nbsp;]</span></a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center border border-line px-3 text-sm text-ink group-open:bg-ink group-open:text-bg dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">[ menu ]</span>
+            <span class="hidden group-open:inline">[ close ]</span>
+          </summary>
+          <div class="absolute inset-x-0 top-full z-20 border-b border-line bg-surface">
+            <ul class="flex flex-col text-ink">
+              <li><a href="#features" class="flex min-h-12 items-center gap-2 px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>features</a></li>
+              <li><a href="#pricing" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>pricing</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>docs</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>changelog</a></li>
+              <li><a href="#" class="flex min-h-12 items-center gap-2 border-t border-line px-4 hover:bg-bg focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true" class="text-muted">&gt;</span>sign in</a></li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title" class="border-b border-line">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 pt-10 pb-12 md:px-6 md:pt-16 md:pb-16 lg:grid-cols-12 lg:items-center lg:gap-12 lg:pt-20 lg:pb-20">
+        <div class="flex flex-col items-start gap-6 lg:col-span-6">
+          <p class="text-xs text-muted dark:text-ink/60"># job queue monitor for backend teams</p>
+          <h1 id="hero-title" class="font-display text-display text-ink">See the stuck job before the pager does.</h1>
+          <p class="max-w-lg text-ink">nightshift reads your Redis, SQS, or Postgres queues and prints one honest screen: what is waiting, what is failing, and which worker dropped it. Retry from the same prompt.</p>
+          <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <a href="#install" class="inline-flex min-h-12 items-center justify-center bg-accent px-5 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>start free<span aria-hidden="true">&nbsp;]</span></a>
+            <a href="#" class="inline-flex min-h-12 items-center justify-center border border-line px-5 text-ink hover:bg-surface dark:border-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>read the docs<span aria-hidden="true">&nbsp;]</span></a>
+          </div>
+        </div>
+
+        <figure class="flex min-w-0 lg:col-span-6">
+          <div aria-hidden="true" class="mt-2.5 flex w-5 shrink-0 flex-col items-center justify-around border-y border-l border-line py-3 dark:hidden"><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span></div>
+          <div class="relative mt-2.5 min-w-0 flex-1 border border-line bg-surface dark:border-muted">
+            <figcaption class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">nightshift watch prod</figcaption>
+            <pre class="overflow-x-auto px-4 pt-6 pb-4 text-xs leading-6 text-ink md:text-sm md:leading-6"><span class="text-muted dark:text-ink/60">queue            status   depth  rate/s</span>
+<span class="text-muted dark:text-ink/60">════════════════ ══════ ═══════ ═══════</span>
+email.send       <span class="font-bold text-accent">[ok]  </span>     128    42.0
+billing.charge   <span class="font-bold text-amber">[warn]</span>   2,140    18.5
+<span class="bg-accent font-bold text-surface">webhooks.out     [err]    9,812     0.0</span>
+thumbs.render    <span class="font-bold text-accent">[ok]  </span>      64    96.2
+search.index     <span class="text-muted dark:text-ink/60">[idle]</span>       0     0.0
+
+<span class="text-danger">13:48:07 [err] POST /v2/events 503</span>
+<span class="text-accent">$</span> nightshift retry webhooks.out<span class="inline-block h-[1.1em] w-[1ch] translate-y-[0.15em] bg-accent animate-blink motion-reduce:animate-none"></span></pre>
+          </div>
+          <div aria-hidden="true" class="mt-2.5 flex w-5 shrink-0 flex-col items-center justify-around border-y border-r border-line py-3 dark:hidden"><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span><span class="size-2 border border-line"></span></div>
+        </figure>
+      </div>
+    </section>
+
+    <section id="features" aria-labelledby="features-title" class="mx-auto max-w-6xl px-4 py-12 md:px-6 md:py-20">
+      <div class="mb-10 flex flex-col gap-2">
+        <p class="text-xs text-muted dark:text-ink/60"># what is on the screen</p>
+        <h2 id="features-title" class="max-w-3xl font-display text-2xl text-ink md:text-display md:leading-[0.9]">Five panels. Nothing you have to configure.</h2>
+      </div>
+      <div class="grid grid-cols-1 gap-x-4 gap-y-7 md:grid-cols-4">
+        <article class="relative flex flex-col gap-4 border border-line bg-surface px-4 pt-6 pb-4 md:col-span-2 md:row-span-2 md:px-5">
+          <h3 class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">queues</h3>
+          <p class="font-display text-2xl text-ink">Every queue in one table, worst first.</p>
+          <p class="text-ink">Depth, rate, p95, and failures for each queue, refreshed every second. A stalled queue jumps to the top and its row turns to inverse video so you cannot miss it.</p>
+          <ul class="mt-auto flex flex-col border-t border-line pt-3 text-sm">
+            <li class="flex justify-between gap-3 bg-accent px-2 py-1 font-bold text-surface"><span>&gt; webhooks.out</span><span class="tabular-nums">9,812</span></li>
+            <li class="flex justify-between gap-3 px-2 py-1 text-ink"><span>&nbsp; billing.charge</span><span class="tabular-nums">2,140</span></li>
+            <li class="flex justify-between gap-3 px-2 py-1 text-ink"><span>&nbsp; email.send</span><span class="tabular-nums">128</span></li>
+          </ul>
+        </article>
+
+        <article class="relative flex flex-col gap-3 border border-line bg-surface px-4 pt-6 pb-4 md:col-span-2">
+          <h3 class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">tail</h3>
+          <p class="text-ink">Follow one queue live, with each job's id, attempt, and error on one line.</p>
+          <p class="overflow-x-auto bg-bg px-3 py-2 text-sm whitespace-nowrap text-ink"><span aria-hidden="true" class="text-muted">$ </span>nightshift tail billing.charge</p>
+        </article>
+
+        <article class="relative flex flex-col gap-3 border border-line bg-surface px-4 pt-6 pb-4">
+          <h3 class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">retry</h3>
+          <p class="text-ink">Send failed jobs back in their original order.</p>
+          <p class="overflow-x-auto bg-bg px-3 py-2 text-xs whitespace-nowrap text-ink"><span aria-hidden="true" class="text-muted">$ </span>nightshift retry -n 50</p>
+        </article>
+
+        <article class="relative flex flex-col gap-2 border border-line bg-surface px-4 pt-6 pb-4">
+          <h3 class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">install</h3>
+          <p class="font-display text-2xl text-accent tabular-nums">9 MB</p>
+          <p class="text-sm text-ink">One static binary. No agent on your workers.</p>
+        </article>
+
+        <article class="relative flex flex-col gap-4 border border-line bg-surface px-4 pt-6 pb-4 md:col-span-4 md:flex-row md:items-center md:justify-between md:gap-8 md:px-5">
+          <h3 class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">alerts</h3>
+          <p class="text-ink md:max-w-sm">Pages that name the queue, the error, and the command that fixes it.</p>
+          <p class="min-w-0 overflow-x-auto bg-bg px-3 py-2 text-xs whitespace-nowrap md:text-sm"><span class="text-ink tabular-nums">13:48:07</span> <span class="font-bold text-danger">[err]</span> <span class="text-ink">webhooks.out stalled. Run: nightshift retry webhooks.out</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title" class="border-y border-line bg-surface">
+      <h2 id="proof-title" class="sr-only">nightshift in numbers</h2>
+      <dl class="mx-auto grid max-w-6xl grid-cols-1 md:grid-cols-3">
+        <div class="flex flex-col gap-1 border-b border-line px-4 py-8 md:border-b-0 md:px-6 md:py-10">
+          <dt class="order-2 text-xs text-muted dark:text-ink/60">jobs watched last month</dt>
+          <dd class="order-1 font-display text-display text-ink tabular-nums">2.1B</dd>
+        </div>
+        <div class="flex flex-col gap-1 border-b border-line px-4 py-8 md:border-b-0 md:border-l md:px-6 md:py-10">
+          <dt class="order-2 text-xs text-muted dark:text-ink/60">seconds from install to first screen</dt>
+          <dd class="order-1 font-display text-display text-ink tabular-nums">40</dd>
+        </div>
+        <div class="flex flex-col gap-1 px-4 py-8 md:border-l md:border-line md:px-6 md:py-10">
+          <dt class="order-2 text-xs text-muted dark:text-ink/60">backend teams on call with it</dt>
+          <dd class="order-1 font-display text-display text-ink tabular-nums">380</dd>
+        </div>
+      </dl>
+      <p class="mx-auto max-w-6xl border-t border-line px-4 py-4 text-xs text-ink md:px-6"><span class="text-muted dark:text-ink/60"># on call at</span> acme-pay <span aria-hidden="true" class="text-muted">|</span> tidewater <span aria-hidden="true" class="text-muted">|</span> parcelpost <span aria-hidden="true" class="text-muted">|</span> lumen health <span aria-hidden="true" class="text-muted">|</span> fernbank</p>
+    </section>
+
+    <section id="pricing" aria-labelledby="pricing-title" class="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:px-6 md:py-20 lg:grid-cols-12 lg:gap-12">
+      <div class="flex flex-col gap-3 lg:col-span-5">
+        <p class="text-xs text-muted dark:text-ink/60"># pricing</p>
+        <h2 id="pricing-title" class="font-display text-2xl text-ink md:text-display md:leading-[0.9]">$0 for one project. $29 a month for the team.</h2>
+        <p class="text-ink">The free plan has every feature. The team plan adds history and more people, nothing else.</p>
+      </div>
+      <div class="relative mt-2.5 border border-line bg-surface lg:col-span-7">
+        <p class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">team.plan</p>
+        <dl class="grid grid-cols-1 gap-x-6 px-4 pt-6 pb-4 text-sm sm:grid-cols-[16ch_1fr]">
+          <dt class="pt-2 text-muted dark:text-ink/60">projects:</dt><dd class="border-b border-line pb-2 text-ink sm:pt-2">unlimited</dd>
+          <dt class="pt-2 text-muted dark:text-ink/60">seats:</dt><dd class="border-b border-line pb-2 text-ink sm:pt-2">15, then $2 each</dd>
+          <dt class="pt-2 text-muted dark:text-ink/60">history:</dt><dd class="border-b border-line pb-2 text-ink sm:pt-2">30 days of job logs</dd>
+          <dt class="pt-2 text-muted dark:text-ink/60">alerts:</dt><dd class="border-b border-line pb-2 text-ink sm:pt-2">PagerDuty, Opsgenie, Slack, webhooks</dd>
+          <dt class="pt-2 text-muted dark:text-ink/60">backends:</dt><dd class="pb-2 text-ink sm:pt-2">Redis, SQS, Postgres, RabbitMQ</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="install" aria-labelledby="cta-title" class="border-t border-line bg-surface">
+      <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:px-6 md:py-20">
+        <h2 id="cta-title" class="font-display text-2xl text-ink md:text-display md:leading-[0.9]">Install it before your next shift.</h2>
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+          <p class="flex min-h-12 min-w-0 items-center overflow-x-auto bg-bg px-4 text-sm whitespace-nowrap text-ink sm:flex-1 lg:max-w-md"><span aria-hidden="true" class="pr-2 text-accent">$</span>brew install nightshift</p>
+          <a href="#" class="inline-flex min-h-12 shrink-0 items-center justify-center bg-accent px-5 font-bold text-surface hover:bg-ink hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">[&nbsp;</span>start free<span aria-hidden="true">&nbsp;]</span></a>
+        </div>
+        <p class="text-xs text-muted dark:text-ink/60"># also on apt, scoop, and as a Docker image</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs md:flex-row md:items-center md:justify-between md:px-6">
+      <p class="text-ink">nightshift v2.4.0 <span aria-hidden="true" class="text-muted">|</span> status <span class="font-bold text-ink">[ok]</span> all systems normal</p>
+      <ul class="flex flex-wrap items-center">
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">docs</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">changelog</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">status</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center px-2 text-ink hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">github</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

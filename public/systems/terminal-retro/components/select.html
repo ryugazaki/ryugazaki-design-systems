@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Select</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-6">
+    <div class="flex flex-col gap-1.5">
+      <div class="flex items-center gap-3">
+        <label for="env" class="w-[7ch] shrink-0 text-ink">env:</label>
+        <div class="relative min-w-0 flex-1">
+          <select id="env" name="env" aria-describedby="env-hint" class="peer min-h-11 w-full cursor-pointer appearance-none border border-line bg-surface py-2 pr-10 pl-3 text-ink hover:border-ink dark:border-muted dark:hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+            <option value="production" selected>production</option>
+            <option value="staging">staging</option>
+            <option value="preview">preview</option>
+          </select>
+          <svg aria-hidden="true" viewBox="0 0 10 8" class="pointer-events-none absolute top-1/2 right-3 h-2 w-2.5 -translate-y-1/2 text-accent" fill="currentColor" shape-rendering="crispEdges"><path d="M0 0h2v2H0zM8 0h2v2H8zM2 2h2v2H2zM6 2h2v2H6zM4 4h2v2H4z"/></svg>
+        </div>
+      </div>
+      <p id="env-hint" class="pl-[calc(7ch+0.75rem)] text-xs text-muted dark:text-ink/60"># every panel on screen follows this</p>
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <div class="flex items-center gap-3">
+        <label for="window" class="w-[7ch] shrink-0 text-ink">window:</label>
+        <div class="relative min-w-0 flex-1">
+          <select id="window" name="window" aria-describedby="window-hint" class="min-h-11 w-full cursor-pointer appearance-none border border-line bg-surface py-2 pr-10 pl-3 text-ink hover:border-ink dark:border-muted dark:hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent">
+            <option value="5m">last 5 min</option>
+            <option value="15m" selected>last 15 min</option>
+            <option value="1h">last 1 h</option>
+            <option value="24h">last 24 h</option>
+          </select>
+          <svg aria-hidden="true" viewBox="0 0 10 8" class="pointer-events-none absolute top-1/2 right-3 h-2 w-2.5 -translate-y-1/2 text-accent" fill="currentColor" shape-rendering="crispEdges"><path d="M0 0h2v2H0zM8 0h2v2H8zM2 2h2v2H2zM6 2h2v2H6zM4 4h2v2H4z"/></svg>
+        </div>
+      </div>
+      <p id="window-hint" class="pl-[calc(7ch+0.75rem)] text-xs text-muted dark:text-ink/60"># sparklines and rates use this window</p>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

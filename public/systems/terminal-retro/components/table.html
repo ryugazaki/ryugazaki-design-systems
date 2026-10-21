@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminal / Retro / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDEAD8;
+  --color-surface: #F6F4E8;
+  --color-ink: #1D2B1F;
+  --color-muted: #5C6B5E;
+  --color-line: #1D2B1F;
+  --color-accent: #1F7A3A;
+  --color-accent-ink: #EDEAD8;
+  --color-amber: #9A5B00;
+  --color-danger: #B3261E;
+
+  --font-display: "VT323", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.1875rem;
+  --text-lg--line-height: 1.4;
+  --text-xl: 1.5625rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.0625rem;
+  --text-2xl--line-height: 1;
+  --text-display: 4.5rem;
+  --text-display--line-height: 0.9;
+
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  --animate-blink: blink 1s steps(1) infinite;
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-bg: #0B0F0C;
+    --color-surface: #111812;
+    --color-ink: #C8F5D2;
+    --color-muted: #5E7A64;
+    --color-line: #2B3A2F;
+    --color-accent: #7CF29A;
+    --color-accent-ink: #0B0F0C;
+    --color-amber: #FFB547;
+    --color-danger: #FF6B5B;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-4xl flex-col gap-3">
+    <section aria-labelledby="queues-title" class="relative mt-2.5 border border-line bg-surface">
+      <h2 id="queues-title" class="absolute -top-2.5 left-3 bg-surface px-1.5 text-xs leading-5 font-bold text-ink">queues (6)</h2>
+      <div class="overflow-x-auto pt-4 pb-2">
+        <table class="w-full min-w-[640px] table-fixed text-sm">
+          <caption class="sr-only">Queues in production. The selected row is webhooks.out.</caption>
+          <colgroup>
+            <col class="w-[19ch]">
+            <col class="w-[9ch]">
+            <col class="w-[9ch]">
+            <col class="w-[9ch]">
+            <col class="w-[9ch]">
+            <col class="w-[12ch]">
+          </colgroup>
+          <thead>
+            <tr class="text-left text-xs text-muted dark:text-ink/60">
+              <th scope="col" class="px-3 pt-1 font-normal"><span aria-hidden="true">&nbsp;&nbsp;</span>queue</th>
+              <th scope="col" class="px-3 pt-1 font-normal">status</th>
+              <th scope="col" class="px-3 pt-1 text-right font-normal">depth</th>
+              <th scope="col" class="px-3 pt-1 text-right font-normal">rate/s</th>
+              <th scope="col" class="px-3 pt-1 text-right font-normal">p95 ms</th>
+              <th scope="col" class="px-3 pt-1 text-right font-normal">failed 1h</th>
+            </tr>
+            <tr aria-hidden="true" class="text-xs text-muted">
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+              <td class="px-3 pb-1"><span class="block overflow-hidden whitespace-nowrap">════════════════════════════════════════</span></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>email.send</a></td>
+              <td class="px-3 py-2 font-bold text-accent">[ok]</td>
+              <td class="px-3 py-2 text-right tabular-nums">128</td>
+              <td class="px-3 py-2 text-right tabular-nums">42.0</td>
+              <td class="px-3 py-2 text-right tabular-nums">310</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+            </tr>
+            <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>billing.charge</a></td>
+              <td class="px-3 py-2 font-bold text-amber">[warn]</td>
+              <td class="px-3 py-2 text-right tabular-nums">2,140</td>
+              <td class="px-3 py-2 text-right tabular-nums">18.5</td>
+              <td class="px-3 py-2 text-right tabular-nums">1,920</td>
+              <td class="px-3 py-2 text-right tabular-nums">3</td>
+            </tr>
+            <tr aria-current="true" class="bg-accent font-bold text-surface">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed focus-visible:outline-surface"><span aria-hidden="true">&gt;&nbsp;</span>webhooks.out<span class="sr-only"> (selected)</span></a></td>
+              <td class="px-3 py-2">[err]</td>
+              <td class="px-3 py-2 text-right tabular-nums">9,812</td>
+              <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+              <td class="px-3 py-2 text-right tabular-nums">n/a</td>
+              <td class="px-3 py-2 text-right tabular-nums">211</td>
+            </tr>
+            <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>thumbs.render</a></td>
+              <td class="px-3 py-2 font-bold text-accent">[ok]</td>
+              <td class="px-3 py-2 text-right tabular-nums">64</td>
+              <td class="px-3 py-2 text-right tabular-nums">96.2</td>
+              <td class="px-3 py-2 text-right tabular-nums">140</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+            </tr>
+            <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>search.index</a></td>
+              <td class="px-3 py-2 font-bold text-muted dark:text-ink/60">[idle]</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+              <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+              <td class="px-3 py-2 text-right tabular-nums text-muted dark:text-ink/60">n/a</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+            </tr>
+            <tr class="text-ink even:bg-accent/6 dark:even:bg-transparent">
+              <td class="px-3 py-0"><a href="#" class="-mx-1 inline-flex min-h-11 items-center px-1 hover:underline hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-accent"><span aria-hidden="true">&nbsp;&nbsp;</span>reports.nightly</a></td>
+              <td class="px-3 py-2 font-bold text-muted dark:text-ink/60">[idle]</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+              <td class="px-3 py-2 text-right tabular-nums">0.0</td>
+              <td class="px-3 py-2 text-right tabular-nums text-muted dark:text-ink/60">n/a</td>
+              <td class="px-3 py-2 text-right tabular-nums">0</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="border-t border-line text-ink">
+              <th scope="row" class="px-3 pt-2 text-left font-normal text-muted dark:text-ink/60"><span aria-hidden="true">&nbsp;&nbsp;</span>total</th>
+              <td class="px-3 pt-2"></td>
+              <td class="px-3 pt-2 text-right font-bold tabular-nums">12,144</td>
+              <td class="px-3 pt-2 text-right font-bold tabular-nums">156.7</td>
+              <td class="px-3 pt-2"></td>
+              <td class="px-3 pt-2 text-right font-bold tabular-nums">214</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+    <p class="text-xs text-muted dark:text-ink/60"># on paper the even rows print as green bars. The table scrolls sideways below 640 px.</p>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
