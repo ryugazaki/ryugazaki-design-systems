@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="sched-title" class="flex max-w-4xl flex-col gap-4">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 id="sched-title" class="font-display text-xl text-ink">This week at the studio</h2>
+      <p class="text-sm text-muted">Thu 22 to Tue 27 Oct</p>
+    </div>
+    <div class="relative overflow-x-auto rounded-lg border border-line bg-surface">
+      <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+        <caption class="sr-only">Class schedule for Thursday 22 to Tuesday 27 October, with spots left and price per person</caption>
+        <thead>
+          <tr class="border-b border-line">
+            <th scope="col" class="px-5 py-3.5 font-medium text-muted">Date</th>
+            <th scope="col" class="px-4 py-3.5 font-medium text-muted">Class</th>
+            <th scope="col" class="px-4 py-3.5 font-medium text-muted">Teacher</th>
+            <th scope="col" class="px-4 py-3.5 text-right font-medium text-muted">Spots left</th>
+            <th scope="col" class="px-4 py-3.5 font-medium text-muted"><span class="sr-only">Availability</span></th>
+            <th scope="col" class="px-5 py-3.5 text-right font-medium text-muted">Price</th>
+          </tr>
+        </thead>
+        <tbody class="text-ink">
+          <tr class="bg-surface">
+            <td class="px-5 py-3.5 whitespace-nowrap">Thu 22 Oct, 18:30</td>
+            <td class="px-4 py-3.5 font-display text-base">Wheel basics</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Mara Okafor</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">2 of 8</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-0.5 text-xs font-medium whitespace-nowrap text-accent ring-1 ring-accent/40 ring-inset dark:bg-accent/10"><span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>Few spots left</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$85</td>
+          </tr>
+          <tr class="bg-bg">
+            <td class="px-5 py-3.5 whitespace-nowrap">Fri 23 Oct, 10:00</td>
+            <td class="px-4 py-3.5 font-display text-base">Hand-building</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Teo Lindqvist</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">5 of 8</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-0.5 text-xs font-medium whitespace-nowrap text-ink"><span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>Open</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$64</td>
+          </tr>
+          <tr class="bg-surface">
+            <td class="px-5 py-3.5 whitespace-nowrap">Sat 24 Oct, 10:00</td>
+            <td class="px-4 py-3.5 font-display text-base">Wheel basics</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Mara Okafor</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">0 of 8</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-danger/10 px-3 py-0.5 text-xs font-medium whitespace-nowrap text-danger"><span aria-hidden="true" class="size-1.5 rounded-full bg-danger"></span>Sold out</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$85</td>
+          </tr>
+          <tr class="bg-bg">
+            <td class="px-5 py-3.5 whitespace-nowrap">Sat 24 Oct, 14:00</td>
+            <td class="px-4 py-3.5 font-display text-base">Wheel basics</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Hana Ruiz</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">4 of 8</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-0.5 text-xs font-medium whitespace-nowrap text-ink"><span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>Open</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$85</td>
+          </tr>
+          <tr class="bg-surface">
+            <td class="px-5 py-3.5 whitespace-nowrap">Sun 25 Oct, 11:00</td>
+            <td class="px-4 py-3.5 font-display text-base">Glaze lab</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Hana Ruiz</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">6 of 10</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-0.5 text-xs font-medium whitespace-nowrap text-ink"><span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>Open</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$48</td>
+          </tr>
+          <tr class="bg-bg">
+            <td class="px-5 py-3.5 whitespace-nowrap">Tue 27 Oct, 18:30</td>
+            <td class="px-4 py-3.5 font-display text-base">Six-week wheel course</td>
+            <td class="px-4 py-3.5 whitespace-nowrap">Teo Lindqvist</td>
+            <td class="px-4 py-3.5 text-right tabular-nums">3 of 6</td>
+            <td class="px-4 py-3.5"><span class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-0.5 text-xs font-medium whitespace-nowrap text-accent ring-1 ring-accent/40 ring-inset dark:bg-accent/10"><span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>Few spots left</span></td>
+            <td class="px-5 py-3.5 text-right font-display tabular-nums">$420</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-sm text-muted">Prices are per person. Wheel and hand-building classes include clay, glaze, and two firings.</p>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

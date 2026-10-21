@@ -1,0 +1,61 @@
+{
+  "slug": "organic-warm",
+  "number": 5,
+  "name": "Organic Warm",
+  "tagline": "Oat, clay, and olive. Soft shapes with a firm hand.",
+  "description": "A warm, tactile system for brands made by people. Earthy colors, large radii and arched shapes, a characterful serif for headlines, and a clean sans for reading. Compositions are asymmetric so pages feel arranged by hand, not generated.",
+  "tags": ["warm", "light", "lifestyle", "commerce", "soft"],
+  "defaultMode": "light",
+  "useCases": ["food and drink", "wellness and studios", "craft and small-batch commerce", "booking flows"],
+  "fonts": [
+    { "family": "Young Serif", "role": "headlines and prices", "weights": [400], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap" },
+    { "family": "Instrument Sans", "role": "body and interface", "weights": [400, 500, 600], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap" }
+  ],
+  "typeScale": { "ratio": 1.333, "steps": { "xs": "13px", "sm": "15px", "base": "17px", "lg": "23px", "xl": "30px", "2xl": "40px", "display": "56px" } },
+  "palette": [
+    { "token": "--color-bg", "light": "#F3EBDD", "dark": "#1E1712", "role": "oat background" },
+    { "token": "--color-surface", "light": "#FBF6EC", "dark": "#2A2019", "role": "cards and fields" },
+    { "token": "--color-ink", "light": "#3A2A20", "dark": "#F1E6D4", "role": "cocoa text" },
+    { "token": "--color-muted", "light": "#7A6656", "dark": "#BFA98F", "role": "secondary text" },
+    { "token": "--color-line", "light": "#DCCDB5", "dark": "#45372B", "role": "borders" },
+    { "token": "--color-accent", "light": "#B5532F", "dark": "#E07A4F", "role": "clay, primary action" },
+    { "token": "--color-accent-ink", "light": "#FBF6EC", "dark": "#1E1712", "role": "text on clay" },
+    { "token": "--color-olive", "light": "#5E6B3A", "dark": "#A5B27A", "role": "secondary accent, success" },
+    { "token": "--color-danger", "light": "#A3341F", "dark": "#F08E76", "role": "errors" }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Use 28px radius on cards and images, full radius on buttons and chips",
+      "Mask hero and product images with an arch (rounded top only) or a pill shape",
+      "Underline one key word per headline with the hand-drawn SVG stroke in clay",
+      "Offset compositions: image and text blocks overlap or sit on different baselines",
+      "Use olive for success and secondary emphasis, clay for the main action"
+    ],
+    "dont": [
+      "Do not use pure white or pure black",
+      "Do not use sharp corners on interactive elements",
+      "Do not use script or handwriting fonts",
+      "Do not place three equal cards in a row; vary size and shape",
+      "Do not use stock-photo style placeholders; draw shapes with tokens instead"
+    ]
+  },
+  "components": [
+    { "id": "button", "name": "Button", "file": "components/button.html", "notes": "Full-radius pills. Primary clay; secondary is a 1.5px cocoa outline; ghost is text with the hand-drawn underline on hover." },
+    { "id": "input", "name": "Input", "file": "components/input.html", "notes": "20px radius fields on surface with a line border, label above in 500 weight. Error turns the border danger and adds a gentle message." },
+    { "id": "select", "name": "Select", "file": "components/select.html", "notes": "Pill-shaped select with a soft chevron, used for class type." },
+    { "id": "checkbox-toggle", "name": "Checkbox and toggle", "file": "components/checkbox-toggle.html", "notes": "Rounded 6px checkbox in clay. Switch is a fat pill with an olive track when on." },
+    { "id": "badge", "name": "Badge", "file": "components/badge.html", "notes": "Pills with tinted surface fills; \"Few spots left\" uses clay text on a clay-tinted surface." },
+    { "id": "card", "name": "Card", "file": "components/card.html", "notes": "Product card: arched image shape drawn with tokens, serif name, price, and a short material note." },
+    { "id": "navbar", "name": "Navbar", "file": "components/navbar.html", "notes": "Serif wordmark, links, and a pill \"Book a class\" action. Mobile menu is a details disclosure with large tap rows." },
+    { "id": "modal", "name": "Modal and sheet", "file": "components/modal.html", "notes": "28px radius sheet that slides up from the bottom on mobile, centered on desktop, with a soft shadow." },
+    { "id": "table", "name": "Table", "file": "components/table.html", "notes": "Class schedule: rounded container, alternating surface rows, date, class, teacher, spots left, price." },
+    { "id": "bento", "name": "Bento grid", "file": "components/bento.html", "notes": "Studio features: one tall arched image tile, a quote tile, a price tile, a map-like tile, and a hours list." },
+    { "id": "empty-state", "name": "Empty state", "file": "components/empty-state.html", "notes": "A drawn bowl shape in clay, a warm headline, and a pill action." },
+    { "id": "toast", "name": "Toast", "file": "components/toast.html", "notes": "Pill-shaped surface toast with an olive dot for success and a clay dot for errors." }
+  ],
+  "pages": [
+    { "id": "landing", "name": "Landing", "file": "pages/landing.html" },
+    { "id": "app", "name": "Book a class", "file": "pages/app.html" }
+  ]
+}

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <a href="#main" class="sr-only rounded-full bg-surface px-5 py-3 font-medium text-ink focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Skip to content</a>
+
+  <header class="relative mx-auto max-w-6xl px-4 pt-4 md:px-6">
+    <nav aria-label="Main" class="flex min-h-16 items-center justify-between gap-4">
+      <a href="#" class="flex min-h-11 items-center gap-2.5 rounded-full pr-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">
+        <svg aria-hidden="true" viewBox="0 0 28 28" class="size-7 text-accent" fill="currentColor"><path d="M10 4h8v2c0 2 6 4 6 11a10 10 0 0 1-20 0c0-7 6-9 6-11z"/></svg>
+        <span class="font-display text-xl text-ink">Slow Clay</span>
+      </a>
+      <ul class="hidden items-center gap-1 md:flex">
+        <li><a href="#classes" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Shop</a></li>
+        <li><a href="#studio" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Studio</a></li>
+        <li><a href="#visit" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Visit</a></li>
+      </ul>
+      <a href="#" class="hidden min-h-11 items-center rounded-full bg-accent px-5 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive md:inline-flex">Book a class</a>
+      <details class="group md:hidden">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border-[1.5px] border-ink px-4 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+          <span class="group-open:hidden">Menu</span>
+          <span class="hidden group-open:inline">Close</span>
+          <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+        </summary>
+        <div class="absolute inset-x-4 top-full z-10 mt-2 rounded-lg bg-surface p-3 shadow-soft">
+          <ul class="flex flex-col">
+            <li><a href="#classes" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes</a></li>
+            <li><a href="#" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Shop</a></li>
+            <li><a href="#studio" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Studio</a></li>
+            <li><a href="#visit" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Visit</a></li>
+          </ul>
+          <a href="#" class="mt-3 flex min-h-12 items-center justify-center rounded-full bg-accent px-5 font-medium text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Book a class</a>
+        </div>
+      </details>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="hero-title" class="mx-auto grid max-w-6xl gap-10 px-4 pt-10 pb-20 md:grid-cols-12 md:gap-6 md:px-6 md:pt-16 lg:pb-28">
+      <div class="flex flex-col gap-6 md:col-span-7 md:pt-20 lg:col-span-6 lg:pt-28">
+        <p class="text-sm font-medium text-olive">Pottery classes on Tanner Street</p>
+        <h1 id="hero-title" class="font-display text-display text-ink">Make something you can
+          <span class="relative inline-block whitespace-nowrap">hold.<svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-1 left-0 h-3.5 w-[88%] text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h1>
+        <p class="max-w-md text-ink">Wheel and hand-building classes for adults, eight people at a time. Clay, glaze, and two firings are included, and you take home what you made.</p>
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a href="#" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Book a class</a>
+          <a href="#" class="inline-flex min-h-12 items-center justify-center rounded-full border-[1.5px] border-ink px-6 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Shop the shelf</a>
+        </div>
+      </div>
+
+      <div class="relative md:col-span-5 lg:col-start-8">
+        <div class="relative ml-auto aspect-[3/4] w-[86%] overflow-hidden rounded-arch bg-accent/15 md:w-full">
+          <svg role="img" aria-label="Drawing of a potter's wheel with a tall clay vase being thrown on it" viewBox="0 0 300 400" preserveAspectRatio="xMidYMax slice" class="absolute inset-0 size-full">
+            <rect x="0" y="300" width="300" height="100" class="fill-line"/>
+            <ellipse cx="150" cy="300" rx="110" ry="16" class="fill-ink/80"/>
+            <ellipse cx="150" cy="294" rx="110" ry="16" class="fill-ink/60"/>
+            <path d="M118 120h64v10c0 14 38 40 38 100 0 36-22 64-70 64s-70-28-70-64c0-60 38-86 38-100z" class="fill-accent"/>
+            <path d="M118 120h64v10h-64z" class="fill-ink/20"/>
+            <path d="M88 236c40 10 84 10 124 0M84 262c44 10 88 10 132 0" class="stroke-surface/50" stroke-width="3" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div aria-hidden="true" class="absolute top-6 left-0 h-28 w-16 rounded-full bg-olive md:-left-8"></div>
+        <div class="relative -mt-20 mr-10 flex flex-col gap-1 rounded-lg bg-surface p-5 shadow-soft md:-ml-16 md:mr-6">
+          <p class="text-sm font-medium text-muted">Next wheel class</p>
+          <p class="font-display text-lg text-ink">Thu 22 Oct, 18:30</p>
+          <p class="text-sm font-medium text-accent">2 spots left</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" aria-labelledby="studio-title" class="mx-auto max-w-6xl px-4 pb-20 md:px-6 lg:pb-28">
+      <h2 id="studio-title" class="max-w-xl font-display text-2xl text-ink">A studio with the
+        <span class="relative inline-block whitespace-nowrap">lights low<svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
+        and the wheels slow.</h2>
+
+      <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-4">
+        <figure class="relative flex min-h-[26rem] flex-col justify-end overflow-hidden rounded-arch bg-olive/20 md:col-span-2 md:row-span-2">
+          <svg aria-hidden="true" viewBox="0 0 300 360" preserveAspectRatio="xMidYMax meet" class="absolute inset-x-0 bottom-24 mx-auto h-[70%] w-full">
+            <rect x="20" y="268" width="260" height="10" rx="5" class="fill-ink/70"/>
+            <path d="M70 120h22v12c0 10 22 26 22 74 0 34-14 62-33 62s-33-28-33-62c0-48 22-64 22-74z" class="fill-accent"/>
+            <path d="M48 196c20 6 46 6 66 0" class="stroke-surface/70" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M130 214c0 30 24 54 44 54s44-24 44-54z" class="fill-olive"/>
+            <ellipse cx="174" cy="214" rx="44" ry="7" class="fill-ink/30"/>
+            <path d="M232 176h30l-2 10c10 8 16 24 16 46 0 22-10 36-29 36s-29-14-29-36c0-22 6-38 16-46l-4-10z" class="fill-ink"/>
+            <path d="M262 196c14 2 18 18 8 30" class="stroke-ink" stroke-width="5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <figcaption class="relative m-3 rounded-lg bg-surface p-5">
+            <p class="font-display text-lg text-ink">Eight wheels, two kilns, one long table.</p>
+            <p class="mt-1 text-sm text-muted">Every piece you make is fired here and waits on your shelf until you collect it.</p>
+          </figcaption>
+        </figure>
+
+        <blockquote class="flex flex-col justify-between gap-6 rounded-lg bg-surface p-6 md:col-span-2 md:p-8">
+          <p class="font-display text-xl text-ink">“I came for a mug and stayed for the quiet. Three hours went by like twenty minutes.”</p>
+          <footer class="text-sm text-muted">Priya Nair, Thursday evening regular since March</footer>
+        </blockquote>
+
+        <div class="flex flex-col justify-between gap-5 rounded-lg border-[1.5px] border-ink/15 p-6">
+          <div>
+            <p class="text-sm font-medium text-muted">Wheel basics</p>
+            <p class="mt-1 font-display text-2xl text-ink lg:text-display">$85</p>
+            <p class="mt-1 text-sm text-muted">3 hours. Clay and two firings included.</p>
+          </div>
+          <a href="#classes" class="inline-flex min-h-11 items-center justify-center rounded-full border-[1.5px] border-ink px-5 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">See all classes</a>
+        </div>
+
+        <div id="visit" class="flex flex-col overflow-hidden rounded-lg bg-surface">
+          <svg role="img" aria-label="Sketch map: the studio sits on Tanner Street, one block north of the canal" viewBox="0 0 200 120" class="h-32 w-full bg-line/50">
+            <path d="M-10 92c40-10 70 8 110-2s70-14 120-6" class="stroke-olive/60" stroke-width="12" fill="none"/>
+            <path d="M-10 52h220M70 -10v140M150 -10v140" class="stroke-surface" stroke-width="7" fill="none"/>
+            <path d="M-10 20l90 30M110 -10l-10 140" class="stroke-surface" stroke-width="4" fill="none"/>
+            <circle cx="112" cy="40" r="9" class="fill-accent"/>
+            <circle cx="112" cy="40" r="3.5" class="fill-surface"/>
+          </svg>
+          <div class="flex flex-1 flex-col gap-1 p-5">
+            <p class="font-display text-ink">41 Tanner Street</p>
+            <p class="text-sm text-muted">Mill Yard, unit 3. Step-free entrance from the canal path.</p>
+            <a href="#" class="mt-auto inline-flex min-h-11 items-center self-start rounded-full font-medium text-ink underline decoration-accent decoration-2 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Get directions</a>
+          </div>
+        </div>
+
+        <div class="rounded-lg bg-surface p-6 md:col-span-4 md:p-8">
+          <div class="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 class="font-display text-lg text-ink">Open studio hours</h3>
+            <p class="text-sm text-muted">Bars run from 08:00 to 22:00</p>
+          </div>
+          <dl class="mt-5 flex flex-col gap-3">
+            <div class="grid grid-cols-[5.5rem_1fr] items-center gap-x-4 gap-y-1 sm:grid-cols-[5.5rem_1fr_8rem]">
+              <dt class="text-sm font-medium text-ink">Mon</dt>
+              <dd aria-hidden="true" class="relative h-3 rounded-full bg-bg"></dd>
+              <dd class="col-start-2 text-sm text-muted sm:col-start-3 sm:text-right">Closed</dd>
+            </div>
+            <div class="grid grid-cols-[5.5rem_1fr] items-center gap-x-4 gap-y-1 sm:grid-cols-[5.5rem_1fr_8rem]">
+              <dt class="text-sm font-medium text-ink">Tue to Fri</dt>
+              <dd aria-hidden="true" class="relative h-3 rounded-full bg-bg"><span class="absolute inset-y-0 left-[14.29%] w-[78.57%] rounded-full bg-olive"></span></dd>
+              <dd class="col-start-2 text-sm text-ink tabular-nums sm:col-start-3 sm:text-right">10:00 to 21:00</dd>
+            </div>
+            <div class="grid grid-cols-[5.5rem_1fr] items-center gap-x-4 gap-y-1 sm:grid-cols-[5.5rem_1fr_8rem]">
+              <dt class="text-sm font-medium text-ink">Sat</dt>
+              <dd aria-hidden="true" class="relative h-3 rounded-full bg-bg"><span class="absolute inset-y-0 left-[7.14%] w-[64.29%] rounded-full bg-olive"></span></dd>
+              <dd class="col-start-2 text-sm text-ink tabular-nums sm:col-start-3 sm:text-right">09:00 to 18:00</dd>
+            </div>
+            <div class="grid grid-cols-[5.5rem_1fr] items-center gap-x-4 gap-y-1 sm:grid-cols-[5.5rem_1fr_8rem]">
+              <dt class="text-sm font-medium text-ink">Sun</dt>
+              <dd aria-hidden="true" class="relative h-3 rounded-full bg-bg"><span class="absolute inset-y-0 left-[14.29%] w-[42.86%] rounded-full bg-olive"></span></dd>
+              <dd class="col-start-2 text-sm text-ink tabular-nums sm:col-start-3 sm:text-right">10:00 to 16:00</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title" class="mx-auto max-w-6xl px-4 pb-20 md:px-6 lg:pb-28">
+      <div class="grid gap-10 rounded-lg bg-surface p-6 md:grid-cols-12 md:p-10">
+        <h2 id="proof-title" class="font-display text-xl text-ink md:col-span-4">What came out of the kilns this year</h2>
+        <dl class="grid grid-cols-2 gap-x-6 gap-y-8 md:col-span-8 md:grid-cols-3">
+          <div class="flex flex-col gap-1">
+            <dt class="order-2 text-sm text-muted">pieces fired since January</dt>
+            <dd class="order-1 font-display text-2xl text-ink tabular-nums lg:text-display">1,180</dd>
+          </div>
+          <div class="flex flex-col gap-1 md:pt-10">
+            <dt class="order-2 text-sm text-muted">people at a wheel for the first time</dt>
+            <dd class="order-1 font-display text-2xl text-ink tabular-nums lg:text-display">436</dd>
+          </div>
+          <div class="col-span-2 flex flex-col gap-1 md:col-span-1 md:pt-4">
+            <dt class="order-2 text-sm text-muted">of six-week students book another course</dt>
+            <dd class="order-1 font-display text-2xl text-olive tabular-nums lg:text-display">71%</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="classes" aria-labelledby="classes-title" class="mx-auto max-w-6xl px-4 pb-20 md:px-6 lg:pb-28">
+      <div class="grid gap-8 md:grid-cols-12">
+        <div class="md:col-span-4">
+          <h2 id="classes-title" class="font-display text-2xl text-ink">Pick your
+            <span class="relative inline-block whitespace-nowrap">pace<svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h2>
+          <p class="mt-4 max-w-xs text-muted">Every price is per person. Wheel and hand-building classes include clay, glaze, and two firings.</p>
+        </div>
+        <ul class="flex flex-col md:col-span-8">
+          <li class="flex items-center gap-4 border-t border-line py-5 md:gap-6">
+            <span aria-hidden="true" class="h-14 w-10 shrink-0 rounded-arch bg-accent"></span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-display text-lg text-ink">Wheel basics</h3>
+              <p class="text-sm text-muted">3 hours. Center, open, and pull your first two cylinders.</p>
+            </div>
+            <p class="shrink-0 font-display text-lg text-ink tabular-nums">$85</p>
+          </li>
+          <li class="flex items-center gap-4 border-t border-line py-5 md:gap-6">
+            <span aria-hidden="true" class="size-10 shrink-0 rounded-full bg-olive"></span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-display text-lg text-ink">Hand-building, coil and slab</h3>
+              <p class="text-sm text-muted">2.5 hours. A planter or a lidded jar, no wheel needed.</p>
+            </div>
+            <p class="shrink-0 font-display text-lg text-ink tabular-nums">$64</p>
+          </li>
+          <li class="flex items-center gap-4 border-t border-line py-5 md:gap-6">
+            <span aria-hidden="true" class="h-8 w-14 shrink-0 rounded-full bg-ink/80"></span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-display text-lg text-ink">Glaze lab</h3>
+              <p class="text-sm text-muted">2 hours. Glaze two bisque pieces of your own or from our shelf.</p>
+            </div>
+            <p class="shrink-0 font-display text-lg text-ink tabular-nums">$48</p>
+          </li>
+          <li class="flex items-center gap-4 border-y border-line py-5 md:gap-6">
+            <span aria-hidden="true" class="size-14 shrink-0 rounded-lg border-[1.5px] border-accent"></span>
+            <div class="min-w-0 flex-1">
+              <h3 class="font-display text-lg text-ink">Six-week wheel course</h3>
+              <p class="text-sm text-muted">Tuesdays, 18:30 to 21:00. Trimming, handles, and a set of four.</p>
+            </div>
+            <p class="shrink-0 font-display text-lg text-ink tabular-nums">$420</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="cta-title" class="mx-auto max-w-6xl px-4 pb-20 md:px-6">
+      <div class="relative overflow-hidden rounded-lg bg-surface px-6 py-12 md:px-12 md:py-16">
+        <div aria-hidden="true" class="absolute -right-10 -bottom-16 h-56 w-40 rounded-arch bg-olive/25 md:right-16 md:h-72 md:w-52"></div>
+        <div aria-hidden="true" class="absolute right-24 -bottom-6 hidden size-24 rounded-full bg-accent/20 md:block"></div>
+        <div class="relative flex max-w-xl flex-col gap-5">
+          <h2 id="cta-title" class="font-display text-2xl text-ink">Three hours, one bag of clay, and nowhere else to
+            <span class="relative inline-block whitespace-nowrap">be.<svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h2>
+          <p class="text-ink">Thursday evening and Saturday afternoon classes still have places this week.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Book a class</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4 pb-10 md:px-6">
+    <div class="grid gap-8 border-t border-line pt-10 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <p class="font-display text-xl text-ink">Slow Clay Studio</p>
+        <p class="mt-2 max-w-xs text-sm text-muted">41 Tanner Street, Mill Yard, unit 3. Closed Mondays while the kilns cool.</p>
+      </div>
+      <ul class="grid grid-cols-2 gap-x-6 md:col-span-4">
+        <li><a href="#classes" class="inline-flex min-h-11 items-center rounded-full text-sm font-medium text-ink hover:underline hover:decoration-accent hover:decoration-2 hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full text-sm font-medium text-ink hover:underline hover:decoration-accent hover:decoration-2 hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Shop</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full text-sm font-medium text-ink hover:underline hover:decoration-accent hover:decoration-2 hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Gift a class</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full text-sm font-medium text-ink hover:underline hover:decoration-accent hover:decoration-2 hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Private groups</a></li>
+      </ul>
+      <p class="text-sm text-muted md:col-span-3 md:text-right">hello@slowclay.studio</p>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

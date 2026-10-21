@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-3xl flex-col gap-10 md:flex-row md:items-start">
+    <article class="relative w-full max-w-sm">
+      <div class="relative aspect-[4/5] overflow-hidden rounded-arch bg-line">
+        <svg role="img" aria-label="Drawing of a clay-red tea bowl with an olive glaze pooling at the rim" viewBox="0 0 200 250" class="absolute inset-0 size-full" preserveAspectRatio="xMidYMax slice">
+          <rect x="0" y="178" width="200" height="72" class="fill-bg"/>
+          <ellipse cx="100" cy="206" rx="62" ry="7" class="fill-ink/10"/>
+          <path d="M38 126c0 46 26 78 62 78s62-32 62-78z" class="fill-accent"/>
+          <path d="M38 126c2 11 9 9 12 17 3-9 8-4 13 4 4-9 10-6 14 2 4-7 11-8 15 0 4-7 10-6 14 3 4-8 9-9 14-1 5-7 9-7 13 1 4-7 10-9 13-3 2-8 6-11 6-23z" class="fill-olive"/>
+          <ellipse cx="100" cy="126" rx="62" ry="10" class="fill-olive"/>
+          <ellipse cx="100" cy="126" rx="55" ry="7" class="fill-ink/25"/>
+          <path d="M84 203h32v6H84z" class="fill-ink/30"/>
+        </svg>
+      </div>
+      <div class="relative -mt-14 ml-6 flex flex-col gap-2 rounded-lg bg-surface p-5 shadow-soft">
+        <div class="flex items-baseline justify-between gap-4">
+          <h3 class="font-display text-xl text-ink"><a href="#" class="inline-flex min-h-11 items-center rounded-sm hover:underline hover:decoration-accent hover:decoration-2 hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Ash tea bowl</a></h3>
+          <p class="font-display text-lg text-ink">$46</p>
+        </div>
+        <p class="text-sm text-muted">Stoneware with a wood-ash glaze. Holds 220 ml. The glaze pools differently on each one, so yours will not match the drawing.</p>
+        <div class="mt-2 flex flex-wrap items-center gap-3">
+          <button type="button" class="inline-flex min-h-11 items-center justify-center rounded-full border-[1.5px] border-ink px-5 text-sm font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Add to basket</button>
+          <span class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-1 text-xs font-medium text-ink"><span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>3 on the shelf</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="flex w-full max-w-sm items-center gap-4 rounded-lg border border-line bg-surface p-3 pr-5 md:mt-24">
+      <div aria-hidden="true" class="relative h-24 w-16 shrink-0 overflow-hidden rounded-full bg-olive/20">
+        <svg viewBox="0 0 64 96" class="absolute inset-0 size-full"><path d="M24 30h16v6c0 6 12 12 12 30a20 20 0 0 1-40 0c0-18 12-24 12-30z" class="fill-olive"/><path d="M14 62c6 3 30 3 36 0" class="stroke-surface" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="flex min-w-0 flex-col gap-0.5">
+        <h3 class="font-display text-lg text-ink">Glaze lab</h3>
+        <p class="text-sm text-muted">2 hours, Sundays at 11:00</p>
+        <p class="font-display text-ink">$48</p>
+      </div>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

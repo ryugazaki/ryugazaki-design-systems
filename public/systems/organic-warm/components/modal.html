@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex min-h-[540px] flex-col justify-end overflow-hidden rounded-lg bg-ink/40 dark:bg-line/70 px-0 pt-16 md:items-center md:justify-center md:p-10">
+    <div role="dialog" aria-modal="true" aria-labelledby="sheet-title" aria-describedby="sheet-desc" class="w-full rounded-t-lg bg-surface px-5 pt-3 pb-6 shadow-soft md:max-w-lg md:rounded-lg md:p-8">
+      <div aria-hidden="true" class="mx-auto mb-5 h-1.5 w-12 rounded-full bg-line md:hidden"></div>
+      <div class="flex items-start justify-between gap-4">
+        <h2 id="sheet-title" class="font-display text-xl text-ink">Confirm your booking</h2>
+        <button type="button" aria-label="Close" class="-mt-1 inline-flex size-11 shrink-0 items-center justify-center rounded-full text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">
+          <svg aria-hidden="true" viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+        </button>
+      </div>
+      <p id="sheet-desc" class="mt-2 text-muted">Wear something you can get muddy. Short nails make centering much easier.</p>
+
+      <dl class="mt-6 flex flex-col gap-3 rounded-md bg-bg p-4 text-sm">
+        <div class="flex justify-between gap-4"><dt class="text-muted">Class</dt><dd class="text-right text-ink">Wheel basics with Hana Ruiz</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-muted">When</dt><dd class="text-right text-ink">Sat 24 Oct, 14:00 to 17:00</dd></div>
+        <div class="flex justify-between gap-4"><dt class="text-muted">People</dt><dd class="text-right text-ink tabular-nums">2 × $85</dd></div>
+        <div class="flex items-baseline justify-between gap-4 border-t border-line pt-3"><dt class="font-medium text-ink">Total</dt><dd class="font-display text-xl text-ink tabular-nums">$170</dd></div>
+      </dl>
+
+      <div class="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full border-[1.5px] border-ink px-6 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Go back</button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Confirm and pay $170</button>
+      </div>
+    </div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-10">
+    <section class="flex flex-col gap-4">
+      <h2 class="font-display text-lg text-ink">Variants</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink transition-shadow duration-200 hover:ring-4 hover:ring-accent/25 active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive motion-reduce:transition-none">
+          Book a class
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full border-[1.5px] border-ink px-6 font-medium text-ink transition-colors duration-200 hover:bg-ink/5 active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive motion-reduce:transition-none">
+          Gift a class
+        </button>
+        <button type="button" class="group inline-flex min-h-12 items-center rounded-full px-3 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">
+          <span class="relative inline-block">
+            See the timetable
+            <svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" pathLength="1" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke" class="[stroke-dasharray:1] [stroke-dashoffset:1] transition-[stroke-dashoffset] duration-500 ease-out group-hover:[stroke-dashoffset:0] group-focus-visible:[stroke-dashoffset:0] motion-reduce:transition-none"/></svg>
+          </span>
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full bg-danger px-6 font-medium text-surface transition-shadow duration-200 hover:ring-4 hover:ring-danger/25 active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive motion-reduce:transition-none">
+          Cancel booking
+        </button>
+      </div>
+      <p class="max-w-md text-sm text-muted">Clay is the main action, once per screen. The ghost button draws its clay stroke on hover and on keyboard focus.</p>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <h2 class="font-display text-lg text-ink">Sizes and icon</h2>
+      <div class="flex flex-wrap items-center gap-3">
+        <button type="button" class="inline-flex min-h-11 items-center justify-center rounded-full border-[1.5px] border-ink px-4 text-sm font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">
+          Small
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full border-[1.5px] border-ink px-6 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">
+          Medium
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-accent py-2 pr-6 pl-4 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8M9 4c0 3-3 4-3 9a6 6 0 0 0 12 0c0-5-3-6-3-9"/><path d="M7.5 14c3 1.2 6 1.2 9 0"/></svg>
+          Reserve a wheel
+        </button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <h2 class="font-display text-lg text-ink">States</h2>
+      <div class="flex flex-wrap items-start gap-x-4 gap-y-6">
+        <div class="flex flex-col items-start gap-2">
+          <button type="button" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink outline-2 outline-offset-[3px] outline-olive">
+            Book a class
+          </button>
+          <p class="text-xs text-muted">Focus visible, shown statically</p>
+        </div>
+        <div class="flex flex-col items-start gap-2">
+          <button type="button" aria-busy="true" class="inline-flex min-h-12 cursor-progress items-center justify-center gap-2.5 rounded-full bg-accent px-6 font-medium text-accent-ink focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5 animate-spin motion-reduce:animate-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"/></svg>
+            Saving
+          </button>
+          <p class="text-xs text-muted">Loading</p>
+        </div>
+        <div class="flex flex-col items-start gap-2">
+          <button type="button" disabled aria-describedby="btn-disabled-reason" class="inline-flex min-h-12 cursor-not-allowed items-center justify-center rounded-full border-[1.5px] border-dashed border-muted bg-transparent px-6 font-medium text-muted">
+            Book a class
+          </button>
+          <p id="btn-disabled-reason" class="max-w-56 text-xs text-muted">Pick a date and time first.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

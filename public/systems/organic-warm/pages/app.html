@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Book a class</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <a href="#main" class="sr-only rounded-full bg-surface px-5 py-3 font-medium text-ink focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Skip to booking</a>
+
+  <header class="relative mx-auto max-w-6xl px-4 pt-4 md:px-6">
+    <nav aria-label="Main" class="flex min-h-16 items-center justify-between gap-4">
+      <a href="#" class="flex min-h-11 items-center gap-2.5 rounded-full pr-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">
+        <svg aria-hidden="true" viewBox="0 0 28 28" class="size-7 text-accent" fill="currentColor"><path d="M10 4h8v2c0 2 6 4 6 11a10 10 0 0 1-20 0c0-7 6-9 6-11z"/></svg>
+        <span class="font-display text-xl text-ink">Slow Clay</span>
+      </a>
+      <ul class="hidden items-center gap-1 md:flex">
+        <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink underline decoration-accent decoration-2 underline-offset-[6px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Shop</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Studio</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Visit</a></li>
+      </ul>
+      <a href="#" class="hidden min-h-11 items-center rounded-full border-[1.5px] border-ink px-5 font-medium text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive md:inline-flex">My bookings</a>
+      <details class="group md:hidden">
+        <summary class="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border-[1.5px] border-ink px-4 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+          <span class="group-open:hidden">Menu</span>
+          <span class="hidden group-open:inline">Close</span>
+          <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+        </summary>
+        <div class="absolute inset-x-4 top-full z-10 mt-2 rounded-lg bg-surface p-3 shadow-soft">
+          <ul class="flex flex-col">
+            <li><a href="#" aria-current="page" class="flex min-h-14 items-center justify-between rounded-md bg-bg px-4 font-display text-lg text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes <span aria-hidden="true" class="size-2 rounded-full bg-accent"></span></a></li>
+            <li><a href="#" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Shop</a></li>
+            <li><a href="#" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Studio</a></li>
+            <li><a href="#" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Visit</a></li>
+            <li><a href="#" class="flex min-h-14 items-center rounded-md px-4 font-display text-lg text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">My bookings</a></li>
+          </ul>
+        </div>
+      </details>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-4 pt-6 pb-20 md:px-6">
+    <nav aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-1 text-sm">
+        <li><a href="#" class="inline-flex min-h-11 items-center rounded-full pr-1 text-muted hover:text-ink hover:underline hover:decoration-accent hover:underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">Classes</a></li>
+        <li aria-hidden="true" class="text-muted">/</li>
+        <li><span aria-current="page" class="pl-1 text-ink">Wheel basics</span></li>
+      </ol>
+    </nav>
+
+    <div class="mt-4 grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <div class="flex flex-col gap-12 lg:col-span-7">
+        <section aria-labelledby="class-title" class="grid gap-6 sm:grid-cols-[minmax(0,15rem)_1fr] sm:items-end">
+          <div class="relative mx-auto aspect-[3/4] w-56 overflow-hidden rounded-arch bg-accent/15 sm:mx-0 sm:w-full">
+            <svg role="img" aria-label="Drawing of a squat clay cylinder on a potter's wheel" viewBox="0 0 240 320" preserveAspectRatio="xMidYMax slice" class="absolute inset-0 size-full">
+              <rect x="0" y="236" width="240" height="84" class="fill-line"/>
+              <ellipse cx="120" cy="238" rx="92" ry="14" class="fill-ink/80"/>
+              <ellipse cx="120" cy="232" rx="92" ry="14" class="fill-ink/60"/>
+              <path d="M78 146c0-6 84-6 84 0v76c0 10-84 10-84 0z" class="fill-accent"/>
+              <ellipse cx="120" cy="146" rx="42" ry="8" class="fill-ink/25"/>
+              <path d="M80 176c26 6 54 6 80 0M80 200c26 6 54 6 80 0" class="stroke-surface/50" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-4 sm:pb-4">
+            <h1 id="class-title" class="font-display text-display text-ink">
+              <span class="relative inline-block whitespace-nowrap">Wheel<svg aria-hidden="true" viewBox="0 0 200 14" preserveAspectRatio="none" fill="none" class="pointer-events-none absolute -bottom-1 left-0 h-3.5 w-full text-accent"><path d="M3 9.5C38 4 77 3.2 118 5.6c26 1.5 50 2.6 79-1.6" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> basics</h1>
+            <ul class="flex flex-wrap gap-2">
+              <li class="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-sm font-medium text-ink">3 hours</li>
+              <li class="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-sm font-medium text-ink">Up to 8 people</li>
+              <li class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-1 text-sm font-medium text-ink"><span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>No experience needed</li>
+            </ul>
+            <p class="max-w-md text-ink">You will center, open, and pull two cylinders on your own wheel. We trim and bisque them, you come back to glaze, and they are ready about three weeks later.</p>
+          </div>
+        </section>
+
+        <form id="booking" action="#" class="flex flex-col gap-10">
+          <fieldset>
+            <legend class="font-display text-xl text-ink">Pick a date</legend>
+            <p class="mt-1 text-sm text-muted">Thursday evenings and Saturdays to the end of October.</p>
+            <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <label class="relative block cursor-pointer">
+                <input type="radio" name="date" value="2026-10-22" class="peer sr-only">
+                <span class="flex h-full flex-col items-center rounded-arch border-[1.5px] border-muted/80 bg-surface px-3 pt-8 pb-4 text-center transition-colors duration-150 hover:border-ink peer-checked:border-accent peer-checked:ring-2 peer-checked:ring-accent peer-checked:ring-inset peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[3px] peer-focus-visible:outline-olive motion-reduce:transition-none">
+                  <span class="text-sm text-muted">Thu</span>
+                  <span class="font-display text-2xl text-ink">22</span>
+                  <span class="text-sm text-muted">Oct</span>
+                  <span class="mt-3 text-xs font-medium text-accent">2 spots left</span>
+                </span>
+                <span aria-hidden="true" class="absolute top-3 left-1/2 hidden size-6 -translate-x-1/2 place-items-center rounded-full bg-accent text-accent-ink peer-checked:grid">
+                  <svg viewBox="0 0 20 20" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c1.6 1.2 2.8 2.6 3.6 4 2-4.2 4.5-7.2 7.6-9"/></svg>
+                </span>
+              </label>
+              <label class="relative block cursor-pointer">
+                <input type="radio" name="date" value="2026-10-24" checked class="peer sr-only">
+                <span class="flex h-full flex-col items-center rounded-arch border-[1.5px] border-muted/80 bg-surface px-3 pt-8 pb-4 text-center transition-colors duration-150 hover:border-ink peer-checked:border-accent peer-checked:ring-2 peer-checked:ring-accent peer-checked:ring-inset peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[3px] peer-focus-visible:outline-olive motion-reduce:transition-none">
+                  <span class="text-sm text-muted">Sat</span>
+                  <span class="font-display text-2xl text-ink">24</span>
+                  <span class="text-sm text-muted">Oct</span>
+                  <span class="mt-3 text-xs font-medium text-ink">4 spots left</span>
+                </span>
+                <span aria-hidden="true" class="absolute top-3 left-1/2 hidden size-6 -translate-x-1/2 place-items-center rounded-full bg-accent text-accent-ink peer-checked:grid">
+                  <svg viewBox="0 0 20 20" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c1.6 1.2 2.8 2.6 3.6 4 2-4.2 4.5-7.2 7.6-9"/></svg>
+                </span>
+              </label>
+              <label class="relative block cursor-pointer">
+                <input type="radio" name="date" value="2026-10-29" class="peer sr-only">
+                <span class="flex h-full flex-col items-center rounded-arch border-[1.5px] border-muted/80 bg-surface px-3 pt-8 pb-4 text-center transition-colors duration-150 hover:border-ink peer-checked:border-accent peer-checked:ring-2 peer-checked:ring-accent peer-checked:ring-inset peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[3px] peer-focus-visible:outline-olive motion-reduce:transition-none">
+                  <span class="text-sm text-muted">Thu</span>
+                  <span class="font-display text-2xl text-ink">29</span>
+                  <span class="text-sm text-muted">Oct</span>
+                  <span class="mt-3 text-xs font-medium text-ink">7 spots left</span>
+                </span>
+                <span aria-hidden="true" class="absolute top-3 left-1/2 hidden size-6 -translate-x-1/2 place-items-center rounded-full bg-accent text-accent-ink peer-checked:grid">
+                  <svg viewBox="0 0 20 20" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c1.6 1.2 2.8 2.6 3.6 4 2-4.2 4.5-7.2 7.6-9"/></svg>
+                </span>
+              </label>
+              <label class="relative block cursor-pointer">
+                <input type="radio" name="date" value="2026-10-31" class="peer sr-only">
+                <span class="flex h-full flex-col items-center rounded-arch border-[1.5px] border-muted/80 bg-surface px-3 pt-8 pb-4 text-center transition-colors duration-150 hover:border-ink peer-checked:border-accent peer-checked:ring-2 peer-checked:ring-accent peer-checked:ring-inset peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[3px] peer-focus-visible:outline-olive motion-reduce:transition-none">
+                  <span class="text-sm text-muted">Sat</span>
+                  <span class="font-display text-2xl text-ink">31</span>
+                  <span class="text-sm text-muted">Oct</span>
+                  <span class="mt-3 text-xs font-medium text-ink">8 spots left</span>
+                </span>
+                <span aria-hidden="true" class="absolute top-3 left-1/2 hidden size-6 -translate-x-1/2 place-items-center rounded-full bg-accent text-accent-ink peer-checked:grid">
+                  <svg viewBox="0 0 20 20" class="size-3.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5c1.6 1.2 2.8 2.6 3.6 4 2-4.2 4.5-7.2 7.6-9"/></svg>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="font-display text-xl text-ink">Pick a time on Sat 24 Oct</legend>
+            <div class="mt-4 flex flex-col gap-3">
+              <label class="relative block cursor-not-allowed">
+                <input type="radio" name="time" value="10:00" disabled aria-describedby="time-1000-note" class="peer sr-only">
+                <span class="flex min-h-16 flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-full border-[1.5px] border-dashed border-line bg-bg py-3 pr-6 pl-6">
+                  <span class="flex flex-col">
+                    <span class="font-display text-lg text-muted line-through decoration-1">10:00 to 13:00</span>
+                    <span class="text-sm text-muted">with Mara Okafor</span>
+                  </span>
+                  <span id="time-1000-note" class="inline-flex items-center gap-2 rounded-full bg-danger/10 px-3 py-1 text-sm font-medium text-danger"><span aria-hidden="true" class="size-1.5 rounded-full bg-danger"></span>Sold out</span>
+                </span>
+              </label>
+              <label class="relative block cursor-pointer">
+                <input type="radio" name="time" value="14:00" checked class="peer sr-only">
+                <span class="flex min-h-16 flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-full border-[1.5px] border-muted/80 bg-surface py-3 pr-6 pl-14 transition-colors duration-150 hover:border-ink peer-checked:border-accent peer-checked:ring-2 peer-checked:ring-accent peer-checked:ring-inset peer-focus-visible:outline-2 peer-focus-visible:outline-offset-[3px] peer-focus-visible:outline-olive motion-reduce:transition-none">
+                  <span class="flex flex-col">
+                    <span class="font-display text-lg text-ink">14:00 to 17:00</span>
+                    <span class="text-sm text-muted">with Hana Ruiz</span>
+                  </span>
+                  <span class="text-sm font-medium text-ink">4 of 8 spots left</span>
+                </span>
+                <span aria-hidden="true" class="absolute top-1/2 left-5 size-5 -translate-y-1/2 rounded-full border-[1.5px] border-muted/80 bg-surface peer-checked:border-[6px] peer-checked:border-accent"></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="flex flex-col gap-3">
+            <label for="group-size" class="font-display text-xl text-ink">How many people?</label>
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full border-[1.5px] border-muted/80 bg-surface p-1.5">
+                <button type="button" aria-label="One fewer person" aria-controls="group-size" class="inline-flex size-12 items-center justify-center rounded-full text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">
+                  <svg aria-hidden="true" viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 10h11"/></svg>
+                </button>
+                <input id="group-size" name="people" type="number" inputmode="numeric" min="1" max="4" value="2" aria-describedby="group-size-hint" class="h-12 w-14 rounded-full bg-transparent text-center font-display text-xl text-ink tabular-nums [appearance:textfield] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+                <button type="button" aria-label="One more person" aria-controls="group-size" class="inline-flex size-12 items-center justify-center rounded-full text-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive">
+                  <svg aria-hidden="true" viewBox="0 0 20 20" class="size-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 10h11M10 4.5v11"/></svg>
+                </button>
+              </div>
+              <p id="group-size-hint" class="text-sm text-muted">Up to 4 for this session. Bigger group? Ask about a private class.</p>
+            </div>
+          </div>
+        </form>
+
+        <section aria-labelledby="faq-title" class="flex flex-col gap-4">
+          <h2 id="faq-title" class="font-display text-xl text-ink">Before you come</h2>
+          <div class="flex flex-col gap-2">
+            <details class="group rounded-lg bg-surface" open>
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-5 py-3 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+                What should I wear?
+                <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 shrink-0 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+              </summary>
+              <p class="px-5 pb-5 text-muted">Clothes that can take a splash of slip, and closed shoes. Clay washes out of cotton easily. Short nails make centering much easier.</p>
+            </details>
+            <details class="group rounded-lg bg-surface">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-5 py-3 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+                Can I come on my own?
+                <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 shrink-0 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+              </summary>
+              <p class="px-5 pb-5 text-muted">Most people do. Everyone gets their own wheel, and the table in the middle is where conversations start.</p>
+            </details>
+            <details class="group rounded-lg bg-surface">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-5 py-3 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+                When can I collect my pieces?
+                <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 shrink-0 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+              </summary>
+              <p class="px-5 pb-5 text-muted">About three weeks after your class. We text you when they leave the glaze kiln, and they wait on your shelf for a month.</p>
+            </details>
+            <details class="group rounded-lg bg-surface">
+              <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-5 py-3 font-medium text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive [&::-webkit-details-marker]:hidden">
+                What if I need to cancel?
+                <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 shrink-0 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4.5 7.5c2 2.2 3.8 4 5.5 4s3.5-1.8 5.5-4"/></svg>
+              </summary>
+              <p class="px-5 pb-5 text-muted">Move or cancel for free up to 48 hours before. After that we can move you to another date once.</p>
+            </details>
+          </div>
+        </section>
+      </div>
+
+      <aside aria-labelledby="summary-title" class="lg:col-span-5">
+        <div class="flex flex-col gap-5 rounded-lg bg-surface p-6 shadow-soft lg:sticky lg:top-6 md:p-8">
+          <h2 id="summary-title" class="font-display text-xl text-ink">Your booking</h2>
+          <dl class="flex flex-col gap-3 text-sm">
+            <div class="flex justify-between gap-4"><dt class="text-muted">Class</dt><dd class="text-right text-ink">Wheel basics</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-muted">When</dt><dd class="text-right text-ink">Sat 24 Oct, 14:00 to 17:00</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-muted">Teacher</dt><dd class="text-right text-ink">Hana Ruiz</dd></div>
+          </dl>
+          <dl class="flex flex-col gap-3 border-t border-line pt-5 text-sm">
+            <div class="flex justify-between gap-4"><dt class="text-ink">2 people × $85</dt><dd class="text-right text-ink tabular-nums">$170</dd></div>
+            <div class="flex justify-between gap-4"><dt class="text-ink">Clay, glaze, and two firings</dt><dd class="text-right font-medium text-olive">Included</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line pt-4"><dt class="text-base font-medium text-ink">Total</dt><dd class="font-display text-2xl text-ink tabular-nums">$170</dd></div>
+          </dl>
+          <button type="submit" form="booking" class="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink transition-shadow duration-200 hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive motion-reduce:transition-none">Book 2 places for $170</button>
+          <p class="text-sm text-muted">Free to move or cancel until Thu 22 Oct at 14:00.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

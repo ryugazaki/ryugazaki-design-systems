@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Empty state</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="empty-title" class="mx-auto flex max-w-md flex-col items-center gap-5 rounded-lg bg-surface px-6 py-12 text-center">
+    <svg aria-hidden="true" viewBox="0 0 160 110" class="w-40 text-accent">
+      <ellipse cx="80" cy="100" rx="46" ry="5" class="fill-ink/10"/>
+      <path d="M14 38c0 36 30 60 66 60s66-24 66-60z" fill="currentColor"/>
+      <ellipse cx="80" cy="38" rx="66" ry="10" fill="currentColor"/>
+      <ellipse cx="80" cy="38" rx="58" ry="6.5" class="fill-ink/25"/>
+      <path d="M30 58c14 8 86 8 100 0" class="stroke-surface/60" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M66 96h28v6H66z" class="fill-ink/30"/>
+    </svg>
+    <h2 id="empty-title" class="font-display text-xl text-ink">Your kiln shelf is empty</h2>
+    <p class="max-w-xs text-muted">Pieces you make in class wait here between the bisque and glaze firings.</p>
+    <a href="#" class="inline-flex min-h-12 items-center justify-center rounded-full bg-accent px-6 font-medium text-accent-ink hover:ring-4 hover:ring-accent/25 focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-olive">Book your first class</a>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

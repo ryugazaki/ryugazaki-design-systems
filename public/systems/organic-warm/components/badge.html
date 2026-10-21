@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organic Warm / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F3EBDD;
+  --color-surface: #FBF6EC;
+  --color-ink: #3A2A20;
+  --color-muted: #7A6656;
+  --color-line: #DCCDB5;
+  --color-accent: #B5532F;
+  --color-accent-ink: #FBF6EC;
+  --color-olive: #5E6B3A;
+  --color-danger: #A3341F;
+
+  --font-display: "Young Serif", ui-serif, Georgia, serif;
+  --font-body: "Instrument Sans", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.3;
+  --text-xl: 1.875rem;
+  --text-xl--line-height: 1.2;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 1.1;
+  --text-display: 3.5rem;
+  --text-display--line-height: 1.02;
+
+  --radius-*: initial;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-arch: 999px 999px 28px 28px;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-soft: 0 12px 32px -12px rgb(58 42 32 / 0.25);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1E1712;
+    --color-surface: #2A2019;
+    --color-ink: #F1E6D4;
+    --color-muted: #BFA98F;
+    --color-line: #45372B;
+    --color-accent: #E07A4F;
+    --color-accent-ink: #1E1712;
+    --color-olive: #A5B27A;
+    --color-danger: #F08E76;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-xl flex-col gap-8">
+    <section class="flex flex-col gap-4">
+      <h2 class="font-display text-lg text-ink">Status pills</h2>
+      <ul class="flex flex-wrap items-center gap-2.5">
+        <li class="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-sm font-medium text-ink">2.5 hours</li>
+        <li class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 text-sm font-medium text-accent ring-1 ring-accent/40 ring-inset dark:bg-accent/10">
+          <span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>
+          Few spots left
+        </li>
+        <li class="inline-flex items-center gap-2 rounded-full bg-olive/15 px-3 py-1 text-sm font-medium text-ink">
+          <span aria-hidden="true" class="size-1.5 rounded-full bg-olive"></span>
+          Fired and ready
+        </li>
+        <li class="inline-flex items-center gap-2 rounded-full bg-danger/10 px-3 py-1 text-sm font-medium text-danger">
+          <span aria-hidden="true" class="size-1.5 rounded-full bg-danger"></span>
+          Sold out
+        </li>
+        <li class="inline-flex items-center gap-1.5 rounded-full bg-line/70 py-1 pr-3 pl-2 text-sm font-medium text-ink">
+          <svg aria-hidden="true" viewBox="0 0 20 20" class="size-4 text-accent" fill="currentColor"><path d="M7 3h6v1.5c0 1.6 3.5 3 3.5 7.5a6.5 6.5 0 0 1-13 0C3.5 7.5 7 6.1 7 4.5z"/></svg>
+          One of one
+        </li>
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-3 rounded-lg bg-surface p-5">
+      <h2 class="font-display text-lg text-ink">In context</h2>
+      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+        <p class="text-ink">Wheel basics, Thu 22 Oct, 18:30</p>
+        <span class="inline-flex items-center gap-2 rounded-full bg-surface px-3 py-1 text-sm font-medium text-accent ring-1 ring-accent/40 ring-inset dark:bg-accent/10">
+          <span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>
+          2 spots left
+        </span>
+      </div>
+      <p class="text-sm text-muted">The clay pill marks a session with 3 or fewer spots. Olive means done; danger means you cannot book it.</p>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
