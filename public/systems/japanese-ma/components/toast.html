@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Toast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-lg flex-col gap-12 md:pl-10">
+    <div role="status" class="flex items-center gap-4 border-y border-line bg-surface py-2 pl-4 pr-1">
+      <span aria-hidden="true" class="size-2.5 shrink-0 bg-accent"></span>
+      <p class="min-w-0 flex-1 text-base text-ink">Reserved. Saturday 24 October, 14:00.</p>
+      <button type="button" aria-label="Dismiss" class="inline-grid size-11 shrink-0 place-items-center text-muted hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 3l10 10M13 3 3 13"/></svg>
+      </button>
+    </div>
+
+    <div role="status" class="flex items-center gap-4 border-y border-line bg-surface py-2 pl-4 pr-1 md:ml-16">
+      <span aria-hidden="true" class="size-2.5 shrink-0 border border-ink"></span>
+      <p class="min-w-0 flex-1 text-base text-ink">Your note was not saved. Check your connection and try again.</p>
+      <button type="button" aria-label="Dismiss" class="inline-grid size-11 shrink-0 place-items-center text-muted hover:text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 3l10 10M13 3 3 13"/></svg>
+      </button>
+    </div>
+    <p class="font-ui text-xs text-muted">The filled red square marks a confirmation. Errors take an empty outline, so red never means two things.</p>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

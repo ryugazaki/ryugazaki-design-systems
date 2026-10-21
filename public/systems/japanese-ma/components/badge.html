@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Badge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <dl class="grid max-w-lg grid-cols-[7rem_1fr] items-center gap-x-6 md:ml-10">
+    <dt class="border-t border-line py-5 font-ui text-xs tracking-[0.18em] text-muted">Neutral</dt>
+    <dd class="border-t border-line py-5">
+      <span class="inline-flex items-center border border-line px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-ink">Counter seat</span>
+    </dd>
+
+    <dt class="border-t border-line py-5 font-ui text-xs tracking-[0.18em] text-muted">Accent</dt>
+    <dd class="border-t border-line py-5">
+      <span class="inline-grid size-14 -rotate-6 place-items-center rounded-full bg-accent font-ui text-xs font-medium tracking-[0.08em] text-accent-ink">Held</span>
+    </dd>
+
+    <dt class="border-t border-line py-5 font-ui text-xs tracking-[0.18em] text-muted">Success</dt>
+    <dd class="border-t border-line py-5">
+      <span class="inline-flex items-center gap-2 border border-line px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-ink">
+        <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M2 6.5 5 9l5-6"/></svg>
+        Confirmed
+      </span>
+    </dd>
+
+    <dt class="border-t border-line py-5 font-ui text-xs tracking-[0.18em] text-muted">Danger</dt>
+    <dd class="border-t border-line py-5">
+      <span class="inline-flex items-center bg-ink px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-bg">Fully booked</span>
+    </dd>
+
+    <dt class="border-y border-line py-5 font-ui text-xs tracking-[0.18em] text-muted">Shelf tag</dt>
+    <dd class="border-y border-line py-5">
+      <span class="inline-flex items-center gap-2.5 border border-line bg-surface py-1 pl-2 pr-3 font-ui text-xs tracking-[0.12em] text-ink">
+        <span aria-hidden="true" class="size-2 rounded-full border border-edge"></span>
+        Signed by the potter
+      </span>
+    </dd>
+  </dl>
+  <!-- snippet:end -->
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line">
+    <div class="flex items-center justify-between gap-4 px-6 py-3 md:pl-20 md:pr-10 lg:pl-32">
+      <a href="#" class="inline-flex min-h-11 items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+        <span aria-hidden="true" class="size-2.5 bg-accent"></span>
+        <span class="whitespace-nowrap font-display text-base font-medium sm:text-lg tracking-[0.04em] text-ink">Sumi &amp; Kiri</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-14">
+          <li><a href="#course" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Tea course</a></li>
+          <li><a href="#house" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Ceramics</a></li>
+          <li><a href="#visit" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Visit</a></li>
+        </ul>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="#reserve" class="inline-flex min-h-11 items-center border border-edge px-4 font-ui text-sm font-medium tracking-[0.06em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink md:px-8 md:tracking-[0.12em]">Reserve</a>
+        <details class="group md:hidden">
+          <summary class="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 px-1 font-ui text-sm tracking-[0.06em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+            Menu
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5 transition-transform duration-300 ease-quiet group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 2v12M2 8h12"/></svg>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full z-10 border-b border-line bg-bg px-6">
+            <ul class="flex flex-col">
+              <li><a href="#course" class="flex min-h-16 items-center font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Tea course</a></li>
+              <li><a href="#house" class="flex min-h-16 items-center border-t border-line font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Ceramics</a></li>
+              <li><a href="#visit" class="flex min-h-16 items-center border-t border-line font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Visit</a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section aria-labelledby="hero-title" class="relative px-6 pb-28 pt-20 md:pb-40 md:pl-20 md:pr-10 md:pt-32 lg:pl-32">
+      <p aria-hidden="true" class="absolute left-8 top-32 hidden font-ui text-xs tracking-[0.5em] text-muted [writing-mode:vertical-rl] md:block lg:left-14">Tea house</p>
+      <div class="flex max-w-6xl flex-col gap-16 lg:flex-row lg:items-end lg:justify-between">
+        <div class="flex max-w-xl flex-col gap-10">
+          <p class="font-ui text-xs tracking-[0.18em] text-muted">14 Kiln Lane. Open Wednesday to Sunday.</p>
+          <h1 id="hero-title" class="font-display text-display font-medium text-ink">Tea, and the quiet around it.</h1>
+          <p class="max-w-md text-base text-ink">A tea house with eight seats at the counter, one tatami room and a shelf of ceramics. Come for an hour. We pour, and leave you the rest.</p>
+          <div class="flex flex-col items-start gap-4 pt-2 sm:flex-row sm:items-center sm:gap-6">
+            <a href="#reserve" class="inline-flex min-h-12 items-center bg-accent px-10 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Reserve a seat</a>
+            <a href="#course" class="inline-flex min-h-12 items-center border border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">See the autumn course</a>
+          </div>
+        </div>
+        <svg role="img" aria-label="Line drawing of a tall tea bowl on its foot" viewBox="0 0 120 150" class="ml-auto h-40 w-auto shrink-0 md:mr-16 lg:mb-4 lg:h-56" fill="none">
+          <path d="M22 18 C22 14 98 14 98 18 L94 128 C93 134 27 134 26 128 Z" class="fill-surface stroke-ink" stroke-width="1"/>
+          <path d="M22 18 C22 22 98 22 98 18" class="stroke-ink" stroke-width="1"/>
+          <path d="M22.5 30 C34 34 40 46 47 40 C55 33 60 50 70 44 C79 39 86 36 97.5 32" class="stroke-edge" stroke-width="1"/>
+          <path d="M40 132 L40 142 L80 142 L80 132" class="stroke-ink" stroke-width="1"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- The house (bento) -->
+    <section id="house" aria-labelledby="house-title" class="border-t border-line px-6 py-24 md:pl-20 md:pr-10 md:py-32 lg:pl-32">
+      <div class="mb-12 flex max-w-md flex-col gap-3">
+        <p class="font-ui text-xs tracking-[0.18em] text-muted">The house</p>
+        <h2 id="house-title" class="font-display text-2xl font-medium text-ink">One room, one counter, one shelf</h2>
+      </div>
+      <div class="grid max-w-5xl grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+        <article aria-labelledby="h-shelf" class="col-span-2 flex flex-col gap-8 bg-bg p-6 md:col-start-1 md:row-span-2 md:row-start-1 md:p-10">
+          <div class="flex flex-1 items-end py-4 pl-4 md:pl-10">
+            <svg role="img" aria-label="Line drawing of a wide tea bowl, its foot and a whisk resting beside it" viewBox="0 0 220 130" class="h-32 w-auto md:h-44" fill="none">
+              <path d="M10 30 C10 26 150 26 150 30 C150 80 125 104 80 104 C35 104 10 80 10 30 Z" class="fill-surface stroke-ink" stroke-width="1"/>
+              <path d="M10 30 C10 34 150 34 150 30" class="stroke-ink" stroke-width="1"/>
+              <path d="M56 104 L58 114 L102 114 L104 104" class="stroke-ink" stroke-width="1"/>
+              <path d="M184 112 L184 60 M178 112 C176 90 178 72 184 60 C190 72 192 90 190 112 Z" class="stroke-edge" stroke-width="1"/>
+              <path d="M172 114 L200 114" class="stroke-edge" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="flex flex-col gap-3 border-t border-line pt-6">
+            <p class="font-ui text-xs tracking-[0.18em] text-muted">The ceramics shelf</p>
+            <h3 id="h-shelf" class="font-display text-xl font-medium text-ink">Drink from it, then take it home</h3>
+            <p class="max-w-sm text-base text-ink">Every bowl we pour into is for sale. This month: Hana Ito's tall tea bowl in persimmon glaze, $120, and her white shino yunomi cups, $34.</p>
+            <a href="#" class="mt-2 inline-flex min-h-11 items-center self-start font-ui text-sm font-medium tracking-[0.12em] text-ink underline decoration-edge decoration-1 underline-offset-[10px] hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Browse the shelf</a>
+          </div>
+        </article>
+
+        <figure class="col-span-2 flex flex-col justify-between gap-6 bg-bg p-6 md:col-start-3 md:row-start-1 md:p-10">
+          <blockquote class="max-w-sm font-display text-lg text-ink">The persimmons are orange on the branch and the mornings are cold. We roast the hojicha at ten, and the room smells of it until we close.</blockquote>
+          <figcaption class="font-ui text-xs tracking-[0.12em] text-muted">Kiri Ando, who roasts the tea</figcaption>
+        </figure>
+
+        <div aria-hidden="true" class="hidden bg-bg md:col-start-3 md:row-start-2 md:block"></div>
+
+        <section aria-labelledby="h-seats" class="flex min-h-56 flex-col justify-between gap-6 bg-bg p-6 md:col-start-4 md:row-span-2 md:row-start-2 md:min-h-0">
+          <h3 id="h-seats" class="font-display text-lg font-medium text-ink">Where you sit</h3>
+          <dl class="flex flex-col gap-4">
+            <div><dt class="font-ui text-xs text-muted">Counter</dt><dd class="font-display text-xl text-ink tabular-nums">8 seats</dd></div>
+            <div><dt class="font-ui text-xs text-muted">Tatami room</dt><dd class="font-display text-xl text-ink">2 to 4 guests</dd></div>
+          </dl>
+        </section>
+
+        <div aria-hidden="true" class="bg-bg md:hidden"></div>
+
+        <section aria-labelledby="h-hours" class="col-span-2 flex flex-col gap-6 bg-bg p-6 md:col-span-3 md:col-start-1 md:row-start-3 md:p-10">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+            <h3 id="h-hours" class="font-display text-lg font-medium text-ink">Hours</h3>
+            <p class="font-ui text-xs tracking-[0.12em] text-muted">Wednesday to Sunday, 11:00 to 18:00. Closed Monday and Tuesday.</p>
+          </div>
+          <figure class="flex flex-col gap-2">
+            <div role="img" aria-label="Five one-hour seatings in a day: 11:00, 12:30, 14:00, 15:30 and 17:00, the last ending at 18:00 when we close." class="relative h-6 border-x border-edge">
+              <span aria-hidden="true" class="absolute inset-x-0 top-1/2 h-px bg-line"></span>
+              <span class="absolute inset-y-1 left-0 w-[14.2857%] border border-edge bg-surface"></span>
+              <span class="absolute inset-y-1 left-[21.4286%] w-[14.2857%] border border-edge bg-surface"></span>
+              <span class="absolute inset-y-1 left-[42.8571%] w-[14.2857%] border border-edge bg-surface"></span>
+              <span class="absolute inset-y-1 left-[64.2857%] w-[14.2857%] border border-edge bg-surface"></span>
+              <span class="absolute inset-y-1 left-[85.7143%] w-[14.2857%] border border-edge bg-surface"></span>
+            </div>
+            <figcaption class="flex justify-between font-ui text-xs text-muted tabular-nums"><span>11:00</span><span>Five seatings of one hour</span><span>18:00</span></figcaption>
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section aria-labelledby="proof-title" class="border-t border-line px-6 py-24 md:pl-20 md:pr-10 md:py-32 lg:pl-32">
+      <h2 id="proof-title" class="sr-only">The house in numbers, and a guest's words</h2>
+      <div class="flex max-w-5xl flex-col gap-16 lg:flex-row lg:items-start lg:justify-between">
+        <dl class="grid max-w-md grid-cols-3 gap-6 md:gap-10 lg:w-sm lg:shrink-0">
+          <div class="flex flex-col gap-1"><dt class="order-2 font-ui text-xs text-muted">counter seats</dt><dd class="order-1 font-display text-2xl text-ink tabular-nums">8</dd></div>
+          <div class="flex flex-col gap-1"><dt class="order-2 font-ui text-xs text-muted">tatami room</dt><dd class="order-1 font-display text-2xl text-ink tabular-nums">1</dd></div>
+          <div class="flex flex-col gap-1"><dt class="order-2 font-ui text-xs text-muted">teas this autumn</dt><dd class="order-1 font-display text-2xl text-ink tabular-nums">6</dd></div>
+        </dl>
+        <figure class="flex max-w-md flex-col gap-5 border-l border-line pl-6 md:ml-[30%] md:pl-10 lg:ml-0 lg:mt-24">
+          <blockquote class="font-display text-lg text-ink">We came for tea and stayed for the quiet. Nobody hurried us out, and the second steep of gyokuro was better than the first.</blockquote>
+          <figcaption class="font-ui text-xs tracking-[0.12em] text-muted">Lena Marsh, a guest in September</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Detail list -->
+    <section id="course" aria-labelledby="course-title" class="border-t border-line px-6 py-24 md:pl-20 md:pr-10 md:py-32 lg:pl-32">
+      <div class="flex max-w-5xl flex-col gap-14 lg:flex-row lg:gap-24">
+        <div class="flex max-w-xs flex-col gap-8">
+          <div class="flex flex-col gap-3">
+            <p class="font-ui text-xs tracking-[0.18em] text-muted">1 October to 30 November</p>
+            <h2 id="course-title" class="font-display text-2xl font-medium text-ink">The autumn course</h2>
+            <p class="text-base text-ink">One hour. Three teas and a chestnut sweet, in the order we pour them.</p>
+          </div>
+          <span aria-hidden="true" lang="ja" class="grid size-20 -rotate-6 place-items-center rounded-full bg-accent font-display text-2xl text-accent-ink">秋</span>
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col gap-14">
+          <ol class="flex flex-col">
+            <li class="grid grid-cols-[2.5rem_1fr] gap-x-4 border-t border-line py-6">
+              <span class="font-ui text-xs text-muted tabular-nums">1</span>
+              <div class="flex flex-col gap-1"><p class="font-display text-lg text-ink">Hojicha</p><p class="text-base text-muted">Roasted that morning, poured hot from Kyoto leaf.</p></div>
+            </li>
+            <li class="grid grid-cols-[2.5rem_1fr] gap-x-4 border-t border-line py-6">
+              <span class="font-ui text-xs text-muted tabular-nums">2</span>
+              <div class="flex flex-col gap-1"><p class="font-display text-lg text-ink">Matcha</p><p class="text-base text-muted">Uji matcha, whisked at your seat.</p></div>
+            </li>
+            <li class="grid grid-cols-[2.5rem_1fr] gap-x-4 border-t border-line py-6">
+              <span class="font-ui text-xs text-muted tabular-nums">3</span>
+              <div class="flex flex-col gap-1"><p class="font-display text-lg text-ink">Chestnut kinton</p><p class="text-base text-muted">Sweet chestnut pressed by hand, with a sliver of persimmon.</p></div>
+            </li>
+            <li class="grid grid-cols-[2.5rem_1fr] gap-x-4 border-y border-line py-6">
+              <span class="font-ui text-xs text-muted tabular-nums">4</span>
+              <div class="flex flex-col gap-1"><p class="font-display text-lg text-ink">Gyokuro</p><p class="text-base text-muted">From Yame, a cool second steep to close.</p></div>
+            </li>
+          </ol>
+          <dl class="flex max-w-md flex-col">
+            <div class="flex items-baseline justify-between gap-6 border-t border-line py-4"><dt class="text-base text-ink">The autumn course</dt><dd class="font-display text-lg text-ink tabular-nums">$38 a guest</dd></div>
+            <div class="flex items-baseline justify-between gap-6 border-t border-line py-4"><dt class="text-base text-ink">Tatami room</dt><dd class="font-display text-lg text-ink tabular-nums">$20 for the room</dd></div>
+            <div class="flex items-baseline justify-between gap-6 border-y border-line py-4"><dt class="text-base text-ink">A pot of tea, no course</dt><dd class="font-display text-lg text-ink tabular-nums">from $7</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="reserve" aria-labelledby="cta-title" class="border-t border-line px-6 py-28 md:pl-20 md:pr-10 md:py-40 lg:pl-32">
+      <div class="flex max-w-lg flex-col gap-8 md:ml-[20%]">
+        <h2 id="cta-title" class="font-display text-2xl font-medium text-ink">Saturday afternoons go first.</h2>
+        <p class="text-base text-ink">Reservations open two weeks ahead. Walk-ins sit at the counter when a seat is free.</p>
+        <a href="#" class="inline-flex min-h-12 items-center self-start bg-accent px-10 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Reserve a seat</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="visit" class="border-t border-line px-6 pb-16 pt-12 md:pl-20 md:pr-10 lg:pl-32">
+    <div class="flex max-w-5xl flex-col gap-10 md:flex-row md:justify-between">
+      <div class="flex flex-col gap-2">
+        <p class="font-display text-lg font-medium text-ink">Sumi &amp; Kiri</p>
+        <p class="font-ui text-xs text-muted">14 Kiln Lane, by the river steps.</p>
+      </div>
+      <dl class="grid grid-cols-[auto_1fr] gap-x-8 gap-y-2 font-ui text-xs">
+        <dt class="text-muted">Wednesday to Sunday</dt><dd class="text-ink tabular-nums">11:00 to 18:00</dd>
+        <dt class="text-muted">Monday and Tuesday</dt><dd class="text-ink">Closed</dd>
+      </dl>
+      <ul class="flex flex-col font-ui text-xs">
+        <li><a href="#" class="inline-flex min-h-11 items-center text-ink underline decoration-edge underline-offset-4 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Journal</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center text-ink underline decoration-edge underline-offset-4 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Write to us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

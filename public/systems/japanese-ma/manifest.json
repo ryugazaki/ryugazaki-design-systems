@@ -1,0 +1,208 @@
+{
+  "slug": "japanese-ma",
+  "number": 9,
+  "name": "Japanese Minimal (Ma)",
+  "tagline": "The space between things is part of the design.",
+  "description": "A system built on ma, the meaningful interval. Washi paper tones, sumi ink, one hanko red, hairline rules, vertical labels, and generous asymmetric space. Nothing is decorated that does not need to be.",
+  "tags": [
+    "light",
+    "minimal",
+    "calm",
+    "hospitality",
+    "editorial"
+  ],
+  "defaultMode": "light",
+  "useCases": [
+    "tea houses, restaurants and hotels",
+    "galleries and craft shops",
+    "booking flows",
+    "quiet editorial sites"
+  ],
+  "fonts": [
+    {
+      "family": "Shippori Mincho",
+      "role": "headings and body text",
+      "weights": [
+        400,
+        500,
+        600
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    },
+    {
+      "family": "Zen Kaku Gothic New",
+      "role": "labels, buttons, small interface text",
+      "weights": [
+        400,
+        500,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.333,
+    "steps": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "21px",
+      "xl": "28px",
+      "2xl": "37px",
+      "display": "50px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#F5F1E8",
+      "dark": "#171614",
+      "role": "washi paper"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FBF9F4",
+      "dark": "#1F1E1B",
+      "role": "raised paper and fields"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#24221F",
+      "dark": "#ECE6DA",
+      "role": "sumi ink text"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#6B655C",
+      "dark": "#A59E91",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#D8D1C4",
+      "dark": "#36332E",
+      "role": "hairline rules"
+    },
+    {
+      "token": "--color-edge",
+      "light": "#8A8377",
+      "dark": "#7D766B",
+      "role": "control edges that need 3:1"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#B7282E",
+      "dark": "#E46468",
+      "role": "hanko red: stamps, the primary action, the selected state"
+    },
+    {
+      "token": "--color-accent-ink",
+      "light": "#FBF9F4",
+      "dark": "#171614",
+      "role": "text on hanko red"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Leave at least as much empty space as content in every section, placed asymmetrically",
+      "Use one vertical label per screen with writing-mode vertical-rl for a section name",
+      "Separate with 1px hairline rules instead of boxes",
+      "Use the hanko red for one stamp, the primary action and the selected state only",
+      "Keep body text at 16px with a line height of at least 1.8"
+    ],
+    "dont": [
+      "Do not use shadows or rounded corners, except the round hanko stamp",
+      "Do not center whole layouts; anchor them to one side",
+      "Do not use more than one red element per section",
+      "Do not use bold weights for body text",
+      "Do not add decorative patterns like waves or cherry blossoms"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Primary is a hanko red fill with paper text; secondary is a 1px edge outline; ghost is text with a hairline underline. Generous horizontal padding, no radius."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Bottom edge only in the edge token, label in Zen Kaku Gothic above, serif input text. Error shows a red short rule and a quiet message."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Bottom edge only with a thin chevron, like a handwritten form line."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Square 1px edge checkbox with a red check. Switch is a thin line track with a small square that moves and turns red when on."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Small Zen Kaku Gothic labels with a hairline frame; one round hanko-style badge in red."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "A ceramic piece: tall token-drawn bowl shape on paper, name in Mincho, glaze and size in small gothic, price."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Wordmark with a small red square seal, links spaced widely, one red reserve action. Mobile menu is a details disclosure with tall rows."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Paper sheet with a hairline frame, a vertical label on the side at md, two actions."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Seasonal tea course or opening hours table with hairline rows and lots of row height."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Asymmetric: one tall tile with a drawn tea bowl, a season note, a vertical label tile, hours, and an empty breathing tile."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "A single circle outline, one quiet sentence, one text action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "A hairline bar with a small red square and a short message."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Reservation",
+      "file": "pages/app.html"
+    }
+  ]
+}

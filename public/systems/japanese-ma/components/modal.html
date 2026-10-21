@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="relative flex min-h-[600px] flex-col justify-end bg-ink/30 pt-28 dark:bg-ink/10 md:min-h-[560px] md:items-start md:justify-center md:p-16 lg:pl-28">
+    <div aria-hidden="true" class="absolute inset-x-6 top-8 flex flex-col gap-4 opacity-50">
+      <div class="h-px w-1/3 bg-bg"></div>
+      <div class="h-px w-1/2 bg-bg"></div>
+    </div>
+    <section role="dialog" aria-modal="true" aria-labelledby="dlg-title" aria-describedby="dlg-body" class="relative flex w-full border-t border-line bg-bg md:max-w-xl md:border">
+      <p aria-hidden="true" class="hidden shrink-0 border-r border-line px-4 py-10 font-ui text-xs tracking-[0.4em] text-muted [writing-mode:vertical-rl] md:block">Reservation</p>
+      <div class="flex min-w-0 flex-1 flex-col gap-8 px-6 pb-8 pt-10 md:px-10 md:pb-10">
+        <div class="flex flex-col gap-3">
+          <p class="font-ui text-xs tracking-[0.18em] text-muted">One step left</p>
+          <h2 id="dlg-title" class="font-display text-xl font-medium text-ink md:text-2xl">Confirm your hour in the tatami room</h2>
+        </div>
+        <div id="dlg-body" class="flex max-w-sm flex-col gap-4 text-base text-ink">
+          <p>Saturday 24 October, 14:00 to 15:00. Three guests, the autumn course.</p>
+          <p class="text-muted">$134 in all, paid at the table. Free to change until Friday 23 October, 18:00. After that, the room goes to the next name on the list.</p>
+        </div>
+        <div class="flex flex-col-reverse gap-4 pt-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <button type="button" class="inline-flex min-h-12 items-center justify-center whitespace-nowrap border border-edge px-6 font-ui text-sm font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Change details</button>
+          <button type="button" class="inline-flex min-h-12 items-center justify-center whitespace-nowrap bg-accent px-6 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Confirm reservation</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

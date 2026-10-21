@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-16 md:pl-10">
+    <section class="flex flex-col gap-6">
+      <h2 class="font-ui text-xs tracking-[0.18em] text-muted">Variants</h2>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+        <button type="button" class="inline-flex min-h-12 items-center bg-accent px-10 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink transition-opacity duration-300 ease-quiet hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          Reserve a seat
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center border border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-ink transition-colors duration-300 ease-quiet hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          See the autumn course
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center px-1 font-ui text-sm font-medium tracking-[0.12em] text-ink underline decoration-edge decoration-1 underline-offset-[10px] transition-colors duration-300 ease-quiet hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          Read the menu
+        </button>
+      </div>
+      <div class="flex flex-col items-start gap-3 border-t border-line pt-6">
+        <button type="button" class="inline-flex min-h-12 items-center gap-3 bg-ink px-10 font-ui text-sm font-medium tracking-[0.12em] text-bg transition-opacity duration-300 ease-quiet hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M3 3l10 10M13 3 3 13"/></svg>
+          Cancel reservation
+        </button>
+        <p class="font-ui text-xs text-muted">Destructive. Filled with the ink token, never red; red stays with the primary action.</p>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6 md:ml-24">
+      <h2 class="font-ui text-xs tracking-[0.18em] text-muted">Sizes and icon</h2>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
+        <button type="button" class="inline-flex min-h-11 items-center border border-edge px-6 font-ui text-xs font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          Small
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center border border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          Medium
+        </button>
+        <button type="button" class="inline-flex min-h-12 items-center gap-3 border border-edge px-8 font-ui text-sm font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.25"><rect x="2.5" y="3.5" width="11" height="10"/><path d="M2.5 6.5h11M5.5 2v3M10.5 2v3"/></svg>
+          Add to calendar
+        </button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-6">
+      <h2 class="font-ui text-xs tracking-[0.18em] text-muted">States</h2>
+      <div class="flex flex-wrap items-start gap-x-8 gap-y-8">
+        <div class="flex flex-col gap-3">
+          <button type="button" class="inline-flex min-h-12 items-center border border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-ink outline-2 outline-offset-4 outline-ink">
+            Focused
+          </button>
+          <p class="font-ui text-xs text-muted">Focus visible, shown static.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <button type="button" aria-busy="true" class="inline-flex min-h-12 cursor-progress items-center gap-3 border border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4 animate-spin motion-reduce:animate-none" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M8 2a6 6 0 1 1-6 6"/></svg>
+            Saving
+          </button>
+          <p class="font-ui text-xs text-muted">Loading.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <button type="button" disabled class="inline-flex min-h-12 cursor-not-allowed items-center border border-dashed border-edge px-10 font-ui text-sm font-medium tracking-[0.12em] text-muted">
+            Confirm reservation
+          </button>
+          <p class="font-ui text-xs text-muted">Choose a date and a time first.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

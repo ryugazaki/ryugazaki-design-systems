@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-4xl flex-col gap-6 md:pl-10">
+    <div class="flex flex-col gap-2">
+      <p class="font-ui text-xs tracking-[0.18em] text-muted">October and November</p>
+      <h2 id="teas-title" class="font-display text-xl font-medium text-ink">Teas this autumn</h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table aria-labelledby="teas-title" class="w-full min-w-[40rem] border-collapse text-left">
+        <thead>
+          <tr class="border-b border-edge font-ui text-xs tracking-[0.12em] text-muted">
+            <th scope="col" class="py-3 pr-6 font-normal">Tea</th>
+            <th scope="col" class="py-3 pr-6 font-normal">Grown in</th>
+            <th scope="col" class="py-3 pr-6 text-right font-normal">Water, °C</th>
+            <th scope="col" class="py-3 pr-6 text-right font-normal">Steep, s</th>
+            <th scope="col" class="py-3 pr-6 text-right font-normal">Pot</th>
+            <th scope="col" class="py-3 font-normal">Status</th>
+          </tr>
+        </thead>
+        <tbody class="text-base text-ink">
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Hojicha</th>
+            <td class="py-6 pr-6 text-muted">Kyoto</td>
+            <td class="py-6 pr-6 text-right tabular-nums">95</td>
+            <td class="py-6 pr-6 text-right tabular-nums">30</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$8</td>
+            <td class="py-6"><span class="inline-flex items-center border border-line px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-ink">In the course</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Matcha</th>
+            <td class="py-6 pr-6 text-muted">Uji</td>
+            <td class="py-6 pr-6 text-right tabular-nums">80</td>
+            <td class="py-6 pr-6 text-right tabular-nums">15</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$12</td>
+            <td class="py-6"><span class="inline-flex items-center border border-line px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-ink">In the course</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Gyokuro</th>
+            <td class="py-6 pr-6 text-muted">Yame</td>
+            <td class="py-6 pr-6 text-right tabular-nums">55</td>
+            <td class="py-6 pr-6 text-right tabular-nums">90</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$14</td>
+            <td class="py-6"><span class="inline-flex items-center border border-line px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-ink">In the course</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Sencha</th>
+            <td class="py-6 pr-6 text-muted">Shizuoka</td>
+            <td class="py-6 pr-6 text-right tabular-nums">75</td>
+            <td class="py-6 pr-6 text-right tabular-nums">60</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$9</td>
+            <td class="py-6"><span class="inline-flex items-center px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-muted">Pot only</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Genmaicha</th>
+            <td class="py-6 pr-6 text-muted">Shizuoka</td>
+            <td class="py-6 pr-6 text-right tabular-nums">85</td>
+            <td class="py-6 pr-6 text-right tabular-nums">45</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$7</td>
+            <td class="py-6"><span class="inline-flex items-center px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-muted">Pot only</span></td>
+          </tr>
+          <tr class="border-b border-line">
+            <th scope="row" class="py-6 pr-6 font-display font-medium">Kukicha</th>
+            <td class="py-6 pr-6 text-muted">Kagoshima</td>
+            <td class="py-6 pr-6 text-right tabular-nums">85</td>
+            <td class="py-6 pr-6 text-right tabular-nums">60</td>
+            <td class="py-6 pr-6 text-right tabular-nums">$8</td>
+            <td class="py-6"><span class="inline-flex items-center whitespace-nowrap bg-ink px-2.5 py-0.5 font-ui text-xs tracking-[0.12em] text-bg">Until 31 October</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="max-w-md font-ui text-xs text-muted">The autumn course pours the first three, with a chestnut sweet between the matcha and the gyokuro.</p>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

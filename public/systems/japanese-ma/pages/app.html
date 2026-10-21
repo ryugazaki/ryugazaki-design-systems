@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Reservation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative border-b border-line">
+    <div class="flex items-center justify-between gap-4 px-6 py-3 md:pl-20 md:pr-10 lg:pl-32">
+      <a href="#" class="inline-flex min-h-11 items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+        <span aria-hidden="true" class="size-2.5 bg-accent"></span>
+        <span class="whitespace-nowrap font-display text-base font-medium sm:text-lg tracking-[0.04em] text-ink">Sumi &amp; Kiri</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-14">
+          <li><a href="#" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Tea course</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Ceramics</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-transparent underline-offset-8 hover:decoration-edge focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Visit</a></li>
+          <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center font-ui text-sm tracking-[0.12em] text-ink underline decoration-ink decoration-1 underline-offset-8 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Reserve</a></li>
+        </ul>
+      </nav>
+      <details class="group md:hidden">
+        <summary class="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 px-1 font-ui text-sm tracking-[0.06em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink [&::-webkit-details-marker]:hidden">
+          Menu
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5 transition-transform duration-300 ease-quiet group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 2v12M2 8h12"/></svg>
+        </summary>
+        <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full z-10 border-b border-line bg-bg px-6">
+          <ul class="flex flex-col">
+            <li><a href="#" class="flex min-h-16 items-center font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Tea course</a></li>
+            <li><a href="#" class="flex min-h-16 items-center border-t border-line font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Ceramics</a></li>
+            <li><a href="#" class="flex min-h-16 items-center border-t border-line font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Visit</a></li>
+            <li><a href="#" aria-current="page" class="flex min-h-16 items-center justify-between border-t border-line font-display text-lg text-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-ink">Reserve <span class="font-ui text-xs tracking-[0.18em] text-muted">You are here</span></a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main class="relative px-6 pb-24 pt-14 md:pl-20 md:pr-10 md:pt-20 lg:pl-32">
+    <p aria-hidden="true" class="absolute left-8 top-24 hidden font-ui text-xs tracking-[0.5em] text-muted [writing-mode:vertical-rl] md:block lg:left-14">Reservation</p>
+
+    <div class="mb-14 flex max-w-xl flex-col gap-4 md:mb-20">
+      <p class="font-ui text-xs tracking-[0.18em] text-muted">Today is Wednesday 21 October</p>
+      <h1 class="font-display text-2xl font-medium text-ink">Reserve an hour</h1>
+      <p class="max-w-md text-base text-muted">Choose where you sit, the day and the seating. We hold the place for you and pour when you arrive.</p>
+    </div>
+
+    <div class="grid max-w-6xl grid-cols-1 gap-x-24 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <form id="reserve-form" action="#" class="flex min-w-0 flex-col lg:col-start-1 lg:row-start-1">
+        <!-- Seating -->
+        <fieldset class="flex flex-col gap-6 border-t border-line pb-14 pt-8">
+          <legend class="float-left mb-6 w-full font-ui text-xs tracking-[0.18em] text-muted">Seating</legend>
+          <div class="grid max-w-xl clear-both gap-4 sm:grid-cols-2">
+            <label class="group flex min-h-32 cursor-pointer flex-col justify-between gap-6 border border-edge p-5 hover:border-ink has-[:checked]:border-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="seating" value="counter" class="sr-only">
+              <span class="flex items-start justify-between gap-4">
+                <span class="font-display text-lg text-ink">Counter</span>
+                <span aria-hidden="true" class="mt-2 size-3.5 shrink-0 border border-edge group-has-[:checked]:border-accent group-has-[:checked]:bg-accent"></span>
+              </span>
+              <span class="flex flex-col font-ui text-xs text-muted"><span>One or two guests, facing the kettle</span><span>No room fee</span></span>
+            </label>
+            <label class="group flex min-h-32 cursor-pointer flex-col justify-between gap-6 border border-edge p-5 hover:border-ink has-[:checked]:border-ink has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="seating" value="tatami" checked class="sr-only">
+              <span class="flex items-start justify-between gap-4">
+                <span class="font-display text-lg text-ink">Tatami room</span>
+                <span aria-hidden="true" class="mt-2 size-3.5 shrink-0 border border-edge group-has-[:checked]:border-accent group-has-[:checked]:bg-accent"></span>
+              </span>
+              <span class="flex flex-col font-ui text-xs text-muted"><span>Two to four guests, the room is yours</span><span>$20 for the room</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Date -->
+        <fieldset class="flex flex-col border-t border-line pb-14 pt-8">
+          <legend class="float-left mb-6 w-full font-ui text-xs tracking-[0.18em] text-muted">Day, the coming week</legend>
+          <div class="clear-both grid max-w-2xl grid-cols-4 gap-2 md:grid-cols-7">
+            <label class="group flex min-h-20 cursor-pointer flex-col items-start justify-between gap-1 border border-edge p-2.5 hover:border-ink has-[:checked]:border-accent has-[:checked]:bg-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="day" value="2026-10-21" class="sr-only">
+              <span class="font-ui text-xs text-muted group-has-[:checked]:text-accent-ink">Wed</span>
+              <span class="font-display text-xl text-ink tabular-nums group-has-[:checked]:text-accent-ink">21</span>
+            </label>
+            <label class="group flex min-h-20 cursor-pointer flex-col items-start justify-between gap-1 border border-edge p-2.5 hover:border-ink has-[:checked]:border-accent has-[:checked]:bg-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="day" value="2026-10-22" class="sr-only">
+              <span class="font-ui text-xs text-muted group-has-[:checked]:text-accent-ink">Thu</span>
+              <span class="font-display text-xl text-ink tabular-nums group-has-[:checked]:text-accent-ink">22</span>
+            </label>
+            <label class="group flex min-h-20 cursor-pointer flex-col items-start justify-between gap-1 border border-edge p-2.5 hover:border-ink has-[:checked]:border-accent has-[:checked]:bg-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="day" value="2026-10-23" class="sr-only">
+              <span class="font-ui text-xs text-muted group-has-[:checked]:text-accent-ink">Fri</span>
+              <span class="font-display text-xl text-ink tabular-nums group-has-[:checked]:text-accent-ink">23</span>
+            </label>
+            <label class="group flex min-h-20 cursor-pointer flex-col items-start justify-between gap-1 border border-edge p-2.5 hover:border-ink has-[:checked]:border-accent has-[:checked]:bg-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="day" value="2026-10-24" checked class="sr-only">
+              <span class="font-ui text-xs text-muted group-has-[:checked]:text-accent-ink">Sat</span>
+              <span class="font-display text-xl text-ink tabular-nums group-has-[:checked]:text-accent-ink">24</span>
+            </label>
+            <label class="group flex min-h-20 cursor-pointer flex-col items-start justify-between gap-1 border border-edge p-2.5 hover:border-ink has-[:checked]:border-accent has-[:checked]:bg-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="day" value="2026-10-25" class="sr-only">
+              <span class="font-ui text-xs text-muted group-has-[:checked]:text-accent-ink">Sun</span>
+              <span class="font-display text-xl text-ink tabular-nums group-has-[:checked]:text-accent-ink">25</span>
+            </label>
+            <label class="flex min-h-20 cursor-not-allowed flex-col items-start justify-between gap-1 border border-dashed border-line p-2.5">
+              <input type="radio" name="day" value="2026-10-26" disabled class="sr-only">
+              <span class="font-ui text-xs text-muted">Mon</span>
+              <span class="font-display text-xl text-muted tabular-nums">26</span>
+              <span class="font-ui text-xs text-muted">Closed</span>
+            </label>
+            <label class="flex min-h-20 cursor-not-allowed flex-col items-start justify-between gap-1 border border-dashed border-line p-2.5">
+              <input type="radio" name="day" value="2026-10-27" disabled class="sr-only">
+              <span class="font-ui text-xs text-muted">Tue</span>
+              <span class="font-display text-xl text-muted tabular-nums">27</span>
+              <span class="font-ui text-xs text-muted">Closed</span>
+            </label>
+          </div>
+          <p class="mt-4 font-ui text-xs text-muted">October 2026. We open Wednesday to Sunday.</p>
+        </fieldset>
+
+        <!-- Time -->
+        <fieldset class="flex flex-col border-t border-line pb-14 pt-8">
+          <legend class="float-left mb-6 w-full font-ui text-xs tracking-[0.18em] text-muted">Seating time, Saturday 24 October</legend>
+          <div class="clear-both flex max-w-xl flex-wrap gap-3">
+            <label class="flex min-h-12 cursor-pointer items-center border border-edge px-5 font-ui text-sm tracking-[0.08em] text-ink tabular-nums hover:border-ink has-[:checked]:border-accent has-[:checked]:text-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="time" value="11:00" class="sr-only">11:00
+            </label>
+            <label class="flex min-h-12 cursor-not-allowed items-center gap-2 border border-dashed border-line px-5 font-ui text-sm tracking-[0.08em] text-muted tabular-nums">
+              <input type="radio" name="time" value="12:30" disabled class="sr-only"><span class="line-through">12:30</span><span class="text-xs">Taken</span>
+            </label>
+            <label class="flex min-h-12 cursor-pointer items-center border border-edge px-5 font-ui text-sm tracking-[0.08em] text-ink tabular-nums hover:border-ink has-[:checked]:border-accent has-[:checked]:text-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="time" value="14:00" checked class="sr-only">14:00
+            </label>
+            <label class="flex min-h-12 cursor-pointer items-center border border-edge px-5 font-ui text-sm tracking-[0.08em] text-ink tabular-nums hover:border-ink has-[:checked]:border-accent has-[:checked]:text-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="time" value="15:30" class="sr-only">15:30
+            </label>
+            <label class="flex min-h-12 cursor-pointer items-center border border-edge px-5 font-ui text-sm tracking-[0.08em] text-ink tabular-nums hover:border-ink has-[:checked]:border-accent has-[:checked]:text-accent has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-4 has-[:focus-visible]:outline-ink">
+              <input type="radio" name="time" value="17:00" class="sr-only">17:00
+            </label>
+          </div>
+          <p class="mt-4 max-w-md font-ui text-xs text-muted">Each seating is one hour. The last begins at 17:00, and we close at 18:00.</p>
+        </fieldset>
+
+        <!-- Guests -->
+        <fieldset class="flex flex-col border-t border-line pb-14 pt-8">
+          <legend class="float-left mb-6 w-full font-ui text-xs tracking-[0.18em] text-muted">Guests</legend>
+          <div class="clear-both flex items-center gap-8">
+            <div class="flex items-center border border-edge">
+              <button type="button" aria-label="One guest fewer" class="grid size-12 place-items-center text-ink hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+                <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 8h12"/></svg>
+              </button>
+              <p class="grid h-12 min-w-16 place-items-center border-x border-line font-display text-xl text-ink tabular-nums"><span class="sr-only">Guests: </span>3</p>
+              <button type="button" aria-label="One guest more" class="grid size-12 place-items-center text-ink hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+                <svg aria-hidden="true" viewBox="0 0 16 16" class="size-3.5" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 8h12M8 2v12"/></svg>
+              </button>
+            </div>
+            <p class="max-w-48 font-ui text-xs text-muted">The tatami room seats two to four.</p>
+          </div>
+        </fieldset>
+
+        <!-- Course -->
+        <section aria-labelledby="course-title" class="flex flex-col gap-6 border-t border-line pb-14 pt-8">
+          <p class="font-ui text-xs tracking-[0.18em] text-muted">Served to every guest</p>
+          <div class="flex max-w-xl flex-col gap-3">
+            <h2 id="course-title" class="font-display text-xl font-medium text-ink">The autumn course, $38 a guest</h2>
+            <p class="text-base text-ink">Hojicha roasted that morning, then Uji matcha whisked at your seat. A chestnut kinton with a sliver of persimmon. To close, a cool second steep of gyokuro from Yame.</p>
+          </div>
+        </section>
+
+        <!-- Details and note -->
+        <fieldset class="flex flex-col border-t border-line pb-6 pt-8">
+          <legend class="float-left mb-6 w-full font-ui text-xs tracking-[0.18em] text-muted">Who is coming</legend>
+          <div class="clear-both flex max-w-xl flex-col gap-10">
+            <div class="grid gap-10 sm:grid-cols-2">
+              <div class="flex flex-col gap-2">
+                <label for="r-name" class="font-ui text-xs tracking-[0.12em] text-muted">Name for the reservation</label>
+                <input id="r-name" name="name" type="text" autocomplete="name" value="Aiko Tanaka" class="min-h-11 min-w-0 border-b border-edge bg-transparent pb-1 font-body text-lg text-ink focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="r-email" class="font-ui text-xs tracking-[0.12em] text-muted">Email</label>
+                <input id="r-email" name="email" type="email" autocomplete="email" value="aiko@example.com" class="min-h-11 min-w-0 border-b border-edge bg-transparent pb-1 font-body text-lg text-ink focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+              </div>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="r-note" class="font-ui text-xs tracking-[0.12em] text-muted">A note for the house</label>
+              <textarea id="r-note" name="note" rows="3" aria-describedby="r-note-hint" class="min-h-28 resize-y border-b border-edge bg-transparent pb-1 font-body text-base text-ink focus:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">One of us cannot kneel for long. A low chair would help.</textarea>
+              <p id="r-note-hint" class="font-ui text-xs text-muted">Optional. We read every note before you arrive.</p>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- Summary -->
+      <aside aria-labelledby="summary-title" class="mt-8 border-t border-line pt-8 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0">
+        <div class="flex flex-col gap-8 lg:sticky lg:top-8">
+          <div class="flex items-start justify-between gap-6">
+            <div class="flex flex-col gap-2">
+              <p class="font-ui text-xs tracking-[0.18em] text-muted">Summary</p>
+              <h2 id="summary-title" class="font-display text-xl font-medium text-ink">Your reservation</h2>
+            </div>
+            <span aria-hidden="true" lang="ja" class="mr-2 mt-1 grid size-16 shrink-0 -rotate-6 place-items-center rounded-full bg-accent font-display text-xl text-accent-ink">茶</span>
+          </div>
+          <dl class="flex flex-col text-base">
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Day</dt><dd class="text-right text-ink">Saturday 24 October</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Time</dt><dd class="text-right text-ink tabular-nums">14:00 to 15:00</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Seating</dt><dd class="text-right text-ink">Tatami room</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Guests</dt><dd class="text-right text-ink tabular-nums">3</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Autumn course</dt><dd class="text-right text-ink tabular-nums">3 × $38 = $114</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-t border-line py-3"><dt class="font-ui text-xs text-muted">Tatami room</dt><dd class="text-right text-ink tabular-nums">$20</dd></div>
+            <div class="flex items-baseline justify-between gap-4 border-y border-ink py-4"><dt class="font-ui text-xs text-ink">Total, paid at the table</dt><dd class="text-right font-display text-xl text-ink tabular-nums">$134</dd></div>
+          </dl>
+          <p class="font-ui text-xs text-muted">Free to change until Friday 23 October, 18:00.</p>
+        </div>
+      </aside>
+
+      <!-- Action -->
+      <section aria-label="Confirm" class="mt-16 flex flex-col items-start gap-4 lg:col-start-1 lg:row-start-2 lg:mt-6">
+        <button type="submit" form="reserve-form" class="inline-flex min-h-12 items-center bg-accent px-10 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Confirm reservation</button>
+        <p class="font-ui text-xs text-muted">We send the confirmation to aiko@example.com.</p>
+      </section>
+    </div>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

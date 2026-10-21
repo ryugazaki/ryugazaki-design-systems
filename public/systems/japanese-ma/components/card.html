@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex flex-col gap-16 md:flex-row md:items-end md:gap-20 md:pl-10">
+    <article aria-labelledby="piece-1" class="flex w-full max-w-xs flex-col">
+      <div class="flex aspect-[3/4] items-end justify-center bg-surface px-10 pb-10 pt-16">
+        <svg role="img" aria-label="Line drawing of a tall cylindrical tea bowl with glaze running from the rim" viewBox="0 0 120 150" class="h-full w-auto" fill="none">
+          <path d="M22 18 C22 14 98 14 98 18 L94 128 C93 134 27 134 26 128 Z" class="fill-bg stroke-ink" stroke-width="1"/>
+          <path d="M22 18 C22 22 98 22 98 18" class="stroke-ink" stroke-width="1"/>
+          <path d="M22.5 30 C34 34 40 46 47 40 C55 33 60 50 70 44 C79 39 86 36 97.5 32" class="stroke-edge" stroke-width="1"/>
+          <path d="M40 132 L40 142 L80 142 L80 132" class="stroke-ink" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-1 border-t border-line pt-5">
+        <p class="font-ui text-xs tracking-[0.18em] text-muted">Hana Ito, 2026</p>
+        <h3 id="piece-1" class="font-display text-xl font-medium text-ink">Tall tea bowl</h3>
+        <p class="font-ui text-xs text-muted">Persimmon glaze over stoneware. 9 cm wide, 11 cm tall.</p>
+      </div>
+      <div class="mt-6 flex items-center justify-between gap-4">
+        <p class="font-display text-lg text-ink tabular-nums">$120</p>
+        <a href="#" class="inline-flex min-h-11 items-center border border-edge px-6 font-ui text-xs font-medium tracking-[0.12em] text-ink hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Hold this piece</a>
+      </div>
+    </article>
+
+    <article aria-labelledby="piece-2" class="flex w-full max-w-xs items-center gap-5 border-y border-line py-4 md:mb-24">
+      <div class="grid size-20 shrink-0 place-items-center bg-surface">
+        <svg aria-hidden="true" viewBox="0 0 60 60" class="size-12" fill="none">
+          <path d="M14 12 L46 12 L43 48 C43 51 17 51 17 48 Z" class="fill-bg stroke-ink" stroke-width="1"/>
+          <path d="M23 50 L23 54 L37 54 L37 50" class="stroke-ink" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="flex min-w-0 flex-1 flex-col">
+        <h3 id="piece-2" class="font-display text-base font-medium text-ink"><a href="#" class="inline-flex min-h-11 items-center underline decoration-line underline-offset-4 hover:decoration-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Yunomi cup</a></h3>
+        <p class="font-ui text-xs text-muted">White shino. 7 cm wide, 8 cm tall.</p>
+        <p class="mt-1 font-display text-base text-ink tabular-nums">$34</p>
+      </div>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

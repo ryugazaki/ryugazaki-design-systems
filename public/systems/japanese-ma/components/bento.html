@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japanese Minimal (Ma) / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F5F1E8;
+  --color-surface: #FBF9F4;
+  --color-ink: #24221F;
+  --color-muted: #6B655C;
+  --color-line: #D8D1C4;
+  --color-edge: #8A8377;
+  --color-accent: #B7282E;
+  --color-accent-ink: #FBF9F4;
+
+  --font-display: "Shippori Mincho", ui-serif, serif;
+  --font-body: "Shippori Mincho", ui-serif, serif;
+  --font-ui: "Zen Kaku Gothic New", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.6;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.7;
+  --text-base: 1rem;
+  --text-base--line-height: 1.85;
+  --text-lg: 1.3125rem;
+  --text-lg--line-height: 1.6;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 2.3125rem;
+  --text-2xl--line-height: 1.3;
+  --text-display: 3.125rem;
+  --text-display--line-height: 1.2;
+
+  --radius-*: initial;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-quiet: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #171614;
+    --color-surface: #1F1E1B;
+    --color-ink: #ECE6DA;
+    --color-muted: #A59E91;
+    --color-line: #36332E;
+    --color-edge: #7D766B;
+    --color-accent: #E46468;
+    --color-accent-ink: #171614;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="grid max-w-5xl grid-cols-2 gap-px border border-line bg-line md:grid-cols-4">
+    <article aria-labelledby="b-course" class="col-span-2 flex flex-col gap-8 bg-bg p-6 md:col-start-1 md:row-span-2 md:row-start-1 md:p-10">
+      <div class="flex flex-1 items-end justify-start py-4 pl-4 md:pl-10">
+        <svg role="img" aria-label="Line drawing of a wide tea bowl, its foot and a whisk resting beside it" viewBox="0 0 220 130" class="h-32 w-auto md:h-44" fill="none">
+          <path d="M10 30 C10 26 150 26 150 30 C150 80 125 104 80 104 C35 104 10 80 10 30 Z" class="fill-surface stroke-ink" stroke-width="1"/>
+          <path d="M10 30 C10 34 150 34 150 30" class="stroke-ink" stroke-width="1"/>
+          <path d="M56 104 L58 114 L102 114 L104 104" class="stroke-ink" stroke-width="1"/>
+          <path d="M184 112 L184 60 M178 112 C176 90 178 72 184 60 C190 72 192 90 190 112 Z" class="stroke-edge" stroke-width="1"/>
+          <path d="M172 114 L200 114" class="stroke-edge" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="flex flex-col gap-3 border-t border-line pt-6">
+        <p class="font-ui text-xs tracking-[0.18em] text-muted">1 October to 30 November</p>
+        <h3 id="b-course" class="font-display text-2xl font-medium text-ink">The autumn course</h3>
+        <p class="max-w-sm text-base text-ink">Three teas and a chestnut sweet, poured over one unhurried hour.</p>
+        <div class="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <p class="font-display text-xl text-ink tabular-nums">$38 <span class="font-ui text-xs tracking-[0.12em] text-muted">a guest</span></p>
+          <a href="#" class="inline-flex min-h-12 items-center bg-accent px-8 font-ui text-sm font-medium tracking-[0.12em] text-accent-ink hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">Reserve a seat</a>
+        </div>
+      </div>
+    </article>
+
+    <figure class="col-span-2 flex flex-col justify-between gap-6 bg-bg p-6 md:col-start-3 md:row-start-1 md:p-10">
+      <blockquote class="max-w-sm font-display text-lg text-ink">The persimmons are orange on the branch and the mornings are cold. We roast the hojicha at ten, and the room smells of it until we close.</blockquote>
+      <figcaption class="font-ui text-xs tracking-[0.12em] text-muted">Kiri Ando, who roasts the tea</figcaption>
+    </figure>
+
+    <div aria-hidden="true" class="hidden bg-bg md:col-start-3 md:row-start-2 md:block"></div>
+
+    <section aria-labelledby="b-season" class="flex min-h-64 gap-5 bg-bg p-6 md:col-start-4 md:row-span-2 md:row-start-2 md:min-h-0">
+      <h3 id="b-season" class="shrink-0 font-display text-lg font-medium tracking-[0.2em] text-ink [writing-mode:vertical-rl]">The counter</h3>
+      <div class="mt-auto flex flex-col gap-1">
+        <p class="font-display text-2xl text-ink tabular-nums">8</p>
+        <p class="font-ui text-xs text-muted">seats facing the kettle</p>
+      </div>
+    </section>
+
+    <div aria-hidden="true" class="bg-bg md:hidden"></div>
+
+    <section aria-labelledby="b-hours" class="col-span-2 flex flex-col gap-6 bg-bg p-6 md:col-span-3 md:col-start-1 md:row-start-3 md:p-10">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+        <h3 id="b-hours" class="font-display text-lg font-medium text-ink">Hours</h3>
+        <p class="font-ui text-xs tracking-[0.12em] text-muted">Wednesday to Sunday, 11:00 to 18:00. Closed Monday and Tuesday.</p>
+      </div>
+      <figure class="flex flex-col gap-2">
+        <div role="img" aria-label="Five one-hour seatings in a day: 11:00, 12:30, 14:00, 15:30 and 17:00, the last ending at 18:00 when we close." class="relative h-6 border-x border-edge">
+          <span aria-hidden="true" class="absolute inset-x-0 top-1/2 h-px bg-line"></span>
+          <span class="absolute inset-y-1 left-0 w-[14.2857%] border border-edge bg-surface"></span>
+          <span class="absolute inset-y-1 left-[21.4286%] w-[14.2857%] border border-edge bg-surface"></span>
+          <span class="absolute inset-y-1 left-[42.8571%] w-[14.2857%] border border-edge bg-surface"></span>
+          <span class="absolute inset-y-1 left-[64.2857%] w-[14.2857%] border border-edge bg-surface"></span>
+          <span class="absolute inset-y-1 left-[85.7143%] w-[14.2857%] border border-edge bg-surface"></span>
+        </div>
+        <figcaption class="flex justify-between font-ui text-xs text-muted tabular-nums"><span>11:00</span><span>Five seatings of one hour</span><span>18:00</span></figcaption>
+      </figure>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
