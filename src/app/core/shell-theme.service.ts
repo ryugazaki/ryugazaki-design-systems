@@ -14,7 +14,11 @@ export class ShellThemeService {
   toggle(): void {
     const next: ColorMode = this.mode() === 'dark' ? 'light' : 'dark';
     this.mode.set(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // Storage blocked (privacy mode, sandbox): the toggle still works for this session.
+    }
     this.apply(next);
   }
 
@@ -23,7 +27,12 @@ export class ShellThemeService {
   }
 
   private initialMode(): ColorMode {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // Storage blocked: fall back to the system preference.
+    }
     if (saved === 'light' || saved === 'dark') return saved;
     const prefersDark =
       typeof matchMedia === 'function' && matchMedia('(prefers-color-scheme: dark)').matches;

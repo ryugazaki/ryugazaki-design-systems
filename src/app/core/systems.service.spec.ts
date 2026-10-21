@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { SystemsService } from './systems.service';
+import { SystemNotFoundError, SystemsService } from './systems.service';
 import { validManifest } from './testing/fixtures';
 
 const flush = () => new Promise((r) => setTimeout(r));
@@ -48,9 +48,27 @@ describe('SystemsService', () => {
   it('does not cache a failed bundle', async () => {
     const first = service.loadBundle('nope');
     http.expectOne('/systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
-    await expect(first).rejects.toMatchObject({ status: 404 });
+    await expect(first).rejects.toBeInstanceOf(SystemNotFoundError);
     service.loadBundle('nope').catch(() => undefined);
     http.expectOne('/systems/nope/manifest.json').flush('missing', { status: 404, statusText: 'Not Found' });
+  });
+
+  it('does not treat a missing theme.css as a missing system', async () => {
+    const result = service.loadBundle('neo-brutalist');
+    http.expectOne('/systems/neo-brutalist/manifest.json').flush(validManifest);
+    await flush();
+    http.expectOne('/systems/neo-brutalist/theme.css').flush('missing', { status: 404, statusText: 'Not Found' });
+    http.expectOne('/systems/neo-brutalist/components/button.html').flush('');
+    http.expectOne('/systems/neo-brutalist/pages/landing.html').flush('');
+    const err = await result.catch((e: unknown) => e);
+    expect(err).not.toBeInstanceOf(SystemNotFoundError);
+    expect(err).toMatchObject({ status: 404 });
+  });
+
+  it('rejects a manifest whose slug does not match the requested slug', async () => {
+    const result = service.loadManifest('other');
+    http.expectOne('/systems/other/manifest.json').flush(validManifest);
+    await expect(result).rejects.toThrow('slug "neo-brutalist" does not match "other"');
   });
 
   it('caches the anti-slop rules', async () => {

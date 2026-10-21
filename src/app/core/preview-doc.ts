@@ -13,8 +13,9 @@ export interface PreviewOptions {
 const HEIGHT_REPORTER =
   '<script>(function(){function send(){parent.postMessage({type:"' +
   PREVIEW_HEIGHT_MESSAGE +
-  '",height:Math.ceil(document.body.getBoundingClientRect().height)},"*");}' +
-  'new ResizeObserver(send).observe(document.body);addEventListener("load",send);})();</script>';
+  '",height:Math.max(Math.ceil(document.body.getBoundingClientRect().height),document.body.scrollHeight)},"*");}' +
+  'new ResizeObserver(send).observe(document.body);addEventListener("load",send);' +
+  'addEventListener("toggle",send,true);})();</script>';
 
 export function buildPreviewDoc(snippet: string, options: PreviewOptions): string {
   return [

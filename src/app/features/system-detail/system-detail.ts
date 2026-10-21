@@ -1,9 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, computed, effect, inject, input, signal, untracked } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ColorMode, SECTIONS, Section, SystemBundle } from '../../core/models';
 import { buildPrompt } from '../../core/prompt-builder';
-import { SystemsService } from '../../core/systems.service';
+import { SystemNotFoundError, SystemsService } from '../../core/systems.service';
 import { padNumber } from '../catalog/catalog-filter';
 import { CopyBar } from './copy-bar';
 import { ItemsSection } from './sections/items-section';
@@ -35,7 +34,7 @@ import { TokensSection } from './sections/tokens-section';
       @default {
         @if (bundle(); as b) {
           <div class="pb-20 md:grid md:grid-cols-[17rem_1fr] md:pb-0 lg:grid-cols-[20rem_1fr]">
-            <aside class="md:sticky md:top-0 md:flex md:h-dvh md:flex-col md:border-r md:border-ink">
+            <aside class="md:sticky md:top-0 md:z-30 md:flex md:h-dvh md:flex-col md:border-r md:border-ink">
               <div class="border-b border-ink px-4 pb-5 pt-6 md:px-6">
                 <a routerLink="/" class="inline-flex min-h-11 items-center font-mono text-meta hover:text-signal">← archive</a>
                 <p class="font-mono text-meta text-graphite">No. {{ number() }}</p>
@@ -60,8 +59,8 @@ import { TokensSection } from './sections/tokens-section';
               @switch (active()) {
                 @case ('overview') { <app-overview-section [bundle]="b" [(viewport)]="viewport" [(mode)]="mode" /> }
                 @case ('tokens') { <app-tokens-section [bundle]="b" /> }
-                @case ('components') { <app-items-section prefix="c" [items]="b.components" [theme]="b.theme" [fonts]="b.manifest.fonts" [(viewport)]="viewport" [(mode)]="mode" /> }
-                @case ('pages') { <app-items-section prefix="p" [padded]="false" fit="device" [items]="b.pages" [theme]="b.theme" [fonts]="b.manifest.fonts" [(viewport)]="viewport" [(mode)]="mode" /> }
+                @case ('components') { <app-items-section prefix="c" heading="Components" [items]="b.components" [theme]="b.theme" [fonts]="b.manifest.fonts" [(viewport)]="viewport" [(mode)]="mode" /> }
+                @case ('pages') { <app-items-section prefix="p" heading="Pages" [padded]="false" fit="device" [items]="b.pages" [theme]="b.theme" [fonts]="b.manifest.fonts" [(viewport)]="viewport" [(mode)]="mode" /> }
                 @case ('rules') { <app-rules-section [manifest]="b.manifest" [antiSlop]="antiSlop()" /> }
               }
             </div>
@@ -109,7 +108,7 @@ export class SystemDetail {
       this.mode.set(bundle.manifest.defaultMode);
       this.state.set('ready');
     } catch (err) {
-      this.state.set(err instanceof HttpErrorResponse && err.status === 404 ? 'not-found' : 'error');
+      this.state.set(err instanceof SystemNotFoundError ? 'not-found' : 'error');
     }
   }
 }

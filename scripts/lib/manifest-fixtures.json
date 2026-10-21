@@ -1,0 +1,76 @@
+{
+  "$comment": "Shared by src/app/core/manifest.spec.ts and scripts/lib/systems-lib.test.mjs. Each case validates { ...valid, ...patch }; a patch that is not an object replaces the whole manifest.",
+  "valid": {
+    "slug": "demo",
+    "number": 1,
+    "name": "Demo",
+    "tagline": "A demo.",
+    "description": "Demo system.",
+    "tags": ["demo"],
+    "defaultMode": "light",
+    "useCases": ["tests"],
+    "fonts": [{ "family": "Archivo", "role": "all", "weights": [400], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo&display=swap" }],
+    "typeScale": { "ratio": 1.5, "steps": { "base": "16px", "display": "64px" } },
+    "palette": [{ "token": "--color-ink", "light": "#111", "dark": "#eee", "role": "text" }],
+    "allowedGradients": [],
+    "rules": { "do": ["Be plain"], "dont": ["Do not shout"] },
+    "components": [{ "id": "button", "name": "Button", "file": "components/button.html", "notes": "One button." }],
+    "pages": [{ "id": "landing", "name": "Landing", "file": "pages/landing.html" }]
+  },
+  "cases": [
+    { "name": "not an object", "patch": null, "expectedErrors": ["manifest is not an object"] },
+    {
+      "name": "empty text fields",
+      "patch": { "slug": "", "name": "", "tagline": "", "description": "" },
+      "expectedErrors": [
+        "slug must be a non-empty string",
+        "name must be a non-empty string",
+        "tagline must be a non-empty string",
+        "description must be a non-empty string"
+      ]
+    },
+    { "name": "number", "patch": { "number": "1" }, "expectedErrors": ["number must be a number"] },
+    {
+      "name": "string arrays",
+      "patch": { "tags": [1], "useCases": "tests" },
+      "expectedErrors": ["tags must be a string array", "useCases must be a string array"]
+    },
+    { "name": "defaultMode", "patch": { "defaultMode": "sepia" }, "expectedErrors": ["defaultMode must be \"light\" or \"dark\""] },
+    {
+      "name": "empty fonts and palette",
+      "patch": { "fonts": [], "palette": "ink" },
+      "expectedErrors": ["fonts must be a non-empty array", "palette must be a non-empty array"]
+    },
+    {
+      "name": "font entries",
+      "patch": { "fonts": [{ "family": "Archivo", "role": "all", "weights": ["400"], "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Archivo" }, "x"] },
+      "expectedErrors": ["fonts[0] needs family, role, weights, googleFontsUrl", "fonts[1] needs family, role, weights, googleFontsUrl"]
+    },
+    {
+      "name": "palette entries",
+      "patch": { "palette": [{ "token": "--color-ink", "light": "#111", "role": "text" }, 42] },
+      "expectedErrors": ["palette[0] needs token, light, dark, role", "palette[1] needs token, light, dark, role"]
+    },
+    { "name": "allowedGradients not an array", "patch": { "allowedGradients": {} }, "expectedErrors": ["allowedGradients must be an array"] },
+    {
+      "name": "allowedGradients entries",
+      "patch": { "allowedGradients": [{ "pattern": "mask-fade" }, null] },
+      "expectedErrors": ["allowedGradients[0] needs pattern, reason", "allowedGradients[1] needs pattern, reason"]
+    },
+    { "name": "typeScale missing", "patch": { "typeScale": null }, "expectedErrors": ["typeScale must have ratio and steps"] },
+    { "name": "typeScale null steps", "patch": { "typeScale": { "ratio": 1.5, "steps": null } }, "expectedErrors": ["typeScale must have ratio and steps"] },
+    { "name": "typeScale numeric step", "patch": { "typeScale": { "ratio": 1.5, "steps": { "base": 16 } } }, "expectedErrors": ["typeScale.steps values must be strings"] },
+    { "name": "typeScale array steps", "patch": { "typeScale": { "ratio": 1.5, "steps": ["16px"] } }, "expectedErrors": ["typeScale.steps values must be strings"] },
+    { "name": "rules", "patch": { "rules": { "do": ["Be plain"] } }, "expectedErrors": ["rules must have do and dont string arrays"] },
+    {
+      "name": "components and pages not arrays",
+      "patch": { "components": {}, "pages": null },
+      "expectedErrors": ["components must be an array", "pages must be an array"]
+    },
+    {
+      "name": "component and page entries",
+      "patch": { "components": [{ "id": "x" }], "pages": [null] },
+      "expectedErrors": ["components[0] needs id, name, file, notes", "pages[0] needs id, name, file"]
+    }
+  ]
+}

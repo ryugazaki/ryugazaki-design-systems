@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { validateManifest } from './manifest';
@@ -6,6 +6,14 @@ import { CatalogEntry, LoadedItem, Manifest, SystemBundle } from './models';
 import { extractSnippet } from './snippet';
 
 export const SYSTEMS_BASE = '/systems';
+
+/** Thrown when a system's manifest.json does not exist (404). */
+export class SystemNotFoundError extends Error {
+  constructor(readonly slug: string) {
+    super(`No design system called "${slug}"`);
+    this.name = 'SystemNotFoundError';
+  }
+}
 
 @Injectable({ providedIn: 'root' })
 export class SystemsService {
@@ -28,9 +36,13 @@ export class SystemsService {
   }
 
   async loadManifest(slug: string): Promise<Manifest> {
-    const raw = await firstValueFrom(this.http.get<unknown>(this.fileUrl(slug, 'manifest.json')));
+    const raw = await firstValueFrom(this.http.get<unknown>(this.fileUrl(slug, 'manifest.json'))).catch((err: unknown) => {
+      throw err instanceof HttpErrorResponse && err.status === 404 ? new SystemNotFoundError(slug) : err;
+    });
     const errors = validateManifest(raw);
     if (errors.length) throw new Error(`Invalid manifest for ${slug}: ${errors.join('; ')}`);
+    const actual = (raw as Manifest).slug;
+    if (actual !== slug) throw new Error(`Invalid manifest for ${slug}: slug "${actual}" does not match "${slug}"`);
     return raw as Manifest;
   }
 

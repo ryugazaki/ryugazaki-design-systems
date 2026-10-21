@@ -1,5 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { mkdtemp, mkdir, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -111,6 +112,18 @@ test('validateManifest tolerates null component entries', () => {
   const m = validManifest();
   m.pages = [null];
   assert.deepEqual(validateManifest(m), ['pages[0] needs id, name, file']);
+});
+
+const shared = JSON.parse(readFileSync(new URL('./manifest-fixtures.json', import.meta.url), 'utf8'));
+
+test('validateManifest matches the shared fixtures (parity with src/app/core/manifest.ts)', async (t) => {
+  assert.deepEqual(validateManifest(shared.valid), []);
+  for (const c of shared.cases) {
+    await t.test(c.name, () => {
+      const value = typeof c.patch === 'object' && c.patch !== null ? { ...shared.valid, ...c.patch } : c.patch;
+      assert.deepEqual(validateManifest(value), c.expectedErrors);
+    });
+  }
 });
 
 async function fixture() {

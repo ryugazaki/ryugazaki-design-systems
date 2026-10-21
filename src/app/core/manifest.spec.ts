@@ -1,5 +1,6 @@
 import { isManifest, validateManifest } from './manifest';
 import { validManifest } from './testing/fixtures';
+import shared from '../../../scripts/lib/manifest-fixtures.json';
 
 describe('validateManifest', () => {
   it('accepts a complete manifest', () => {
@@ -36,5 +37,18 @@ describe('validateManifest', () => {
   it('requires type scale step values to be strings', () => {
     const broken = { ...validManifest, typeScale: { ratio: 1.2, steps: { base: 16 } } };
     expect(validateManifest(broken)).toContain('typeScale.steps values must be strings');
+  });
+
+  describe('shared fixtures (parity with scripts/lib/systems-lib.mjs)', () => {
+    it('accepts the shared valid manifest', () => {
+      expect(validateManifest(shared.valid)).toEqual([]);
+    });
+
+    for (const c of shared.cases) {
+      it(`reports exactly the expected errors: ${c.name}`, () => {
+        const value = typeof c.patch === 'object' && c.patch !== null ? { ...shared.valid, ...c.patch } : c.patch;
+        expect(validateManifest(value)).toEqual(c.expectedErrors);
+      });
+    }
   });
 });

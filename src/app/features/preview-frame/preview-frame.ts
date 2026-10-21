@@ -14,6 +14,7 @@ export const DEVICE_HEIGHTS: Record<number, number> = { 375: 812, 768: 1024, 128
       <iframe
         #frame
         sandbox="allow-scripts"
+        loading="lazy"
         class="block origin-top-left border-0"
         [title]="label()"
         [srcdoc]="doc()"

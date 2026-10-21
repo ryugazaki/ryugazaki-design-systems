@@ -11,6 +11,8 @@ describe('buildPreviewDoc', () => {
     expect(doc).toContain('<style type="text/tailwindcss">\n@theme { --color-ink: #111; }\n</style>');
     expect(doc).toContain('<body class="p-6">\n<button>Go</button>');
     expect(doc).toContain(PREVIEW_HEIGHT_MESSAGE);
+    expect(doc).toContain('document.body.scrollHeight');
+    expect(doc).toContain('addEventListener("toggle",send,true)');
     expect(doc).toContain('<html lang="en">');
   });
 

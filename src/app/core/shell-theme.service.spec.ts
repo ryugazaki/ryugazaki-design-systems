@@ -25,4 +25,21 @@ describe('ShellThemeService', () => {
     service.toggle();
     expect(document.documentElement.classList.contains('dark')).toBe(false);
   });
+
+  it('still boots and toggles when storage is blocked', () => {
+    const blocked = () => {
+      throw new DOMException('blocked', 'SecurityError');
+    };
+    const get = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(blocked);
+    const set = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(blocked);
+    try {
+      const service = TestBed.inject(ShellThemeService);
+      const first = service.mode();
+      expect(() => service.toggle()).not.toThrow();
+      expect(service.mode()).not.toBe(first);
+    } finally {
+      get.mockRestore();
+      set.mockRestore();
+    }
+  });
 });

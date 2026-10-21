@@ -8,6 +8,7 @@ import { padNumber } from '../../catalog/catalog-filter';
   selector: 'app-items-section',
   imports: [PreviewControls, PreviewItem],
   template: `
+    <h2 class="sr-only">{{ heading() }}</h2>
     <div class="sticky top-0 z-10 -mx-4 border-b border-ink bg-paper px-4 py-2 md:mx-0 md:px-0">
       <app-preview-controls [(viewport)]="viewport" [(mode)]="mode" />
     </div>
@@ -23,6 +24,7 @@ export class ItemsSection {
   readonly theme = input.required<string>();
   readonly fonts = input.required<FontSpec[]>();
   readonly prefix = input.required<string>();
+  readonly heading = input.required<string>();
   readonly padded = input(true);
   readonly fit = input<'content' | 'device'>('content');
   readonly viewport = model.required<number>();
