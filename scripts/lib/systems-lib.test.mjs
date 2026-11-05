@@ -46,6 +46,22 @@ test('lintCopy checks visible text only', () => {
 test('lintOrnaments flags blur and heavy shadows', () => {
   assert.equal(lintOrnaments('<div class="backdrop-blur-md shadow-2xl">').length, 2);
   assert.equal(lintOrnaments('<div class="shadow-hard">').length, 0);
+  assert.equal(lintOrnaments('.pane { backdrop-filter: blur(8px); }').length, 1);
+});
+
+test('lintOrnaments respects the allowlist', () => {
+  const allowed = [{ pattern: 'glass-pane', reason: 'overlay legibility' }];
+  assert.equal(lintOrnaments('@utility glass-pane { backdrop-filter: blur(20px); }', allowed).length, 0);
+  assert.equal(lintOrnaments('<div class="glass-pane">', allowed).length, 0);
+  assert.equal(lintOrnaments('<div class="backdrop-blur-md">', allowed).length, 1);
+});
+
+test('validateManifest checks optional allowedOrnaments', () => {
+  const m = validManifest();
+  m.allowedOrnaments = [{ pattern: 'glass-pane' }];
+  assert.deepEqual(validateManifest(m), ['allowedOrnaments[0] needs pattern, reason']);
+  m.allowedOrnaments = 'glass-pane';
+  assert.deepEqual(validateManifest(m), ['allowedOrnaments must be an array when present']);
 });
 
 test('lintTypeScale enforces ratio and display size', () => {

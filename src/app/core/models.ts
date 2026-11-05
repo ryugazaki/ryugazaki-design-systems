@@ -24,6 +24,12 @@ export interface AllowedGradient {
   reason: string;
 }
 
+/** A named exception to the global ornament rule (for example a backdrop blur utility), with its functional reason. */
+export interface AllowedOrnament {
+  pattern: string;
+  reason: string;
+}
+
 export interface ComponentEntry {
   id: string;
   name: string;
@@ -50,6 +56,7 @@ export interface Manifest {
   typeScale: TypeScale;
   palette: PaletteEntry[];
   allowedGradients: AllowedGradient[];
+  allowedOrnaments?: AllowedOrnament[];
   rules: { do: string[]; dont: string[] };
   components: ComponentEntry[];
   pages: PageEntry[];

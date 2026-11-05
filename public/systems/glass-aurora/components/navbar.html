@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Navbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="aurora-sky relative min-h-72 rounded-lg p-3 sm:p-5">
+    <header class="glass-pane relative z-10 flex min-h-16 items-center gap-3 rounded-full border border-glass-edge py-2 pr-2 pl-5 shadow-pane md:gap-8">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><path d="M6 20c2-3.5 4-5 6-5s4 1.5 6 5"/></svg>
+        <span class="font-display text-base font-semibold tracking-tight text-ink">Polarlys</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          <li><a href="#" aria-current="page" class="inline-flex min-h-11 items-center rounded-full bg-surface px-4 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Gallery</a></li>
+          <li><a href="#" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-2">
+        <a href="#" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none bg-accent text-accent-ink hover:brightness-110 min-h-11 px-5 text-sm">Book</a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-full border border-edge px-4 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full mt-2 rounded-lg border border-line bg-surface p-2 shadow-pane">
+            <ul class="flex flex-col">
+              <li><a href="#" aria-current="page" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Gallery <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <p class="mt-4 max-w-xs rounded-sm bg-surface px-3 py-2 text-xs text-muted">The navbar floats as glass over the aurora. The open mobile menu is a solid panel, so glass never stacks on glass.</p>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

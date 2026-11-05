@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="aurora-sky max-w-xl rounded-lg px-4 pt-16 pb-6 sm:px-8 sm:pt-24 sm:pb-8">
+    <article aria-labelledby="tonight-title" class="glass-pane flex flex-col gap-6 rounded-lg border border-glass-edge p-5 shadow-pane sm:p-7">
+      <header class="flex flex-wrap items-center justify-between gap-3">
+        <h2 id="tonight-title" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Tonight over Tromsø</h2>
+        <span class="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-accent px-3 text-xs font-bold text-accent"><span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>Good chance</span>
+      </header>
+      <div class="flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+        <p class="flex flex-col">
+          <span class="font-display text-2xl font-semibold tabular-nums tracking-tight text-ink sm:text-display">4.7</span>
+          <span class="text-sm text-muted">Peak Kp index, 23:00</span>
+        </p>
+        <dl class="grid grid-cols-2 gap-x-8 gap-y-1">
+          <dt class="text-sm text-muted">Probability</dt>
+          <dd class="text-right text-sm font-bold tabular-nums text-ink">72%</dd>
+          <dt class="text-sm text-muted">Best window</dt>
+          <dd class="text-right text-sm font-bold tabular-nums text-ink">22:10 to 00:40</dd>
+          <dt class="text-sm text-muted">Cloud cover</dt>
+          <dd class="text-right text-sm font-bold tabular-nums text-ink">18%</dd>
+        </dl>
+      </div>
+      <figure class="flex flex-col gap-2">
+        <svg role="img" aria-labelledby="spark-title" viewBox="0 0 320 64" class="h-16 w-full text-accent" preserveAspectRatio="none">
+          <title id="spark-title">Kp index by hour from 18:00 to 04:00, rising from 1.8 to a peak of 4.7 at 23:00, then falling to 2.1.</title>
+          <path d="M0 56 L32 52 L64 46 L96 38 L128 24 L160 8 L192 14 L224 26 L256 38 L288 46 L320 50" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+          <circle cx="160" cy="8" r="4" fill="currentColor"/>
+        </svg>
+        <figcaption class="flex justify-between text-xs tabular-nums text-muted"><span>18:00</span><span>23:00</span><span>04:00</span></figcaption>
+      </figure>
+      <a href="#" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none bg-accent text-accent-ink hover:brightness-110 self-start">Book the 22:00 bus</a>
+    </article>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

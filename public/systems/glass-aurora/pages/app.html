@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Tonight's forecast</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <div class="aurora-sky px-3 pt-3 pb-10 sm:px-5 sm:pt-5">
+    <header class="glass-pane relative z-10 mx-auto flex min-h-16 max-w-6xl items-center gap-3 rounded-full border border-glass-edge py-2 pr-2 pl-5 shadow-pane md:gap-8">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><path d="M6 20c2-3.5 4-5 6-5s4 1.5 6 5"/></svg>
+        <span class="font-display text-base font-semibold tracking-tight text-ink">Polarlys</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          <li><a href="#forecast" aria-current="page" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold bg-surface text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast</a></li>
+          <li><a href="#tours" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours</a></li>
+          <li><a href="#how" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">How it works</a></li>
+          <li><a href="#faq" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-2">
+        <a href="#bookings" class="hidden sm:inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none border border-edge text-ink hover:border-ink hover:bg-surface min-h-11 px-5 text-sm whitespace-nowrap">Bookings</a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-full border border-edge px-4 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full mt-2 rounded-lg border border-line bg-surface p-2 shadow-pane">
+            <ul class="flex flex-col">
+              <li><a href="#forecast" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#tours" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#how" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">How it works <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#faq" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <section aria-labelledby="now-title" class="mx-auto mt-10 max-w-6xl md:mt-16">
+      <div class="glass-pane flex flex-col gap-6 rounded-lg border border-glass-edge p-5 shadow-pane sm:p-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+        <div class="flex flex-col gap-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Thursday 5 November, updated 17:45</p>
+          <h1 id="now-title" class="font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl">Tonight is a go.</h1>
+          <p class="max-w-md text-base text-muted">All five departures run. Clear sky on the coast route from 21:00; inland stays cloudy until midnight.</p>
+        </div>
+        <dl class="grid grid-cols-2 gap-x-10 gap-y-4 sm:grid-cols-3 lg:shrink-0">
+          <div class="flex flex-col gap-1"><dt class="text-xs text-muted">Chance to see it</dt><dd class="font-display text-xl font-semibold tabular-nums text-accent">72%</dd></div>
+          <div class="flex flex-col gap-1"><dt class="text-xs text-muted">Best window</dt><dd class="text-lg font-bold tabular-nums text-ink">22:10 to 00:40</dd></div>
+          <div class="col-span-2 flex flex-col gap-1 sm:col-span-1"><dt class="text-xs text-muted">Temperature</dt><dd class="text-lg font-bold tabular-nums text-ink">minus 9 °C</dd></div>
+        </dl>
+      </div>
+    </section>
+  </div>
+
+  <main class="mx-auto flex max-w-6xl flex-col gap-12 px-4 pt-10 pb-20 md:px-6">
+    <section aria-label="Sky conditions">
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-4">
+        <section aria-labelledby="b-kp" class="flex flex-col gap-5 rounded-lg border border-line bg-surface p-5 sm:col-span-2 sm:row-span-2">
+          <header class="flex items-center justify-between gap-3">
+            <h2 id="b-kp" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Kp index tonight</h2>
+            <span class="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-accent px-3 text-xs font-bold text-accent"><span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>Kp 5, strong</span>
+          </header>
+          <p class="flex items-baseline gap-3">
+            <span class="font-display text-2xl font-semibold tabular-nums tracking-tight text-ink sm:text-display">4.7</span>
+            <span class="text-sm text-muted">peak at 23:00</span>
+          </p>
+          <figure class="mt-auto flex flex-col gap-2">
+            <div role="img" aria-label="Kp by hour: 18:00 1.8, 19:00 2.2, 20:00 2.9, 21:00 3.6, 22:00 4.3, 23:00 4.7, 00:00 4.1, 01:00 3.4, 02:00 2.6, 03:00 2.1" class="flex h-32 items-end gap-1.5">
+              <span class="flex-1 rounded-t-sm bg-line" style="height:20%"></span>
+              <span class="flex-1 rounded-t-sm bg-line" style="height:25%"></span>
+              <span class="flex-1 rounded-t-sm bg-line" style="height:33%"></span>
+              <span class="flex-1 rounded-t-sm bg-edge" style="height:41%"></span>
+              <span class="flex-1 rounded-t-sm bg-edge" style="height:49%"></span>
+              <span class="flex-1 rounded-t-sm bg-accent" style="height:100%"></span>
+              <span class="flex-1 rounded-t-sm bg-edge" style="height:47%"></span>
+              <span class="flex-1 rounded-t-sm bg-edge" style="height:39%"></span>
+              <span class="flex-1 rounded-t-sm bg-line" style="height:30%"></span>
+              <span class="flex-1 rounded-t-sm bg-line" style="height:24%"></span>
+            </div>
+            <figcaption class="flex justify-between text-xs tabular-nums text-muted"><span>18:00</span><span>23:00</span><span>03:00</span></figcaption>
+          </figure>
+        </section>
+
+        <section aria-labelledby="b-cloud" class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-5 sm:col-span-2">
+          <h2 id="b-cloud" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Cloud cover, coast route</h2>
+          <p class="font-display text-xl font-semibold tabular-nums text-ink">18%</p>
+          <div class="h-2 overflow-hidden rounded-full bg-line"><div class="h-full w-[18%] rounded-full bg-ink"></div></div>
+          <p class="text-sm text-muted">Clearing from the west after 21:00.</p>
+        </section>
+
+        <section aria-labelledby="b-moon" class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-5">
+          <h2 id="b-moon" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Moon</h2>
+          <svg aria-hidden="true" viewBox="0 0 32 32" class="size-8 text-ink"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 3a13 13 0 0 1 0 26 9 13 0 0 0 0-26Z" fill="currentColor"/></svg>
+          <p class="text-sm font-semibold text-ink">Waning, 31%</p>
+          <p class="text-xs text-muted">Sets 01:12</p>
+        </section>
+
+        <section aria-labelledby="b-wind" class="flex flex-col gap-2 rounded-lg border border-line bg-surface p-5">
+          <h2 id="b-wind" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Solar wind</h2>
+          <p class="font-display text-xl font-semibold tabular-nums text-ink">612</p>
+          <p class="text-xs text-muted">km per second, Bz pointing south</p>
+        </section>
+
+        <section aria-labelledby="b-dark" class="flex flex-col gap-3 rounded-lg border border-line bg-surface p-5 sm:col-span-4 sm:flex-row sm:items-center sm:justify-between">
+          <h2 id="b-dark" class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Dark enough to see</h2>
+          <div class="flex flex-1 items-center gap-3 sm:max-w-md">
+            <span class="text-sm tabular-nums text-ink">16:40</span>
+            <div class="relative h-2 flex-1 rounded-full bg-line"><div class="absolute inset-y-0 left-[8%] right-[10%] rounded-full bg-ink"></div></div>
+            <span class="text-sm tabular-nums text-ink">06:55</span>
+          </div>
+          <p class="text-sm text-muted">14 hours 15 minutes of darkness</p>
+        </section>
+      </div>
+    </section>
+
+      <section aria-labelledby="dep-title" class="overflow-hidden rounded-lg border border-line bg-surface">
+        <header class="flex flex-wrap items-end justify-between gap-3 border-b border-line px-4 py-4 sm:px-5">
+          <div class="flex flex-col gap-1">
+            <h2 id="dep-title" class="font-display text-lg font-semibold tracking-tight text-ink">Departures tonight</h2>
+            <p class="text-sm text-muted">Thursday 5 November. Pickup 20 minutes before departure.</p>
+          </div>
+          <p class="text-sm tabular-nums text-muted">22 of 68 seats left</p>
+        </header>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <caption class="sr-only">Tours departing tonight with seats left, cloud cover on the route, price, and status</caption>
+            <thead class="hidden sm:table-header-group">
+              <tr class="border-b border-line">
+                <th scope="col" class="py-3 pr-4 pl-5 text-xs font-semibold uppercase tracking-[0.16em] text-muted">Departs</th>
+                <th scope="col" class="py-3 pr-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted">Tour</th>
+                <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Seats left</th>
+                <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Cloud</th>
+                <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Price</th>
+                <th scope="col" class="py-3 pr-5 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Status</th>
+              </tr>
+            </thead>
+            <tbody class="block sm:table-row-group">
+              <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+                <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">21:00</td>
+                <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Minibus chase</span><span class="block text-sm text-muted">6 h</span></td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>0 of 14</td>
+                <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>22%</td>
+                <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 290 NOK</td>
+                <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-danger px-3 text-xs font-bold text-danger">Sold out</span></td>
+              </tr>
+              <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+                <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">21:30</td>
+                <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Fjord cabin and fire</span><span class="block text-sm text-muted">4 h</span></td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>5 of 12</td>
+                <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>18%</td>
+                <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">990 NOK</td>
+                <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+              </tr>
+              <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+                <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">22:00</td>
+                <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Minibus chase</span><span class="block text-sm text-muted">6 h</span></td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>6 of 14</td>
+                <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>22%</td>
+                <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 290 NOK</td>
+                <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+              </tr>
+              <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+                <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">22:15</td>
+                <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Photo workshop</span><span class="block text-sm text-muted">7 h</span></td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>2 of 8</td>
+                <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>15%</td>
+                <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 650 NOK</td>
+                <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">2 seats left</span></td>
+              </tr>
+              <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+                <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">23:00</td>
+                <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Sami camp and reindeer</span><span class="block text-sm text-muted">5 h</span></td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>9 of 20</td>
+                <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>34%</td>
+                <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 450 NOK</td>
+                <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    <section id="bookings" aria-labelledby="bookings-title" class="grid gap-6 lg:grid-cols-12">
+      <div class="flex flex-col gap-2 lg:col-span-4">
+        <h2 id="bookings-title" class="font-display text-lg font-semibold tracking-tight text-ink">Your bookings</h2>
+        <p class="text-sm text-muted">Pickup texts go to +47 412 33 908.</p>
+      </div>
+      <ul class="flex flex-col gap-3 lg:col-span-8">
+        <li class="flex flex-col gap-4 rounded-lg border border-line bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-col gap-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex min-h-7 items-center rounded-full bg-accent px-3 text-xs font-bold text-accent-ink">Confirmed</span>
+              <span class="text-sm tabular-nums text-muted">Tonight, pickup 21:40</span>
+            </div>
+            <p class="text-base font-bold text-ink">Minibus chase, 2 guests</p>
+            <p class="text-sm text-muted">Clarion Hotel The Edge, main entrance</p>
+          </div>
+          <a href="#" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none border border-edge text-ink hover:border-ink hover:bg-surface shrink-0">Change pickup</a>
+        </li>
+        <li class="flex flex-col gap-4 rounded-lg border border-line bg-surface p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-col gap-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex min-h-7 items-center rounded-full border border-dashed border-edge px-3 text-xs font-semibold text-muted">Waitlist, 3rd</span>
+              <span class="text-sm tabular-nums text-muted">Saturday 7 November, 22:15</span>
+            </div>
+            <p class="text-base font-bold text-ink">Photo workshop, 1 guest</p>
+            <p class="text-sm text-muted">We text you by 16:00 Saturday if a seat opens.</p>
+          </div>
+          <a href="#" class="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent shrink-0">Leave waitlist</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- snippet:end -->
+</body>
+</html>

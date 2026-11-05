@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Modal and sheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="aurora-sky relative overflow-hidden rounded-lg">
+    <div aria-hidden="true" class="flex flex-col gap-3 p-6">
+      <div class="h-10 w-2/3 rounded-sm bg-surface"></div>
+      <div class="h-24 rounded-md bg-surface"></div>
+      <div class="h-24 w-5/6 rounded-md bg-surface"></div>
+    </div>
+    <div class="glass-scrim absolute inset-0 flex items-end justify-center sm:items-center sm:p-6">
+      <div role="dialog" aria-modal="true" aria-labelledby="seat-title" class="glass-pane flex w-full max-w-md flex-col gap-6 rounded-t-lg border border-glass-edge p-5 shadow-pane sm:rounded-lg sm:p-7">
+        <header class="flex items-start justify-between gap-4">
+          <div class="flex flex-col gap-1">
+            <h2 id="seat-title" class="font-display text-lg font-semibold tracking-tight text-ink">Hold two seats</h2>
+            <p class="text-sm text-muted">Minibus chase, tonight at 22:00. We hold seats for 15 minutes.</p>
+          </div>
+          <button type="button" aria-label="Close" class="grid size-11 shrink-0 place-items-center rounded-full text-muted hover:bg-surface hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m4 4 8 8M12 4l-8 8"/></svg>
+          </button>
+        </header>
+        <div class="flex flex-col gap-2">
+          <label for="m-name" class="text-sm font-semibold text-ink">Lead guest</label>
+          <input id="m-name" type="text" value="Ingrid Solberg" class="min-h-12 w-full rounded-sm border border-edge bg-surface px-4 text-base text-ink placeholder:text-muted transition-[border-color,box-shadow] duration-200 ease-drift hover:border-ink focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent motion-reduce:transition-none">
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="m-phone" class="text-sm font-semibold text-ink">Phone for pickup texts</label>
+          <input id="m-phone" type="tel" value="+47 412 33 908" class="min-h-12 w-full rounded-sm border border-edge bg-surface px-4 text-base text-ink placeholder:text-muted transition-[border-color,box-shadow] duration-200 ease-drift hover:border-ink focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent motion-reduce:transition-none tabular-nums">
+        </div>
+        <footer class="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+          <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none border border-edge text-ink hover:border-ink hover:bg-surface">Not now</button>
+          <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none bg-accent text-accent-ink hover:brightness-110">Hold seats</button>
+        </footer>
+      </div>
+    </div>
+    <div aria-hidden="true" class="h-96 sm:h-72"></div>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

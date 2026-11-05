@@ -34,6 +34,12 @@ describe('validateManifest', () => {
     expect(validateManifest(broken)).toContain('allowedGradients[0] needs pattern, reason');
   });
 
+  it('accepts a missing allowedOrnaments and validates its entries when present', () => {
+    expect(validateManifest(validManifest)).toEqual([]);
+    const broken = { ...validManifest, allowedOrnaments: [{ pattern: 'glass-pane' }] };
+    expect(validateManifest(broken)).toContain('allowedOrnaments[0] needs pattern, reason');
+  });
+
   it('requires type scale step values to be strings', () => {
     const broken = { ...validManifest, typeScale: { ratio: 1.2, steps: { base: 16 } } };
     expect(validateManifest(broken)).toContain('typeScale.steps values must be strings');

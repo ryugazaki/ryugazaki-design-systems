@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <div class="aurora-sky px-3 pt-3 pb-16 sm:px-5 sm:pt-5 md:pb-24">
+    <header class="glass-pane relative z-10 mx-auto flex min-h-16 max-w-6xl items-center gap-3 rounded-full border border-glass-edge py-2 pr-2 pl-5 shadow-pane md:gap-8">
+      <a href="#" class="flex min-h-11 shrink-0 items-center gap-2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17c3-6 6-9 9-9s6 3 9 9"/><path d="M6 20c2-3.5 4-5 6-5s4 1.5 6 5"/></svg>
+        <span class="font-display text-base font-semibold tracking-tight text-ink">Polarlys</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:block">
+        <ul class="flex items-center gap-1">
+          <li><a href="#forecast" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast</a></li>
+          <li><a href="#tours" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours</a></li>
+          <li><a href="#how" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">How it works</a></li>
+          <li><a href="#faq" class="inline-flex min-h-11 items-center rounded-full px-4 text-sm font-semibold text-muted hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-center gap-2">
+        <a href="#tours" class="hidden sm:inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none border border-edge text-ink hover:border-ink hover:bg-surface min-h-11 px-5 text-sm whitespace-nowrap">Book a tour</a>
+        <details class="group md:hidden">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center rounded-full border border-edge px-4 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full mt-2 rounded-lg border border-line bg-surface p-2 shadow-pane">
+            <ul class="flex flex-col">
+              <li><a href="#forecast" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Forecast <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#tours" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Tours <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#how" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">How it works <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+              <li><a href="#faq" class="flex min-h-12 items-center justify-between rounded-sm px-4 text-base font-semibold text-ink hover:bg-bg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Help <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+
+    <section aria-labelledby="hero-title" class="mx-auto mt-14 max-w-6xl md:mt-24">
+      <div class="glass-pane grid gap-8 rounded-lg border border-glass-edge p-6 shadow-pane sm:p-10 lg:grid-cols-12 lg:items-end lg:gap-x-12 lg:gap-y-10">
+        <div class="flex flex-col items-start gap-6 lg:col-span-12">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Aurora tours from Tromsø, September to March</p>
+          <h1 id="hero-title" class="max-w-5xl font-display text-xl font-semibold tracking-tight text-ink sm:text-2xl lg:text-display">We only drive out when the sky says yes.</h1>
+        </div>
+        <div class="flex flex-col items-start gap-6 lg:col-span-7">
+          <p class="max-w-lg text-base text-muted sm:text-lg sm:leading-snug">Polarlys reads the Kp index, the solar wind, and the cloud map every 15 minutes. At 17:00 we decide where tonight's buses go, or we cancel and refund you in full.</p>
+          <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <a href="#tours" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none bg-accent text-accent-ink hover:brightness-110">Book tonight's tour</a>
+            <a href="#forecast" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-6 text-base font-bold transition-[background-color,border-color,filter,transform] duration-200 ease-drift active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent motion-reduce:transition-none border border-edge text-ink hover:border-ink hover:bg-surface">Read the forecast</a>
+          </div>
+        </div>
+        <div id="forecast" class="flex flex-col gap-4 border-t border-line pt-8 lg:col-span-5 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Tonight, 5 November</h2>
+            <span class="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-accent px-3 text-xs font-bold text-accent"><span aria-hidden="true" class="size-1.5 rounded-full bg-accent"></span>Good chance</span>
+          </div>
+          <p class="flex items-baseline gap-3">
+            <span class="font-display text-2xl font-semibold tabular-nums tracking-tight text-ink">4.7</span>
+            <span class="text-sm text-muted">peak Kp at 23:00</span>
+          </p>
+          <dl class="grid grid-cols-3 gap-4 border-t border-line pt-4">
+            <div class="flex flex-col gap-1"><dt class="text-xs text-muted">Chance</dt><dd class="text-base font-bold tabular-nums text-ink">72%</dd></div>
+            <div class="flex flex-col gap-1"><dt class="text-xs text-muted">Cloud</dt><dd class="text-base font-bold tabular-nums text-ink">18%</dd></div>
+            <div class="flex flex-col gap-1"><dt class="text-xs text-muted">Best window</dt><dd class="text-base font-bold tabular-nums text-ink">22:10</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <main>
+    <section id="how" aria-labelledby="how-title" class="mx-auto grid max-w-6xl gap-10 px-4 py-20 md:px-6 lg:grid-cols-12 lg:gap-12 lg:py-28">
+      <div class="flex flex-col gap-4 lg:col-span-4">
+        <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">How a night works</p>
+        <h2 id="how-title" class="font-display text-xl font-semibold tracking-tight text-ink">From a forecast at five to a hot drink at one.</h2>
+      </div>
+      <ol class="flex flex-col lg:col-span-8">
+        <li class="grid grid-cols-[4.5rem_1fr] gap-x-6 gap-y-1 border-t border-line py-6 sm:grid-cols-[6rem_1fr]">
+          <span class="row-span-2 font-display text-lg font-semibold tabular-nums text-ink">17:00</span>
+          <h3 class="text-base font-bold text-ink">We pick the route</h3>
+          <p class="text-base text-muted">The guide on duty compares three cloud models and chooses between the coast, the Lyngen valley, and the Finnish border. You get a text with the plan.</p>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] gap-x-6 gap-y-1 border-t border-line py-6 sm:grid-cols-[6rem_1fr]">
+          <span class="row-span-2 font-display text-lg font-semibold tabular-nums text-ink">20:40</span>
+          <h3 class="text-base font-bold text-ink">Pickup at your hotel</h3>
+          <p class="text-base text-muted">Thermal suits, boots, and mittens are in the bus. Drives run from 40 minutes to two hours, depending on where the gap in the clouds is.</p>
+        </li>
+        <li class="grid grid-cols-[4.5rem_1fr] gap-x-6 gap-y-1 border-y border-line py-6 sm:grid-cols-[6rem_1fr]">
+          <span class="row-span-2 font-display text-lg font-semibold tabular-nums text-ink">01:30</span>
+          <h3 class="text-base font-bold text-ink">Photos in your inbox</h3>
+          <p class="text-base text-muted">Your guide shoots on a full frame camera all night. The edited set arrives before breakfast, free.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="tours" aria-labelledby="tours-title" class="border-t border-line bg-surface">
+      <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-20 md:px-6 lg:py-28">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div class="flex flex-col gap-3">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Tours</p>
+            <h2 id="tours-title" class="font-display text-xl font-semibold tracking-tight text-ink">Four ways to spend the night outside.</h2>
+          </div>
+          <a href="#" class="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Compare all tours <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a>
+        </div>
+        <div class="grid gap-3 md:grid-cols-6">
+          <article class="flex flex-col gap-6 rounded-lg border border-line bg-bg p-6 md:col-span-4 md:row-span-2 md:p-8">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex min-h-7 items-center rounded-full border border-accent px-3 text-xs font-bold text-accent">Most booked</span>
+              <span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">6 hours</span>
+            </div>
+            <h3 class="font-display text-lg font-semibold tracking-tight text-ink sm:text-xl">Minibus chase</h3>
+            <p class="max-w-md text-base text-muted">Fourteen seats, two guides, and no fixed destination. We drive to the clearest sky within three hours of Tromsø and stay until the show ends.</p>
+            <dl class="mt-auto grid grid-cols-2 gap-4 border-t border-line pt-5 sm:grid-cols-3">
+              <div><dt class="text-xs text-muted">From</dt><dd class="text-lg font-bold tabular-nums text-ink">1 290 NOK</dd></div>
+              <div><dt class="text-xs text-muted">Sightings last season</dt><dd class="text-lg font-bold tabular-nums text-ink">121 of 138</dd></div>
+              <div class="col-span-2 sm:col-span-1"><dt class="text-xs text-muted">Next departure</dt><dd class="text-lg font-bold tabular-nums text-ink">Tonight 22:00</dd></div>
+            </dl>
+          </article>
+          <article class="flex flex-col gap-2 rounded-lg border border-line bg-bg p-6 md:col-span-2">
+            <h3 class="text-base font-bold text-ink">Fjord cabin and fire</h3>
+            <p class="text-sm text-muted">4 hours. A heated cabin on Kvaløya with a lavvo fire outside. Good for families.</p>
+            <p class="mt-auto pt-2 text-base font-bold tabular-nums text-ink">990 NOK</p>
+          </article>
+          <article class="flex flex-col gap-2 rounded-lg border border-line bg-bg p-6 md:col-span-2">
+            <h3 class="text-base font-bold text-ink">Photo workshop</h3>
+            <p class="text-sm text-muted">7 hours, eight guests. Manual settings, tripods, and a guide who stays by your camera.</p>
+            <p class="mt-auto pt-2 text-base font-bold tabular-nums text-ink">1 650 NOK</p>
+          </article>
+          <article class="flex flex-col gap-3 rounded-lg border border-line bg-bg p-6 sm:flex-row sm:items-center sm:justify-between md:col-span-6">
+            <div class="flex flex-col gap-1">
+              <h3 class="text-base font-bold text-ink">Sami camp and reindeer</h3>
+              <p class="text-sm text-muted">5 hours with a Sami family outside Tromsø: reindeer feeding, bidos stew, and joik by the fire.</p>
+            </div>
+            <p class="shrink-0 text-base font-bold tabular-nums text-ink">1 450 NOK</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="promise-title" class="mx-auto grid max-w-6xl gap-8 px-4 py-20 md:px-6 lg:grid-cols-12 lg:py-28">
+      <p class="font-display text-2xl font-semibold tabular-nums tracking-tight text-ink lg:col-span-5 lg:text-display">88%</p>
+      <div class="flex flex-col gap-4 lg:col-span-7 lg:pt-4">
+        <h2 id="promise-title" class="font-display text-lg font-semibold tracking-tight text-ink">of our tours saw the aurora last season.</h2>
+        <p class="max-w-xl text-base text-muted">That is 302 of 343 departures between 1 September 2025 and 31 March 2026. On the other 41 nights you got a free seat on any later tour, and most guests used it.</p>
+        <a href="#" class="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent self-start">Read the season report <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-title" class="border-t border-line">
+      <div class="mx-auto grid max-w-6xl gap-8 px-4 py-20 md:px-6 lg:grid-cols-12 lg:py-28">
+        <h2 id="faq-title" class="font-display text-xl font-semibold tracking-tight text-ink lg:col-span-4">Questions before you book</h2>
+        <div class="flex flex-col lg:col-span-8">
+          <details class="group border-t border-line">
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">What happens if the forecast turns bad?<svg aria-hidden="true" viewBox="0 0 16 16" class="size-4 shrink-0 text-muted transition-transform duration-200 ease-drift group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></summary>
+            <p class="pb-5 text-base text-muted">If we cancel at 17:00, you get a full refund or a seat on another night, your choice. If we go out and the sky stays empty, you get a free seat on a later tour.</p>
+          </details>
+          <details class="group border-t border-line">
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">How cold does it get?<svg aria-hidden="true" viewBox="0 0 16 16" class="size-4 shrink-0 text-muted transition-transform duration-200 ease-drift group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></summary>
+            <p class="pb-5 text-base text-muted">Between minus 5 and minus 25 degrees inland. The suits we lend are rated to minus 30. Wear wool under them, not cotton.</p>
+          </details>
+          <details class="group border-y border-line">
+            <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-base font-bold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent [&::-webkit-details-marker]:hidden">Can children come?<svg aria-hidden="true" viewBox="0 0 16 16" class="size-4 shrink-0 text-muted transition-transform duration-200 ease-drift group-open:rotate-180 motion-reduce:transition-none" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 4 4 4-4"/></svg></summary>
+            <p class="pb-5 text-base text-muted">Yes, from age 6 on the cabin tour and age 10 on the minibus chase. Children ride at half price.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-muted sm:flex-row sm:items-center sm:justify-between md:px-6">
+      <p>Polarlys AS, Storgata 42, 9008 Tromsø. Org. 921 448 330.</p>
+      <ul class="flex flex-wrap gap-x-6">
+        <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Terms</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Privacy</a></li>
+        <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

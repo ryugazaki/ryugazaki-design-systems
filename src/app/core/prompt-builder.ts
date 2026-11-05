@@ -18,6 +18,20 @@ function itemsSection(title: string, items: LoadedItem[]): string[] {
   return out;
 }
 
+/** Lists the system's declared exceptions to the global gradient and ornament rules; empty when it declares none. */
+function exceptionsSection(m: SystemBundle['manifest']): string[] {
+  const entries = [...m.allowedGradients, ...(m.allowedOrnaments ?? [])];
+  if (entries.length === 0) return [];
+  return [
+    '## Allowed exceptions',
+    '',
+    'These utilities are the only exceptions to the gradient and ornament rules below. Use each only for its stated reason.',
+    '',
+    ...entries.map((e) => `- \`${e.pattern}\`: ${e.reason}`),
+    '',
+  ];
+}
+
 export function buildPrompt(bundle: SystemBundle, antiSlop: string): string {
   const m = bundle.manifest;
   const lines = [
@@ -65,6 +79,7 @@ export function buildPrompt(bundle: SystemBundle, antiSlop: string): string {
     '',
     ...m.rules.dont.map((r) => `- ${r}`),
     '',
+    ...exceptionsSection(m),
     '## Global anti-slop rules',
     '',
     antiSlop.trim(),

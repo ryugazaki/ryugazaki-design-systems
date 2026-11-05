@@ -1,0 +1,266 @@
+{
+  "slug": "glass-aurora",
+  "number": 11,
+  "name": "Glass Aurora",
+  "tagline": "One aurora in the sky, frosted glass where things float.",
+  "description": "A dark-first system built around a single aurora field per screen. Floating layers (navbar, modal, toast, the hero card) are frosted glass over that field; everything in the page flow stays on a solid surface. Wide Unbounded headlines, Manrope for reading, pill controls, and one aurora green that marks the action or the good news.",
+  "tags": [
+    "dark",
+    "glass",
+    "consumer",
+    "forecast",
+    "dashboard"
+  ],
+  "defaultMode": "dark",
+  "useCases": [
+    "weather, sky, and travel apps",
+    "consumer AI and audio products",
+    "event and night-life booking",
+    "media players and launch pages"
+  ],
+  "fonts": [
+    {
+      "family": "Unbounded",
+      "role": "display headlines, wordmark, and big numerals",
+      "weights": [
+        500,
+        600,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"
+    },
+    {
+      "family": "Manrope",
+      "role": "body, labels, buttons, and tables with tabular numerals",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.5,
+    "steps": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "24px",
+      "xl": "36px",
+      "2xl": "54px",
+      "display": "80px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#EDF1F6",
+      "dark": "#070B14",
+      "role": "page background and the base of the aurora field"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FFFFFF",
+      "dark": "#101828",
+      "role": "solid surface for in-flow content: tables, forms, tiles"
+    },
+    {
+      "token": "--color-glass",
+      "light": "#FFFFFFB8",
+      "dark": "#0E1524B8",
+      "role": "glass-pane fill, 72 percent opaque so text stays AA over the aurora"
+    },
+    {
+      "token": "--color-glass-edge",
+      "light": "#FFFFFFCC",
+      "dark": "#FFFFFF1F",
+      "role": "1px top highlight and hairline on glass panes; decorative, never a control edge"
+    },
+    {
+      "token": "--color-scrim",
+      "light": "#0B122066",
+      "dark": "#03060DA6",
+      "role": "glass-scrim behind modals"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#0B1220",
+      "dark": "#EAF0F7",
+      "role": "text"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#475266",
+      "dark": "#A3AFC2",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#D3DAE4",
+      "dark": "#1F2A3D",
+      "role": "dividers and table rules"
+    },
+    {
+      "token": "--color-edge",
+      "light": "#6A7688",
+      "dark": "#6B7A90",
+      "role": "control borders that need 3:1"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#0A7A55",
+      "dark": "#3EE6A8",
+      "role": "aurora green: the primary action, good news, live; one per screen"
+    },
+    {
+      "token": "--color-accent-ink",
+      "light": "#FFFFFF",
+      "dark": "#03130D",
+      "role": "text on accent"
+    },
+    {
+      "token": "--color-danger",
+      "light": "#B4232F",
+      "dark": "#FF8A94",
+      "role": "errors, sold out, cancellations"
+    },
+    {
+      "token": "--color-aurora-a",
+      "light": "#3EE6A8",
+      "dark": "#3EE6A8",
+      "role": "aurora field only: green band"
+    },
+    {
+      "token": "--color-aurora-b",
+      "light": "#4CC9F0",
+      "dark": "#4CC9F0",
+      "role": "aurora field only: cyan band; never a UI accent"
+    },
+    {
+      "token": "--color-aurora-c",
+      "light": "#F0609E",
+      "dark": "#F0609E",
+      "role": "aurora field only: rose top band; never a UI accent"
+    }
+  ],
+  "allowedGradients": [
+    {
+      "pattern": "aurora-sky",
+      "reason": "the one aurora field per screen, behind floating glass layers; it depicts the product's subject and gives the glass something to read against"
+    }
+  ],
+  "allowedOrnaments": [
+    {
+      "pattern": "glass-pane",
+      "reason": "frosted surface for floating layers only (navbar, modal, popover, toast, hero card) so they stay legible over the aurora field; falls back to the solid surface without backdrop-filter support or with reduced transparency"
+    },
+    {
+      "pattern": "glass-scrim",
+      "reason": "light blur behind an open modal so the page underneath reads as inactive"
+    }
+  ],
+  "rules": {
+    "do": [
+      "Use one aurora-sky field per screen, placed where floating layers sit, and keep body copy off it",
+      "Put glass-pane only on layers that float above the page: navbar, modal, popover, toast, the one hero card",
+      "Keep everything in the page flow on the solid surface token: tables, forms, lists, bento tiles",
+      "Make the key number giant in Unbounded with tabular numerals",
+      "Use pill shapes for buttons, badges, and toggles, and the radius tokens for panes"
+    ],
+    "dont": [
+      "Do not stack glass on glass",
+      "Do not use aurora-b or aurora-c as UI colors; they exist only inside the aurora field",
+      "Do not place text directly on the aurora field without a glass pane",
+      "Do not add glows, gradient text, or a second aurora field",
+      "Do not put more than one accent-filled button on a screen; on pages with a hero action, the navbar action is the outline variant"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Pill shapes. Primary is an aurora green fill; secondary is an outline pill with an edge border that fills with the surface on hover; ghost is a text link with an arrow. 48px tall, 44px at the small size."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Solid surface field, 12px radius, edge border, Manrope label above, hint below. Focus shows a 2px accent ring; error swaps the border and hint to danger."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Same frame as the input with a chevron; tour options with durations."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Rounded 6px checkbox that fills accent with a check. Switch is a pill track with a round knob that slides and turns the track accent."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Pill badges: Kp level with an accent dot, clear and cloudy sky in outline, sold out in danger outline, live with a pulsing dot that stops under reduced motion."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "The hero forecast card: glass-pane over an aurora-sky field, giant Kp number, probability, best viewing window, and an hourly sparkline in inline SVG."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Floating glass pill over the aurora field: wordmark, links, a primary book action. Mobile collapses into a details menu that opens a glass panel."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Glass-pane dialog on a glass-scrim; title, a short booking form on solid fields, actions right-aligned. Full-width sheet on phones."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Tonight's departures on the solid surface: time, tour, seats left, cloud cover, price in NOK, status badge. Tabular numerals, rows stack into cards below 640px."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Solid tiles: Kp 2x2 with an hourly bar chart, cloud cover, moon phase, solar wind speed, and dark hours."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "Inside a solid frame: a small line drawing of a quiet sky, \"No tours tonight\", the reason, and one action to set an alert."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "Glass pill, bottom-centered on phones and bottom-left on wide screens, with an undo action."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Tonight's forecast",
+      "file": "pages/app.html"
+    }
+  ]
+}

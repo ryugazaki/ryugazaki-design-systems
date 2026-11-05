@@ -55,6 +55,8 @@ export function validateManifest(m) {
   );
   if (!Array.isArray(m.allowedGradients)) errors.push('allowedGradients must be an array');
   checkEntries(m.allowedGradients, 'allowedGradients', errors, 'pattern, reason', (g) => isText(g.pattern) && isText(g.reason));
+  if (m.allowedOrnaments !== undefined && !Array.isArray(m.allowedOrnaments)) errors.push('allowedOrnaments must be an array when present');
+  checkEntries(m.allowedOrnaments, 'allowedOrnaments', errors, 'pattern, reason', (o) => isText(o.pattern) && isText(o.reason));
   const scale = m.typeScale;
   if (!scale || typeof scale.ratio !== 'number' || typeof scale.steps !== 'object' || scale.steps === null) {
     errors.push('typeScale must have ratio and steps');
@@ -130,9 +132,12 @@ export function lintCopy(html) {
   return errors;
 }
 
-export function lintOrnaments(text) {
+const BLUR = /\bbackdrop-blur|\bbackdrop-filter\s*:/;
+/** Backdrop blur is glassmorphism unless the line carries a pattern from the manifest's allowedOrnaments. */
+export function lintOrnaments(text, allowed = []) {
   const errors = [];
-  if (/\bbackdrop-blur/.test(text)) errors.push('glassmorphism (backdrop-blur)');
+  const blurLines = text.split('\n').filter((line) => BLUR.test(line) && !allowed.some((a) => line.includes(a.pattern)));
+  if (blurLines.length) errors.push(`glassmorphism (backdrop blur): ${blurLines[0].trim().slice(0, 80)}`);
   if (/\bshadow-(xl|2xl)\b/.test(text)) errors.push('generic heavy shadow (shadow-xl / shadow-2xl)');
   return errors;
 }
@@ -177,7 +182,8 @@ export async function checkSystem(root, slug) {
   const themePath = path.join(dir, 'theme.css');
   if (!(await exists(themePath))) { report('theme.css', ['missing']); return errors; }
   const theme = normalize(await readFile(themePath, 'utf8'));
-  report('theme.css', [...lintFonts(theme), ...lintGradients(theme, manifest.allowedGradients)]);
+  const allowedOrnaments = manifest.allowedOrnaments ?? [];
+  report('theme.css', [...lintFonts(theme), ...lintGradients(theme, manifest.allowedGradients), ...lintOrnaments(theme, allowedOrnaments)]);
 
   for (const item of [...manifest.components, ...manifest.pages]) {
     const file = path.join(dir, item.file);
@@ -200,7 +206,7 @@ export async function checkSystem(root, slug) {
       ...lintGradients(html, manifest.allowedGradients),
       ...lintPalette(html),
       ...lintCopy(html),
-      ...lintOrnaments(html),
+      ...lintOrnaments(html, allowedOrnaments),
     );
     report(item.file, problems);
   }

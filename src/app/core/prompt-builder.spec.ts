@@ -30,6 +30,18 @@ const bundle: SystemBundle = {
 describe('buildPrompt', () => {
   const md = buildPrompt(bundle, '1. No gradients.\n');
 
+  it('lists allowed exceptions only when the system declares some', () => {
+    expect(md).not.toContain('## Allowed exceptions');
+    const withGlass: SystemBundle = {
+      ...bundle,
+      manifest: { ...bundle.manifest, allowedOrnaments: [{ pattern: 'glass-pane', reason: 'overlay legibility' }] },
+    };
+    const out = buildPrompt(withGlass, '1. No gradients.\n');
+    expect(out).toContain('## Allowed exceptions');
+    expect(out).toContain('- `glass-pane`: overlay legibility');
+    expect(out.indexOf('## Allowed exceptions')).toBeLessThan(out.indexOf('## Global anti-slop rules'));
+  });
+
   it('emits every section in order', () => {
     const order = ['# Design system: Neo-Brutalist (No. 02)', '## Identity', '## Fonts', '## Tokens', '## Type scale', '## Rules', '## Global anti-slop rules', '## Components', '## Pages', '## Before you finish'];
     const positions = order.map((h) => md.indexOf(h));

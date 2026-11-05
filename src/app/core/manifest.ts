@@ -49,6 +49,12 @@ export function validateManifest(value: unknown): string[] {
   checkEntries(m['allowedGradients'], 'allowedGradients', errors, 'pattern, reason', (g) =>
     isText(g['pattern']) && isText(g['reason']),
   );
+  if (m['allowedOrnaments'] !== undefined && !Array.isArray(m['allowedOrnaments'])) {
+    errors.push('allowedOrnaments must be an array when present');
+  }
+  checkEntries(m['allowedOrnaments'], 'allowedOrnaments', errors, 'pattern, reason', (o) =>
+    isText(o['pattern']) && isText(o['reason']),
+  );
 
   const scale = m['typeScale'] as Record<string, unknown> | undefined;
   if (!scale || typeof scale['ratio'] !== 'number' || typeof scale['steps'] !== 'object' || scale['steps'] === null) {

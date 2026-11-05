@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glass Aurora / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #EDF1F6;
+  --color-surface: #FFFFFF;
+  --color-glass: #FFFFFFB8;
+  --color-glass-edge: #FFFFFFCC;
+  --color-scrim: #0B122066;
+  --color-ink: #0B1220;
+  --color-muted: #475266;
+  --color-line: #D3DAE4;
+  --color-edge: #6A7688;
+  --color-accent: #0A7A55;
+  --color-accent-ink: #FFFFFF;
+  --color-danger: #B4232F;
+  --color-aurora-a: #3EE6A8;
+  --color-aurora-b: #4CC9F0;
+  --color-aurora-c: #F0609E;
+
+  --font-display: "Unbounded", ui-sans-serif, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.25;
+  --text-xl: 2.25rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3.375rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 5rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-pane: inset 0 1px 0 0 var(--color-glass-edge), 0 18px 40px -24px rgb(3 8 20 / 0.55);
+
+  --ease-drift: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility aurora-sky { background-color: var(--color-bg); background-image: radial-gradient(70% 90% at 15% 0%, color-mix(in oklab, var(--color-aurora-a) 50%, transparent), transparent 70%), radial-gradient(55% 80% at 60% 0%, color-mix(in oklab, var(--color-aurora-b) 40%, transparent), transparent 70%), radial-gradient(45% 70% at 95% 10%, color-mix(in oklab, var(--color-aurora-c) 32%, transparent), transparent 70%); }
+
+@utility glass-pane { background-color: var(--color-glass); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); @supports not (backdrop-filter: blur(1px)) { background-color: var(--color-surface); } @media (prefers-reduced-transparency: reduce) { background-color: var(--color-surface); backdrop-filter: none; } }
+
+@utility glass-scrim { background-color: var(--color-scrim); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); @media (prefers-reduced-transparency: reduce) { backdrop-filter: none; } }
+
+@layer base {
+  .dark {
+    --color-bg: #070B14;
+    --color-surface: #101828;
+    --color-glass: #0E1524B8;
+    --color-glass-edge: #FFFFFF1F;
+    --color-scrim: #03060DA6;
+    --color-ink: #EAF0F7;
+    --color-muted: #A3AFC2;
+    --color-line: #1F2A3D;
+    --color-edge: #6B7A90;
+    --color-accent: #3EE6A8;
+    --color-accent-ink: #03130D;
+    --color-danger: #FF8A94;
+    --color-aurora-a: #3EE6A8;
+    --color-aurora-b: #4CC9F0;
+    --color-aurora-c: #F0609E;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="dep-title" class="max-w-4xl overflow-hidden rounded-lg border border-line bg-surface">
+    <header class="flex flex-wrap items-end justify-between gap-3 border-b border-line px-4 py-4 sm:px-5">
+      <div class="flex flex-col gap-1">
+        <h2 id="dep-title" class="font-display text-lg font-semibold tracking-tight text-ink">Departures tonight</h2>
+        <p class="text-sm text-muted">Thursday 5 November. Pickup 20 minutes before departure.</p>
+      </div>
+      <p class="text-sm tabular-nums text-muted">22 of 68 seats left</p>
+    </header>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <caption class="sr-only">Tours departing tonight with seats left, cloud cover on the route, price, and status</caption>
+        <thead class="hidden sm:table-header-group">
+          <tr class="border-b border-line">
+            <th scope="col" class="py-3 pr-4 pl-5 text-xs font-semibold uppercase tracking-[0.16em] text-muted">Departs</th>
+            <th scope="col" class="py-3 pr-4 text-xs font-semibold uppercase tracking-[0.16em] text-muted">Tour</th>
+            <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Seats left</th>
+            <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Cloud</th>
+            <th scope="col" class="py-3 pr-4 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Price</th>
+            <th scope="col" class="py-3 pr-5 text-right text-xs font-semibold uppercase tracking-[0.16em] text-muted">Status</th>
+          </tr>
+        </thead>
+        <tbody class="block sm:table-row-group">
+          <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+            <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">21:00</td>
+            <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Minibus chase</span><span class="block text-sm text-muted">6 h</span></td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>0 of 14</td>
+            <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>22%</td>
+            <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 290 NOK</td>
+            <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-danger px-3 text-xs font-bold text-danger">Sold out</span></td>
+          </tr>
+          <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+            <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">21:30</td>
+            <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Fjord cabin and fire</span><span class="block text-sm text-muted">4 h</span></td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>5 of 12</td>
+            <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>18%</td>
+            <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">990 NOK</td>
+            <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+          </tr>
+          <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+            <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">22:00</td>
+            <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Minibus chase</span><span class="block text-sm text-muted">6 h</span></td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>6 of 14</td>
+            <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>22%</td>
+            <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 290 NOK</td>
+            <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+          </tr>
+          <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+            <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">22:15</td>
+            <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Photo workshop</span><span class="block text-sm text-muted">7 h</span></td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>2 of 8</td>
+            <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>15%</td>
+            <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 650 NOK</td>
+            <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">2 seats left</span></td>
+          </tr>
+          <tr class="grid grid-cols-2 gap-x-4 gap-y-1 border-b border-line px-4 py-4 last:border-b-0 hover:bg-bg sm:table-row sm:p-0">
+            <td class="font-display text-lg font-semibold tabular-nums text-ink sm:py-4 sm:pr-4 sm:pl-5 sm:text-base">23:00</td>
+            <td class="col-span-2 row-start-2 sm:py-4 sm:pr-4"><span class="block text-base font-semibold text-ink">Sami camp and reindeer</span><span class="block text-sm text-muted">5 h</span></td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-right sm:text-ink"><span class="sm:hidden">Seats </span>9 of 20</td>
+            <td class="row-start-3 text-right text-sm tabular-nums text-muted sm:py-4 sm:pr-4 sm:text-ink"><span class="sm:hidden">Cloud </span>34%</td>
+            <td class="row-start-4 text-sm font-bold tabular-nums text-ink sm:py-4 sm:pr-4 sm:text-right">1 450 NOK</td>
+            <td class="col-start-2 row-start-1 justify-self-end sm:py-4 sm:pr-5"><span class="inline-flex min-h-7 items-center rounded-full border border-edge px-3 text-xs font-semibold text-ink">Open</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>
