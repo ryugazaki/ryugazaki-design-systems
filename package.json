@@ -10,6 +10,7 @@
     "test": "ng test",
     "check:systems": "node scripts/check-systems.mjs",
     "sync:themes": "node scripts/sync-themes.mjs",
+    "build:pen": "node scripts/pen/glass-aurora-pen.mjs",
     "test:scripts": "node --test \"scripts/**/*.test.mjs\""
   },
   "private": true,

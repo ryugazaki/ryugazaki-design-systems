@@ -1,0 +1,2850 @@
+{
+  "version": "2.9",
+  "themes": {
+    "mode": [
+      "dark",
+      "light"
+    ]
+  },
+  "variables": {
+    "color-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#070B14",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#EDF1F6",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#101828",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-glass": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#0E1524B8",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFFB8",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-glass-edge": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF1F",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFFCC",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-scrim": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#03060DA6",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#0B122066",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-ink": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#EAF0F7",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#0B1220",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#A3AFC2",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#475266",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-line": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1F2A3D",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#D3DAE4",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-edge": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#6B7A90",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#6A7688",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#3EE6A8",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#0A7A55",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-accent-ink": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#03130D",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFF",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-danger": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FF8A94",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#B4232F",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-aurora-a": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#3EE6A8",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#3EE6A8",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-aurora-b": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#4CC9F0",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#4CC9F0",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-aurora-c": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F0609E",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#F0609E",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "font-display": {
+      "type": "string",
+      "value": "Unbounded"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Manrope"
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 10
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 16
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 24
+    },
+    "radius-full": {
+      "type": "number",
+      "value": 999
+    },
+    "text-xs": {
+      "type": "number",
+      "value": 12
+    },
+    "text-sm": {
+      "type": "number",
+      "value": 14
+    },
+    "text-base": {
+      "type": "number",
+      "value": 16
+    },
+    "text-lg": {
+      "type": "number",
+      "value": 24
+    },
+    "text-xl": {
+      "type": "number",
+      "value": 36
+    },
+    "text-2xl": {
+      "type": "number",
+      "value": 54
+    },
+    "text-display": {
+      "type": "number",
+      "value": 80
+    }
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "board-tokens",
+      "name": "Glass Aurora / Tokens",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 64,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "dark"
+      },
+      "children": [
+        {
+          "type": "text",
+          "id": "board-tokens-title",
+          "name": "board-tokens-title",
+          "content": "Glass Aurora / Tokens",
+          "fontFamily": "$font-display",
+          "fontSize": 36,
+          "fontWeight": "600",
+          "fill": "$color-ink",
+          "letterSpacing": -0.5
+        },
+        {
+          "type": "text",
+          "id": "tok-colors",
+          "name": "tok-colors",
+          "content": "COLOR, DARK / LIGHT",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-0",
+          "name": "Row 1",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-bg",
+              "name": "--color-bg",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-bg-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-bg",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-bg-name",
+                  "name": "sw-color-bg-name",
+                  "content": "--color-bg",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-bg-hex",
+                  "name": "sw-color-bg-hex",
+                  "content": "#070B14 / #EDF1F6",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-surface",
+              "name": "--color-surface",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-surface-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-surface-name",
+                  "name": "sw-color-surface-name",
+                  "content": "--color-surface",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-surface-hex",
+                  "name": "sw-color-surface-hex",
+                  "content": "#101828 / #FFFFFF",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-glass",
+              "name": "--color-glass",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-glass-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-glass",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-glass-name",
+                  "name": "sw-color-glass-name",
+                  "content": "--color-glass",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-glass-hex",
+                  "name": "sw-color-glass-hex",
+                  "content": "#0E1524B8 / #FFFFFFB8",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-glass-edge",
+              "name": "--color-glass-edge",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-glass-edge-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-glass-edge",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-glass-edge-name",
+                  "name": "sw-color-glass-edge-name",
+                  "content": "--color-glass-edge",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-glass-edge-hex",
+                  "name": "sw-color-glass-edge-hex",
+                  "content": "#FFFFFF1F / #FFFFFFCC",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-scrim",
+              "name": "--color-scrim",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-scrim-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-scrim",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-scrim-name",
+                  "name": "sw-color-scrim-name",
+                  "content": "--color-scrim",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-scrim-hex",
+                  "name": "sw-color-scrim-hex",
+                  "content": "#03060DA6 / #0B122066",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-ink",
+              "name": "--color-ink",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-ink-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-ink",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-ink-name",
+                  "name": "sw-color-ink-name",
+                  "content": "--color-ink",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-ink-hex",
+                  "name": "sw-color-ink-hex",
+                  "content": "#EAF0F7 / #0B1220",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-1",
+          "name": "Row 2",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-muted",
+              "name": "--color-muted",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-muted-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-muted",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-muted-name",
+                  "name": "sw-color-muted-name",
+                  "content": "--color-muted",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-muted-hex",
+                  "name": "sw-color-muted-hex",
+                  "content": "#A3AFC2 / #475266",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-line",
+              "name": "--color-line",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-line-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-line",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-line-name",
+                  "name": "sw-color-line-name",
+                  "content": "--color-line",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-line-hex",
+                  "name": "sw-color-line-hex",
+                  "content": "#1F2A3D / #D3DAE4",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-edge",
+              "name": "--color-edge",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-edge-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-edge",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-edge-name",
+                  "name": "sw-color-edge-name",
+                  "content": "--color-edge",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-edge-hex",
+                  "name": "sw-color-edge-hex",
+                  "content": "#6B7A90 / #6A7688",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-accent",
+              "name": "--color-accent",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-accent-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-accent",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-name",
+                  "name": "sw-color-accent-name",
+                  "content": "--color-accent",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-hex",
+                  "name": "sw-color-accent-hex",
+                  "content": "#3EE6A8 / #0A7A55",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-accent-ink",
+              "name": "--color-accent-ink",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-accent-ink-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-accent-ink",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-ink-name",
+                  "name": "sw-color-accent-ink-name",
+                  "content": "--color-accent-ink",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-ink-hex",
+                  "name": "sw-color-accent-ink-hex",
+                  "content": "#03130D / #FFFFFF",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-danger",
+              "name": "--color-danger",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-danger-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-danger",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-danger-name",
+                  "name": "sw-color-danger-name",
+                  "content": "--color-danger",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-danger-hex",
+                  "name": "sw-color-danger-hex",
+                  "content": "#FF8A94 / #B4232F",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-2",
+          "name": "Row 3",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-aurora-a",
+              "name": "--color-aurora-a",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-aurora-a-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-aurora-a",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-a-name",
+                  "name": "sw-color-aurora-a-name",
+                  "content": "--color-aurora-a",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-a-hex",
+                  "name": "sw-color-aurora-a-hex",
+                  "content": "#3EE6A8 / #3EE6A8",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-aurora-b",
+              "name": "--color-aurora-b",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-aurora-b-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-aurora-b",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-b-name",
+                  "name": "sw-color-aurora-b-name",
+                  "content": "--color-aurora-b",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-b-hex",
+                  "name": "sw-color-aurora-b-hex",
+                  "content": "#4CC9F0 / #4CC9F0",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-aurora-c",
+              "name": "--color-aurora-c",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-aurora-c-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-aurora-c",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-c-name",
+                  "name": "sw-color-aurora-c-name",
+                  "content": "--color-aurora-c",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-aurora-c-hex",
+                  "name": "sw-color-aurora-c-hex",
+                  "content": "#F0609E / #F0609E",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "tok-type",
+          "name": "tok-type",
+          "content": "TYPE SCALE, RATIO 1.5",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "tok-type-list",
+          "name": "Type scale",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tok-type-display",
+              "name": "display",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-display-label",
+                  "name": "tok-type-display-label",
+                  "content": "display 80px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-display-sample",
+                  "name": "tok-type-display-sample",
+                  "content": "Kp 4.7 tonight",
+                  "fontFamily": "$font-display",
+                  "fontSize": 80,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-2xl",
+              "name": "2xl",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-2xl-label",
+                  "name": "tok-type-2xl-label",
+                  "content": "2xl 54px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-2xl-sample",
+                  "name": "tok-type-2xl-sample",
+                  "content": "Kp 4.7 tonight",
+                  "fontFamily": "$font-display",
+                  "fontSize": 54,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-xl",
+              "name": "xl",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-xl-label",
+                  "name": "tok-type-xl-label",
+                  "content": "xl 36px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-xl-sample",
+                  "name": "tok-type-xl-sample",
+                  "content": "Kp 4.7 tonight",
+                  "fontFamily": "$font-display",
+                  "fontSize": 36,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-lg",
+              "name": "lg",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-lg-label",
+                  "name": "tok-type-lg-label",
+                  "content": "lg 24px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-lg-sample",
+                  "name": "tok-type-lg-sample",
+                  "content": "Kp 4.7 tonight",
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-base",
+              "name": "base",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-base-label",
+                  "name": "tok-type-base-label",
+                  "content": "base 16px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-base-sample",
+                  "name": "tok-type-base-sample",
+                  "content": "Pickup 20 minutes before departure.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-sm",
+              "name": "sm",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-sm-label",
+                  "name": "tok-type-sm-label",
+                  "content": "sm 14px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-sm-sample",
+                  "name": "tok-type-sm-sample",
+                  "content": "Pickup 20 minutes before departure.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-xs",
+              "name": "xs",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-xs-label",
+                  "name": "tok-type-xs-label",
+                  "content": "xs 12px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-xs-sample",
+                  "name": "tok-type-xs-sample",
+                  "content": "Pickup 20 minutes before departure.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "tok-radius",
+          "name": "tok-radius",
+          "content": "RADIUS",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "tok-radius-row",
+          "name": "Radius",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tok-radius-sm",
+              "name": "sm",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-sm-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-sm-label",
+                  "name": "tok-radius-sm-label",
+                  "content": "radius-sm",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-md",
+              "name": "md",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-md-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-md-label",
+                  "name": "tok-radius-md-label",
+                  "content": "radius-md",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-lg",
+              "name": "lg",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-lg-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-lg",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-lg-label",
+                  "name": "tok-radius-lg-label",
+                  "content": "radius-lg",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-full",
+              "name": "full",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-full-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-full",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-full-label",
+                  "name": "tok-radius-full-label",
+                  "content": "radius-full",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "board-components",
+      "name": "Glass Aurora / Components",
+      "x": 1400,
+      "y": 0,
+      "width": 1280,
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 64,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "dark"
+      },
+      "children": [
+        {
+          "type": "text",
+          "id": "board-components-title",
+          "name": "board-components-title",
+          "content": "Glass Aurora / Components",
+          "fontFamily": "$font-display",
+          "fontSize": 36,
+          "fontWeight": "600",
+          "fill": "$color-ink",
+          "letterSpacing": -0.5
+        },
+        {
+          "type": "text",
+          "id": "cmp-buttons",
+          "name": "cmp-buttons",
+          "content": "BUTTONS",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "cmp-row-buttons",
+          "name": "Buttons",
+          "layout": "horizontal",
+          "gap": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "btn-primary",
+              "name": "Button / Primary",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "height": 48,
+              "padding": [
+                0,
+                24
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-accent",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "btn-primary-label",
+                  "name": "btn-primary-label",
+                  "content": "Book a night tour",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "700",
+                  "fill": "$color-accent-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "btn-secondary",
+              "name": "Button / Secondary",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "height": 48,
+              "padding": [
+                0,
+                24
+              ],
+              "cornerRadius": "$radius-full",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-edge"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "btn-secondary-label",
+                  "name": "btn-secondary-label",
+                  "content": "See tonight's forecast",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-badges",
+          "name": "cmp-badges",
+          "content": "BADGES",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "cmp-row-badges",
+          "name": "Badges",
+          "layout": "horizontal",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "badge-accent",
+              "name": "Badge / Forecast",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 6,
+              "height": 28,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-accent"
+              },
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "badge-accent-dot",
+                  "name": "Dot",
+                  "width": 6,
+                  "height": 6,
+                  "fill": "$color-accent"
+                },
+                {
+                  "type": "text",
+                  "id": "badge-accent-label",
+                  "name": "badge-accent-label",
+                  "content": "Kp 5, strong",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-accent"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "badge-outline",
+              "name": "Badge / Outline",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "height": 28,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-edge"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "badge-outline-label",
+                  "name": "badge-outline-label",
+                  "content": "Clear sky",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "badge-danger",
+              "name": "Badge / Danger",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "height": 28,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-danger"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "badge-danger-label",
+                  "name": "badge-danger-label",
+                  "content": "Sold out",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-danger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-inputs",
+          "name": "cmp-inputs",
+          "content": "INPUT",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "input",
+          "name": "Input",
+          "reusable": true,
+          "layout": "vertical",
+          "gap": 8,
+          "width": 360,
+          "children": [
+            {
+              "type": "text",
+              "id": "input-label",
+              "name": "input-label",
+              "content": "Pickup hotel",
+              "fontFamily": "$font-body",
+              "fontSize": 14,
+              "fontWeight": "600",
+              "fill": "$color-ink"
+            },
+            {
+              "type": "frame",
+              "id": "input-field",
+              "name": "Field",
+              "layout": "horizontal",
+              "alignItems": "center",
+              "width": "fill_container",
+              "height": 48,
+              "padding": [
+                0,
+                16
+              ],
+              "cornerRadius": "$radius-sm",
+              "fill": "$color-surface",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-edge"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "id": "input-value",
+                  "name": "input-value",
+                  "content": "Clarion Hotel The Edge",
+                  "fontFamily": "$font-body",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "input-hint",
+              "name": "input-hint",
+              "content": "We collect from any hotel in central Tromsø.",
+              "fontFamily": "$font-body",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "fill": "$color-muted"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-glass",
+          "name": "cmp-glass",
+          "content": "GLASS LAYERS, SHOWN OVER AN AURORA FIELD",
+          "fontFamily": "$font-body",
+          "fontSize": 12,
+          "fontWeight": "600",
+          "fill": "$color-muted",
+          "letterSpacing": 1.9
+        },
+        {
+          "type": "frame",
+          "id": "cmp-glass-field",
+          "name": "Aurora field",
+          "layout": "none",
+          "width": 1152,
+          "height": 260,
+          "clip": true,
+          "cornerRadius": "$radius-lg",
+          "fill": "$color-bg",
+          "children": [
+            {
+              "type": "ellipse",
+              "id": "cmp-aurora-a",
+              "name": "Aurora a",
+              "x": -115.2,
+              "y": -260,
+              "width": 806.4,
+              "height": 520,
+              "fill": "$color-aurora-a",
+              "opacity": 0.5,
+              "effect": {
+                "type": "blur",
+                "radius": 120
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "cmp-aurora-b",
+              "name": "Aurora b",
+              "x": 403.2,
+              "y": -300,
+              "width": 576,
+              "height": 480,
+              "fill": "$color-aurora-b",
+              "opacity": 0.5,
+              "effect": {
+                "type": "blur",
+                "radius": 120
+              }
+            },
+            {
+              "type": "ellipse",
+              "id": "cmp-aurora-c",
+              "name": "Aurora c",
+              "x": 864,
+              "y": -220,
+              "width": 460.8,
+              "height": 400,
+              "fill": "$color-aurora-c",
+              "opacity": 0.5,
+              "effect": {
+                "type": "blur",
+                "radius": 120
+              }
+            },
+            {
+              "type": "frame",
+              "id": "navbar",
+              "name": "Navbar (glass)",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 32,
+              "width": 1152,
+              "height": 64,
+              "padding": [
+                8,
+                8,
+                8,
+                20
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-glass",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-glass-edge"
+              },
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 18
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#03081499",
+                  "offset": {
+                    "x": 0,
+                    "y": 18
+                  },
+                  "blur": 40,
+                  "spread": -24
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "navbar-wordmark",
+                  "name": "navbar-wordmark",
+                  "content": "Polarlys",
+                  "fontFamily": "$font-display",
+                  "fontSize": 16,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "frame",
+                  "id": "navbar-links",
+                  "name": "Links",
+                  "layout": "horizontal",
+                  "alignItems": "center",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "navbar-link-current",
+                      "name": "Forecast (current)",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 44,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "cornerRadius": "$radius-full",
+                      "fill": "$color-surface",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "navbar-link-1",
+                          "name": "navbar-link-1",
+                          "content": "Forecast",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "600",
+                          "fill": "$color-ink"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "navbar-link-2-box",
+                      "name": "Tours",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 44,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "navbar-link-2",
+                          "name": "navbar-link-2",
+                          "content": "Tours",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "600",
+                          "fill": "$color-muted"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "navbar-link-3-box",
+                      "name": "How it works",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 44,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "navbar-link-3",
+                          "name": "navbar-link-3",
+                          "content": "How it works",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "600",
+                          "fill": "$color-muted"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "navbar-link-4-box",
+                      "name": "Help",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 44,
+                      "padding": [
+                        0,
+                        16
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "navbar-link-4",
+                          "name": "navbar-link-4",
+                          "content": "Help",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "600",
+                          "fill": "$color-muted"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "navbar-spacer",
+                  "name": "Spacer",
+                  "width": "fill_container",
+                  "height": 1,
+                  "children": []
+                },
+                {
+                  "type": "ref",
+                  "id": "navbar-cta",
+                  "ref": "btn-secondary",
+                  "height": 44,
+                  "descendants": {
+                    "btn-secondary-label": {
+                      "content": "Book a tour"
+                    }
+                  }
+                }
+              ],
+              "x": 0,
+              "y": 32
+            },
+            {
+              "type": "frame",
+              "id": "toast",
+              "name": "Toast (glass)",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 12,
+              "width": 420,
+              "height": 60,
+              "padding": [
+                8,
+                8,
+                8,
+                20
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-glass",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$color-glass-edge"
+              },
+              "effect": [
+                {
+                  "type": "background_blur",
+                  "radius": 18
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#03081499",
+                  "offset": {
+                    "x": 0,
+                    "y": 18
+                  },
+                  "blur": 40,
+                  "spread": -24
+                }
+              ],
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "toast-dot",
+                  "name": "Dot",
+                  "width": 8,
+                  "height": 8,
+                  "fill": "$color-accent"
+                },
+                {
+                  "type": "text",
+                  "id": "toast-message",
+                  "name": "toast-message",
+                  "content": "Alert set for Kp 4 or higher.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 14,
+                  "fontWeight": "400",
+                  "fill": "$color-ink",
+                  "width": "fill_container",
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "frame",
+                  "id": "toast-undo",
+                  "name": "Undo",
+                  "layout": "horizontal",
+                  "alignItems": "center",
+                  "height": 44,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "toast-undo-label",
+                      "name": "toast-undo-label",
+                      "content": "Undo",
+                      "fontFamily": "$font-body",
+                      "fontSize": 14,
+                      "fontWeight": "700",
+                      "fill": "$color-ink"
+                    }
+                  ]
+                }
+              ],
+              "x": 32,
+              "y": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "landing-dark",
+      "name": "Landing / Hero, dark",
+      "x": 2800,
+      "y": 0,
+      "width": 1280,
+      "height": 900,
+      "layout": "none",
+      "clip": true,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "dark"
+      },
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "landing-dark-aurora-a",
+          "name": "Aurora a",
+          "x": -128,
+          "y": -260,
+          "width": 896,
+          "height": 520,
+          "fill": "$color-aurora-a",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "landing-dark-aurora-b",
+          "name": "Aurora b",
+          "x": 448,
+          "y": -300,
+          "width": 640,
+          "height": 480,
+          "fill": "$color-aurora-b",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "landing-dark-aurora-c",
+          "name": "Aurora c",
+          "x": 960,
+          "y": -220,
+          "width": 512,
+          "height": 400,
+          "fill": "$color-aurora-c",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ref",
+          "id": "landing-dark-nav",
+          "ref": "navbar",
+          "x": 64,
+          "y": 20
+        },
+        {
+          "type": "frame",
+          "id": "landing-dark-hero",
+          "name": "Hero (glass)",
+          "x": 64,
+          "y": 168,
+          "width": 1152,
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 40,
+          "cornerRadius": "$radius-lg",
+          "fill": "$color-glass",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "$color-glass-edge"
+          },
+          "effect": [
+            {
+              "type": "background_blur",
+              "radius": 18
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#03081499",
+              "offset": {
+                "x": 0,
+                "y": 18
+              },
+              "blur": 40,
+              "spread": -24
+            }
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "landing-dark-eyebrow",
+              "name": "landing-dark-eyebrow",
+              "content": "AURORA TOURS FROM TROMSØ, SEPTEMBER TO MARCH",
+              "fontFamily": "$font-body",
+              "fontSize": 12,
+              "fontWeight": "600",
+              "fill": "$color-muted",
+              "letterSpacing": 1.9
+            },
+            {
+              "type": "text",
+              "id": "landing-dark-title",
+              "name": "landing-dark-title",
+              "content": "We only drive out when the sky says yes.",
+              "fontFamily": "$font-display",
+              "fontSize": 80,
+              "fontWeight": "600",
+              "fill": "$color-ink",
+              "lineHeight": 0.98,
+              "letterSpacing": -2,
+              "width": 920,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "frame",
+              "id": "landing-dark-row",
+              "name": "Body and forecast",
+              "layout": "horizontal",
+              "gap": 48,
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "landing-dark-copy",
+                  "name": "Copy",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "landing-dark-lede",
+                      "name": "landing-dark-lede",
+                      "content": "Polarlys reads the Kp index, the solar wind, and the cloud map every 15 minutes. At 17:00 we decide where tonight’s buses go, or we cancel and refund you in full.",
+                      "fontFamily": "$font-body",
+                      "fontSize": 24,
+                      "fontWeight": "400",
+                      "fill": "$color-muted",
+                      "lineHeight": 1.3,
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-dark-ctas",
+                      "name": "Actions",
+                      "layout": "horizontal",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "ref",
+                          "id": "landing-dark-cta-1",
+                          "ref": "btn-primary",
+                          "descendants": {
+                            "btn-primary-label": {
+                              "content": "Book tonight’s tour"
+                            }
+                          }
+                        },
+                        {
+                          "type": "ref",
+                          "id": "landing-dark-cta-2",
+                          "ref": "btn-secondary",
+                          "descendants": {
+                            "btn-secondary-label": {
+                              "content": "Read the forecast"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "landing-dark-forecast",
+                  "name": "Forecast",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "width": 400,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    48
+                  ],
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "left": 1
+                    },
+                    "fill": "$color-line"
+                  },
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "landing-dark-forecast-head",
+                      "name": "Head",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "landing-dark-forecast-date",
+                          "name": "landing-dark-forecast-date",
+                          "content": "TONIGHT, 5 NOVEMBER",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "fill": "$color-muted",
+                          "letterSpacing": 1.9
+                        },
+                        {
+                          "type": "ref",
+                          "id": "landing-dark-forecast-badge",
+                          "ref": "badge-accent",
+                          "descendants": {
+                            "badge-accent-label": {
+                              "content": "Good chance"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-dark-forecast-kp",
+                      "name": "Kp",
+                      "layout": "horizontal",
+                      "alignItems": "end",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "landing-dark-kp",
+                          "name": "landing-dark-kp",
+                          "content": "4.7",
+                          "fontFamily": "$font-display",
+                          "fontSize": 54,
+                          "fontWeight": "600",
+                          "fill": "$color-ink",
+                          "lineHeight": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "landing-dark-kp-label",
+                          "name": "landing-dark-kp-label",
+                          "content": "peak Kp at 23:00",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "400",
+                          "fill": "$color-muted"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-dark-forecast-stats",
+                      "name": "Stats",
+                      "layout": "horizontal",
+                      "gap": 40,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "landing-dark-stat-0",
+                          "name": "Chance",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-0-k",
+                              "name": "landing-dark-stat-0-k",
+                              "content": "Chance",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-0-v",
+                              "name": "landing-dark-stat-0-v",
+                              "content": "72%",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "landing-dark-stat-1",
+                          "name": "Cloud",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-1-k",
+                              "name": "landing-dark-stat-1-k",
+                              "content": "Cloud",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-1-v",
+                              "name": "landing-dark-stat-1-v",
+                              "content": "18%",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "landing-dark-stat-2",
+                          "name": "Best window",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-2-k",
+                              "name": "landing-dark-stat-2-k",
+                              "content": "Best window",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-dark-stat-2-v",
+                              "name": "landing-dark-stat-2-v",
+                              "content": "22:10",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "id": "landing-dark-toast",
+          "ref": "toast",
+          "x": 64,
+          "y": 812
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "landing-light",
+      "name": "Landing / Hero, light",
+      "x": 4200,
+      "y": 0,
+      "width": 1280,
+      "height": 900,
+      "layout": "none",
+      "clip": true,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "light"
+      },
+      "children": [
+        {
+          "type": "ellipse",
+          "id": "landing-light-aurora-a",
+          "name": "Aurora a",
+          "x": -128,
+          "y": -260,
+          "width": 896,
+          "height": 520,
+          "fill": "$color-aurora-a",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "landing-light-aurora-b",
+          "name": "Aurora b",
+          "x": 448,
+          "y": -300,
+          "width": 640,
+          "height": 480,
+          "fill": "$color-aurora-b",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ellipse",
+          "id": "landing-light-aurora-c",
+          "name": "Aurora c",
+          "x": 960,
+          "y": -220,
+          "width": 512,
+          "height": 400,
+          "fill": "$color-aurora-c",
+          "opacity": 0.5,
+          "effect": {
+            "type": "blur",
+            "radius": 120
+          }
+        },
+        {
+          "type": "ref",
+          "id": "landing-light-nav",
+          "ref": "navbar",
+          "x": 64,
+          "y": 20
+        },
+        {
+          "type": "frame",
+          "id": "landing-light-hero",
+          "name": "Hero (glass)",
+          "x": 64,
+          "y": 168,
+          "width": 1152,
+          "layout": "vertical",
+          "gap": 32,
+          "padding": 40,
+          "cornerRadius": "$radius-lg",
+          "fill": "$color-glass",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "$color-glass-edge"
+          },
+          "effect": [
+            {
+              "type": "background_blur",
+              "radius": 18
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#03081499",
+              "offset": {
+                "x": 0,
+                "y": 18
+              },
+              "blur": 40,
+              "spread": -24
+            }
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "landing-light-eyebrow",
+              "name": "landing-light-eyebrow",
+              "content": "AURORA TOURS FROM TROMSØ, SEPTEMBER TO MARCH",
+              "fontFamily": "$font-body",
+              "fontSize": 12,
+              "fontWeight": "600",
+              "fill": "$color-muted",
+              "letterSpacing": 1.9
+            },
+            {
+              "type": "text",
+              "id": "landing-light-title",
+              "name": "landing-light-title",
+              "content": "We only drive out when the sky says yes.",
+              "fontFamily": "$font-display",
+              "fontSize": 80,
+              "fontWeight": "600",
+              "fill": "$color-ink",
+              "lineHeight": 0.98,
+              "letterSpacing": -2,
+              "width": 920,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "frame",
+              "id": "landing-light-row",
+              "name": "Body and forecast",
+              "layout": "horizontal",
+              "gap": 48,
+              "width": "fill_container",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "landing-light-copy",
+                  "name": "Copy",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "landing-light-lede",
+                      "name": "landing-light-lede",
+                      "content": "Polarlys reads the Kp index, the solar wind, and the cloud map every 15 minutes. At 17:00 we decide where tonight’s buses go, or we cancel and refund you in full.",
+                      "fontFamily": "$font-body",
+                      "fontSize": 24,
+                      "fontWeight": "400",
+                      "fill": "$color-muted",
+                      "lineHeight": 1.3,
+                      "width": "fill_container",
+                      "textGrowth": "fixed-width"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-light-ctas",
+                      "name": "Actions",
+                      "layout": "horizontal",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "ref",
+                          "id": "landing-light-cta-1",
+                          "ref": "btn-primary",
+                          "descendants": {
+                            "btn-primary-label": {
+                              "content": "Book tonight’s tour"
+                            }
+                          }
+                        },
+                        {
+                          "type": "ref",
+                          "id": "landing-light-cta-2",
+                          "ref": "btn-secondary",
+                          "descendants": {
+                            "btn-secondary-label": {
+                              "content": "Read the forecast"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "landing-light-forecast",
+                  "name": "Forecast",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "width": 400,
+                  "padding": [
+                    0,
+                    0,
+                    0,
+                    48
+                  ],
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "left": 1
+                    },
+                    "fill": "$color-line"
+                  },
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "landing-light-forecast-head",
+                      "name": "Head",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "landing-light-forecast-date",
+                          "name": "landing-light-forecast-date",
+                          "content": "TONIGHT, 5 NOVEMBER",
+                          "fontFamily": "$font-body",
+                          "fontSize": 12,
+                          "fontWeight": "600",
+                          "fill": "$color-muted",
+                          "letterSpacing": 1.9
+                        },
+                        {
+                          "type": "ref",
+                          "id": "landing-light-forecast-badge",
+                          "ref": "badge-accent",
+                          "descendants": {
+                            "badge-accent-label": {
+                              "content": "Good chance"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-light-forecast-kp",
+                      "name": "Kp",
+                      "layout": "horizontal",
+                      "alignItems": "end",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "landing-light-kp",
+                          "name": "landing-light-kp",
+                          "content": "4.7",
+                          "fontFamily": "$font-display",
+                          "fontSize": 54,
+                          "fontWeight": "600",
+                          "fill": "$color-ink",
+                          "lineHeight": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "landing-light-kp-label",
+                          "name": "landing-light-kp-label",
+                          "content": "peak Kp at 23:00",
+                          "fontFamily": "$font-body",
+                          "fontSize": 14,
+                          "fontWeight": "400",
+                          "fill": "$color-muted"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "landing-light-forecast-stats",
+                      "name": "Stats",
+                      "layout": "horizontal",
+                      "gap": 40,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "landing-light-stat-0",
+                          "name": "Chance",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-0-k",
+                              "name": "landing-light-stat-0-k",
+                              "content": "Chance",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-0-v",
+                              "name": "landing-light-stat-0-v",
+                              "content": "72%",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "landing-light-stat-1",
+                          "name": "Cloud",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-1-k",
+                              "name": "landing-light-stat-1-k",
+                              "content": "Cloud",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-1-v",
+                              "name": "landing-light-stat-1-v",
+                              "content": "18%",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "landing-light-stat-2",
+                          "name": "Best window",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-2-k",
+                              "name": "landing-light-stat-2-k",
+                              "content": "Best window",
+                              "fontFamily": "$font-body",
+                              "fontSize": 12,
+                              "fontWeight": "400",
+                              "fill": "$color-muted"
+                            },
+                            {
+                              "type": "text",
+                              "id": "landing-light-stat-2-v",
+                              "name": "landing-light-stat-2-v",
+                              "content": "22:10",
+                              "fontFamily": "$font-body",
+                              "fontSize": 16,
+                              "fontWeight": "700",
+                              "fill": "$color-ink"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "id": "landing-light-toast",
+          "ref": "toast",
+          "x": 64,
+          "y": 812
+        }
+      ]
+    }
+  ]
+}
