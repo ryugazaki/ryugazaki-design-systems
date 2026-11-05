@@ -6,6 +6,7 @@
 |---|---|---|
 | `glass-aurora.pen` | No. 11 Glass Aurora | dark |
 | `bauhaus-geometric.pen` | No. 12 Bauhaus Geometric | light |
+| `clay-playful.pen` | No. 13 Clay Playful | light |
 
 Every file has the same layout:
 

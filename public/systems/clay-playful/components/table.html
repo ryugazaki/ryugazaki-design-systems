@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clay Playful / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6EFE6;
+  --color-surface: #FFF9F2;
+  --color-ink: #2B2233;
+  --color-muted: #665B6C;
+  --color-line: #E8DCCD;
+  --color-edge: #8A7D86;
+  --color-accent: #FF8A5B;
+  --color-accent-text: #B4432A;
+  --color-mint: #9EE0C4;
+  --color-sky: #A9C9FF;
+  --color-butter: #FFD96B;
+  --color-on-clay: #2B2233;
+  --color-clay-tint: #FFFFFFA6;
+  --color-danger: #B8352A;
+  --color-clay-hi: #FFFFFF8C;
+  --color-clay-lo: #2B223326;
+
+  --font-display: "Fredoka", ui-rounded, sans-serif;
+  --font-body: "Nunito", ui-rounded, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.2;
+  --text-xl: 2.125rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 4.25rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-clay: inset 0 -6px 0 0 var(--color-clay-lo), inset 0 4px 6px 0 var(--color-clay-hi), 0 10px 18px -10px var(--color-clay-lo);
+  --shadow-clay-sm: inset 0 -3px 0 0 var(--color-clay-lo), inset 0 2px 4px 0 var(--color-clay-hi), 0 6px 10px -8px var(--color-clay-lo);
+  --shadow-clay-pressed: inset 0 -1px 0 0 var(--color-clay-lo), inset 0 4px 8px 0 var(--color-clay-lo);
+  --shadow-well: inset 0 3px 6px 0 var(--color-clay-lo);
+
+  --ease-squish: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1F1A25;
+    --color-surface: #2B2433;
+    --color-ink: #F6EFE6;
+    --color-muted: #BBB0C2;
+    --color-line: #3B3344;
+    --color-edge: #8E8296;
+    --color-accent: #FF9A70;
+    --color-accent-text: #FFB08F;
+    --color-mint: #8FD6B8;
+    --color-sky: #9DBDF5;
+    --color-butter: #F5CF5E;
+    --color-on-clay: #2B2233;
+    --color-clay-tint: #FFFFFF8C;
+    --color-danger: #FF8F84;
+    --color-clay-hi: #FFFFFF40;
+    --color-clay-lo: #0000004D;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="w-title" class="max-w-3xl rounded-lg bg-surface">
+    <header class="flex flex-wrap items-end justify-between gap-3 border-b-2 border-line px-5 py-4">
+      <div class="flex flex-col gap-1">
+        <h2 id="w-title" class="font-display text-lg font-semibold text-ink">Mila's week</h2>
+        <p class="text-sm text-muted">3 to 7 November. 55 minutes of reading, 11 new words.</p>
+      </div>
+    </header>
+    <div class="overflow-x-auto">
+      <table class="w-full">
+        <caption class="sr-only">Lessons, minutes read, and new words for each school day</caption>
+        <thead>
+          <tr class="border-b-2 border-line">
+            <th scope="col" class="py-3 pr-4 pl-5 text-left text-xs font-extrabold text-muted">Day</th>
+            <th scope="col" class="py-3 pr-4 text-right text-xs font-extrabold text-muted">Lessons</th>
+            <th scope="col" class="py-3 pr-4 text-right text-xs font-extrabold text-muted">Minutes</th>
+            <th scope="col" class="hidden py-3 pr-5 text-left text-xs font-extrabold text-muted sm:table-cell">New words</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b-2 border-line last:border-b-0">
+            <th scope="row" class="py-3 pr-4 pl-5 text-left"><span class="flex items-center gap-2.5 font-display text-base font-semibold text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-full bg-mint ring-2 ring-on-clay/20"></span>Mon<span class="sr-only">, read</span></span></th>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">2</td>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">14</td>
+            <td class="hidden py-3 pr-5 text-sm text-ink sm:table-cell">fox, box, hop</td>
+          </tr>
+          <tr class="border-b-2 border-line last:border-b-0">
+            <th scope="row" class="py-3 pr-4 pl-5 text-left"><span class="flex items-center gap-2.5 font-display text-base font-semibold text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-full bg-mint ring-2 ring-on-clay/20"></span>Tue<span class="sr-only">, read</span></span></th>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">1</td>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">8</td>
+            <td class="hidden py-3 pr-5 text-sm text-ink sm:table-cell">top, mop</td>
+          </tr>
+          <tr class="border-b-2 border-line last:border-b-0">
+            <th scope="row" class="py-3 pr-4 pl-5 text-left"><span class="flex items-center gap-2.5 font-display text-base font-semibold text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-full border-2 border-edge"></span>Wed<span class="sr-only">, not read</span></span></th>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">0</td>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">0</td>
+            <td class="hidden py-3 pr-5 text-sm text-ink sm:table-cell"><span class="text-muted">No reading</span></td>
+          </tr>
+          <tr class="border-b-2 border-line last:border-b-0">
+            <th scope="row" class="py-3 pr-4 pl-5 text-left"><span class="flex items-center gap-2.5 font-display text-base font-semibold text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-full bg-mint ring-2 ring-on-clay/20"></span>Thu<span class="sr-only">, read</span></span></th>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">3</td>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">21</td>
+            <td class="hidden py-3 pr-5 text-sm text-ink sm:table-cell">ship, shop, fish, dish</td>
+          </tr>
+          <tr class="border-b-2 border-line last:border-b-0">
+            <th scope="row" class="py-3 pr-4 pl-5 text-left"><span class="flex items-center gap-2.5 font-display text-base font-semibold text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-full bg-mint ring-2 ring-on-clay/20"></span>Fri<span class="sr-only">, read</span></span></th>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">2</td>
+            <td class="py-3 pr-4 text-right text-base tabular-nums text-ink">12</td>
+            <td class="hidden py-3 pr-5 text-sm text-ink sm:table-cell">sun, run</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

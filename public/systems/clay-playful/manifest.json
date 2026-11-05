@@ -1,0 +1,257 @@
+{
+  "slug": "clay-playful",
+  "number": 13,
+  "name": "Clay Playful",
+  "tagline": "Soft enough to squish, clear enough for a six-year-old.",
+  "description": "A light-first system for children's products and the grown-ups around them. Things you can press or pick up are made of clay: thick rounded shapes in coral, mint, sky, and butter with an inner highlight and a pressed bottom edge that squashes when tapped. Everything else stays flat on cream. Rounded Fredoka headlines, Nunito for reading, big targets, and few words per screen.",
+  "tags": [
+    "light",
+    "playful",
+    "kids",
+    "education",
+    "consumer"
+  ],
+  "defaultMode": "light",
+  "useCases": [
+    "children's learning and reading apps",
+    "family and parenting products",
+    "casual games and onboarding",
+    "consumer apps that want warmth without noise"
+  ],
+  "fonts": [
+    {
+      "family": "Fredoka",
+      "role": "display headlines, numbers, and button labels",
+      "weights": [
+        500,
+        600,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    },
+    {
+      "family": "Nunito",
+      "role": "body, labels, and parent-facing text",
+      "weights": [
+        400,
+        600,
+        700,
+        800
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.414,
+    "steps": {
+      "xs": "13px",
+      "sm": "15px",
+      "base": "17px",
+      "lg": "24px",
+      "xl": "34px",
+      "2xl": "48px",
+      "display": "68px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#F6EFE6",
+      "dark": "#1F1A25",
+      "role": "page background, warm clay cream"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FFF9F2",
+      "dark": "#2B2433",
+      "role": "flat panels, fields, and cards"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#2B2233",
+      "dark": "#F6EFE6",
+      "role": "text"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#665B6C",
+      "dark": "#BBB0C2",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#E8DCCD",
+      "dark": "#3B3344",
+      "role": "dividers and progress tracks"
+    },
+    {
+      "token": "--color-edge",
+      "light": "#8A7D86",
+      "dark": "#8E8296",
+      "role": "field borders that need 3:1"
+    },
+    {
+      "token": "--color-accent",
+      "light": "#FF8A5B",
+      "dark": "#FF9A70",
+      "role": "coral: the primary action fill; one per screen"
+    },
+    {
+      "token": "--color-accent-text",
+      "light": "#B4432A",
+      "dark": "#FFB08F",
+      "role": "coral as text: links and the active tab label"
+    },
+    {
+      "token": "--color-mint",
+      "light": "#9EE0C4",
+      "dark": "#8FD6B8",
+      "role": "clay fill: correct answers, done, phonics category"
+    },
+    {
+      "token": "--color-sky",
+      "light": "#A9C9FF",
+      "dark": "#9DBDF5",
+      "role": "clay fill: reading category, info"
+    },
+    {
+      "token": "--color-butter",
+      "light": "#FFD96B",
+      "dark": "#F5CF5E",
+      "role": "clay fill: stars, streaks, word games category"
+    },
+    {
+      "token": "--color-on-clay",
+      "light": "#2B2233",
+      "dark": "#2B2233",
+      "role": "text and icons on every clay fill, in both modes"
+    },
+    {
+      "token": "--color-clay-tint",
+      "light": "#FFFFFFA6",
+      "dark": "#FFFFFF8C",
+      "role": "light wash inside clay fills (pills, picture wells) so on-clay ink stays readable in both modes"
+    },
+    {
+      "token": "--color-danger",
+      "light": "#B8352A",
+      "dark": "#FF8F84",
+      "role": "errors and wrong answers, always with words"
+    },
+    {
+      "token": "--color-clay-hi",
+      "light": "#FFFFFF8C",
+      "dark": "#FFFFFF40",
+      "role": "inner top highlight in the clay shadows"
+    },
+    {
+      "token": "--color-clay-lo",
+      "light": "#2B223326",
+      "dark": "#0000004D",
+      "role": "inner bottom edge and drop in the clay shadows"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Give the clay shadow only to things you can press, pick up, or that float above the page: buttons, answer tiles, cards that open, toggle knobs, the toast",
+      "Squash clay on press: drop to the pressed shadow and move 2px down",
+      "Put on-clay ink on every pastel and coral fill, in both modes",
+      "Make tap targets at least 56px tall on child-facing screens",
+      "Say what happened in words next to every color signal: right, try again, done"
+    ],
+    "dont": [
+      "Do not put the clay shadow on panels, text blocks, or the page frame",
+      "Do not place icons inside pastel circles as decoration",
+      "Do not use pastels as text colors",
+      "Do not use more than one coral button on a screen",
+      "Do not use punishing language for wrong answers"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Clay pills 56px tall. Primary is coral; secondary is surface clay; ghost is a coral text link. Pressing swaps to the pressed shadow and nudges 2px down with a squish ease."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Flat surface field with an inset well shadow, 20px radius, label above. Focus shows a 3px coral ring; error adds a danger border and a kind message."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Same well as the input with a rounded chevron; reading levels and ages."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Rounded 8px checkbox that fills mint with a check. Switch is a well track with a clay knob that slides and turns the track mint."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Flat pastel pills with on-clay text for categories and levels; a butter star count; a danger outline for an overdue lesson."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "A lesson card made of clay: category pill, title, a drawn word picture, minutes and stars, and a coral start button."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Flat cream bar with the wordmark, child avatar initial, star count, and a grown-ups link. On phones it becomes a bottom tab bar of four clay tabs."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Rounded 40px surface sheet with a grab handle, a short question for the child, and two big clay answers."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Grown-ups view of the week: day, lessons, minutes read, new words, with a mint dot for days done. Flat, no clay."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Child home tiles: a flat butter streak tile with the week as day dots, today's lesson as a sky clay link, words learned, a sticker shelf, and a flat reading-time bar chart."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "A drawn sleeping pebble, \"No stickers yet\", one line, one coral action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "Mint clay pill at the top center: \"Great reading!\" with the star earned; shown for 3 seconds and announced politely."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Today's lesson",
+      "file": "pages/app.html"
+    }
+  ]
+}

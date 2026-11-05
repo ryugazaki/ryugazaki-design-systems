@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clay Playful / Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6EFE6;
+  --color-surface: #FFF9F2;
+  --color-ink: #2B2233;
+  --color-muted: #665B6C;
+  --color-line: #E8DCCD;
+  --color-edge: #8A7D86;
+  --color-accent: #FF8A5B;
+  --color-accent-text: #B4432A;
+  --color-mint: #9EE0C4;
+  --color-sky: #A9C9FF;
+  --color-butter: #FFD96B;
+  --color-on-clay: #2B2233;
+  --color-clay-tint: #FFFFFFA6;
+  --color-danger: #B8352A;
+  --color-clay-hi: #FFFFFF8C;
+  --color-clay-lo: #2B223326;
+
+  --font-display: "Fredoka", ui-rounded, sans-serif;
+  --font-body: "Nunito", ui-rounded, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.2;
+  --text-xl: 2.125rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 4.25rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-clay: inset 0 -6px 0 0 var(--color-clay-lo), inset 0 4px 6px 0 var(--color-clay-hi), 0 10px 18px -10px var(--color-clay-lo);
+  --shadow-clay-sm: inset 0 -3px 0 0 var(--color-clay-lo), inset 0 2px 4px 0 var(--color-clay-hi), 0 6px 10px -8px var(--color-clay-lo);
+  --shadow-clay-pressed: inset 0 -1px 0 0 var(--color-clay-lo), inset 0 4px 8px 0 var(--color-clay-lo);
+  --shadow-well: inset 0 3px 6px 0 var(--color-clay-lo);
+
+  --ease-squish: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1F1A25;
+    --color-surface: #2B2433;
+    --color-ink: #F6EFE6;
+    --color-muted: #BBB0C2;
+    --color-line: #3B3344;
+    --color-edge: #8E8296;
+    --color-accent: #FF9A70;
+    --color-accent-text: #FFB08F;
+    --color-mint: #8FD6B8;
+    --color-sky: #9DBDF5;
+    --color-butter: #F5CF5E;
+    --color-on-clay: #2B2233;
+    --color-clay-tint: #FFFFFF8C;
+    --color-danger: #FF8F84;
+    --color-clay-hi: #FFFFFF40;
+    --color-clay-lo: #0000004D;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-10">
+    <section class="flex flex-col gap-4">
+      <p class="text-sm font-bold text-muted">Variants</p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-4">
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-accent text-on-clay">Start reading</button>
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-surface text-ink">Hear it again</button>
+        <a href="#" class="inline-flex min-h-11 items-center gap-2 font-display text-base font-semibold text-accent-text underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-accent-text">For grown-ups <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <p class="text-sm font-bold text-muted">Answer tiles</p>
+      <div class="grid max-w-md grid-cols-3 gap-3">
+        <button type="button" class="min-h-20 rounded-lg bg-sky font-display text-xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">ship</button>
+        <button type="button" class="min-h-20 rounded-lg bg-butter font-display text-xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">shop</button>
+        <button type="button" class="min-h-20 rounded-lg bg-mint font-display text-xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">fish</button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <p class="text-sm font-bold text-muted">Sizes and icon</p>
+      <div class="flex flex-wrap items-center gap-x-5 gap-y-4">
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-surface text-ink min-h-12 px-5 text-base">Small</button>
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-surface text-ink">Medium</button>
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-surface text-ink pl-5">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5Z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></svg>
+          Read it to me
+        </button>
+        <button type="button" aria-label="Next page" class="grid size-14 place-items-center rounded-full bg-surface text-ink shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <p class="text-sm font-bold text-muted">States</p>
+      <div class="flex flex-wrap items-start gap-x-6 gap-y-5">
+        <div class="flex flex-col gap-2">
+          <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-accent text-on-clay outline-3 outline-offset-3 outline-accent-text">Start reading</button>
+          <p class="text-xs text-muted">Focus visible, shown statically.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-accent text-on-clay translate-y-0.5 shadow-clay-pressed">Start reading</button>
+          <p class="text-xs text-muted">Pressed, squashed into the page.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <button type="button" disabled class="inline-flex min-h-14 cursor-not-allowed items-center justify-center rounded-full border-2 border-dashed border-edge px-7 font-display text-lg font-semibold text-muted">Next lesson</button>
+          <p class="max-w-56 text-xs text-muted">Finish "The fox in the box" to open the next lesson.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

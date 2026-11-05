@@ -2,8 +2,9 @@
 // Run: npm run build:pen
 import { build as glassAurora } from './glass-aurora.mjs';
 import { build as bauhausGeometric } from './bauhaus-geometric.mjs';
+import { build as clayPlayful } from './clay-playful.mjs';
 
-for (const build of [glassAurora, bauhausGeometric]) {
+for (const build of [glassAurora, bauhausGeometric, clayPlayful]) {
   try {
     console.log(`Wrote ${await build()}.`);
   } catch (err) {

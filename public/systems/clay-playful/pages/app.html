@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clay Playful / Today's lesson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F6EFE6;
+  --color-surface: #FFF9F2;
+  --color-ink: #2B2233;
+  --color-muted: #665B6C;
+  --color-line: #E8DCCD;
+  --color-edge: #8A7D86;
+  --color-accent: #FF8A5B;
+  --color-accent-text: #B4432A;
+  --color-mint: #9EE0C4;
+  --color-sky: #A9C9FF;
+  --color-butter: #FFD96B;
+  --color-on-clay: #2B2233;
+  --color-clay-tint: #FFFFFFA6;
+  --color-danger: #B8352A;
+  --color-clay-hi: #FFFFFF8C;
+  --color-clay-lo: #2B223326;
+
+  --font-display: "Fredoka", ui-rounded, sans-serif;
+  --font-body: "Nunito", ui-rounded, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.5rem;
+  --text-lg--line-height: 1.2;
+  --text-xl: 2.125rem;
+  --text-xl--line-height: 1.1;
+  --text-2xl: 3rem;
+  --text-2xl--line-height: 1.02;
+  --text-display: 4.25rem;
+  --text-display--line-height: 0.98;
+
+  --radius-*: initial;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
+  --radius-xl: 2.5rem;
+  --radius-full: 9999px;
+
+  --shadow-*: initial;
+  --shadow-clay: inset 0 -6px 0 0 var(--color-clay-lo), inset 0 4px 6px 0 var(--color-clay-hi), 0 10px 18px -10px var(--color-clay-lo);
+  --shadow-clay-sm: inset 0 -3px 0 0 var(--color-clay-lo), inset 0 2px 4px 0 var(--color-clay-hi), 0 6px 10px -8px var(--color-clay-lo);
+  --shadow-clay-pressed: inset 0 -1px 0 0 var(--color-clay-lo), inset 0 4px 8px 0 var(--color-clay-lo);
+  --shadow-well: inset 0 3px 6px 0 var(--color-clay-lo);
+
+  --ease-squish: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #1F1A25;
+    --color-surface: #2B2433;
+    --color-ink: #F6EFE6;
+    --color-muted: #BBB0C2;
+    --color-line: #3B3344;
+    --color-edge: #8E8296;
+    --color-accent: #FF9A70;
+    --color-accent-text: #FFB08F;
+    --color-mint: #8FD6B8;
+    --color-sky: #9DBDF5;
+    --color-butter: #F5CF5E;
+    --color-on-clay: #2B2233;
+    --color-clay-tint: #FFFFFF8C;
+    --color-danger: #FF8F84;
+    --color-clay-hi: #FFFFFF40;
+    --color-clay-lo: #0000004D;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="mx-auto flex w-full max-w-5xl items-center gap-3 px-4 pt-4 md:px-6">
+    <a href="#" aria-label="Back to Today" class="grid size-14 shrink-0 place-items-center rounded-full bg-surface text-ink shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">
+      <svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </a>
+    <div class="flex flex-1 flex-col gap-1.5">
+      <div role="progressbar" aria-label="Story progress" aria-valuemin="1" aria-valuemax="8" aria-valuenow="3" aria-valuetext="Page 3 of 8" class="h-4 overflow-hidden rounded-full bg-line shadow-well"><div class="h-full w-[37.5%] rounded-full bg-mint"></div></div>
+      <p class="text-sm font-bold text-muted">Page 3 of 8</p>
+    </div>
+    <span class="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full bg-butter px-3 text-sm font-bold text-on-clay"><svg aria-hidden="true" viewBox="0 0 20 20" class="size-4"><path d="M10 1.8l2.5 5.1 5.6.8-4 3.9.9 5.6-5-2.6-5 2.6.9-5.6-4-3.9 5.6-.8Z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg><span>12<span class="sr-only"> stars</span></span></span>
+  </header>
+
+  <main class="mx-auto grid w-full max-w-5xl gap-6 px-4 py-6 md:px-6 lg:grid-cols-12 lg:gap-8 lg:py-10">
+    <section aria-labelledby="story-title" class="flex flex-col gap-6 rounded-xl bg-surface p-5 sm:p-8 lg:col-span-8">
+      <h1 id="story-title" class="sr-only">The fox in the box, page 3</h1>
+      <div class="rounded-lg bg-sky px-8 pt-6 pb-2 sm:px-16">
+        <svg aria-hidden="true" viewBox="0 0 200 140" class="h-auto w-full"><rect x="58" y="62" width="84" height="62" rx="10" fill="var(--color-butter)" stroke="var(--color-on-clay)" stroke-width="4"/><path d="M58 62l20-18h44l20 18" fill="none" stroke="var(--color-on-clay)" stroke-width="4" stroke-linejoin="round"/><path d="M78 62c0-26 10-40 22-40s22 14 22 40" fill="var(--color-accent)" stroke="var(--color-on-clay)" stroke-width="4" stroke-linejoin="round"/><path d="M80 34 76 14l14 12M120 34l4-20-14 12" fill="var(--color-accent)" stroke="var(--color-on-clay)" stroke-width="4" stroke-linejoin="round"/><circle cx="92" cy="44" r="3.5" fill="var(--color-on-clay)"/><circle cx="108" cy="44" r="3.5" fill="var(--color-on-clay)"/><path d="M96 54q4 4 8 0" fill="none" stroke="var(--color-on-clay)" stroke-width="3.5" stroke-linecap="round"/></svg>
+      </div>
+      <p class="font-display text-xl leading-snug font-semibold sm:text-2xl"><button type="button" class="rounded-md px-1 text-ink hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">The</button> <button type="button" class="rounded-md px-1 text-accent-text underline decoration-3 underline-offset-6 hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">fox</button> <button type="button" class="rounded-md px-1 text-accent-text underline decoration-3 underline-offset-6 hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">hops</button> <button type="button" class="rounded-md px-1 text-ink hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">on</button> <button type="button" class="rounded-md px-1 text-accent-text underline decoration-3 underline-offset-6 hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">top</button> <button type="button" class="rounded-md px-1 text-ink hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">of</button> <button type="button" class="rounded-md px-1 text-ink hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">the</button> <button type="button" class="rounded-md px-1 text-accent-text underline decoration-3 underline-offset-6 hover:bg-butter hover:text-on-clay focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">box.</button></p>
+      <p class="text-sm text-muted">Tap any word to hear it. The underlined words have the short o sound.</p>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-surface text-ink pl-5"><svg aria-hidden="true" viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5v5h3.5L13 19V5L7.5 9.5Z"/><path d="M16.5 9a4 4 0 0 1 0 6M19 6.5a7.5 7.5 0 0 1 0 11"/></svg>Read it to me</button>
+        <button type="button" class="inline-flex min-h-14 items-center justify-center gap-2 rounded-full px-7 font-display text-lg font-semibold shadow-clay transition-[transform,box-shadow,filter] duration-200 ease-squish hover:brightness-105 active:translate-y-0.5 active:shadow-clay-pressed focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text motion-reduce:transition-none bg-accent text-on-clay">Next page <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 8h10M9 4.5 12.5 8 9 11.5"/></svg></button>
+      </div>
+    </section>
+
+    <aside class="flex flex-col gap-4 lg:col-span-4">
+      <section aria-labelledby="sound-title" class="flex flex-col gap-4 rounded-xl bg-surface p-5">
+        <h2 id="sound-title" class="font-display text-lg font-semibold text-ink">Squish the sounds</h2>
+        <div class="flex items-center justify-center gap-2">
+          <button type="button" class="grid size-16 place-items-center rounded-lg bg-butter font-display text-2xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">f</button>
+          <button type="button" class="grid size-16 place-items-center rounded-lg bg-mint font-display text-2xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">o</button>
+          <button type="button" class="grid size-16 place-items-center rounded-lg bg-sky font-display text-2xl font-semibold text-on-clay shadow-clay transition-[transform,box-shadow] duration-200 ease-squish active:translate-y-0.5 active:shadow-clay-pressed motion-reduce:transition-none focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-accent-text">x</button>
+        </div>
+        <p class="text-center text-sm text-muted">Push them together to hear "fox".</p>
+      </section>
+      <section aria-labelledby="streak-title" class="flex items-center gap-4 rounded-xl bg-butter p-5 text-on-clay">
+        <p class="font-display text-2xl font-semibold tabular-nums">6</p>
+        <div class="flex flex-col">
+          <h2 id="streak-title" class="font-display text-lg font-semibold">day streak</h2>
+          <p class="text-sm">Finish this story to make it 7.</p>
+        </div>
+      </section>
+    </aside>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

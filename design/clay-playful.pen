@@ -1,0 +1,2571 @@
+{
+  "version": "2.9",
+  "themes": {
+    "mode": [
+      "dark",
+      "light"
+    ]
+  },
+  "variables": {
+    "color-bg": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#1F1A25",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#F6EFE6",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2B2433",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFF9F2",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-ink": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F6EFE6",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#2B2233",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-muted": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#BBB0C2",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#665B6C",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-line": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#3B3344",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#E8DCCD",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-edge": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8E8296",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#8A7D86",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-accent": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FF9A70",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FF8A5B",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-accent-text": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFB08F",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#B4432A",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-mint": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#8FD6B8",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#9EE0C4",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-sky": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#9DBDF5",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#A9C9FF",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-butter": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#F5CF5E",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFD96B",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-on-clay": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#2B2233",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#2B2233",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-clay-tint": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF8C",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFFA6",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-danger": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FF8F84",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#B8352A",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-clay-hi": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF40",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#FFFFFF8C",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "color-clay-lo": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#0000004D",
+          "theme": {
+            "mode": "dark"
+          }
+        },
+        {
+          "value": "#2B223326",
+          "theme": {
+            "mode": "light"
+          }
+        }
+      ]
+    },
+    "font-display": {
+      "type": "string",
+      "value": "Fredoka"
+    },
+    "font-body": {
+      "type": "string",
+      "value": "Nunito"
+    },
+    "radius-sm": {
+      "type": "number",
+      "value": 12
+    },
+    "radius-md": {
+      "type": "number",
+      "value": 20
+    },
+    "radius-lg": {
+      "type": "number",
+      "value": 28
+    },
+    "radius-xl": {
+      "type": "number",
+      "value": 40
+    },
+    "radius-full": {
+      "type": "number",
+      "value": 999
+    },
+    "text-xs": {
+      "type": "number",
+      "value": 13
+    },
+    "text-sm": {
+      "type": "number",
+      "value": 15
+    },
+    "text-base": {
+      "type": "number",
+      "value": 17
+    },
+    "text-lg": {
+      "type": "number",
+      "value": 24
+    },
+    "text-xl": {
+      "type": "number",
+      "value": 34
+    },
+    "text-2xl": {
+      "type": "number",
+      "value": 48
+    },
+    "text-display": {
+      "type": "number",
+      "value": 68
+    }
+  },
+  "children": [
+    {
+      "type": "frame",
+      "id": "board-tokens",
+      "name": "Clay Playful / Tokens",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 64,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "light"
+      },
+      "children": [
+        {
+          "type": "text",
+          "id": "board-tokens-title",
+          "name": "board-tokens-title",
+          "content": "Clay Playful / Tokens",
+          "fontFamily": "$font-display",
+          "fontSize": 36,
+          "fontWeight": "600",
+          "fill": "$color-ink",
+          "letterSpacing": -0.5
+        },
+        {
+          "type": "text",
+          "id": "tok-colors",
+          "name": "tok-colors",
+          "content": "Color, dark / light",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-0",
+          "name": "Row 1",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-bg",
+              "name": "--color-bg",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-bg-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-bg",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-bg-name",
+                  "name": "sw-color-bg-name",
+                  "content": "--color-bg",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-bg-hex",
+                  "name": "sw-color-bg-hex",
+                  "content": "#1F1A25 / #F6EFE6",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-surface",
+              "name": "--color-surface",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-surface-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-surface-name",
+                  "name": "sw-color-surface-name",
+                  "content": "--color-surface",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-surface-hex",
+                  "name": "sw-color-surface-hex",
+                  "content": "#2B2433 / #FFF9F2",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-ink",
+              "name": "--color-ink",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-ink-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-ink",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-ink-name",
+                  "name": "sw-color-ink-name",
+                  "content": "--color-ink",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-ink-hex",
+                  "name": "sw-color-ink-hex",
+                  "content": "#F6EFE6 / #2B2233",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-muted",
+              "name": "--color-muted",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-muted-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-muted",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-muted-name",
+                  "name": "sw-color-muted-name",
+                  "content": "--color-muted",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-muted-hex",
+                  "name": "sw-color-muted-hex",
+                  "content": "#BBB0C2 / #665B6C",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-line",
+              "name": "--color-line",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-line-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-line",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-line-name",
+                  "name": "sw-color-line-name",
+                  "content": "--color-line",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-line-hex",
+                  "name": "sw-color-line-hex",
+                  "content": "#3B3344 / #E8DCCD",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-edge",
+              "name": "--color-edge",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-edge-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-edge",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-edge-name",
+                  "name": "sw-color-edge-name",
+                  "content": "--color-edge",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-edge-hex",
+                  "name": "sw-color-edge-hex",
+                  "content": "#8E8296 / #8A7D86",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-1",
+          "name": "Row 2",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-accent",
+              "name": "--color-accent",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-accent-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-accent",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-name",
+                  "name": "sw-color-accent-name",
+                  "content": "--color-accent",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-hex",
+                  "name": "sw-color-accent-hex",
+                  "content": "#FF9A70 / #FF8A5B",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-accent-text",
+              "name": "--color-accent-text",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-accent-text-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-accent-text",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-text-name",
+                  "name": "sw-color-accent-text-name",
+                  "content": "--color-accent-text",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-accent-text-hex",
+                  "name": "sw-color-accent-text-hex",
+                  "content": "#FFB08F / #B4432A",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-mint",
+              "name": "--color-mint",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-mint-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-mint",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-mint-name",
+                  "name": "sw-color-mint-name",
+                  "content": "--color-mint",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-mint-hex",
+                  "name": "sw-color-mint-hex",
+                  "content": "#8FD6B8 / #9EE0C4",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-sky",
+              "name": "--color-sky",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-sky-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-sky",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-sky-name",
+                  "name": "sw-color-sky-name",
+                  "content": "--color-sky",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-sky-hex",
+                  "name": "sw-color-sky-hex",
+                  "content": "#9DBDF5 / #A9C9FF",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-butter",
+              "name": "--color-butter",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-butter-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-butter",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-butter-name",
+                  "name": "sw-color-butter-name",
+                  "content": "--color-butter",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-butter-hex",
+                  "name": "sw-color-butter-hex",
+                  "content": "#F5CF5E / #FFD96B",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-on-clay",
+              "name": "--color-on-clay",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-on-clay-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-on-clay",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-on-clay-name",
+                  "name": "sw-color-on-clay-name",
+                  "content": "--color-on-clay",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-on-clay-hex",
+                  "name": "sw-color-on-clay-hex",
+                  "content": "#2B2233 / #2B2233",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "tok-row-2",
+          "name": "Row 3",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "sw-color-clay-tint",
+              "name": "--color-clay-tint",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-clay-tint-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-clay-tint",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-tint-name",
+                  "name": "sw-color-clay-tint-name",
+                  "content": "--color-clay-tint",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-tint-hex",
+                  "name": "sw-color-clay-tint-hex",
+                  "content": "#FFFFFF8C / #FFFFFFA6",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-danger",
+              "name": "--color-danger",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-danger-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-danger",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-danger-name",
+                  "name": "sw-color-danger-name",
+                  "content": "--color-danger",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-danger-hex",
+                  "name": "sw-color-danger-hex",
+                  "content": "#FF8F84 / #B8352A",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-clay-hi",
+              "name": "--color-clay-hi",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-clay-hi-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-clay-hi",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-hi-name",
+                  "name": "sw-color-clay-hi-name",
+                  "content": "--color-clay-hi",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-hi-hex",
+                  "name": "sw-color-clay-hi-hex",
+                  "content": "#FFFFFF40 / #FFFFFF8C",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "sw-color-clay-lo",
+              "name": "--color-clay-lo",
+              "layout": "vertical",
+              "gap": 8,
+              "width": 160,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "sw-color-clay-lo-chip",
+                  "name": "Chip",
+                  "width": 160,
+                  "height": 72,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-clay-lo",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-line"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-lo-name",
+                  "name": "sw-color-clay-lo-name",
+                  "content": "--color-clay-lo",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "fill": "$color-ink"
+                },
+                {
+                  "type": "text",
+                  "id": "sw-color-clay-lo-hex",
+                  "name": "sw-color-clay-lo-hex",
+                  "content": "#0000004D / #2B223326",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "tok-type",
+          "name": "tok-type",
+          "content": "Type scale, ratio 1.414",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "tok-type-list",
+          "name": "Type scale",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tok-type-display",
+              "name": "display",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-display-label",
+                  "name": "tok-type-display-label",
+                  "content": "display 68px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-display-sample",
+                  "name": "tok-type-display-sample",
+                  "content": "The fox in the box",
+                  "fontFamily": "$font-display",
+                  "fontSize": 68,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-2xl",
+              "name": "2xl",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-2xl-label",
+                  "name": "tok-type-2xl-label",
+                  "content": "2xl 48px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-2xl-sample",
+                  "name": "tok-type-2xl-sample",
+                  "content": "The fox in the box",
+                  "fontFamily": "$font-display",
+                  "fontSize": 48,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-xl",
+              "name": "xl",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-xl-label",
+                  "name": "tok-type-xl-label",
+                  "content": "xl 34px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-xl-sample",
+                  "name": "tok-type-xl-sample",
+                  "content": "The fox in the box",
+                  "fontFamily": "$font-display",
+                  "fontSize": 34,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-lg",
+              "name": "lg",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-lg-label",
+                  "name": "tok-type-lg-label",
+                  "content": "lg 24px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-lg-sample",
+                  "name": "tok-type-lg-sample",
+                  "content": "The fox in the box",
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-base",
+              "name": "base",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-base-label",
+                  "name": "tok-type-base-label",
+                  "content": "base 17px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-base-sample",
+                  "name": "tok-type-base-sample",
+                  "content": "Tap any word to hear it.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-sm",
+              "name": "sm",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-sm-label",
+                  "name": "tok-type-sm-label",
+                  "content": "sm 15px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-sm-sample",
+                  "name": "tok-type-sm-sample",
+                  "content": "Tap any word to hear it.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-type-xs",
+              "name": "xs",
+              "layout": "horizontal",
+              "alignItems": "end",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tok-type-xs-label",
+                  "name": "tok-type-xs-label",
+                  "content": "xs 13px",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted",
+                  "width": 96,
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "text",
+                  "id": "tok-type-xs-sample",
+                  "name": "tok-type-xs-sample",
+                  "content": "Tap any word to hear it.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "fill": "$color-ink"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "tok-radius",
+          "name": "tok-radius",
+          "content": "Radius",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "tok-radius-row",
+          "name": "Radius",
+          "layout": "horizontal",
+          "gap": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "tok-radius-sm",
+              "name": "sm",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-sm-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-sm",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-sm-label",
+                  "name": "tok-radius-sm-label",
+                  "content": "radius-sm",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-md",
+              "name": "md",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-md-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-md",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-md-label",
+                  "name": "tok-radius-md-label",
+                  "content": "radius-md",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-lg",
+              "name": "lg",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-lg-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-lg",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-lg-label",
+                  "name": "tok-radius-lg-label",
+                  "content": "radius-lg",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-xl",
+              "name": "xl",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-xl-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 64,
+                  "cornerRadius": "$radius-xl",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-xl-label",
+                  "name": "tok-radius-xl-label",
+                  "content": "radius-xl",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tok-radius-full",
+              "name": "full",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "tok-radius-full-box",
+                  "name": "Box",
+                  "width": 96,
+                  "height": 96,
+                  "cornerRadius": "$radius-full",
+                  "fill": "$color-surface",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "$color-edge"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "tok-radius-full-label",
+                  "name": "tok-radius-full-label",
+                  "content": "radius-full",
+                  "fontFamily": "$font-body",
+                  "fontSize": 12,
+                  "fontWeight": "400",
+                  "fill": "$color-muted"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "board-components",
+      "name": "Clay Playful / Components",
+      "x": 1400,
+      "y": 0,
+      "width": 1280,
+      "layout": "vertical",
+      "gap": 40,
+      "padding": 64,
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "light"
+      },
+      "children": [
+        {
+          "type": "text",
+          "id": "board-components-title",
+          "name": "board-components-title",
+          "content": "Clay Playful / Components",
+          "fontFamily": "$font-display",
+          "fontSize": 36,
+          "fontWeight": "600",
+          "fill": "$color-ink",
+          "letterSpacing": -0.5
+        },
+        {
+          "type": "text",
+          "id": "cmp-buttons",
+          "name": "cmp-buttons",
+          "content": "Buttons and answer tile",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "cmp-row-buttons",
+          "name": "Buttons",
+          "layout": "horizontal",
+          "gap": 20,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "btn-primary",
+              "name": "Button / Primary",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "height": 56,
+              "padding": [
+                0,
+                28
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-accent",
+              "effect": [
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": -6
+                  },
+                  "blur": 0,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#FFFFFF8C",
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "blur": 6,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "blur": 18,
+                  "spread": -10
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "btn-primary-label",
+                  "name": "btn-primary-label",
+                  "content": "Start reading",
+                  "fontFamily": "$font-display",
+                  "fontSize": 18,
+                  "fontWeight": "600",
+                  "fill": "$color-on-clay"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "btn-secondary",
+              "name": "Button / Secondary",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "height": 56,
+              "padding": [
+                0,
+                28
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-surface",
+              "effect": [
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": -6
+                  },
+                  "blur": 0,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#FFFFFF8C",
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "blur": 6,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "blur": 18,
+                  "spread": -10
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "btn-secondary-label",
+                  "name": "btn-secondary-label",
+                  "content": "Hear it again",
+                  "fontFamily": "$font-display",
+                  "fontSize": 18,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "answer-tile",
+              "name": "Answer tile",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "justifyContent": "center",
+              "width": 120,
+              "height": 80,
+              "cornerRadius": "$radius-lg",
+              "fill": "$color-sky",
+              "effect": [
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": -6
+                  },
+                  "blur": 0,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#FFFFFF8C",
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "blur": 6,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "blur": 18,
+                  "spread": -10
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "answer-tile-label",
+                  "name": "answer-tile-label",
+                  "content": "ship",
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                  "fill": "$color-on-clay"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-badges",
+          "name": "cmp-badges",
+          "content": "Tags and star count",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "cmp-row-badges",
+          "name": "Tags",
+          "layout": "horizontal",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "tag-phonics",
+              "name": "Tag / Phonics",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "height": 32,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-mint",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tag-phonics-label",
+                  "name": "tag-phonics-label",
+                  "content": "Phonics",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                  "fill": "$color-on-clay"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tag-story",
+              "name": "Tag / Story time",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "height": 32,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-sky",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tag-story-label",
+                  "name": "tag-story-label",
+                  "content": "Story time",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                  "fill": "$color-on-clay"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "star-count",
+              "name": "Star count",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 6,
+              "height": 32,
+              "padding": [
+                0,
+                12
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-butter",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "star-count-icon",
+                  "name": "Star",
+                  "width": 16,
+                  "height": 16,
+                  "geometry": "M8 0 L10 5.5 L16 6 L11.5 9.8 L13 16 L8 12.6 L3 16 L4.5 9.8 L0 6 L6 5.5 Z",
+                  "fill": "$color-on-clay"
+                },
+                {
+                  "type": "text",
+                  "id": "star-count-label",
+                  "name": "star-count-label",
+                  "content": "12 stars",
+                  "fontFamily": "$font-body",
+                  "fontSize": 15,
+                  "fontWeight": "700",
+                  "fill": "$color-on-clay"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-cards",
+          "name": "cmp-cards",
+          "content": "Lesson card and toast",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "cmp-row-cards",
+          "name": "Card and toast",
+          "layout": "horizontal",
+          "gap": 40,
+          "alignItems": "start",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lesson-card",
+              "name": "Card / Lesson",
+              "reusable": true,
+              "layout": "vertical",
+              "gap": 16,
+              "width": 360,
+              "padding": 20,
+              "cornerRadius": "$radius-xl",
+              "fill": "$color-sky",
+              "effect": [
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": -6
+                  },
+                  "blur": 0,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#FFFFFF8C",
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "blur": 6,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "blur": 18,
+                  "spread": -10
+                }
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lesson-card-head",
+                  "name": "Head",
+                  "layout": "horizontal",
+                  "alignItems": "center",
+                  "gap": 8,
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lesson-card-tag",
+                      "name": "Tag",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 32,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "cornerRadius": "$radius-full",
+                      "fill": "$color-clay-tint",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lesson-card-tag-label",
+                          "name": "lesson-card-tag-label",
+                          "content": "Story time",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700",
+                          "fill": "$color-on-clay"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lesson-card-spacer",
+                      "name": "Spacer",
+                      "width": "fill_container",
+                      "height": 1,
+                      "children": []
+                    },
+                    {
+                      "type": "frame",
+                      "id": "lesson-card-stars",
+                      "name": "Stars",
+                      "layout": "horizontal",
+                      "alignItems": "center",
+                      "height": 32,
+                      "padding": [
+                        0,
+                        12
+                      ],
+                      "cornerRadius": "$radius-full",
+                      "fill": "$color-butter",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lesson-card-stars-label",
+                          "name": "lesson-card-stars-label",
+                          "content": "3 stars",
+                          "fontFamily": "$font-body",
+                          "fontSize": 15,
+                          "fontWeight": "700",
+                          "fill": "$color-on-clay"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lesson-card-art",
+                  "name": "Picture",
+                  "layout": "horizontal",
+                  "justifyContent": "center",
+                  "width": "fill_container",
+                  "padding": [
+                    16,
+                    24,
+                    8,
+                    24
+                  ],
+                  "cornerRadius": "$radius-lg",
+                  "fill": "$color-clay-tint",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lesson-card-fox",
+                      "name": "Fox in a box",
+                      "layout": "none",
+                      "width": 200,
+                      "height": 140,
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "lesson-card-fox-ear-l",
+                          "name": "Ear",
+                          "x": 76,
+                          "y": 14,
+                          "width": 16,
+                          "height": 22,
+                          "geometry": "M0 22 L2 0 L16 14 Z",
+                          "fill": "$color-accent",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 4,
+                            "fill": "$color-on-clay"
+                          }
+                        },
+                        {
+                          "type": "path",
+                          "id": "lesson-card-fox-ear-r",
+                          "name": "Ear",
+                          "x": 108,
+                          "y": 14,
+                          "width": 16,
+                          "height": 22,
+                          "geometry": "M16 22 L14 0 L0 14 Z",
+                          "fill": "$color-accent",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 4,
+                            "fill": "$color-on-clay"
+                          }
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "lesson-card-fox-head",
+                          "name": "Head",
+                          "x": 76,
+                          "y": 22,
+                          "width": 48,
+                          "height": 60,
+                          "fill": "$color-accent",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 4,
+                            "fill": "$color-on-clay"
+                          }
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "lesson-card-fox-eye-l",
+                          "name": "Eye",
+                          "x": 88,
+                          "y": 41,
+                          "width": 7,
+                          "height": 7,
+                          "fill": "$color-on-clay"
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "lesson-card-fox-eye-r",
+                          "name": "Eye",
+                          "x": 105,
+                          "y": 41,
+                          "width": 7,
+                          "height": 7,
+                          "fill": "$color-on-clay"
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "lesson-card-fox-box",
+                          "name": "Box",
+                          "x": 58,
+                          "y": 62,
+                          "width": 84,
+                          "height": 62,
+                          "cornerRadius": 10,
+                          "fill": "$color-butter",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 4,
+                            "fill": "$color-on-clay"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "lesson-card-title",
+                  "name": "lesson-card-title",
+                  "content": "The fox in the box",
+                  "fontFamily": "$font-display",
+                  "fontSize": 34,
+                  "fontWeight": "600",
+                  "fill": "$color-on-clay"
+                },
+                {
+                  "type": "text",
+                  "id": "lesson-card-copy",
+                  "name": "lesson-card-copy",
+                  "content": "Short o words: fox, box, hop, top. 8 pages, about 6 minutes.",
+                  "fontFamily": "$font-body",
+                  "fontSize": 17,
+                  "fontWeight": "400",
+                  "fill": "$color-on-clay",
+                  "width": "fill_container",
+                  "textGrowth": "fixed-width"
+                },
+                {
+                  "type": "ref",
+                  "id": "lesson-card-cta",
+                  "ref": "btn-primary",
+                  "width": "fill_container"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "toast",
+              "name": "Toast",
+              "reusable": true,
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 12,
+              "height": 56,
+              "padding": [
+                8,
+                8,
+                8,
+                20
+              ],
+              "cornerRadius": "$radius-full",
+              "fill": "$color-mint",
+              "effect": [
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": -6
+                  },
+                  "blur": 0,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "inner",
+                  "color": "#FFFFFF8C",
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "blur": 6,
+                  "spread": 0
+                },
+                {
+                  "type": "shadow",
+                  "shadowType": "outer",
+                  "color": "#2B223326",
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "blur": 18,
+                  "spread": -10
+                }
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "toast-message",
+                  "name": "toast-message",
+                  "content": "Great reading!",
+                  "fontFamily": "$font-display",
+                  "fontSize": 18,
+                  "fontWeight": "600",
+                  "fill": "$color-on-clay"
+                },
+                {
+                  "type": "frame",
+                  "id": "toast-star",
+                  "name": "Star earned",
+                  "layout": "horizontal",
+                  "alignItems": "center",
+                  "height": 36,
+                  "padding": [
+                    0,
+                    12
+                  ],
+                  "cornerRadius": "$radius-full",
+                  "fill": "$color-butter",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "toast-star-label",
+                      "name": "toast-star-label",
+                      "content": "+1 star",
+                      "fontFamily": "$font-body",
+                      "fontSize": 15,
+                      "fontWeight": "700",
+                      "fill": "$color-on-clay"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "cmp-nav",
+          "name": "cmp-nav",
+          "content": "Navbar",
+          "fontFamily": "$font-body",
+          "fontSize": 15,
+          "fontWeight": "700",
+          "fill": "$color-muted"
+        },
+        {
+          "type": "frame",
+          "id": "navbar",
+          "name": "Navbar",
+          "reusable": true,
+          "layout": "horizontal",
+          "alignItems": "center",
+          "gap": 24,
+          "width": 1152,
+          "height": 64,
+          "padding": [
+            0,
+            16
+          ],
+          "cornerRadius": "$radius-lg",
+          "fill": "$color-surface",
+          "children": [
+            {
+              "type": "frame",
+              "id": "navbar-brand",
+              "name": "Wordmark",
+              "layout": "horizontal",
+              "alignItems": "center",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "navbar-pebble",
+                  "name": "Pebble",
+                  "width": 32,
+                  "height": 30,
+                  "fill": "$color-accent",
+                  "effect": [
+                    {
+                      "type": "shadow",
+                      "shadowType": "inner",
+                      "color": "#2B223326",
+                      "offset": {
+                        "x": 0,
+                        "y": -6
+                      },
+                      "blur": 0,
+                      "spread": 0
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "inner",
+                      "color": "#FFFFFF8C",
+                      "offset": {
+                        "x": 0,
+                        "y": 4
+                      },
+                      "blur": 6,
+                      "spread": 0
+                    },
+                    {
+                      "type": "shadow",
+                      "shadowType": "outer",
+                      "color": "#2B223326",
+                      "offset": {
+                        "x": 0,
+                        "y": 10
+                      },
+                      "blur": 18,
+                      "spread": -10
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "navbar-name",
+                  "name": "navbar-name",
+                  "content": "Pebble Reads",
+                  "fontFamily": "$font-display",
+                  "fontSize": 24,
+                  "fontWeight": "600",
+                  "fill": "$color-ink"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "navbar-link-0",
+              "name": "navbar-link-0",
+              "content": "How it works",
+              "fontFamily": "$font-display",
+              "fontSize": 17,
+              "fontWeight": "600",
+              "fill": "$color-muted"
+            },
+            {
+              "type": "text",
+              "id": "navbar-link-1",
+              "name": "navbar-link-1",
+              "content": "Reports",
+              "fontFamily": "$font-display",
+              "fontSize": 17,
+              "fontWeight": "600",
+              "fill": "$color-muted"
+            },
+            {
+              "type": "text",
+              "id": "navbar-link-2",
+              "name": "navbar-link-2",
+              "content": "Price",
+              "fontFamily": "$font-display",
+              "fontSize": 17,
+              "fontWeight": "600",
+              "fill": "$color-muted"
+            },
+            {
+              "type": "frame",
+              "id": "navbar-spacer",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1,
+              "children": []
+            },
+            {
+              "type": "ref",
+              "id": "navbar-cta",
+              "ref": "btn-secondary",
+              "height": 44,
+              "descendants": {
+                "btn-secondary-label": {
+                  "content": "Try it free"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "landing-light",
+      "name": "Landing / Hero, light",
+      "x": 2800,
+      "y": 0,
+      "width": 1280,
+      "height": 760,
+      "layout": "none",
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "light"
+      },
+      "children": [
+        {
+          "type": "ref",
+          "id": "landing-light-nav",
+          "ref": "navbar",
+          "x": 64,
+          "y": 20
+        },
+        {
+          "type": "frame",
+          "id": "landing-light-copy",
+          "name": "Copy",
+          "x": 64,
+          "y": 150,
+          "width": 660,
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "ref",
+              "id": "landing-light-tag",
+              "ref": "tag-phonics",
+              "descendants": {
+                "tag-phonics-label": {
+                  "content": "For readers aged 4 to 8"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "landing-light-title",
+              "name": "landing-light-title",
+              "content": "Ten minutes a day, and the words start to stick.",
+              "fontFamily": "$font-display",
+              "fontSize": 68,
+              "fontWeight": "600",
+              "fill": "$color-ink",
+              "lineHeight": 0.98,
+              "width": 640,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "text",
+              "id": "landing-light-lede",
+              "name": "landing-light-lede",
+              "content": "Pebble Reads turns phonics into short stories your child can tap, hear, and read back. Each lesson ends with one small question and one sticker.",
+              "fontFamily": "$font-body",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "fill": "$color-muted",
+              "lineHeight": 1.4,
+              "width": 520,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "ref",
+              "id": "landing-light-cta",
+              "ref": "btn-primary",
+              "descendants": {
+                "btn-primary-label": {
+                  "content": "Start 14 free days"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "id": "landing-light-card",
+          "ref": "lesson-card",
+          "x": 820,
+          "y": 150,
+          "rotation": -2
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "landing-dark",
+      "name": "Landing / Hero, dark",
+      "x": 4200,
+      "y": 0,
+      "width": 1280,
+      "height": 760,
+      "layout": "none",
+      "fill": "$color-bg",
+      "theme": {
+        "mode": "dark"
+      },
+      "children": [
+        {
+          "type": "ref",
+          "id": "landing-dark-nav",
+          "ref": "navbar",
+          "x": 64,
+          "y": 20
+        },
+        {
+          "type": "frame",
+          "id": "landing-dark-copy",
+          "name": "Copy",
+          "x": 64,
+          "y": 150,
+          "width": 660,
+          "layout": "vertical",
+          "gap": 28,
+          "children": [
+            {
+              "type": "ref",
+              "id": "landing-dark-tag",
+              "ref": "tag-phonics",
+              "descendants": {
+                "tag-phonics-label": {
+                  "content": "For readers aged 4 to 8"
+                }
+              }
+            },
+            {
+              "type": "text",
+              "id": "landing-dark-title",
+              "name": "landing-dark-title",
+              "content": "Ten minutes a day, and the words start to stick.",
+              "fontFamily": "$font-display",
+              "fontSize": 68,
+              "fontWeight": "600",
+              "fill": "$color-ink",
+              "lineHeight": 0.98,
+              "width": 640,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "text",
+              "id": "landing-dark-lede",
+              "name": "landing-dark-lede",
+              "content": "Pebble Reads turns phonics into short stories your child can tap, hear, and read back. Each lesson ends with one small question and one sticker.",
+              "fontFamily": "$font-body",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "fill": "$color-muted",
+              "lineHeight": 1.4,
+              "width": 520,
+              "textGrowth": "fixed-width"
+            },
+            {
+              "type": "ref",
+              "id": "landing-dark-cta",
+              "ref": "btn-primary",
+              "descendants": {
+                "btn-primary-label": {
+                  "content": "Start 14 free days"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "ref",
+          "id": "landing-dark-card",
+          "ref": "lesson-card",
+          "x": 820,
+          "y": 150,
+          "rotation": -2
+        }
+      ]
+    }
+  ]
+}

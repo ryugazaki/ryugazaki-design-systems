@@ -27,7 +27,7 @@ test('check reports duplicate ids, broken refs, bad overrides, unknown variables
 });
 
 test('committed .pen files pass the check and match their manifests', async () => {
-  for (const slug of ['glass-aurora', 'bauhaus-geometric']) {
+  for (const slug of ['glass-aurora', 'bauhaus-geometric', 'clay-playful']) {
     const pen = JSON.parse(await readFile(path.join(ROOT, 'design', `${slug}.pen`), 'utf8'));
     const manifest = JSON.parse(await readFile(path.join(ROOT, 'public', 'systems', slug, 'manifest.json'), 'utf8'));
     assert.deepEqual(check(pen), [], slug);
