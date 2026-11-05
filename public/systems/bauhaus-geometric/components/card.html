@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <article aria-labelledby="p-title" class="flex max-w-sm flex-col border-3 border-edge bg-surface">
+    <div aria-hidden="true" class="relative aspect-square overflow-hidden border-b-3 border-edge bg-bg">
+      <div class="absolute top-[12%] left-[12%] h-[38%] w-[38%] bg-blue"></div>
+      <div class="absolute top-[12%] right-[12%] h-[38%] w-[38%] rounded-circle bg-yellow"></div>
+      <div class="absolute bottom-[12%] left-[12%] h-[38%] w-[76%] bg-red [clip-path:polygon(0_100%,50%_0,100%_100%)]"></div>
+      <div class="absolute inset-x-[12%] top-1/2 h-[3px] bg-ink"></div>
+    </div>
+    <div class="flex flex-col gap-3 p-5">
+      <div class="flex items-center justify-between gap-3">
+        <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Module 04</p>
+        <span class="inline-flex min-h-7 items-center gap-2 border-2 border-edge px-2.5 font-display text-xs font-bold uppercase tracking-[0.1em] text-ink"><span aria-hidden="true" class="size-2.5 rounded-circle bg-blue"></span>In stock</span>
+      </div>
+      <h2 id="p-title" class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Drawer unit</h2>
+      <p class="text-sm text-muted">Two drawers on soft-close runners. Fits any 40 by 40 cm bay.</p>
+      <dl class="grid grid-cols-3 border-t-2 border-edge pt-3 text-sm">
+        <div><dt class="text-xs text-muted">W</dt><dd class="font-semibold tabular-nums text-ink">40 cm</dd></div>
+        <div><dt class="text-xs text-muted">H</dt><dd class="font-semibold tabular-nums text-ink">40 cm</dd></div>
+        <div><dt class="text-xs text-muted">D</dt><dd class="font-semibold tabular-nums text-ink">35 cm</dd></div>
+      </dl>
+    </div>
+    <div class="flex items-stretch border-t-3 border-edge">
+      <p class="flex flex-1 items-center px-5 font-display text-xl font-extrabold tabular-nums text-ink">149 EUR</p>
+      <button type="button" class="inline-flex min-h-14 items-center gap-2 border-l-3 border-edge bg-red px-5 font-display text-sm font-bold uppercase tracking-wide text-red-ink hover:bg-ink hover:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Add</button>
+    </div>
+  </article>
+  <!-- snippet:end -->
+</body>
+</html>

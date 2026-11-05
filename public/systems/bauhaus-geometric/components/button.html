@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Button</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-2xl flex-col gap-10">
+    <section class="flex flex-col gap-4">
+      <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Variants</p>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-red text-red-ink hover:bg-ink hover:text-bg">Add to shelf</button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-surface text-ink hover:bg-ink hover:text-bg">Save design</button>
+        <a href="#" class="inline-flex min-h-11 items-center gap-2 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Finish samples <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Sizes and icon</p>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-surface text-ink hover:bg-ink hover:text-bg min-h-11 px-4 text-sm">Small</button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-surface text-ink hover:bg-ink hover:text-bg">Medium</button>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-surface text-ink hover:bg-ink hover:text-bg pl-4">
+          <svg aria-hidden="true" viewBox="0 0 20 20" class="size-5"><rect x="2" y="2" width="7" height="7" fill="currentColor"/><circle cx="14.5" cy="5.5" r="3.5" fill="currentColor"/><path d="M2 18 5.5 11 9 18Z" fill="currentColor"/><path d="M11 14.5h7M14.5 11v7" stroke="currentColor" stroke-width="2"/></svg>
+          Add module
+        </button>
+        <button type="button" aria-label="Remove module" class="grid size-12 place-items-center border-3 border-edge bg-surface text-ink hover:bg-ink hover:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">
+          <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M3 8h10"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-4">
+      <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">States</p>
+      <div class="flex flex-wrap items-start gap-x-6 gap-y-5">
+        <div class="flex flex-col gap-2">
+          <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-red text-red-ink hover:bg-ink hover:text-bg outline-3 outline-offset-2 outline-blue">Add to shelf</button>
+          <p class="text-xs text-muted">Focus visible, shown statically.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <button type="button" aria-busy="true" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-red text-red-ink hover:bg-ink hover:text-bg cursor-progress">
+            <svg aria-hidden="true" viewBox="0 0 20 20" class="size-5 animate-spin motion-reduce:animate-none"><rect x="3" y="3" width="6" height="6" fill="currentColor"/><rect x="11" y="11" width="6" height="6" fill="currentColor"/></svg>
+            Saving
+          </button>
+          <p class="text-xs text-muted">Busy, still focusable.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <button type="button" disabled class="inline-flex min-h-12 cursor-not-allowed items-center justify-center border-3 border-dashed border-muted px-6 font-display text-base font-bold uppercase tracking-wide text-muted">Order now</button>
+          <p class="max-w-56 text-xs text-muted">Add at least one module to your shelf before ordering.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

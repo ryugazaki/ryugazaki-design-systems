@@ -1,0 +1,251 @@
+{
+  "slug": "bauhaus-geometric",
+  "number": 12,
+  "name": "Bauhaus Geometric",
+  "tagline": "Circle, square, triangle. Three colors, one grid.",
+  "description": "A light-first system built from the three basic shapes and the three primaries. Pages sit on a visible grid of thick ink rules; circles, squares, and triangles are composed as the illustration. Red is the only action color, blue carries data and information, yellow is for shapes only. Corners are square everywhere except the circle.",
+  "tags": [
+    "light",
+    "bold",
+    "geometric",
+    "commerce",
+    "configurator"
+  ],
+  "defaultMode": "light",
+  "useCases": [
+    "furniture, product, and hardware stores",
+    "design schools, museums, and exhibitions",
+    "configurators and product builders",
+    "architecture and studio portfolios"
+  ],
+  "fonts": [
+    {
+      "family": "League Spartan",
+      "role": "display headlines and numerals, uppercase, tight tracking",
+      "weights": [
+        600,
+        700,
+        800
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap"
+    },
+    {
+      "family": "Figtree",
+      "role": "body, labels, buttons, and tables",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap"
+    }
+  ],
+  "typeScale": {
+    "ratio": 1.414,
+    "steps": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "23px",
+      "xl": "32px",
+      "2xl": "45px",
+      "display": "90px"
+    }
+  },
+  "palette": [
+    {
+      "token": "--color-bg",
+      "light": "#F2EEE3",
+      "dark": "#121211",
+      "role": "page background, unbleached paper"
+    },
+    {
+      "token": "--color-surface",
+      "light": "#FBF9F4",
+      "dark": "#1C1C1A",
+      "role": "panels, fields, and table rows"
+    },
+    {
+      "token": "--color-ink",
+      "light": "#141414",
+      "dark": "#F2EEE3",
+      "role": "text and the 3px grid rules"
+    },
+    {
+      "token": "--color-muted",
+      "light": "#55524A",
+      "dark": "#ADA898",
+      "role": "secondary text"
+    },
+    {
+      "token": "--color-line",
+      "light": "#C9C3B4",
+      "dark": "#3A3934",
+      "role": "thin 1px dividers inside panels"
+    },
+    {
+      "token": "--color-edge",
+      "light": "#141414",
+      "dark": "#F2EEE3",
+      "role": "control borders"
+    },
+    {
+      "token": "--color-red",
+      "light": "#C8211A",
+      "dark": "#FF5A4C",
+      "role": "the only action color: primary buttons, selected state, errors"
+    },
+    {
+      "token": "--color-red-ink",
+      "light": "#FFFFFF",
+      "dark": "#121211",
+      "role": "text on red"
+    },
+    {
+      "token": "--color-blue",
+      "light": "#1D4FA0",
+      "dark": "#7FA6F2",
+      "role": "information and data: charts, info badges, links in body copy"
+    },
+    {
+      "token": "--color-blue-ink",
+      "light": "#F2EEE3",
+      "dark": "#121211",
+      "role": "text on blue"
+    },
+    {
+      "token": "--color-yellow",
+      "light": "#F2C230",
+      "dark": "#F2C230",
+      "role": "shapes and highlights only; never text, never on its own as a signal in light mode"
+    },
+    {
+      "token": "--color-yellow-ink",
+      "light": "#141414",
+      "dark": "#141414",
+      "role": "text on yellow"
+    },
+    {
+      "token": "--color-wood-birch",
+      "light": "#D9C3A0",
+      "dark": "#D9C3A0",
+      "role": "finish swatch only: birch"
+    },
+    {
+      "token": "--color-wood-oak",
+      "light": "#B98E5E",
+      "dark": "#B98E5E",
+      "role": "finish swatch only: oak"
+    },
+    {
+      "token": "--color-wood-ash",
+      "light": "#2A2724",
+      "dark": "#2A2724",
+      "role": "finish swatch only: black stained ash; always drawn with an edge border"
+    }
+  ],
+  "allowedGradients": [],
+  "rules": {
+    "do": [
+      "Build every page on a visible grid of 3px ink rules",
+      "Use the circle, the square, and the triangle as the illustration, filled with the three primaries",
+      "Set headlines in League Spartan uppercase with tight tracking, numbering sections 01, 02, 03",
+      "Keep red for actions and selection, blue for information, yellow for shapes",
+      "Keep corners square; only true circles are round"
+    ],
+    "dont": [
+      "Do not round corners on cards, buttons, or fields",
+      "Do not use shadows, gradients, or textures",
+      "Do not set text in yellow or put body text on a colored shape",
+      "Do not use more than one red button on a screen",
+      "Do not draw pictorial icons where a plain shape or an arrow will do"
+    ]
+  },
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "file": "components/button.html",
+      "notes": "Square corners, 3px ink border. Primary is red with an ink border; secondary is surface with an ink border that inverts on hover; ghost is an uppercase text link with an arrow. Pressed shifts 2px down and right."
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "file": "components/input.html",
+      "notes": "Surface field with a 2px ink border, uppercase label above, unit suffix for dimensions in cm. Focus thickens to a 3px blue outline; error turns the border and message red."
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "file": "components/select.html",
+      "notes": "Same frame as the input with a triangle chevron; finishes and wood types."
+    },
+    {
+      "id": "checkbox-toggle",
+      "name": "Checkbox and toggle",
+      "file": "components/checkbox-toggle.html",
+      "notes": "Square checkbox that fills red with a check; radio is a circle that fills blue. Switch is a rectangular track with a square knob."
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "file": "components/badge.html",
+      "notes": "Square-cornered tags led by a tiny shape: circle for in stock, triangle for low stock, square for made to order."
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "file": "components/card.html",
+      "notes": "Product card: a composition of shapes as the image, product name in uppercase, dimensions, price, and a square add button."
+    },
+    {
+      "id": "navbar",
+      "name": "Navbar",
+      "file": "components/navbar.html",
+      "notes": "Wordmark built from a circle, a square, and a triangle; uppercase links; a cart count in a red square. Mobile menu is a details disclosure with full-width rows."
+    },
+    {
+      "id": "modal",
+      "name": "Modal and sheet",
+      "file": "components/modal.html",
+      "notes": "Square panel with a 3px ink border and a blue title bar, delivery form, two actions."
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "file": "components/table.html",
+      "notes": "Order lines on a ruled grid: module, finish, size, quantity, price, with a total row in bold."
+    },
+    {
+      "id": "bento",
+      "name": "Bento grid",
+      "file": "components/bento.html",
+      "notes": "Grid tiles split by 3px rules: a large shape composition, a blue bar chart of delivery weeks, a stat, a finish swatch row, and a quote."
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "file": "components/empty-state.html",
+      "notes": "An empty square frame with a lone circle, \"Your shelf is empty\", one line, one red action."
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "file": "components/toast.html",
+      "notes": "Ink bar with a yellow square marker and an undo action."
+    }
+  ],
+  "pages": [
+    {
+      "id": "landing",
+      "name": "Landing",
+      "file": "pages/landing.html"
+    },
+    {
+      "id": "app",
+      "name": "Shelf configurator",
+      "file": "pages/app.html"
+    }
+  ]
+}

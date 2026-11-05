@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <section aria-labelledby="t-title" class="max-w-4xl border-3 border-edge bg-surface">
+    <header class="flex flex-wrap items-baseline justify-between gap-3 border-b-3 border-edge px-4 py-4 sm:px-5">
+      <h2 id="t-title" class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Your shelf, 20 parts</h2>
+      <p class="text-sm text-muted">Design QD-2291, saved 5 November</p>
+    </header>
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <caption class="sr-only">Parts in your shelf with finish, size in centimetres, quantity, and price</caption>
+        <thead class="hidden border-b-3 border-edge sm:table-header-group">
+          <tr>
+            <th scope="col" class="py-3 pr-4 pl-5 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Module</th>
+            <th scope="col" class="py-3 pr-4 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Finish</th>
+            <th scope="col" class="py-3 pr-4 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">W × H × D</th>
+            <th scope="col" class="py-3 pr-4 text-right font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Qty</th>
+            <th scope="col" class="py-3 pr-5 text-right font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Price</th>
+          </tr>
+        </thead>
+        <tbody class="block sm:table-row-group">
+          <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+            <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-ink"></span>Frame 200</span></td>
+            <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Black stained ash</td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">80 × 200 × 35 cm</td>
+            <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>2</td>
+            <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">778 EUR</td>
+          </tr>
+          <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+            <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="h-[3px] w-3 shrink-0 bg-ink"></span>Open bay</span></td>
+            <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Birch, clear oil</td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+            <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>8</td>
+            <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">472 EUR</td>
+          </tr>
+          <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+            <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-blue"></span>Door pair</span></td>
+            <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Birch, clear oil</td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+            <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>5</td>
+            <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">645 EUR</td>
+          </tr>
+          <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+            <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-yellow ring-1 ring-ink"></span>Drawer unit</span></td>
+            <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Oak veneer, white oil</td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+            <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>3</td>
+            <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">447 EUR</td>
+          </tr>
+          <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+            <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-circle bg-ink"></span>Record bin</span></td>
+            <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Black stained ash</td>
+            <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+            <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>2</td>
+            <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">158 EUR</td>
+          </tr>
+        </tbody>
+        <tfoot class="block border-t-3 border-edge sm:table-footer-group">
+          <tr class="flex justify-between px-4 py-4 sm:table-row sm:p-0">
+            <th scope="row" colspan="4" class="text-left font-display text-base font-extrabold uppercase text-ink sm:py-4 sm:pl-5">Total, before delivery</th>
+            <td class="text-right font-display text-xl font-extrabold whitespace-nowrap tabular-nums text-ink sm:py-4 sm:pr-5">2 500 EUR</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+  <!-- snippet:end -->
+</body>
+</html>

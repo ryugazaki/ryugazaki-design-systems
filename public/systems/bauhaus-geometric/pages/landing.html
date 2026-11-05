@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative z-10 border-b-3 border-edge bg-surface">
+    <div class="flex min-h-16 items-stretch">
+      <a href="#" class="flex shrink-0 items-center gap-2.5 px-4 md:border-r-3 md:border-edge focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">
+        <span aria-hidden="true" class="flex items-end gap-1"><span class="size-4 rounded-circle bg-red"></span><span class="size-4 bg-blue"></span><svg viewBox="0 0 16 16" class="size-4 text-yellow"><path d="M8 0 16 16H0Z" fill="currentColor" stroke="var(--color-ink)" stroke-width="1"/></svg></span>
+        <span class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Quadra</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:flex">
+        <ul class="flex">
+          <li class="flex"><a href="#" aria-current="page" class="flex items-center border-r-3 border-edge bg-ink px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Shelves</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Modules</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Finishes</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Studio</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-stretch">
+        <a href="#" class="flex min-w-16 items-center justify-center gap-2 border-l-3 border-edge px-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">
+          <span class="hidden sm:inline">Cart</span>
+          <span class="grid size-7 place-items-center bg-red font-display text-sm font-bold tabular-nums text-red-ink"><span class="sr-only">items: </span>3</span>
+        </a>
+        <details class="group flex md:hidden">
+          <summary class="flex min-w-16 cursor-pointer list-none items-center justify-center border-l-3 border-edge px-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full z-20 border-b-3 border-edge bg-surface">
+            <ul class="flex flex-col">
+              <li><a href="#" aria-current="page" class="flex min-h-14 items-center justify-between border-b-3 border-edge bg-ink px-4 font-display text-lg font-extrabold uppercase text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Shelves <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between border-b-3 border-edge px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Modules <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between border-b-3 border-edge px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Finishes <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Studio <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title" class="grid border-b-3 border-edge lg:grid-cols-12">
+      <div class="flex flex-col items-start gap-8 px-4 pt-12 pb-14 md:px-8 lg:col-span-7 lg:border-r-3 lg:border-edge lg:pt-20 lg:pb-20">
+        <p class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Modular shelving, made in Leipzig</p>
+        <h1 id="hero-title" class="font-display text-2xl font-extrabold uppercase tracking-tight text-ink sm:text-display">One square. Every shelf you will ever need.</h1>
+        <p class="max-w-lg text-base text-ink sm:text-lg sm:leading-snug">Quadra is built from one 40 cm bay. Stack frames, fill the bays with doors, drawers, or nothing, and take it apart when you move.</p>
+        <div class="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+          <a href="#" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-red text-red-ink hover:bg-ink hover:text-bg">Design your shelf</a>
+          <a href="#modules" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-surface text-ink hover:bg-ink hover:text-bg">See the modules</a>
+        </div>
+      </div>
+      <div aria-hidden="true" class="relative aspect-square border-t-3 border-edge bg-bg lg:col-span-5 lg:aspect-auto lg:border-t-0">
+        <div class="absolute inset-0 grid grid-cols-2 grid-rows-2">
+          <div class="border-r-3 border-b-3 border-edge bg-blue"></div>
+          <div class="relative border-b-3 border-edge"><svg viewBox="0 0 100 100" class="absolute inset-[12%] size-[76%] text-red"><circle cx="50" cy="50" r="50" fill="currentColor"/></svg></div>
+          <div class="relative border-r-3 border-edge"><div class="absolute inset-x-[10%] top-[18%] bottom-0 bg-yellow [clip-path:polygon(0_100%,50%_0,100%_100%)]"></div></div>
+          <div class="grid grid-cols-2 grid-rows-2"><div class="border-r-3 border-b-3 border-edge"></div><div class="border-b-3 border-edge bg-ink"></div><div class="border-r-3 border-edge bg-surface"></div><div class="relative"><svg viewBox="0 0 100 100" class="absolute inset-[20%] size-[60%] text-blue"><circle cx="50" cy="50" r="50" fill="currentColor"/></svg></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules" aria-labelledby="mod-title" class="border-b-3 border-edge">
+      <div class="flex flex-wrap items-end justify-between gap-4 border-b-3 border-edge px-4 py-8 md:px-8">
+        <div class="flex items-baseline gap-4">
+          <span class="bg-yellow px-2 font-display text-xl font-extrabold tabular-nums text-yellow-ink">01</span>
+          <h2 id="mod-title" class="font-display text-xl font-extrabold uppercase tracking-tight text-ink">Four modules fill any bay</h2>
+        </div>
+        <a href="#" class="inline-flex min-h-11 items-center gap-2 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink underline-offset-4 hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">All finishes <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4">
+        <article class="flex flex-col gap-4 border-b-3 border-edge p-6 sm:border-r-3 lg:row-span-2 lg:col-span-2 lg:border-b-0">
+          <div aria-hidden="true" class="relative aspect-[2/1] border-3 border-edge bg-bg"><div class="absolute inset-y-[12%] left-[6%] w-[40%] bg-blue"></div><div class="absolute inset-y-[12%] right-[6%] w-[40%] bg-blue"></div><div class="absolute top-1/2 left-1/2 size-3 -translate-1/2 rounded-circle bg-ink"></div></div>
+          <div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-lg font-extrabold uppercase text-ink">Door pair</h3><p class="font-display text-lg font-extrabold tabular-nums text-ink">129 EUR</p></div>
+          <p class="max-w-md text-base text-muted">Two doors on push latches, no handles. The most ordered module, usually on the bottom row where the clutter lives.</p>
+        </article>
+        <article class="flex flex-col gap-3 border-b-3 border-edge p-6 lg:border-r-3">
+          <div aria-hidden="true" class="relative aspect-square w-20 border-3 border-edge"><div class="absolute inset-x-[12%] top-[16%] h-[28%] border-3 border-edge bg-yellow"></div><div class="absolute inset-x-[12%] bottom-[16%] h-[28%] border-3 border-edge bg-yellow"></div></div>
+          <div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-base font-extrabold uppercase text-ink">Drawer unit</h3><p class="font-display text-base font-extrabold tabular-nums text-ink">149 EUR</p></div>
+          <p class="text-sm text-muted">Two drawers, soft-close runners.</p>
+        </article>
+        <article class="flex flex-col gap-3 border-b-3 border-edge p-6">
+          <div aria-hidden="true" class="relative aspect-square w-20 border-3 border-edge"><div class="absolute inset-x-0 top-1/2 h-[3px] bg-ink"></div></div>
+          <div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-base font-extrabold uppercase text-ink">Open bay</h3><p class="font-display text-base font-extrabold tabular-nums text-ink">59 EUR</p></div>
+          <p class="text-sm text-muted">One shelf, height adjustable in 4 cm steps.</p>
+        </article>
+        <article class="flex flex-col gap-3 border-b-3 border-edge p-6 sm:border-b-0 lg:col-span-2">
+          <div aria-hidden="true" class="relative aspect-square w-20 border-3 border-edge"><div class="absolute inset-[18%] rounded-circle border-3 border-edge bg-red"></div></div>
+          <div class="flex items-baseline justify-between gap-4"><h3 class="font-display text-base font-extrabold uppercase text-ink">Record bin</h3><p class="font-display text-base font-extrabold tabular-nums text-ink">79 EUR</p></div>
+          <p class="text-sm text-muted">Holds 60 LPs upright, with a felt base and a front lip.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="how-title" class="grid border-b-3 border-edge lg:grid-cols-12">
+      <div class="flex items-baseline gap-4 border-b-3 border-edge px-4 py-8 md:px-8 lg:col-span-4 lg:border-r-3 lg:border-b-0">
+        <span class="bg-yellow px-2 font-display text-xl font-extrabold tabular-nums text-yellow-ink">02</span>
+        <h2 id="how-title" class="font-display text-xl font-extrabold uppercase tracking-tight text-ink">From wall to shelf in three steps</h2>
+      </div>
+      <ol class="lg:col-span-8">
+        <li class="grid grid-cols-[3.5rem_1fr] gap-x-4 border-b-3 border-edge px-4 py-6 md:px-8">
+          <span aria-hidden="true" class="mt-1 size-8 bg-blue"></span>
+          <div class="flex flex-col gap-1"><h3 class="font-display text-base font-extrabold uppercase text-ink">Measure the wall</h3><p class="text-base text-muted">Width at skirting height and the ceiling. The configurator only offers frames that fit.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-x-4 border-b-3 border-edge px-4 py-6 md:px-8">
+          <span aria-hidden="true" class="mt-1 size-8 rounded-circle bg-red"></span>
+          <div class="flex flex-col gap-1"><h3 class="font-display text-base font-extrabold uppercase text-ink">Fill the bays</h3><p class="text-base text-muted">Drag doors, drawers, and bins into the grid. The price updates with every module.</p></div>
+        </li>
+        <li class="grid grid-cols-[3.5rem_1fr] gap-x-4 px-4 py-6 md:px-8">
+          <svg aria-hidden="true" viewBox="0 0 32 32" class="mt-1 size-8 text-yellow"><path d="M16 1 31 31H1Z" fill="currentColor" stroke="var(--color-ink)" stroke-width="2"/></svg>
+          <div class="flex flex-col gap-1"><h3 class="font-display text-base font-extrabold uppercase text-ink">Build it with one key</h3><p class="text-base text-muted">Every joint is the same steel connector. The hex key comes in the first box.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="num-title" class="grid border-b-3 border-edge sm:grid-cols-3">
+      <h2 id="num-title" class="sr-only">Quadra in numbers</h2>
+      <div class="flex flex-col gap-2 border-b-3 border-edge px-4 py-10 sm:border-r-3 sm:border-b-0 md:px-8">
+        <p class="font-display text-2xl font-extrabold tabular-nums tracking-tight text-ink">40 cm</p>
+        <p class="text-sm text-muted">The only bay size. Every module fits every frame since 2019.</p>
+      </div>
+      <div class="flex flex-col gap-2 border-b-3 border-edge bg-blue px-4 py-10 sm:border-r-3 sm:border-b-0 md:px-8">
+        <p class="font-display text-2xl font-extrabold tabular-nums tracking-tight text-blue-ink">18 400</p>
+        <p class="text-sm text-blue-ink">Shelves delivered across Germany, Austria, and the Netherlands.</p>
+      </div>
+      <div class="flex flex-col gap-2 px-4 py-10 md:px-8">
+        <p class="font-display text-2xl font-extrabold tabular-nums tracking-tight text-ink">25 yrs</p>
+        <p class="text-sm text-muted">Spare parts guarantee. Connectors and runners are sold separately.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="flex flex-col gap-4 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between md:px-8">
+    <p>Quadra Möbel GmbH, Spinnereistraße 7, 04179 Leipzig</p>
+    <ul class="flex flex-wrap gap-x-6">
+      <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Delivery</a></li>
+      <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Returns</a></li>
+      <li><a href="#" class="inline-flex min-h-11 items-center hover:text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Imprint</a></li>
+    </ul>
+  </footer>
+  <!-- snippet:end -->
+</body>
+</html>

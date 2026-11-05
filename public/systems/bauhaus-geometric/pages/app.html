@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Shelf configurator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body>
+  <!-- snippet:start -->
+  <header class="relative z-10 border-b-3 border-edge bg-surface">
+    <div class="flex min-h-16 items-stretch">
+      <a href="#" class="flex shrink-0 items-center gap-2.5 px-4 md:border-r-3 md:border-edge focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">
+        <span aria-hidden="true" class="flex items-end gap-1"><span class="size-4 rounded-circle bg-red"></span><span class="size-4 bg-blue"></span><svg viewBox="0 0 16 16" class="size-4 text-yellow"><path d="M8 0 16 16H0Z" fill="currentColor" stroke="var(--color-ink)" stroke-width="1"/></svg></span>
+        <span class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Quadra</span>
+      </a>
+      <nav aria-label="Main" class="hidden md:flex">
+        <ul class="flex">
+          <li class="flex"><a href="#" aria-current="page" class="flex items-center border-r-3 border-edge bg-ink px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Shelves</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Modules</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Finishes</a></li>
+          <li class="flex"><a href="#" class="flex items-center border-r-3 border-edge px-5 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Studio</a></li>
+        </ul>
+      </nav>
+      <div class="ml-auto flex items-stretch">
+        <a href="#" class="flex min-w-16 items-center justify-center gap-2 border-l-3 border-edge px-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">
+          <span class="hidden sm:inline">Cart</span>
+          <span class="grid size-7 place-items-center bg-red font-display text-sm font-bold tabular-nums text-red-ink"><span class="sr-only">items: </span>3</span>
+        </a>
+        <details class="group flex md:hidden">
+          <summary class="flex min-w-16 cursor-pointer list-none items-center justify-center border-l-3 border-edge px-4 font-display text-sm font-bold uppercase tracking-[0.12em] text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue [&::-webkit-details-marker]:hidden">
+            <span class="group-open:hidden">Menu</span>
+            <span class="hidden group-open:inline">Close</span>
+          </summary>
+          <nav aria-label="Main, mobile" class="absolute inset-x-0 top-full z-20 border-b-3 border-edge bg-surface">
+            <ul class="flex flex-col">
+              <li><a href="#" aria-current="page" class="flex min-h-14 items-center justify-between border-b-3 border-edge bg-ink px-4 font-display text-lg font-extrabold uppercase text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Shelves <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between border-b-3 border-edge px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Modules <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between border-b-3 border-edge px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Finishes <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+              <li><a href="#" class="flex min-h-14 items-center justify-between px-4 font-display text-lg font-extrabold uppercase text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue">Studio <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid lg:grid-cols-12">
+    <section aria-labelledby="draw-title" class="flex flex-col gap-6 border-b-3 border-edge px-4 py-8 md:px-8 lg:col-span-7 lg:border-r-3 lg:border-b-0">
+      <div class="flex flex-wrap items-baseline justify-between gap-3">
+        <h1 id="draw-title" class="font-display text-xl font-extrabold uppercase tracking-tight text-ink sm:text-2xl">Living room shelf</h1>
+        <p class="text-sm tabular-nums text-muted">Design QD-2291, autosaved 18:04</p>
+      </div>
+      <div class="flex gap-3">
+        <div class="flex flex-1 flex-col gap-2">
+          <div class="mx-auto grid w-full max-w-md grid-cols-4 border-t-3 border-l-3 border-edge">
+            <button type="button" aria-label="Bay A1, Door pair" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-y-[10%] left-[6%] w-[42%] bg-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] bg-blue"></span></button><button type="button" aria-label="Bay A2, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay A3, Drawer unit" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-[8%] top-[12%] h-[34%] bg-yellow"></span><span class="absolute inset-x-[8%] bottom-[12%] h-[34%] bg-yellow"></span></button><button type="button" aria-label="Bay A4, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button>
+            <button type="button" aria-label="Bay B1, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay B2, Record bin" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-[18%] rounded-circle bg-ink"></span></button><button type="button" aria-label="Bay B3, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay B4, Door pair" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-y-[10%] left-[6%] w-[42%] bg-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] bg-blue"></span></button>
+            <button type="button" aria-label="Bay C1, Drawer unit" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-[8%] top-[12%] h-[34%] bg-yellow"></span><span class="absolute inset-x-[8%] bottom-[12%] h-[34%] bg-yellow"></span></button><button type="button" aria-label="Bay C2, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay C3, selected, previewing Door pair" aria-pressed="true" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue outline-3 -outline-offset-3 outline-red"><span class="absolute inset-y-[10%] left-[6%] w-[42%] border-3 border-dashed border-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] border-3 border-dashed border-blue"></span></button><button type="button" aria-label="Bay C4, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button>
+            <button type="button" aria-label="Bay D1, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay D2, Door pair" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-y-[10%] left-[6%] w-[42%] bg-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] bg-blue"></span></button><button type="button" aria-label="Bay D3, Open bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-0 top-1/2 h-[3px] bg-line"></span></button><button type="button" aria-label="Bay D4, Drawer unit" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-x-[8%] top-[12%] h-[34%] bg-yellow"></span><span class="absolute inset-x-[8%] bottom-[12%] h-[34%] bg-yellow"></span></button>
+            <button type="button" aria-label="Bay E1, Door pair" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-y-[10%] left-[6%] w-[42%] bg-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] bg-blue"></span></button><button type="button" aria-label="Bay E2, Door pair" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-y-[10%] left-[6%] w-[42%] bg-blue"></span><span class="absolute inset-y-[10%] right-[6%] w-[42%] bg-blue"></span></button><button type="button" aria-label="Bay E3, Record bin" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-[18%] rounded-circle bg-ink"></span></button><button type="button" aria-label="Bay E4, Empty bay" class="relative aspect-square border-r-3 border-b-3 border-edge bg-surface hover:bg-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue"><span class="absolute inset-[14%] border-2 border-dashed border-muted"></span></button>
+          </div>
+          <p class="text-center text-xs font-semibold tabular-nums text-muted">160 cm</p>
+        </div>
+        <p class="flex items-center text-xs font-semibold tabular-nums text-muted [writing-mode:vertical-rl]">200 cm</p>
+      </div>
+      <div class="flex flex-wrap gap-x-5 gap-y-2 border-t-3 border-edge pt-4 text-sm text-ink">
+        <span class="flex items-center gap-2"><span aria-hidden="true" class="size-3 bg-blue"></span>Door pair</span>
+        <span class="flex items-center gap-2"><span aria-hidden="true" class="size-3 bg-yellow ring-1 ring-ink"></span>Drawer unit</span>
+        <span class="flex items-center gap-2"><span aria-hidden="true" class="size-3 rounded-circle bg-ink"></span>Record bin</span>
+        <span class="flex items-center gap-2"><span aria-hidden="true" class="size-3 border-2 border-dashed border-muted"></span>Empty</span>
+      </div>
+    </section>
+
+    <aside aria-labelledby="bay-title" class="flex flex-col lg:col-span-5">
+      <div class="flex flex-col gap-5 border-b-3 border-edge px-4 py-8 md:px-8">
+        <div class="flex items-baseline gap-3">
+          <span class="bg-yellow px-2 font-display text-lg font-extrabold tabular-nums text-yellow-ink">C3</span>
+          <h2 id="bay-title" class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Fill this bay</h2>
+        </div>
+        <fieldset class="grid grid-cols-2 border-t-3 border-l-3 border-edge">
+          <legend class="sr-only">Module for bay C3</legend>
+          <label class="flex min-h-16 cursor-pointer items-center gap-3 border-r-3 border-b-3 border-edge px-4 has-checked:bg-ink has-checked:text-bg has-focus-visible:outline-3 has-focus-visible:-outline-offset-3 has-focus-visible:outline-blue"><input type="radio" name="mod" class="sr-only" checked><span aria-hidden="true" class="size-4 bg-blue"></span><span class="font-display text-sm font-bold uppercase">Door pair</span></label>
+          <label class="flex min-h-16 cursor-pointer items-center gap-3 border-r-3 border-b-3 border-edge px-4 text-ink hover:bg-bg has-checked:bg-ink has-checked:text-bg has-focus-visible:outline-3 has-focus-visible:-outline-offset-3 has-focus-visible:outline-blue"><input type="radio" name="mod" class="sr-only"><span aria-hidden="true" class="size-4 bg-yellow ring-1 ring-ink"></span><span class="font-display text-sm font-bold uppercase">Drawers</span></label>
+          <label class="flex min-h-16 cursor-pointer items-center gap-3 border-r-3 border-b-3 border-edge px-4 text-ink hover:bg-bg has-checked:bg-ink has-checked:text-bg has-focus-visible:outline-3 has-focus-visible:-outline-offset-3 has-focus-visible:outline-blue"><input type="radio" name="mod" class="sr-only"><span aria-hidden="true" class="size-4 rounded-circle bg-red"></span><span class="font-display text-sm font-bold uppercase">Record bin</span></label>
+          <label class="flex min-h-16 cursor-pointer items-center gap-3 border-r-3 border-b-3 border-edge px-4 text-ink hover:bg-bg has-checked:bg-ink has-checked:text-bg has-focus-visible:outline-3 has-focus-visible:-outline-offset-3 has-focus-visible:outline-blue"><input type="radio" name="mod" class="sr-only"><span aria-hidden="true" class="h-[3px] w-4 bg-ink"></span><span class="font-display text-sm font-bold uppercase">Open bay</span></label>
+        </fieldset>
+        <div class="flex flex-col gap-2">
+          <label for="finish" class="font-display text-xs font-bold uppercase tracking-[0.14em] text-ink">Finish</label>
+          <div class="relative">
+            <select id="finish" class="min-h-12 w-full border-2 border-edge bg-surface px-4 text-base text-ink placeholder:text-muted focus:outline-3 focus:outline-offset-0 focus:outline-blue appearance-none pr-12">
+              <option>Birch plywood, clear oil</option>
+              <option>Oak veneer, white oil</option>
+              <option>Black stained ash</option>
+              <option>Signal red lacquer</option>
+            </select>
+            <svg aria-hidden="true" viewBox="0 0 12 12" class="pointer-events-none absolute top-1/2 right-4 size-3 -translate-y-1/2 text-ink"><path d="M0 2h12L6 11Z" fill="currentColor"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 px-4 py-8 md:px-8">
+        <dl class="flex flex-col gap-2 text-sm">
+          <div class="flex justify-between"><dt class="text-muted">Modules</dt><dd class="tabular-nums text-ink">2 500 EUR</dd></div>
+          <div class="flex justify-between"><dt class="text-muted">Delivery to 10437 Berlin</dt><dd class="tabular-nums text-ink">130 EUR</dd></div>
+          <div class="flex items-baseline justify-between border-t-3 border-edge pt-3"><dt class="font-display text-base font-extrabold uppercase text-ink">Total</dt><dd class="font-display text-xl font-extrabold tabular-nums text-ink">2 630 EUR</dd></div>
+        </dl>
+        <button type="button" class="inline-flex min-h-12 items-center justify-center gap-2 border-3 border-edge px-6 font-display text-base font-bold uppercase tracking-wide transition-transform duration-100 ease-snap active:translate-x-0.5 active:translate-y-0.5 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue motion-reduce:transition-none bg-red text-red-ink hover:bg-ink hover:text-bg w-full">Order this shelf</button>
+        <p class="flex items-center gap-2 text-sm text-muted"><span aria-hidden="true" class="inline-flex min-h-7 shrink-0 items-center whitespace-nowrap bg-blue px-2.5 font-display text-xs font-bold uppercase tracking-[0.1em] text-blue-ink">2 weeks</span>Ships with the slowest finish in your design. Adding the door pair to C3 adds 129 EUR.</p>
+      </div>
+    </aside>
+
+    <div class="border-t-3 border-edge px-4 py-8 md:px-8 lg:col-span-12">
+      <section aria-labelledby="t-title" class="border-3 border-edge bg-surface">
+        <header class="flex flex-wrap items-baseline justify-between gap-3 border-b-3 border-edge px-4 py-4 sm:px-5">
+          <h2 id="t-title" class="font-display text-lg font-extrabold uppercase tracking-tight text-ink">Your shelf, 20 parts</h2>
+          <p class="text-sm text-muted">Design QD-2291, saved 5 November</p>
+        </header>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left">
+            <caption class="sr-only">Parts in your shelf with finish, size in centimetres, quantity, and price</caption>
+            <thead class="hidden border-b-3 border-edge sm:table-header-group">
+              <tr>
+                <th scope="col" class="py-3 pr-4 pl-5 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Module</th>
+                <th scope="col" class="py-3 pr-4 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Finish</th>
+                <th scope="col" class="py-3 pr-4 font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">W × H × D</th>
+                <th scope="col" class="py-3 pr-4 text-right font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Qty</th>
+                <th scope="col" class="py-3 pr-5 text-right font-display text-xs font-bold uppercase tracking-[0.16em] text-muted">Price</th>
+              </tr>
+            </thead>
+            <tbody class="block sm:table-row-group">
+              <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+                <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-ink"></span>Frame 200</span></td>
+                <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Black stained ash</td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">80 × 200 × 35 cm</td>
+                <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>2</td>
+                <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">778 EUR</td>
+              </tr>
+              <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+                <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="h-[3px] w-3 shrink-0 bg-ink"></span>Open bay</span></td>
+                <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Birch, clear oil</td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+                <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>8</td>
+                <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">472 EUR</td>
+              </tr>
+              <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+                <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-blue"></span>Door pair</span></td>
+                <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Birch, clear oil</td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+                <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>5</td>
+                <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">645 EUR</td>
+              </tr>
+              <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+                <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 bg-yellow ring-1 ring-ink"></span>Drawer unit</span></td>
+                <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Oak veneer, white oil</td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+                <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>3</td>
+                <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">447 EUR</td>
+              </tr>
+              <tr class="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 border-b-2 border-line px-4 py-4 sm:table-row sm:p-0">
+                <td class="sm:py-3 sm:pr-4 sm:pl-5"><span class="flex items-center gap-2.5 font-display text-base font-bold uppercase text-ink"><span aria-hidden="true" class="size-3 shrink-0 rounded-circle bg-ink"></span>Record bin</span></td>
+                <td class="row-start-2 text-sm text-muted sm:py-3 sm:pr-4 sm:text-ink">Black stained ash</td>
+                <td class="row-start-3 text-sm tabular-nums text-muted sm:py-3 sm:pr-4">40 × 40 × 35 cm</td>
+                <td class="col-start-2 row-start-2 text-right text-sm tabular-nums text-ink sm:py-3 sm:pr-4"><span class="sm:hidden">Qty </span>2</td>
+                <td class="col-start-2 row-start-1 text-right text-base font-semibold tabular-nums text-ink sm:py-3 sm:pr-5">158 EUR</td>
+              </tr>
+            </tbody>
+            <tfoot class="block border-t-3 border-edge sm:table-footer-group">
+              <tr class="flex justify-between px-4 py-4 sm:table-row sm:p-0">
+                <th scope="row" colspan="4" class="text-left font-display text-base font-extrabold uppercase text-ink sm:py-4 sm:pl-5">Total, before delivery</th>
+                <td class="text-right font-display text-xl font-extrabold whitespace-nowrap tabular-nums text-ink sm:py-4 sm:pr-5">2 500 EUR</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!-- snippet:end -->
+</body>
+</html>

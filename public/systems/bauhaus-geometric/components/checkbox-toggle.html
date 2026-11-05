@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Checkbox and toggle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="flex max-w-md flex-col gap-10">
+    <fieldset class="flex flex-col gap-1">
+      <legend class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted mb-3">Checkbox</legend>
+      <label class="group flex min-h-11 cursor-pointer items-center gap-3">
+        <input type="checkbox" checked class="peer sr-only">
+        <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center border-2 border-edge bg-surface text-red-ink peer-checked:bg-red peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100">
+          <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="m3 8.5 3.2 3L13 4.5"/></svg>
+        </span>
+        <span class="text-base text-ink">Wall fixings included</span>
+      </label>
+      <label class="group flex min-h-11 cursor-pointer items-center gap-3">
+        <input type="checkbox" class="peer sr-only">
+        <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center border-2 border-edge bg-surface text-red-ink group-hover:bg-bg peer-checked:bg-red peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue [&>svg]:opacity-0 peer-checked:[&>svg]:opacity-100">
+          <svg viewBox="0 0 16 16" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="m3 8.5 3.2 3L13 4.5"/></svg>
+        </span>
+        <span class="text-base text-ink">Assembly at home, 89 EUR</span>
+      </label>
+      <label class="flex min-h-11 cursor-not-allowed items-center gap-3">
+        <input type="checkbox" disabled class="peer sr-only">
+        <span aria-hidden="true" class="size-6 shrink-0 border-2 border-dashed border-muted"></span>
+        <span class="text-base text-muted">Next day delivery (not for lacquer)</span>
+      </label>
+    </fieldset>
+
+    <fieldset class="flex flex-col gap-1">
+      <legend class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted mb-3">Radio</legend>
+      <label class="flex min-h-11 cursor-pointer items-center gap-3">
+        <input type="radio" name="frame" checked class="peer sr-only">
+        <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center rounded-circle border-2 border-edge bg-surface peer-checked:[&>span]:bg-blue peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue"><span class="size-3 rounded-circle"></span></span>
+        <span class="text-base text-ink">Frame 200 cm, five rows</span>
+      </label>
+      <label class="flex min-h-11 cursor-pointer items-center gap-3">
+        <input type="radio" name="frame" class="peer sr-only">
+        <span aria-hidden="true" class="grid size-6 shrink-0 place-items-center rounded-circle border-2 border-edge bg-surface peer-checked:[&>span]:bg-blue peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue"><span class="size-3 rounded-circle"></span></span>
+        <span class="text-base text-ink">Frame 160 cm, four rows</span>
+      </label>
+    </fieldset>
+
+    <fieldset class="flex flex-col gap-1">
+      <legend class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted mb-3">Toggle</legend>
+      <label class="flex min-h-11 cursor-pointer items-center justify-between gap-4">
+        <span class="flex flex-col">
+          <span class="text-base font-semibold text-ink">Show dimensions</span>
+          <span class="text-sm text-muted">Print widths and heights on the drawing.</span>
+        </span>
+        <input type="checkbox" role="switch" checked class="peer sr-only">
+        <span aria-hidden="true" class="relative h-7 w-13 shrink-0 border-2 border-edge bg-surface peer-checked:bg-ink peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue after:absolute after:top-0.5 after:left-0.5 after:size-5 after:bg-ink after:transition-transform after:duration-150 after:ease-snap peer-checked:after:translate-x-6 peer-checked:after:bg-red motion-reduce:after:transition-none"></span>
+      </label>
+      <label class="flex min-h-11 cursor-pointer items-center justify-between gap-4">
+        <span class="flex flex-col">
+          <span class="text-base font-semibold text-ink">Snap to wall grid</span>
+          <span class="text-sm text-muted">Keep modules on the 40 cm grid.</span>
+        </span>
+        <input type="checkbox" role="switch" class="peer sr-only">
+        <span aria-hidden="true" class="relative h-7 w-13 shrink-0 border-2 border-edge bg-surface peer-checked:bg-ink peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue after:absolute after:top-0.5 after:left-0.5 after:size-5 after:bg-ink after:transition-transform after:duration-150 after:ease-snap peer-checked:after:translate-x-6 peer-checked:after:bg-red motion-reduce:after:transition-none"></span>
+      </label>
+    </fieldset>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>

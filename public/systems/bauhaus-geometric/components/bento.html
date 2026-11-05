@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bauhaus Geometric / Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+/* theme:start */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-bg: #F2EEE3;
+  --color-surface: #FBF9F4;
+  --color-ink: #141414;
+  --color-muted: #55524A;
+  --color-line: #C9C3B4;
+  --color-edge: #141414;
+  --color-red: #C8211A;
+  --color-red-ink: #FFFFFF;
+  --color-blue: #1D4FA0;
+  --color-blue-ink: #F2EEE3;
+  --color-yellow: #F2C230;
+  --color-yellow-ink: #141414;
+  --color-wood-birch: #D9C3A0;
+  --color-wood-oak: #B98E5E;
+  --color-wood-ash: #2A2724;
+
+  --font-display: "League Spartan", ui-sans-serif, sans-serif;
+  --font-body: "Figtree", ui-sans-serif, sans-serif;
+
+  --text-*: initial;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1.4375rem;
+  --text-lg--line-height: 1.15;
+  --text-xl: 2rem;
+  --text-xl--line-height: 1;
+  --text-2xl: 2.8125rem;
+  --text-2xl--line-height: 0.95;
+  --text-display: 5.625rem;
+  --text-display--line-height: 0.88;
+
+  --radius-*: initial;
+  --radius-circle: 9999px;
+
+  --shadow-*: initial;
+
+  --ease-snap: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@layer base {
+  .dark {
+    --color-bg: #121211;
+    --color-surface: #1C1C1A;
+    --color-ink: #F2EEE3;
+    --color-muted: #ADA898;
+    --color-line: #3A3934;
+    --color-edge: #F2EEE3;
+    --color-red: #FF5A4C;
+    --color-red-ink: #121211;
+    --color-blue: #7FA6F2;
+    --color-blue-ink: #121211;
+    --color-yellow: #F2C230;
+    --color-yellow-ink: #141414;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* theme:end */
+  </style>
+</head>
+<body class="p-6">
+  <!-- snippet:start -->
+  <div class="grid max-w-4xl grid-cols-1 border-t-3 border-l-3 border-edge bg-surface sm:grid-cols-4">
+    <section aria-label="Shape study" class="relative aspect-square border-r-3 border-b-3 border-edge bg-bg sm:col-span-2 sm:row-span-2">
+      <div aria-hidden="true" class="absolute inset-0">
+        <div class="absolute top-0 left-0 h-1/2 w-1/2 bg-blue"></div>
+        <div class="absolute top-[8%] right-[8%] size-[42%] rounded-circle bg-red"></div>
+        <div class="absolute bottom-0 left-0 h-1/2 w-full bg-yellow [clip-path:polygon(0_100%,50%_0,100%_100%)]"></div>
+        <div class="absolute top-1/2 left-0 h-[3px] w-full bg-ink"></div>
+        <div class="absolute top-0 left-1/2 h-full w-[3px] bg-ink"></div>
+      </div>
+      <p class="absolute bottom-4 left-4 bg-ink px-2 py-1 font-display text-xs font-bold uppercase tracking-[0.16em] text-bg">Fig. 1, one bay in four</p>
+    </section>
+
+    <section aria-labelledby="b-weeks" class="flex flex-col gap-4 border-r-3 border-b-3 border-edge p-5 sm:col-span-2">
+      <h2 id="b-weeks" class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Delivery, in weeks</h2>
+      <ul class="flex flex-col gap-2">
+        <li class="grid grid-cols-[6rem_1fr_2rem] items-center gap-3 text-sm"><span class="text-ink">Birch</span><span class="h-4 w-[25%] bg-blue"></span><span class="text-right font-semibold tabular-nums text-ink">1</span></li>
+        <li class="grid grid-cols-[6rem_1fr_2rem] items-center gap-3 text-sm"><span class="text-ink">Oak</span><span class="h-4 w-[50%] bg-blue"></span><span class="text-right font-semibold tabular-nums text-ink">2</span></li>
+        <li class="grid grid-cols-[6rem_1fr_2rem] items-center gap-3 text-sm"><span class="text-ink">Black ash</span><span class="h-4 w-[50%] bg-blue"></span><span class="text-right font-semibold tabular-nums text-ink">2</span></li>
+        <li class="grid grid-cols-[6rem_1fr_2rem] items-center gap-3 text-sm"><span class="text-ink">Lacquer</span><span class="h-4 w-full bg-blue"></span><span class="text-right font-semibold tabular-nums text-ink">4</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="b-bays" class="flex flex-col justify-between gap-2 border-r-3 border-b-3 border-edge p-5">
+      <h2 id="b-bays" class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Bays filled</h2>
+      <p class="font-display text-2xl font-extrabold tabular-nums tracking-tight text-ink">8<span class="text-lg text-muted">/10</span></p>
+    </section>
+
+    <section aria-labelledby="b-finish" class="flex flex-col justify-between gap-3 border-r-3 border-b-3 border-edge p-5">
+      <h2 id="b-finish" class="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted">Finishes</h2>
+      <ul class="flex gap-2">
+        <li class="size-8 border-2 border-edge bg-wood-birch"><span class="sr-only">Birch</span></li>
+        <li class="size-8 border-2 border-edge bg-wood-oak"><span class="sr-only">Oak</span></li>
+        <li class="size-8 border-2 border-edge bg-wood-ash"><span class="sr-only">Black ash</span></li>
+        <li class="size-8 border-2 border-edge bg-red"><span class="sr-only">Signal red lacquer</span></li>
+      </ul>
+    </section>
+
+    <section aria-label="Customer note" class="flex flex-col gap-3 border-r-3 border-b-3 border-edge p-5 sm:col-span-4 sm:flex-row sm:items-center sm:gap-8">
+      <span aria-hidden="true" class="size-10 shrink-0 rounded-circle bg-yellow"></span>
+      <blockquote class="font-display text-lg font-bold uppercase tracking-tight text-ink">"We moved twice. The shelf came apart in ten minutes and went up in twenty."</blockquote>
+      <p class="shrink-0 text-sm text-muted">Lena K., Leipzig</p>
+    </section>
+  </div>
+  <!-- snippet:end -->
+</body>
+</html>
