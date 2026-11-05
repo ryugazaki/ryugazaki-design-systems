@@ -1413,7 +1413,7 @@
                   "id": "tok-radius-full-box",
                   "name": "Box",
                   "width": 96,
-                  "height": 64,
+                  "height": 96,
                   "cornerRadius": "$radius-full",
                   "fill": "$color-surface",
                   "stroke": {
